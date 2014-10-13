@@ -18,6 +18,15 @@ Rails.application.routes.draw do
   
   get '/new-york' => 'packages_gen/new_york#home'
 
+
+  get '/spring-break' => 'packages_hol#home'
+
+  get '/christmas' => 'packages_hol#home'
+
+  get '/thanksgiving' => 'packages_hol#home'
+
+  get '/valentines' => 'packages_hol#home'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
