@@ -1,4 +1,4 @@
 class PackagesGen::SeattleController < ApplicationController
-  def seattle
+  def home
   end
 end
