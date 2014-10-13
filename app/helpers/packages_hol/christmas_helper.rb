@@ -1,0 +1,2 @@
+module PackagesHol::ChristmasHelper
+end

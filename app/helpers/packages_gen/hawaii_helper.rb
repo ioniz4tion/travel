@@ -1,0 +1,2 @@
+module PackagesGen::HawaiiHelper
+end
