@@ -1,0 +1,2 @@
+module PackagesGen::SydneyHelper
+end
