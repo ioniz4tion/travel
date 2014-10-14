@@ -5,6 +5,27 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   get '/home' => 'home#index'
+  
+  get '/seattle' => 'packages_gen/seattle#home'
+  
+  get '/london' => 'packages_gen/london#home'
+  
+  get '/washington' => 'packages_gen/washington#home'
+  
+  get '/hawaii' => 'packages_gen/hawaii#home'
+  
+  get '/sydney' => 'packages_gen/sydney#home'
+  
+  get '/new-york' => 'packages_gen/new_york#home'
+
+
+  get '/spring-break' => 'packages_hol#home'
+
+  get '/christmas' => 'packages_hol#home'
+
+  get '/thanksgiving' => 'packages_hol#home'
+
+  get '/valentines' => 'packages_hol#home'
 
   get '/home' => 'home#index'
 
