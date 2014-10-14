@@ -1,0 +1,10 @@
+.container {
+	max-width: 1366px;
+	padding: 20px 75.5px;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: space-around;
+}

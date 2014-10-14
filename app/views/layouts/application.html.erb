@@ -14,7 +14,35 @@
 	
 	<body>
 
-	<%= yield %>
+		<div class="container">
+
+			<nav>
+
+				<div>
+					<%= link_to 'home','/home' %>
+				</div>
+
+				<div>
+					<span>General Packages</span>
+				</div>
+
+				<div>
+					<span>Holiday Packages
+				</div>
+
+				<div>
+					<%= link_to 'calendar', '/calendar' %>
+				</div>
+
+			</nav>
+
+			<%= yield %>
+
+			<footer>
+
+			</footer>
+
+		</div>
 
 	</body>
 </html>
