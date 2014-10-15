@@ -1,0 +1,49 @@
+<nav>
+
+	<div>
+		<%= link_to('/home') do %>
+			<span>Home</span>
+		<% end %>
+	</div>
+
+	<div class="dropdown">
+		<span>General Packages</span>
+
+		<div>
+			<div>
+				<%= link_to('/hawaii') do %>
+					<span>Hawaii</span>
+					<ul>
+						<li><%= link_to 'Hotels','/hawaii/hotels' %></li>
+						<li><%= link_to 'Restaurants','/hawaii/restarants' %></li>
+						<li><%= link_to 'Attractions','/hawaii/attractions' %></li>
+					</ul>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div class="dropdown">
+		<span>Holiday Packages</span>
+
+		<div>
+			<div>
+				<%= link_to('/christmas') do %>
+					<span>Christmas</span>
+					<ul>
+						<li><%= link_to 'Hotels','/christmas/hotels' %></li>
+						<li><%= link_to 'Restaurants','/christmas/restarants' %></li>
+						<li><%= link_to 'Attractions','/christmas/attractions' %></li>
+					</ul>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<%= link_to('/calendar') do %>
+			<span>Calendar</span>
+		<% end %>
+	</div>
+
+</nav>

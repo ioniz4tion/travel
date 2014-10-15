@@ -1,0 +1,21 @@
+@mixin box-sizing {
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin transition($transition) {
+	-ms-transition:     $transition;
+	-moz-transition:    $transition;
+	-webkit-transition: $transition;
+	-o-transition:      $transition;
+	transition:         $transition;
+}
+
+@mixin transform($transform) {
+	-ms-transform:     $transform;
+	-moz-transform:    $transform;
+	-webkit-transform: $transform;
+	-o-transform:      $transform;
+	transform:         $transform;
+}

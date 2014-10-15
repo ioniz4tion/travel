@@ -16,25 +16,7 @@
 
 		<div class="container">
 
-			<nav>
-
-				<div>
-					<%= link_to 'home','/home' %>
-				</div>
-
-				<div>
-					<span>General Packages</span>
-				</div>
-
-				<div>
-					<span>Holiday Packages
-				</div>
-
-				<div>
-					<%= link_to 'calendar', '/calendar' %>
-				</div>
-
-			</nav>
+			<%= render :partial => "templates/nav" %>
 
 			<%= yield %>
 
@@ -43,6 +25,8 @@
 			</footer>
 
 		</div>
+
+		<script src="../assets/javascripts/jquery-2.1.1.js"></script>
 
 	</body>
 </html>

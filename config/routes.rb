@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   
   get '/sydney' => 'packages_gen/sydney#home'
   
-  get '/new-york' => 'packages_gen/new_york#home'
+  get '/new_york' => 'packages_gen/new_york#home'
 
 
   get '/spring-break' => 'packages_hol#home'

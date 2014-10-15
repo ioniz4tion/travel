@@ -1,0 +1,7 @@
+@import 'variables.css.scss';
+@import 'mixins.css.scss';
+
+body {
+	background: $dark-grey;
+	color: $light-grey;
+}
