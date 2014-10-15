@@ -1,4 +1,8 @@
 class HomeController < ApplicationController
 
-	
+	@city_names = ["Hawaii","London","New York","Seattle","Sydney","Washington"]
+  @city_links = ["hawaii","london","new_york","seattle","sydney","washington"]
+
+  @holiday_names = ["Christmas","Spring Break","Thanksgiving","Valentine's Day"]
+  @holiday_links = ["christmas","spring_break","thanksgiving","valentines"]
 end
