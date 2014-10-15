@@ -10,16 +10,20 @@
 		<span>General Packages</span>
 
 		<div>
-			<div>
-				<%= link_to('/hawaii') do %>
-					<span>Hawaii</span>
-					<ul>
-						<li><%= link_to 'Hotels','/hawaii/hotels' %></li>
-						<li><%= link_to 'Restaurants','/hawaii/restarants' %></li>
-						<li><%= link_to 'Attractions','/hawaii/attractions' %></li>
-					</ul>
-				<% end %>
-			</div>
+			<% city_names = ["Hawaii","London","New York","Seattle","Sydney","Washington"] %>
+			<% city_links = ["hawaii","london","new_york","seattle","sydney","washington"] %>
+			<% city_names.zip(city_links).each do |name,link| %>
+				<div>
+					<%= link_to("/#{link}") do %>
+						<span><%= name %></span>
+						<ul>
+							<li><%= link_to "Hotels","/#{link}/hotels" %></li>
+							<li><%= link_to "Restaurants","/#{link}/restarants" %></li>
+							<li><%= link_to "Attractions","/#{link}/attractions" %></li>
+						</ul>
+					<% end %>
+				</div>
+			<% end %>
 		</div>
 	</div>
 
@@ -27,16 +31,20 @@
 		<span>Holiday Packages</span>
 
 		<div>
-			<div>
-				<%= link_to('/christmas') do %>
-					<span>Christmas</span>
-					<ul>
-						<li><%= link_to 'Hotels','/christmas/hotels' %></li>
-						<li><%= link_to 'Restaurants','/christmas/restarants' %></li>
-						<li><%= link_to 'Attractions','/christmas/attractions' %></li>
-					</ul>
-				<% end %>
-			</div>
+			<% holiday_names = ["Christmas","Spring Break","Thanksgiving","Valentine's Day"] %>
+			<% holiday_links = ["christmas","spring_break","thanksgiving","valentines"] %>
+			<% holiday_names.zip(holiday_links).each do |name,link| %>
+				<div>
+					<%= link_to("/#{link}") do %>
+						<span><%= name %></span>
+						<ul>
+							<li><%= link_to "Hotels","/#{link}/hotels" %></li>
+							<li><%= link_to "Restaurants","/#{link}/restarants" %></li>
+							<li><%= link_to "Attractions","/#{link}/attractions" %></li>
+						</ul>
+					<% end %>
+				</div>
+			<% end %>
 		</div>
 	</div>
 
