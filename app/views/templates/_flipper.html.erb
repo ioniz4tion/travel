@@ -1,6 +1,14 @@
-<div class="flipper">
+<div class="flipper-container">
 
-	<%= render :partial => 'templates/logo' %>
-	<%= render :partial => 'templates/weather' %>
+	<div class="flipper">
+	
+		<%= render :partial => 'templates/logo' %>
+		<%= render :partial => 'templates/weather' %>
+
+		<div class="back weather-more">
+			<button id="flipperClose"></button>
+		</div>
+
+	</div>
 
 </div>
