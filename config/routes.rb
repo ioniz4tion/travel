@@ -5,29 +5,86 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   get '/home' => 'home#index'
-  
-  get '/seattle' => 'packages_gen/seattle#home'
-  
-  get '/london' => 'packages_gen/london#home'
-  
-  get '/washington' => 'packages_gen/washington#home'
-  
-  get '/hawaii' => 'packages_gen/hawaii#home'
-  
-  get '/sydney' => 'packages_gen/sydney#home'
-  
-  get '/new_york' => 'packages_gen/new_york#home'
 
+  get '/calendar' => 'calendar#calendar'
 
-  get '/spring-break' => 'packages_hol#home'
+  get '/about' => 'about#about'
 
-  get '/christmas' => 'packages_hol#home'
+  get '/planner' => 'planner#planner'
 
-  get '/thanksgiving' => 'packages_hol#home'
+  #Starting general packages here
+  
+  scope 'seattle', module: 'packages_gen' do
+    get '' => 'seattle#home'
+    get '/hotels' => 'seattle#hotels'
+    get '/restaurants' => 'seattle#restaurants'
+    get '/attractions' => 'seattle#attractions'
+  end
 
-  get '/valentines' => 'packages_hol#home'
+  scope 'london', module: 'packages_gen' do
+    get '' => 'london#home'
+    get '/hotels' => 'london#hotels'
+    get '/restaurants' => 'london#restaurants'
+    get '/attractions' => 'london#attractions'
+  end
 
-  get '/home' => 'home#index'
+  scope 'washington', module: 'packages_gen' do
+    get '' => 'washington#home'
+    get '/hotels' => 'washington#hotels'
+    get '/restaurants' => 'washington#restaurants'
+    get '/attractions' => 'washington#attractions'
+  end
+  
+  scope 'hawaii', module: 'packages_gen' do
+    get '' => 'hawaii#home'
+    get '/hotels' => 'hawaii#hotels'
+    get '/restaurants' => 'hawaii#restaurants'
+    get '/attractions' => 'hawaii#attractions'
+  end
+  
+  scope 'sydney', module: 'packages_gen' do
+    get '' => 'sydney#home'
+    get '/hotels' => 'sydney#hotels'
+    get '/restaurants' => 'sydney#restaurants'
+    get '/attractions' => 'sydney#attractions'
+  end
+  
+  scope 'new_york', module: 'packages_gen' do
+    get '' => 'new_york#home'
+    get '/hotels' => 'new_york#hotels'
+    get '/restaurants' => 'new_york#restaurants'
+    get '/attractions' => 'new_york#attractions'
+  end
+
+  # Starting holiday package routes here
+
+  scope 'spring_break', module: 'packages_hol' do
+    get '' => 'spring_break#home'
+    get '/hotels' => 'spring_break#hotels'
+    get '/restaurants' => 'spring_break#restaurants'
+    get '/attractions' => 'spring_break#attractions'
+  end
+
+  scope 'christmas', module: 'packages_hol' do
+    get '' => 'christmas#home'
+    get '/hotels' => 'christmas#hotels'
+    get '/restaurants' => 'christmas#restaurants'
+    get '/attractions' => 'christmas#attractions'
+  end
+
+  scope 'thanksgiving', module: 'packages_hol' do
+    get '' => 'thanksgiving#home'
+    get '/hotels' => 'thanksgiving#hotels'
+    get '/restaurants' => 'thanksgiving#restaurants'
+    get '/attractions' => 'thanksgiving#attractions'
+  end
+
+  scope 'valentines', module: 'packages_hol' do
+    get '' => 'valentines#home'
+    get '/hotels' => 'valentines#hotels'
+    get '/restaurants' => 'valentines#restaurants'
+    get '/attractions' => 'valentines#attractions'
+  end  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
