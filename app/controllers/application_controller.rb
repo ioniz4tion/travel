@@ -5,12 +5,9 @@ class ApplicationController < ActionController::Base
 
  before_filter :vars
 
-def vars
-	@city_names = ["Hawaii","London","New York","Seattle","Sydney","Washington"]
-	@city_links = ["hawaii","london","new_york","seattle","sydney","washington"]
-
-	@holiday_names = ["Christmas","Spring Break","Thanksgiving","Valentine's Day"]
-	@holiday_links = ["christmas","spring_break","thanksgiving","valentines"]
-end
+	def vars
+		@gen_package = GenPackage.all
+		@hol_package = HolPackage.all	
+	end
 
 end

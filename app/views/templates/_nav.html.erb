@@ -10,14 +10,14 @@
 		<span>General Packages</span>
 
 		<div>
-			<% @city_names.zip(@city_links).each do |name,link| %>
+			<% @gen_package.each do |package| %>
 				<div>
-					<%= link_to("/#{link}") do %>
-						<span><%= name %></span>
+					<%= link_to("/#{package.link}") do %>
+						<span><%= package.name %></span>
 						<ul>
-							<li><%= link_to "Hotels","/#{link}/hotels" %></li>
-							<li><%= link_to "Restaurants","/#{link}/restaurants" %></li>
-							<li><%= link_to "Attractions","/#{link}/attractions" %></li>
+							<li><%= link_to "Hotels","/#{package.link}/hotels" %></li>
+							<li><%= link_to "Restaurants","/#{package.link}/restaurants" %></li>
+							<li><%= link_to "Attractions","/#{package.link}/attractions" %></li>
 						</ul>
 					<% end %>
 				</div>
@@ -29,14 +29,14 @@
 		<span>Holiday Packages</span>
 
 		<div>			
-			<% @holiday_names.zip(@holiday_links).each do |name,link| %>
+			<% @hol_package.each do |package| %>
 				<div>
-					<%= link_to("/#{link}") do %>
-						<span><%= name %></span>
+					<%= link_to("/#{package.link}") do %>
+						<span><%= package.name %></span>
 						<ul>
-							<li><%= link_to "Hotels","/#{link}/hotels" %></li>
-							<li><%= link_to "Restaurants","/#{link}/restaurants" %></li>
-							<li><%= link_to "Attractions","/#{link}/attractions" %></li>
+							<li><%= link_to "Hotels","/#{package.link}/hotels" %></li>
+							<li><%= link_to "Restaurants","/#{package.link}/restaurants" %></li>
+							<li><%= link_to "Attractions","/#{package.link}/attractions" %></li>
 						</ul>
 					<% end %>
 				</div>
