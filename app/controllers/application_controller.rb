@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   
-	@@city_names = ["Hawaii","London","New York","Seattle","Sydney","Washington"]
-	@@city_links = ["hawaii","london","new_york","seattle","sydney","washington"]
+	@city_names = ["Hawaii","London","New York","Seattle","Sydney","Washington"]
+	@city_links = ["hawaii","london","new_york","seattle","sydney","washington"]
 
-	@@holiday_names = ["Christmas","Spring Break","Thanksgiving","Valentine's Day"]
-	@@holiday_links = ["christmas","spring_break","thanksgiving","valentines"]
+	@holiday_names = ["Christmas","Spring Break","Thanksgiving","Valentine's Day"]
+	@holiday_links = ["christmas","spring_break","thanksgiving","valentines"]
   
 end
