@@ -1,0 +1,110 @@
+
+
+	#<YahooWeather::Response:0x00000005b308f8 
+@doc={
+	"title"=>"Yahoo! Weather - Hawaiian Beaches, HI",
+	 "link"=>"http://us.rd.yahoo.com/dailynews/rss/weather/Hawaiian_Beaches__HI/*http://weather.yahoo.com/forecast/USHI0290_f.html",
+	 "description"=>"Yahoo! Weather for Hawaiian Beaches, HI",
+	 "language"=>"en-us",
+	 "lastBuildDate"=>"Wed, 15 Oct 2014 3:52 pm HST",
+	 "ttl"=>"60",
+	 "location"=>{
+	 	"city"=>"Hawaiian Beaches",
+		 "country"=>"United States",
+		 "region"=>"HI"},
+	 "units"=>{
+		 "distance"=>"mi",
+		 "pressure"=>"in",
+		 "speed"=>"mph",
+		 "temperature"=>"F"},
+	 "wind"=>{
+		 "chill"=>"76",
+		 "direction"=>"250",
+		 "speed"=>"9"},
+	 "atmosphere"=>{
+		 "humidity"=>"87",
+		 "pressure"=>"29.89",
+		 "rising"=>"0",
+		 "visibility"=>"10"},
+	 "astronomy"=>{
+	 	"sunrise"=>"6:14 am",
+	 	"sunset"=>"5:56 pm"},
+	 "image"=>{
+		 "title"=>"Yahoo! Weather",
+		 "width"=>"142",
+		 "height"=>"18",
+		 "link"=>"http://weather.yahoo.com",
+		 "url"=>"http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"},
+	 
+ 	"title"=>"Conditions for Hawaiian Beaches, HI at 3:52 pm HST",
+ 	"lat"=>"19.54",
+ 	"long"=>"-154.92",
+ 	"link"=>"http://us.rd.yahoo.com/dailynews/rss/weather/Hawaiian_Beaches__HI/*http://weather.yahoo.com/forecast/USHI0290_f.html",
+ 	"pubDate"=>"Wed, 15 Oct 2014 3:52 pm HST",
+ 	"condition"=>{
+ 		"code"=>"26",
+	 	"date"=>"Wed,
+	 	15 Oct 2014 3:52 pm HST",
+	 	"temp"=>"76",
+	 	"text"=>"Cloudy"},
+	 	"description"=>"\n<img src=\"http://l.yimg.com/a/i/us/we/52/26.gif\"/><br />\n<b>Current Conditions:</b><br />\nCloudy, 76 F<BR />\n<BR /><b>Forecast:</b><BR />\nWed - Partly Cloudy. High: 80 Low: 71<br />\nThu - PM Showers. High: 83 Low: 73<br />\nFri - Showers. High: 81 Low: 74<br />\nSat - Showers/Wind. High: 85 Low: 73<br />\nSun - Showers. High: 83 Low: 73<br />\n<br />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Hawaiian_Beaches__HI/*http://weather.yahoo.com/forecast/USHI0290_f.html\">Full Forecast at Yahoo! Weather</a><BR/><BR/>\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)<br/>\n",
+
+	 	"forecast"=>[
+
+	 		{"code"=>"29",
+	 		"date"=>"15 Oct 2014",
+	 		"day"=>"Wed",
+	 		"high"=>"80",
+	 		"low"=>"71",
+	 		"text"=>"Partly Cloudy"},
+
+			{"code"=>"39",
+			"date"=>"16 Oct 2014",
+			"day"=>"Thu",
+			"high"=>"83",
+			"low"=>"73",
+			"text"=>"PM Showers"},
+
+			{"code"=>"11",
+			"date"=>"17 Oct 2014",
+			"day"=>"Fri",
+			"high"=>"81",
+			"low"=>"74",
+			"text"=>"Showers"},
+
+			{"code"=>"11",
+			"date"=>"18 Oct 2014",
+			"day"=>"Sat",
+			"high"=>"85",
+			"low"=>"73",
+			"text"=>"Showers/Wind"},
+
+			{"code"=>"11",
+			"date"=>"19 Oct 2014",
+			"day"=>"Sun",
+			"high"=>"83",
+			"low"=>"73",
+			"text"=>"Showers"}
+		],
+
+	 "guid"=>{
+		 "isPermaLink"=>"false",
+		 "content"=>"USHI0290_2014_10_19_7_00_HST"}
+	}
+},
+ 
+@title="Conditions for Hawaiian Beaches, HI at 3:52 pm HST",
+ 
+@link="http://us.rd.yahoo.com/dailynews/rss/weather/Hawaiian_Beaches__HI/*http://weather.yahoo.com/forecast/USHI0290_f.html",
+ 
+@description="Yahoo! Weather for Hawaiian Beaches, HI",
+ 
+@language="en-us",
+ 
+@last_build_date=2014-10-15 15:52:00 -0700,
+ 
+@ttl=60,
+ 
+@lat=19.54,
+ 
+@long=-154.92>

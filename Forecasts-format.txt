@@ -1,0 +1,41 @@
+
+
+[#<YahooWeather::Forecast:0x00000004d8ece0 	
+@date=Wed, 15 Oct 2014, 	
+@text="Partly Cloudy", 	
+@day="Wed", 	
+@code=29, 
+@high=80, 
+@low=71>, 
+
+#<YahooWeather::Forecast:0x00000004d8e880 
+@date=Thu, 16 Oct 2014, 
+@text="PM Showers", 
+@day="Thu", 
+@code=39, 
+@high=83, 
+@low=73>, 
+
+#<YahooWeather::Forecast:0x00000004d8e3a8 
+@date=Fri, 17 Oct 2014, 
+@text="Showers", 
+@day="Fri", 
+@code=11, 
+@high=81, 
+@low=74>, 
+
+#<YahooWeather::Forecast:0x00000004d8ded0 
+@date=Sat, 18 Oct 2014, 
+@text="Showers/Wind", 
+@day="Sat", 
+@code=11, 
+@high=85, 
+@low=73>, 
+
+#<YahooWeather::Forecast:0x00000004d8da70 
+@date=Sun, 19 Oct 2014, 
+@text="Showers", 
+@day="Sun", 
+@code=11, 
+@high=83, 
+@low=73>]
