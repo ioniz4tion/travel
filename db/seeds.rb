@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+GenPackage.create!([
+  {name: "Hawaii", link: "hawaii", code: 23417489},
+  {name: "London", link: "london", code: 44418},
+  {name: "New York", link: "new_york", code: 2459115},
+  {name: "Seattle", link: "seattle", code: 2490383},
+  {name: "Sydney", link: "sydney", code: 1105779},
+  {name: "Washington", link: "washington", code: 2514815}
+])
+
+HolPackage.create!([
+  {name: "Christmas", link: "christmas"},
+  {name: "Spring Break", link: "spring_break"},
+  {name: "Thanksgiving", link: "thanksgiving"},
+  {name: "Valentine's Day", link: "valentines"}
+])
