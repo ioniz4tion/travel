@@ -13,7 +13,7 @@
 			<% city_names = ["Hawaii","London","New York","Seattle","Sydney","Washington"] %>
 			<% city_links = ["hawaii","london","new_york","seattle","sydney","washington"] %>
 			<% city_names.zip(city_links).each do |name,link| %>
-				<div>
+				<div class="destination">
 					<%= link_to("/#{link}") do %>
 						<span><%= name %></span>
 						<ul>
