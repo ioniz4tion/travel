@@ -7,7 +7,10 @@ class HomeController < ApplicationController
 
 	def weather
 		@client = YahooWeather::Client.new
-		@weather = @client.fetch(23417489)		
+		@weather = []
+		GenPackage.all.order(:name).each do |package|
+			@weather.push(@client.fetch(package.code))
+		end
 	end
 
 end

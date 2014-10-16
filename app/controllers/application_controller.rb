@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
  before_filter :vars
 
 	def vars
-		@gen_package = GenPackage.all
-		@hol_package = HolPackage.all	
+		@gen_package = GenPackage.all.order(:name)
+		@hol_package = HolPackage.all.order(:name)	
 	end
 
 end

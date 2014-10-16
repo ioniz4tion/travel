@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015232441) do
+ActiveRecord::Schema.define(version: 20141016045512) do
 
   create_table "gen_packages", force: true do |t|
     t.string   "name"
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "code"
   end
 
   create_table "hol_packages", force: true do |t|
