@@ -1,0 +1,2 @@
+class HolPackagesController < ApplicationController
+end

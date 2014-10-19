@@ -12,13 +12,13 @@
 		<div>
 			<% @gen_package.each do |package| %>
 				<div>
-					<%= link_to("/#{package.link}") do %>
+					<%= link_to("/#{package.name}") do %>
 						<span><%= package.name %></span>
 
 						<ul>
-							<li><%= link_to "Hotels","/#{package.link}/hotels" %></li>
-							<li><%= link_to "Restaurants","/#{package.link}/restaurants" %></li>
-							<li><%= link_to "Attractions","/#{package.link}/attractions" %></li>
+							<li><%= link_to "Hotels","/#{package.name}/hotels" %></li>
+							<li><%= link_to "Restaurants","/#{package.name}/restaurants" %></li>
+							<li><%= link_to "Attractions","/#{package.name}/attractions" %></li>
 						</ul>
 					<% end %>
 				</div>
