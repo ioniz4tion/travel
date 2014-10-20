@@ -1,0 +1,17 @@
+<h1><%= @city.name %> Hotels</h1>
+
+<div style="display:flex; width: 100%; justify-content: space-around">
+	<% @city.gen_hotels.each do |hotel| %>
+	<div>
+		<div><%= hotel.name %></div>
+		<p><%= hotel.description %></p>
+		<p>Pricing: <%= hotel.pricing %></p>
+		<p>Address: <%= hotel.address %></p>
+		<div class="slide">
+			<% hotel.gen_hotel_images.each do |image| %>
+				<%= image_tag image.link %>
+			<% end %>
+		</div>
+	</div>
+	<% end %>
+</div>
