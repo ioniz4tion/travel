@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   get '/:city/restaurants', to: 'gen_packages#restaurants'
   get '/:city/attractions', to: 'gen_packages#attractions'
 
+  get 'holiday/:city', to: 'hol_packages#home'
+  get 'holiday/:city/hotels', to: 'hol_packages#hotels'
+  get 'holiday/:city/restaurants', to: 'hol_packages#restaurants'
+  get 'holiday/:city/attractions', to: 'hol_packages#attractions'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
