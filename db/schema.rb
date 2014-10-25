@@ -11,14 +11,83 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016045512) do
+ActiveRecord::Schema.define(version: 20141020000758) do
+
+  create_table "gen_attraction_images", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.integer  "gen_attraction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gen_attractions", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "pricing"
+    t.string   "location"
+    t.string   "link"
+    t.integer  "gen_package_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gen_hotel_images", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.integer  "gen_hotel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gen_hotels", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "pricing"
+    t.string   "address"
+    t.string   "link"
+    t.integer  "gen_package_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gen_images", force: true do |t|
+    t.string   "link"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "gen_package_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gen_packages", force: true do |t|
     t.string   "name"
-    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "code"
+    t.text     "description"
+  end
+
+  create_table "gen_restaurant_images", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.integer  "gen_restaurant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gen_restaurants", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "pricing"
+    t.string   "address"
+    t.string   "link"
+    t.integer  "gen_package_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "hol_packages", force: true do |t|

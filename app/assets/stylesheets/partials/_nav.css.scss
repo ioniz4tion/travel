@@ -34,8 +34,9 @@ nav {
 	padding: 0 20px;
 	position: relative;
 
-	div {
+	> div {
 		opacity: 0;
+		visibility: hidden;
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -45,8 +46,22 @@ nav {
 
 	&:hover,
 	&:focus {
-		div {
+		> div {
 			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.destination {
+	width: 100%;
+	background: #000;
+	
+	ul {
+		list-style: none;
+
+		li {
+			text-indent: 10px;
 		}
 	}
 }

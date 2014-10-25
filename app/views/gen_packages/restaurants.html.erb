@@ -1,0 +1,17 @@
+<h1><%= @city.name %> Restaurants</h1>
+
+<div style="display:flex; width: 100%; justify-content: space-around">
+	<% @city.gen_restaurants.each do |restaurant| %>
+	<div>
+		<div><%= restaurant.name %></div>
+		<p><%= restaurant.description %></p>
+		<p>Pricing: <%= restaurant.pricing %></p>
+		<p>Address: <%= restaurant.address %></p>
+		<div class="slide">
+			<% restaurant.gen_restaurant_images.each do |image| %>
+				<%= image_tag image.link %>
+			<% end %>
+		</div>
+	</div>
+	<% end %>
+</div>

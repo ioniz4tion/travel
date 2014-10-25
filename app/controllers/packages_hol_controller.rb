@@ -1,2 +1,0 @@
-class PackagesHolController < ApplicationController
-end
