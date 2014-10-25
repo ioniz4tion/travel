@@ -20,7 +20,13 @@ $(document).ready(function() {
 				"transform"         : "rotateY(180deg)"
 			});
 
+			$back.css({
+				"z-index": "21"
+			});
+
 			flipped = true;
+
+			console.log("flip");
 
 		};
 
@@ -38,7 +44,13 @@ $(document).ready(function() {
 				"transform"         : "rotateY(0deg)"
 			});
 
+			$back.css({
+				"z-index": "-1"
+			});
+
 			flipped = false;
+
+			console.log("flip back");
 
 		};
 
