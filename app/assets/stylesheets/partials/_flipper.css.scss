@@ -8,7 +8,7 @@
 	position: relative;
 	transform-style: preserve-3d;
 
-	@include transition(transform 2s);
+	@include transition(transform 1s);
 
 	.back {
 		width: 100%;
