@@ -1,6 +1,7 @@
 <div class="slideshow">
 
 	<ul class="bxslider">
+<<<<<<< HEAD
 	  <li><img src="/assets/720x700.gif"></li>
 	  <li><img src="/assets/720x700.gif"></li>
 	  <li><img src="/assets/720x700.gif"></li>
@@ -8,6 +9,15 @@
 	  <li><img src="/assets/720x700.gif"></li>
 	  <li><img src="/assets/720x700.gif"></li>
 	  <li><img src="/assets/720x700.gif"></li>
+=======
+		<% @slideshow.each do |slide| %>
+	  	<li>
+	  		<h2><%= slide[:name] %></h2>
+	  		<img src="/assets/<%= slide[:link] %>">
+	  		<p><%= slide[:description] %></p>
+	  	</li>
+	  <% end %>
+>>>>>>> 07270856338f35ee377fdd8761f3d8d978f820a8
 	</ul>
 
 </div>

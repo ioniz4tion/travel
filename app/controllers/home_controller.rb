@@ -9,16 +9,15 @@ class HomeController < ApplicationController
 	def weather
 		@client = YahooWeather::Client.new
 		@weather = []
-		# GenPackage.all.order(:name).each do |package|
-		# 	@weather.push(@client.fetch(package.code))
-		# end
+		GenPackage.all.order(:name).each do |package|
+			@weather.push(@client.fetch(package.code))
+		end
 	end
 
 	def home_vars
-		@temp = GenPackage.all
 		@slideshow = []
-		@temp.each do |slide|
-			@slideshow.push(slide.gen_images)
+		GenPackage.all.each do |package|
+			@slideshow << {name: package.name, link: package.image_link, description: package.image_description}
 		end
 	end
 
