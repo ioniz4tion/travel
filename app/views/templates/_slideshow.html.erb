@@ -1,0 +1,9 @@
+<div class="slideshow">
+
+	<ul class="bxslider">
+		<% @slideshow.each do |slide| %>
+	  	<li><img src="/assets/<%= slide.link %>"></li>
+	  <% end %>
+	</ul>
+
+</div>

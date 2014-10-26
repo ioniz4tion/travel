@@ -1,20 +1,7 @@
 <%= render :partial => 'templates/tiles' %>
 
-<div class="slideshow">
 
-<% @slideshow.each do |slide| %>
-	<%= slide[:link] %>
-	<br/>
-	<br/>
-
-<% end %>
-
-<%= @test.first.inspect %>
-
-<br/>
-<%= @slideshow.first.inspect %>
-
-</div>
+<%= render :partial => 'templates/slideshow' %>
 
 <%= render :partial => 'templates/flipper' %>
 
