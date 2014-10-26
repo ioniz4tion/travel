@@ -2,7 +2,11 @@
 
 	<ul class="bxslider">
 		<% @slideshow.each do |slide| %>
-	  	<li><img src="/assets/<%= slide.link %>"></li>
+	  	<li>
+	  		<h2><%= slide[:name] %></h2>
+	  		<img src="/assets/<%= slide[:link] %>">
+	  		<p><%= slide[:description] %></p>
+	  	</li>
 	  <% end %>
 	</ul>
 
