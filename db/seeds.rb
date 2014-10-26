@@ -113,11 +113,11 @@ GenAttractionImage.create!([
 ])
 
 GenImage.create!([
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_package_id: 1},
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_package_id: 2},
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_package_id: 2},
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_package_id: 3},
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_package_id: 4}
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 1},
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 2},
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 2},
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 3},
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 4}
 ])
 
 HolPackage.create!([
