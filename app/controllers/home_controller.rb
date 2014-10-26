@@ -14,11 +14,11 @@ class HomeController < ApplicationController
 		end
 	end
 
-	def home_vars
-		@temp = GenPackage.all
+	def home_vars		
+		@test = GenPackage.all
 		@slideshow = []
-		@temp.each do |slide|
-			@slideshow.push(slide.gen_images)
+		GenPackage.all.each do |package|
+			@slideshow.push({link: package.image_link, name: package.image_name, description: package.image_description})
 		end
 	end
 
