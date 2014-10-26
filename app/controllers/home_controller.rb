@@ -9,9 +9,9 @@ class HomeController < ApplicationController
 	def weather
 		@client = YahooWeather::Client.new
 		@weather = []
-		GenPackage.all.order(:name).each do |package|
-			@weather.push(@client.fetch(package.code))
-		end
+		# GenPackage.all.order(:name).each do |package|
+		# 	@weather.push(@client.fetch(package.code))
+		# end
 	end
 
 	def home_vars

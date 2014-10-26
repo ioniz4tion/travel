@@ -1,17 +1,33 @@
-<h1><%= @city.name %> Attractions</h1>
+<%= render :partial => 'templates/tiles' %>
 
-<div style="display:flex; width: 100%; justify-content: space-around">
+<%= render :partial => 'templates/slideshow' %>
+
+<%= render :partial => 'templates/flipper' %>
+
+<div class="content">
+
+	<h1><%= @city.name %> Attractions</h1>
+
 	<% @city.gen_attractions.each do |attraction| %>
-	<div>
-		<div><%= attraction.name %></div>
-		<p><%= attraction.description %></p>
-		<p>Pricing: <%= attraction.pricing %></p>
-		<p>Address: <%= attraction.location %></p>
-		<div class="slide">
-			<% attraction.gen_attraction_images.each do |image| %>
-				<%= image_tag image.link %>
-			<% end %>
+
+		<div>
+
+			<h2><%= attraction.name %></h2>
+
+			<div class="img">
+				<% attraction.gen_attraction_images.each do |image| %>
+					<img src="/assets/<%= image.link %>">
+				<% end %>
+			</div>
+
+			<div class="text">
+				<p><%= attraction.description %></p>
+				<p>Pricing: <%= attraction.pricing %></p>
+				<p>Address: <%= attraction.location %></p>
+			</div>
+
 		</div>
-	</div>
+
 	<% end %>
+
 </div>

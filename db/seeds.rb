@@ -105,11 +105,11 @@ GenAttraction.create!([
 ])
 
 GenAttractionImage.create!([
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_attraction_id: 1},
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_attraction_id: 2},
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_attraction_id: 2},
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_attraction_id: 3},
-  {name: "Test", description: "This is a test.", link: "www.hello.com", gen_attraction_id: 4}
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 1},
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 2},
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 2},
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 3},
+  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 4}
 ])
 
 GenImage.create!([

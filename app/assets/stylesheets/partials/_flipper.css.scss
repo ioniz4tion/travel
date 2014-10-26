@@ -1,6 +1,9 @@
 @import 'imports.css.scss';
 
 .flipper-container {
+	display: $box-display;
+	width: 30%;
+	position: relative;
 	perspective: 1500px;
 }
 
@@ -65,7 +68,7 @@
 	width: 360px;
 	height: 340px;
 	position: relative;
-	border: 1px solid #e7e7e7;
+	// border: 1px solid #e7e7e7;
 	z-index: 1;
 
 	@include backface-visibility(hidden);

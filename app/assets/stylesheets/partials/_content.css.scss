@@ -1,0 +1,31 @@
+@import 'imports.css.scss';
+
+.content {
+	width: 100%;
+	background: $light-grey;
+	color: $dark-grey;
+
+	> div {
+		width: 100%;
+	}
+
+	.img {
+		display: inline-block;
+		position: relative;
+		left: 0;
+		height: 100%;
+
+		img {
+			display: block;
+			width: 200px;
+			height: 100px;
+		}
+	}
+
+	.text {
+		display: inline-block;
+		position: relative;
+		left: 0;
+		height: 100%;
+	}
+}
