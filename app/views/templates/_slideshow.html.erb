@@ -1,23 +1,67 @@
 <div class="slideshow">
 
 	<ul class="bxslider">
-<<<<<<< HEAD
-	  <li><img src="/assets/720x700.gif"></li>
-	  <li><img src="/assets/720x700.gif"></li>
-	  <li><img src="/assets/720x700.gif"></li>
-	  <li><img src="/assets/720x700.gif"></li>
-	  <li><img src="/assets/720x700.gif"></li>
-	  <li><img src="/assets/720x700.gif"></li>
-	  <li><img src="/assets/720x700.gif"></li>
-=======
+
+	  <!-- <li>
+	  	<div>
+	  		<img src="/assets/720x700.gif">
+	  		<p>This text is here as a test</p>
+	  	</div>
+	  </li>
+
+	  <li>
+	  	<div>
+	  		<img src="/assets/720x700.gif">
+	  		<p>This text is here as a test</p>
+	  	</div>
+	  </li>
+
+	  <li>
+	  	<div>
+	  		<img src="/assets/720x700.gif">
+	  		<p>This text is here as a test</p>
+	  	</div>
+	  </li>
+
+	  <li>
+	  	<div>
+	  		<img src="/assets/720x700.gif">
+	  		<p>This text is here as a test</p>
+	  	</div>
+	  </li>
+
+	  <li>
+	  	<div>
+	  		<img src="/assets/720x700.gif">
+	  		<p>This text is here as a test</p>
+	  	</div>
+	  </li>
+
+	  <li>
+	  	<div>
+	  		<img src="/assets/720x700.gif">
+	  		<p>This text is here as a test</p>
+	  	</div>
+	  </li>
+
+	  <li>
+	  	<div>
+	  		<img src="/assets/720x700.gif">
+	  		<p>This text is here as a test</p>
+	  	</div>
+	  </li> -->
+
 		<% @slideshow.each do |slide| %>
 	  	<li>
-	  		<h2><%= slide[:name] %></h2>
-	  		<img src="/assets/<%= slide[:link] %>">
-	  		<p><%= slide[:description] %></p>
+	  		<div>
+	  			<a href="">Learn More</a>
+		  		<span class="slideshow-heading"><%= slide[:name] %></span>
+		  		<img src="/assets/<%= slide[:link] %>">
+		  		<p><%= slide[:description] %></p>
+		  	</div>
 	  	</li>
 	  <% end %>
->>>>>>> 07270856338f35ee377fdd8761f3d8d978f820a8
+
 	</ul>
 
 </div>

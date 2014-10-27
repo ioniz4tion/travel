@@ -1,10 +1,10 @@
 GenPackage.create!([
-  {name: "Hawaii", code: 23417489, image_name: "Test", image_description: "This is a test", image_link: "placeholder.png"},
-  {name: "London", code: 44418, image_name: "Test", image_description: "This is a test", image_link: "placeholder.png"},
-  {name: "New York", code: 2459115, image_name: "Test", image_description: "This is a test", image_link: "placeholder.png"},
-  {name: "Seattle", code: 2490383, image_name: "Test", image_description: "This is a test", image_link: "placeholder.png"},
-  {name: "Sydney", code: 1105779, image_name: "Test", image_description: "This is a test", image_link: "placeholder.png"},
-  {name: "Washington", code: 2514815, image_name: "Test", image_description: "This is a test", image_link: "placeholder.png"}
+  {name: "Hawaii", code: 23417489, image_name: "Test", image_description: "This is a test", image_link: "720x700.gif"},
+  {name: "London", code: 44418, image_name: "Test", image_description: "This is a test", image_link: "720x700.gif"},
+  {name: "New York", code: 2459115, image_name: "Test", image_description: "This is a test", image_link: "720x700.gif"},
+  {name: "Seattle", code: 2490383, image_name: "Test", image_description: "This is a test", image_link: "720x700.gif"},
+  {name: "Sydney", code: 1105779, image_name: "Test", image_description: "This is a test", image_link: "720x700.gif"},
+  {name: "Washington", code: 2514815, image_name: "Test", image_description: "This is a test", image_link: "720x700.gif"}
 ])
 
 GenHotel.create!([
@@ -113,11 +113,11 @@ GenAttractionImage.create!([
 ])
 
 GenImage.create!([
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 1},
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 2},
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 2},
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 3},
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_package_id: 4}
+  {name: "Test", description: "This is a test.", link: "720x700.gif", gen_package_id: 1},
+  {name: "Test", description: "This is a test.", link: "720x700.gif", gen_package_id: 2},
+  {name: "Test", description: "This is a test.", link: "720x700.gif", gen_package_id: 2},
+  {name: "Test", description: "This is a test.", link: "720x700.gif", gen_package_id: 3},
+  {name: "Test", description: "This is a test.", link: "720x700.gif", gen_package_id: 4}
 ])
 
 HolPackage.create!([

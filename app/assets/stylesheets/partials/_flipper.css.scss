@@ -44,7 +44,7 @@
 }
 
 .logo {
-	width: 360px;
+	width: 100%;
 	height: 360px;
 	z-index: 1;
 
@@ -55,17 +55,22 @@
 		width: 100%;
 		height: 100%;
 		border: 10px solid #0f0;
+		// position: relative;
 
 		@include transition(all 0.3s);
 
 		&:hover {
-			border: 15px solid #f00;
+			border-color: #f00;
+		}
+
+		img {
+			// @include xy-center;
 		}
 	}
 }
 
 .weather {
-	width: 360px;
+	width: 100%;
 	height: 340px;
 	position: relative;
 	// border: 1px solid #e7e7e7;

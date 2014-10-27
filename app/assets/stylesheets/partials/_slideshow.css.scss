@@ -7,6 +7,40 @@
 	position: relative;
 	// left: -4px;
 	// border: 1px solid #e7e7e7;
+	// color: $dark-grey;
+
+	li {
+		height: 700px;
+
+			div {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			padding: 50px;
+
+			img {
+				z-index: -1;
+				
+				@include xy-center;
+			}
+		}
+
+		a {
+			display: inline-block;
+			padding: 15px;
+			position: relative;
+			top: 0;
+			left: 0;
+			background: $yellow;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.slideshow-heading {
+	position: absolute;
+	top: 50px;
+	right: 50px;
 }
 
 /**

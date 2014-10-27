@@ -27,3 +27,11 @@
 	-o-backface-visibility:      $visibility;
 	backface-visibility:         $visibility;
 }
+
+@mixin xy-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	@include transform(translate(-50%, -50%));
+}
