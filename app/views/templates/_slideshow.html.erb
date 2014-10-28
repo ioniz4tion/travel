@@ -56,7 +56,7 @@
 	  		<div>
 	  			<a href="">Learn More</a>
 		  		<span class="slideshow-heading"><%= slide[:name] %></span>
-		  		<img src="/assets/<%= slide[:link] %>">
+		  		<% = iamge_tag(slide[:link]) %>
 		  		<p><%= slide[:description] %></p>
 		  	</div>
 	  	</li>
