@@ -2,15 +2,26 @@
 
 	<button id="flipperBtn"></button>
 
-	<%= @weather[0].forecasts[0].date.inspect %>
-	<br/>
-	Weather:<%= @weather[0].forecasts[0].text %>
-	<br/>
-	High:<%= @weather[0].forecasts[0].high %>
-	<br/>
-	Low:<%= @weather[0].forecasts[0].low %>
-	<br/>
-	Image-width:<%= @weather[0].doc["image"]["width"] %>
+	<div class="slideshow">
+
+		<ul class="bxslider">
+			<% @weather.each do |city_weather| %>
+			<li>
+				<%= city_weather.doc["location"]["city"] %>
+				<br/>
+				<%= city_weather.forecasts[0].high %>
+				<br/>
+				<%= city_weather.forecasts[0].low %>
+				<br/>
+				<%= city_weather.forecasts[0].text %>
+				<br/>
+				<%= city_weather.forecasts[0].date.inspect %>
+				<br/>
+			</li>
+			<% end %>
+		</ul>
+
+	</div>	
 
 	<!-- So I have a weather-format.txt file under the main travel folder. You can use it to see hwo to access what data. Basically if an @ sign precedes the data name in the text file you need to use a dot. Like @weather.lat
 	If the naem is not preceded by an @ but in qoutes, you need to access it with arrays. Like in the above @weather.doc["image"]["width"].
