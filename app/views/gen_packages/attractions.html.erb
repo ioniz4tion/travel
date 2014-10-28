@@ -16,7 +16,7 @@
 
 			<div class="img">
 				<% attraction.gen_attraction_images.each do |image| %>
-					<img src="/assets/<%= image.link %>">
+					<%= image_tag(image.link) %>
 				<% end %>
 			</div>
 
