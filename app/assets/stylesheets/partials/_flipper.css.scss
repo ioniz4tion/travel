@@ -74,9 +74,26 @@
 	height: 340px;
 	position: relative;
 	// border: 1px solid #e7e7e7;
-	z-index: 1;
+	// z-index: 1;
 
 	@include backface-visibility(hidden);
+
+	button {
+		z-index: 1;
+	}
+
+	.weather-slide {
+		z-index: -1;
+
+		.bx-wrapper,
+		.bx-viewport {
+			height: 340px;
+		}
+
+		.bx-controls {
+			display: none;
+		}
+	}
 }
 
 .weather-more {

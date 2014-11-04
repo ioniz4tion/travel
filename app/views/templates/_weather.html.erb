@@ -2,9 +2,9 @@
 
 	<button id="flipperBtn"></button>
 
-	<div class="slideshow">
+	<div class="weather-slide">
 
-		<ul class="bxslider">
+		<ul class="weather-bxslider">
 			<% @weather.each do |city_weather| %>
 			<li>
 				<%= city_weather.doc["location"]["city"] %>

@@ -35,3 +35,19 @@
 
 	@include transform(translate(-50%, -50%));
 }
+
+// Mixins for slideshow arrows
+@mixin arrow {
+	display: inline-block;
+	width: 20px;
+	height: 5px;
+	background: $yellow;
+	border-radius: 5px;
+
+	@include transition(all 0.3s ease);
+	// @include arrow-shadow(rgba(200, 200, 200, 0.7));
+}
+
+@mixin arrow-shadow($color) {
+	box-shadow: 0 0 10px $color;
+}

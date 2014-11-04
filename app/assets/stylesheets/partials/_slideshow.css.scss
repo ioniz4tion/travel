@@ -33,7 +33,31 @@
 			left: 0;
 			background: $yellow;
 			text-transform: uppercase;
+
+			@include transition(all 0.3s);
+
+			&:hover {
+				background: $blue;
+			}
 		}
+
+		span {
+			color: $blue;
+			font-size: 24px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+
+		p {
+			position: relative;
+			top: 70%;
+			color: $dark-grey;
+		}
+	}
+
+	.bx-wrapper,
+	.bx-viewport {
+		height: 700px !important;
 	}
 }
 
@@ -41,6 +65,55 @@
 	position: absolute;
 	top: 50px;
 	right: 50px;
+}
+
+.arrow {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	right: 10px;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		right: 10px;
+
+		@include transition(background 0.3s ease);
+		@include arrow;
+	}
+
+	&:before {
+		top: $arrow-pos;
+
+		@include transform(rotate($arrow-rotate));
+	}
+
+	&:after {
+		bottom: $arrow-pos;
+
+		@include transform(rotate(-$arrow-rotate));
+	}
+
+	&.arrow-left {
+		&:before {
+			@include transform(rotate(-$arrow-rotate));
+		}
+
+		&:after {
+			@include transform(rotate($arrow-rotate));
+		}
+	}
+}
+
+.bx-next:hover,
+.bx-next:focus,
+.bx-prev:hover,
+.bx-prev:focus {
+	.arrow:before,
+	.arrow:after {
+		background: $blue;
+	}
 }
 
 /**
@@ -81,7 +154,6 @@
 	// border:  5px solid #fff;
 	// left: -5px;
 	// background: #fff;
-	height: 700px !important;
 	
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);
@@ -155,12 +227,12 @@
 
 .bx-wrapper .bx-prev {
 	left: 10px;
-	background: url(/assets/controls.png) no-repeat 0 -32px;
+	// background: url(/assets/controls.png) no-repeat 0 -32px;
 }
 
 .bx-wrapper .bx-next {
 	right: 10px;
-	background: url(/assets/controls.png) no-repeat -43px -32px;
+	// background: url(/assets/controls.png) no-repeat -43px -32px;
 }
 
 .bx-wrapper .bx-prev:hover {
@@ -177,7 +249,7 @@
 	margin-top: -16px;
 	outline: 0;
 	width: 32px;
-	height: 32px;
+	// height: 32px;
 	text-indent: -9999px;
 	// z-index: 9999;
 }
