@@ -104,14 +104,6 @@ GenAttraction.create!([
   {name: "Test", description: "This is a test.", pricing: "10 bucks", location: "3343", link: "www.hello.com", gen_package_id: 6}
 ])
 
-GenAttractionImage.create!([
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 1},
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 2},
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 2},
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 3},
-  {name: "Test", description: "This is a test.", link: "placeholder.png", gen_attraction_id: 4}
-])
-
 GenImage.create!([
   {name: "Test", description: "This is a test.", link: "720x700.gif", gen_package_id: 1},
   {name: "Test", description: "This is a test.", link: "720x700.gif", gen_package_id: 2},

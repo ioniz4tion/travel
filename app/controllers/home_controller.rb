@@ -7,18 +7,7 @@ class HomeController < ApplicationController
 
 
 	before_filter :weather
-	before_filter :home_vars
-
-	def weather
-		begin
-			@client = YahooWeather::Client.new
-			@weather = []
-			GenPackage.all.order(:name).each do |package|
-				@weather.push(@client.fetch(package.code))
-			end
-		rescue SocketError => e
-		end		
-	end
+	before_filter :home_vars	
 
 	def home_vars
 		@slideshow = []
