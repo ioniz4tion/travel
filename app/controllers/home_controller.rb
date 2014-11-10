@@ -2,17 +2,12 @@ class HomeController < ApplicationController
 	require 'rubygems'
 	require 'yahoo_weather'
 	require 'date'
+	extend ActiveModel::Naming
+
+
 
 	before_filter :weather
-	before_filter :home_vars
-
-	def weather
-		@client = YahooWeather::Client.new
-		@weather = []
-		GenPackage.all.order(:name).each do |package|
-			@weather.push(@client.fetch(package.code))
-		end
-	end
+	before_filter :home_vars	
 
 	def home_vars
 		@slideshow = []
