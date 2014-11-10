@@ -4,9 +4,6 @@ class HomeController < ApplicationController
 	require 'date'
 	extend ActiveModel::Naming
 
-
-
-	before_filter :weather
 	before_filter :home_vars	
 
 	def home_vars

@@ -1,5 +1,4 @@
-class GenPackagesController < ApplicationController
-	before_filter :weather
+class GenPackagesController < ApplicationController	
 	
 	def home
 		@city = GenPackage.find_by_name(params[:city])
@@ -23,16 +22,5 @@ class GenPackagesController < ApplicationController
 		GenPackage.find_by_name(params[:city]).gen_attractions.all.each do |package|
 			@slideshow << {name: package.name, link: package.link, description: package.image_description}
 		end
-	end
-
-	def weather
-		begin
-			@client = YahooWeather::Client.new
-			@weather = []
-			GenPackage.all.order(:name).each do |package|
-				@weather.push(@client.fetch(package.code))
-			end
-		rescue SocketError => e
-		end		
-	end
+	end	
 end
