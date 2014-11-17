@@ -47,6 +47,7 @@
 	width: 100%;
 	height: 360px;
 	z-index: 1;
+	background: $blue;
 
 	@include backface-visibility(hidden);
 
@@ -75,6 +76,7 @@
 	position: relative;
 	// border: 1px solid #e7e7e7;
 	// z-index: 1;
+	background: $blue;
 
 	@include backface-visibility(hidden);
 

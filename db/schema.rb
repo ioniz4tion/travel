@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20141109231950) do
 
+  create_table "gen_attraction_images", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.integer  "gen_attraction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "gen_attractions", force: true do |t|
     t.string   "name"
     t.text     "description"
