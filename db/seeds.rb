@@ -1,10 +1,10 @@
 GenPackage.create!([
-  {name: "Hawaii", code: 23417489, image_name: "Test", image_description: "This is a test", image_link: "720x700.gif"},
-  {name: "London", code: 44418, image_name: "Test", image_description: "This is a test", image_link: "london.jpg"},
-  {name: "New York", code: 2459115, image_name: "Test", image_description: "This is a test", image_link: "720x700.gif"},
+  {name: "Hawaii", code: 23417489, image_name: "Hawaii", image_description: "This is Hawaii.", image_link: "hawaii.jpg"},
+  {name: "London", code: 44418, image_name: "Test", image_description: "This is London", image_link: "720x700.gif"},
+  {name: "New York", code: 2459115, image_name: "New York", image_description: "This is New York.", image_link: "NewYork.jpg"},
   {name: "Seattle", code: 2490383, image_name: "Seattle", image_description: "This is a Seattle.", image_link: "seattle.jpg"},
   {name: "Sydney", code: 1105779, image_name: "Test", image_description: "This is not Seattle.", image_link: "sydney.jpg"},
-  {name: "Washington", code: 2514815, image_name: "Test", image_description: "This is a test", image_link: "washington.jpg"}
+  {name: "Washington", code: 2514815, image_name: "Test", image_description: "This is Washington", image_link: "washington.jpg"}
 ])
 
 GenHotel.create!([
