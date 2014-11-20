@@ -54,3 +54,22 @@ footer {
 		}
 	}
 }
+
+.copy {
+	span {
+		// color: $hover-color;
+		margin: 0 5px;
+
+		&.copyline {
+			margin: 0;
+		}
+	}
+
+	a {
+		color: $light-grey;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

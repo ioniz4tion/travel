@@ -33,12 +33,12 @@
 		right: 0;
 		outline: none;
 		border: none;
-		background: #0f0;
+		background: $blue;
 
 		@include transition(all 0.3s);
 
 		&:hover {
-			background: #f00;
+			background: $yellow;
 		}
 	}
 }
@@ -47,7 +47,7 @@
 	width: 100%;
 	height: 360px;
 	z-index: 1;
-	background: $blue;
+	background: $dark-grey;
 
 	@include backface-visibility(hidden);
 
@@ -55,13 +55,13 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		border: 10px solid #0f0;
+		border: 10px solid $blue;
 		// position: relative;
 
 		@include transition(all 0.3s);
 
 		&:hover {
-			border-color: #f00;
+			border-color: $yellow;
 		}
 
 		img {
@@ -76,7 +76,7 @@
 	position: relative;
 	// border: 1px solid #e7e7e7;
 	// z-index: 1;
-	background: $blue;
+	background: $dark-grey;
 
 	@include backface-visibility(hidden);
 

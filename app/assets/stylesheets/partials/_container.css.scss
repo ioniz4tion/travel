@@ -1,12 +1,18 @@
 .container {
-	max-width: 1200px;
 	// padding: 0 75.5px;
 	margin: 0 auto;
 	margin-bottom: 50px;
+	overflow: hidden;
 
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-content: space-around;
+}
+
+@media (min-width: 1210px) {
+	.container {
+		width: 1200px;
+	}
 }
