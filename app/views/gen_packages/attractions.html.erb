@@ -14,10 +14,8 @@
 
 			<h2><%= attraction.name %></h2>
 
-			<div class="img">
-				<% attraction.gen_attraction_images.each do |image| %>
-					<%= image_tag(image.link) %>
-				<% end %>
+			<div class="img">				
+					<%= image_tag(attraction.link) %>				
 			</div>
 
 			<div class="text">

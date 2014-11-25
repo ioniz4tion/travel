@@ -107,9 +107,7 @@
 }
 
 .bx-next:hover,
-.bx-next:focus,
-.bx-prev:hover,
-.bx-prev:focus {
+.bx-prev:hover {
 	.arrow:before,
 	.arrow:after {
 		background: $blue;

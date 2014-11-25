@@ -16,3 +16,7 @@
 //= require_tree .
 
 //= require flipper
+
+//= require external/classie.js
+//= require external/stepsForm.js
+//= require external/modernizr.custom.js

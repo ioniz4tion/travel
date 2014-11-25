@@ -2,11 +2,18 @@
 
 .content {
 	width: 100%;
-	background: $light-grey;
-	color: $dark-grey;
+	padding: 50px;
+	background: #676767;
+	color: $light-grey;
+
+	h1 {
+		margin: 0 0 50px 0;
+		text-transform: uppercase;
+	}
 
 	> div {
 		width: 100%;
+		margin-top: 30px;
 	}
 
 	.img {

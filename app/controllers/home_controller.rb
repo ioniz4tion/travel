@@ -2,25 +2,10 @@ class HomeController < ApplicationController
 	require 'rubygems'
 	require 'yahoo_weather'
 	require 'date'
-	require 'resolv-replace'
-	require 'ping'
+	
+	extend ActiveModel::Naming
 
-	before_filter :weather
-	before_filter :home_vars
-
-	def internet_connection?
-		Ping.pingecho "google.com",1,80
-	end
-
-	def weather
-		if internet_connection?
-			@client = YahooWeather::Client.new
-		end
-		@weather = []
-		GenPackage.all.order(:name).each do |package|
-			@weather.push(@client.fetch(package.code))
-		end
-	end
+	before_filter :home_vars	
 
 	def home_vars
 		@slideshow = []

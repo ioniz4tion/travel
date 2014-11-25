@@ -2,44 +2,45 @@
 
 	<div>
 		<%= link_to('/home') do %>
-			<span>Home</span>
+			<span class="nav-heading">Home</span>
 		<% end %>
 	</div>
 
 	<div class="dropdown">
-		<span>General Packages</span>
+		<span class="nav-heading">General Packages</span>
 
-		<div>
+		<div class="nav-list general">
 			<% @gen_package.each do |package| %>
-				<div class="destination">
+				<div>
 					<%= link_to("/#{package.name}") do %>
 						<span><%= package.name %></span>
+					<% end %>
 
 						<ul>
 							<li><%= link_to "Hotels","/#{package.name}/hotels" %></li>
 							<li><%= link_to "Restaurants","/#{package.name}/restaurants" %></li>
 							<li><%= link_to "Attractions","/#{package.name}/attractions" %></li>
 						</ul>
-					<% end %>
 				</div>
 			<% end %>
 		</div>
 	</div>
 
 	<div class="dropdown">
-		<span>Holiday Packages</span>
+		<span class="nav-heading">Holiday Packages</span>
 
-		<div>			
+		<div class="nav-list holiday">			
 			<% @hol_package.each do |package| %>
 				<div>
 					<%= link_to("/holiday/#{package.name}") do %>
 						<span><%= package.name %></span>
+					<% end %>
 						<ul>
 							<li><%= link_to "Hotels","/holiday/#{package.name}/hotels" %></li>
 							<li><%= link_to "Restaurants","/holiday/#{package.name}/restaurants" %></li>
 							<li><%= link_to "Attractions","/holiday/#{package.name}/attractions" %></li>
 						</ul>
-					<% end %>
+				
 				</div>
 			<% end %>
 		</div>
@@ -47,7 +48,7 @@
 
 	<div>
 		<%= link_to('/calendar') do %>
-			<span>Calendar</span>
+			<span class="nav-heading">Calendar</span>
 		<% end %>
 	</div>
 
