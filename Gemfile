@@ -3,12 +3,14 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-gem 'pg'
+#gem 'pg'
 gem 'rails_12factor'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 gem 'seed_dump'
 gem 'yahoo_weather', '~> 1.1.1'
+# this if for checking internet connection - delete if it isn't used
+gem 'net-ping', '~> 1.7.5'
 # check out the forecast_io gem to see if it is any better than yahoo weather.
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -31,6 +33,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
