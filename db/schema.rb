@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127051244) do
+
+ActiveRecord::Schema.define(version: 20141127053142) do
 
   create_table "answers", force: true do |t|
     t.text     "text"
@@ -43,11 +44,11 @@ ActiveRecord::Schema.define(version: 20141127051244) do
     t.datetime "updated_at"
     t.text     "image_description"
     t.string   "phone"
-    t.integer  "hours"
-    t.integer  "rating"
-    t.integer  "imap_id"
-    t.integer  "button_id"
     t.string   "website"
+    t.string   "hours"
+    t.string   "rating"
+    t.string   "iframe_id"
+    t.string   "button_id"
   end
 
   create_table "gen_hotel_images", force: true do |t|

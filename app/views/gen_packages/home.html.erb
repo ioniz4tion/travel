@@ -1,11 +1,11 @@
-<h1><%= @city.name %></h1>
+<%= render :partial => 'templates/tiles' %>
 
-<div style="display:flex; width: 100%; justify-content: space-around">
-	<div class="slide">
-		<% @city.gen_images.each do |image| %>
-		<div>
-			<%= image_tag image.link %>
-		</div>
-		<% end %>
-	</div>
+<%= render :partial => 'templates/slideshow' %>
+
+<%= render :partial => 'templates/flipper' %>
+
+<div class="content">
+
+	<h1><span><%= @city.name %></span></h1>
+
 </div>
