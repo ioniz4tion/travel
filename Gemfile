@@ -9,8 +9,6 @@ gem 'rails_12factor'
 gem 'mysql2'
 gem 'seed_dump'
 gem 'yahoo_weather', '~> 1.1.1'
-# this if for checking internet connection - delete if it isn't used
-gem 'net-ping', '~> 1.7.5'
 # check out the forecast_io gem to see if it is any better than yahoo weather.
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

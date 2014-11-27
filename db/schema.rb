@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109231950) do
+ActiveRecord::Schema.define(version: 20141127021909) do
 
   create_table "gen_attraction_images", force: true do |t|
     t.string   "name"
@@ -97,6 +97,12 @@ ActiveRecord::Schema.define(version: 20141109231950) do
   create_table "hol_packages", force: true do |t|
     t.string   "name"
     t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

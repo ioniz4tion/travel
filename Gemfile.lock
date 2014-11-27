@@ -38,7 +38,6 @@ GEM
     coffee-script-source (1.8.0)
     erubis (2.7.0)
     execjs (2.2.2)
-    ffi (1.9.6-x86-mingw32)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.4)
@@ -54,9 +53,6 @@ GEM
     minitest (5.4.2)
     multi_json (1.10.1)
     mysql2 (0.3.16)
-    net-ping (1.7.5)
-    net-ping (1.7.5-x86-mingw32)
-      win32-security (>= 0.2.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -117,8 +113,6 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    win32-security (0.3.0)
-      ffi
     yahoo_weather (1.1.1)
       rails (>= 3.1.0)
 
@@ -131,7 +125,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
-  net-ping (~> 1.7.5)
   rails (= 4.1.6)
   rails_12factor
   sass-rails (~> 4.0.3)
