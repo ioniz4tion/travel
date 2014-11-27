@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20141127053142) do
 
   create_table "answers", force: true do |t|
@@ -20,6 +21,7 @@ ActiveRecord::Schema.define(version: 20141127053142) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "question_id"
+    t.string   "label"
   end
 
   create_table "gen_attraction_images", force: true do |t|

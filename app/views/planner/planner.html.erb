@@ -1,4 +1,23 @@
 <form>
+	<% i = 1 %>
+	<% @questions.each do |question| %>
+		<div class="question  <% if(i > 1)%><%= 'right-away' %><% end %>" id="q<%= i %>">
+			<span><%= question.text %></span>
+
+			<div class="answer-group">
+
+				<% @answers[i - 1].each do |answer| %>
+
+					<label for="<%= i %><%= answer.label %>" data-color="<%= answer.color %>" class="<%= answer.color %> answer">
+						<input type="radio" name="weather" id="<%= i %><%= answer.label %>" value="<%= answer.score %>">
+						<label for="<%= i %><%= answer.label %>"><%= answer.text %></label>
+					</label>
+				<% end %>
+			</div>
+		</div>
+		<% i += 1 %>
+	<% end %><!--
+
 	<div class="question" id="q1">
 		<span>What kind of weather do you like?</span>
 		
@@ -41,7 +60,7 @@
 				<label for="relaxing">Relaxing</label>
 			</label>
 		</div>		
-	</div>
+	</div>-->
 
 	<div class="controls">
 		<button id="previous" class="grey-left btn-slide btn icon-arrow-left" type="button">Previous</button>
@@ -56,3 +75,4 @@
 </form>
 
 <%= @questions.inspect %>
+<%= @answers.inspect %>
