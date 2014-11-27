@@ -15,6 +15,7 @@ nav {
 		height: 100%;
 		// border: 1px solid #e7e7e7;
 		// margin: 0 -3px;
+		z-index: 9999;
 
 		@include transition(all 0.3s);
 
@@ -81,6 +82,7 @@ nav {
 	width: 1201px;
 	max-height: 225px;
 	padding: 25px;
+	z-index: 9999;
 
 	@include transition(all 0.3s);
 
@@ -106,6 +108,8 @@ nav {
 	span {
 		font-weight: bolder;
 		color: $yellow;
+
+		@include transition(all 0.3s);
 	}
 	
 	ul {

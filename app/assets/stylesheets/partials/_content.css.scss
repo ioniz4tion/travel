@@ -11,28 +11,103 @@
 		text-transform: uppercase;
 	}
 
-	> div {
-		width: 100%;
-		margin-top: 30px;
+	ul {
+		list-style: none;
+	}
+}
+
+.item {
+	display: block;
+	margin-top: 30px;
+	position: relative;
+
+	img {
+		width: 330px;
+		height: 210px;
+		margin-right: 20px;
 	}
 
-	.img {
+	.description {
 		display: inline-block;
-		position: relative;
-		left: 0;
-		height: 100%;
+		width: 750px;
+		position: absolute;
+		top: 0;
+		left: 350px;
 
-		img {
-			display: block;
-			width: 200px;
-			height: 100px;
+		h2 {
+			display: inline-block;
+			font-variant: small-caps;
+			margin-bottom: 20px;
+		}
+
+		p {
+			line-height: 1.25;
+			margin-bottom: 10px;
 		}
 	}
 
-	.text {
-		display: inline-block;
-		position: relative;
-		left: 0;
-		height: 100%;
+	.rating {
+		.glyphicon {
+			font-size: 28px;
+			color: $yellow;
+			margin-right: 10px;
+		}
+
+		div {
+			display: inline-block;
+		}
+
+		p {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 22px;
+
+			span {
+				color: #898989;
+				margin: 0 5px;
+			}
+		}
+	}
+
+	table {
+		td {
+			height: 50px;
+			padding: 10px;
+			vertical-align: middle;
+		}
+
+		.glyphicon {
+			// float: left;
+			font-size: 24px;
+			margin-right: 10px;
+			color: #898989;
+		}
+
+		div {
+			display: inline-block;
+		}
+
+		p,
+		a {
+			display: table-cell;
+			line-height: 24px;
+			// height: 24px;
+			vertical-align: middle;
+		}
+	}
+}
+
+.dash {
+	width: 10px;
+	margin: 0 5px;
+	position: relative;
+
+	&:before {
+		content: '';
+		width: 100%;
+		height: 2px;
+		background: #898989;
+
+		@include y-center;
 	}
 }

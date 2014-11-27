@@ -2,9 +2,11 @@
 
 .slideshow {
 	display: $box-display;
-	width: 60%;
+	width: 720px;
 	height: 700px;
-	position: relative;
+	position: absolute;
+	top: 65px;
+	left: 120px;
 	// left: -4px;
 	// border: 1px solid #e7e7e7;
 	// color: $dark-grey;
