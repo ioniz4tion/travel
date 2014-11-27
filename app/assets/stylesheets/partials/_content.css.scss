@@ -9,10 +9,25 @@
 	h1 {
 		margin: 0 0 50px 0;
 		text-transform: uppercase;
+		color: $yellow;
+
+		span {
+			color: #898989;
+		}
 	}
 
 	ul {
 		list-style: none;
+	}
+
+	button {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background: transparent;
+		border: none;
+		outline: none;
+		float: right;
 	}
 }
 
@@ -20,6 +35,10 @@
 	display: block;
 	margin-top: 30px;
 	position: relative;
+
+	div {
+		position: relative;
+	}
 
 	img {
 		width: 330px;
@@ -94,10 +113,20 @@
 			// height: 24px;
 			vertical-align: middle;
 		}
+
+		a {
+			color: $light-grey;
+
+			@include transition(all 0.3s);
+
+			&:hover {
+				color: $yellow;
+			}
+		}
 	}
 }
 
-.dash {
+/* .dash {
 	width: 10px;
 	margin: 0 5px;
 	position: relative;
@@ -109,5 +138,16 @@
 		background: #898989;
 
 		@include y-center;
+	}
+} */
+
+.map {
+	// height: 0;
+
+	iframe {
+		display: block;
+		width: 1100px;
+		height: 0;
+		border: none;
 	}
 }
