@@ -8,24 +8,73 @@
 
 	<h1><%= @city.name %> Attractions</h1>
 
-	<% @city.gen_attractions.each do |attraction| %>
+	<ul>
 
-		<div>
+		<% @city.gen_attractions.each do |attraction| %>
 
-			<h2><%= attraction.name %></h2>
+			<li class="item">
+				<div>
+					<%= image_tag(attraction.link) %>
 
-			<div class="img">				
-					<%= image_tag(attraction.link) %>				
-			</div>
+					<div class="description">
+						<h2><%= attraction.name %></h2>
+						<p><%= attraction.description %></p>
+						<div class="rating">
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<div>
+								<p>4.0<span>/</span>5</p>
+							</div>
+						</div>
+					</div>
 
-			<div class="text">
-				<p><%= attraction.description %></p>
-				<p>Pricing: <%= attraction.pricing %></p>
-				<p>Address: <%= attraction.location %></p>
-			</div>
+				</div>
 
-		</div>
+				<div>
 
-	<% end %>
+					<table>
+
+						<tr>
+
+							<td>
+								<span class="glyphicon glyphicon-map-marker"></span>
+								<div>
+									<p><%= attraction.location %></p>
+								</div>
+							</td>
+
+							<td>
+								<span class="glyphicon glyphicon-globe"></span>
+								<div>
+									<a href="http://www.google.com" target="_blank">www.google.com</a>
+								</div>
+							</td>
+
+						</tr>
+
+						<tr>
+
+							<td>
+								<span class="glyphicon glyphicon-time"></span>
+								<div>
+									<p>XX:XX AM -- XX:XX PM</p>
+								</div>
+							</td>
+
+							<td>
+								<span class="glyphicon glyphicon-earphone"></span>
+								<div>
+									<p>(XXX) XXX-XXXX</p>
+								</div>
+							</td>
+
+						</tr>
+
+					</table>
+
+				</div>
+
+			</li>
+
+		<% end %>
 
 </div>

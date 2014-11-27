@@ -36,6 +36,13 @@
 	@include transform(translate(-50%, -50%));
 }
 
+@mixin y-center {
+	position: absolute;
+	top: 50%;
+
+	@include transform(translateY(-50%));
+}
+
 // Mixins for slideshow arrows
 @mixin arrow {
 	display: inline-block;

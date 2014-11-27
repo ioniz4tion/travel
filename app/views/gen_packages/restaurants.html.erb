@@ -1,17 +1,31 @@
-<h1><%= @city.name %> Restaurants</h1>
+<%= render :partial => 'templates/tiles' %>
 
-<div style="display:flex; width: 100%; justify-content: space-around">
+<%= render :partial => 'templates/slideshow' %>
+
+<%= render :partial => 'templates/flipper' %>
+
+<div class="content">
+
+	<h1><%= @city.name %> Restaurants</h1>
+
 	<% @city.gen_restaurants.each do |restaurant| %>
-	<div>
-		<div><%= restaurant.name %></div>
-		<p><%= restaurant.description %></p>
-		<p>Pricing: <%= restaurant.pricing %></p>
-		<p>Address: <%= restaurant.address %></p>
-		<div class="slide">
-			<% restaurant.gen_restaurant_images.each do |image| %>
-				<%= image_tag image.link %>
-			<% end %>
+
+		<div>
+
+			<h2><%= restaurant.name %></h2>
+
+			<div class="img">
+				<%= image_tag(image.link) %>
+			</div>
+
+			<div class="text">
+				<p><%= restaurant.description %></p>
+				<p>Pricing: <%= restaurant.pricing %></p>
+				<p>Address: <%= restaurant.address %></p>
+			</div>
+
 		</div>
-	</div>
+
 	<% end %>
+
 </div>

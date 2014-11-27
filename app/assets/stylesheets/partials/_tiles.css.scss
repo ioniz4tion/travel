@@ -2,9 +2,11 @@
 
 .tiles {
 	display: $box-display;
-	width: 10%;
+	width: 120px;
 	height: 700px;
 	// border: 1px solid #e7e7e7;
+	position: absolute;
+	// top: 0;
 	left: 0;
 	text-transform: uppercase;
 	text-align: center;
