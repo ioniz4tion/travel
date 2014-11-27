@@ -143,18 +143,19 @@
 } */
 
 .map {
-	// height: 0;
+	height: 0;
+	overflow: hidden;
+
+	@include transition(all 0.3s);
+
+	&.open {
+		height: 600px;
+	}
 
 	iframe {
 		display: block;
 		width: 1100px;
-		height: 0;
+		height: 600px;
 		border: none;
-
-		@include transition(all 0.3s);
-
-		&.open {
-			height: 600px;
-		}
 	}
 }
