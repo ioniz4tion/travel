@@ -130,10 +130,10 @@ Question.create!([
 ])
 
 Answer.create!([
-  {text: "Hot Weather", color: "red", score: 100, question_id:1},
-  {text: "Temperate Weather", color: "green", score: 50, question_id:1},
-  {text: "Cold Weather", color: "blue", score: 0, question_id:1},
-  {text: "Exciting", color: "red", score: 100, question_id:2},
-  {text: "Normal", color: "green", score: 50, question_id:2},
-  {text: "Relaxing", color: "blue", score: 0, question_id:2},
+  {text: "Hot Weather", label: "hot", color: "red", score: 100, question_id:1},
+  {text: "Temperate Weather", label: "temperate", color: "green", score: 50, question_id:1},
+  {text: "Cold Weather", label: "cold", color: "blue", score: 0, question_id:1},
+  {text: "Exciting", label: "exciting", color: "red", score: 100, question_id:2},
+  {text: "Normal", label: "normal", color: "green", score: 50, question_id:2},
+  {text: "Relaxing", label: "relaxing", color: "blue", score: 0, question_id:2},
   ])
