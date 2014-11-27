@@ -58,3 +58,25 @@
 @mixin arrow-shadow($color) {
 	box-shadow: 0 0 10px $color;
 }
+
+@mixin hover-color($selector, $color, $fade-color) {
+	#{$selector}:hover {		
+		background-color: $color;
+		:after {
+			background-color: $fade-color;
+		}
+	}
+	#{$selector}-select {
+		background-color: $color !important;
+		:after {
+			background-color: $fade-color !important;
+		}		
+	}
+}
+
+@mixin transform-origin($origin) {
+	-webkit-transform-origin: $origin;
+	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	transform-origin: $origin;
+}

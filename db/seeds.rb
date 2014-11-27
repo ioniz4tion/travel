@@ -105,12 +105,12 @@ GenAttraction.create!([
   {name: "Brooklyn Bridge", description: "This is a test.", pricing: "10 bucks", location: "New York, NY", link: "330x210.gif", gen_package_id: 3},
   {name: "Yankee Stadium", description: "This is a test.", pricing: "10 bucks", location: "1 E 161st St, Bronx, NY 10451", link: "330x210.gif", gen_package_id: 3},
 
-  {name: "Space Needle", description: "This is a test.", pricing: "10 bucks", location: "3343", link: "330x210.gif", gen_package_id: 4},
-  {name: "Experience Music Project", description: "This is a test.", pricing: "10 bucks", location: "3343", link: "330x210.gif", gen_package_id: 4},
-  {name: "Seattle Art Museum", description: "This is a test.", pricing: "10 bucks", location: "3343", link: "330x210.gif", gen_package_id: 4},
-  {name: "Pike Place Market", description: "This is a test.", pricing: "10 bucks", location: "3343", link: "330x210.gif", gen_package_id: 4},
-  {name: "Seattle Science Center", description: "This is a test.", pricing: "10 bucks", location: "3343", link: "330x210.gif", gen_package_id: 4},
-  {name: "CenturyLink Field", description: "This is a test.", pricing: "10 bucks", location: "3343", link: "330x210.gif", gen_package_id: 4},
+  {name: "Space Needle", iframe_id: "needle", button_id: "showNeedle", description: "This is a test.", pricing: "10 bucks", location: "400 Broad St, Seattle, WA 98109", hours: "10:00 AM -- 11:00 PM", website: "http://www.spaceneedle.com/home/", phone: "+1 206 905 2100", rating: "4.2", link: "330x210.gif", gen_package_id: 4},
+  {name: "Experience Music Project", iframe_id: "emp", button_id: "showEmp", description: "This is a test.", pricing: "10 bucks", location: "325 5th Ave N, Seattle, WA 98109", hours: "10:00 AM -- 5:00 PM", website: "http://www.empmuseum.org/", phone: "+1 206 770 2700", rating: "4.2", link: "330x210.gif", gen_package_id: 4},
+  {name: "Seattle Art Museum", iframe_id: "sam", button_id: "showSam", description: "This is a test.", pricing: "10 bucks", location: "1300 1st Ave, Seattle, WA 98101", hours: "10:00 AM -- 5:00 PM", website: "http://www.seattleartmuseum.org/", phone: "+1 206 654 3100", rating: "4.2", link: "330x210.gif", gen_package_id: 4},
+  {name: "Pike Place Market", iframe_id: "pike", button_id: "showPike", description: "This is a test.", pricing: "10 bucks", location: "Seattle, WA", hours: "N/A", website: "", phone: "+1 206 682 7453", rating: "4.5", link: "330x210.gif", gen_package_id: 4},
+  {name: "Pacific Science Center", iframe_id: "psc", button_id: "showPsc", description: "This is a test.", pricing: "10 bucks", location: "200 2nd Ave N, Seattle, WA 98109", hours: "10:00 AM -- 5:00 PM", website: "http://www.pacificsciencecenter.org/", phone: "+1 206 443 2001", rating: "3.9", link: "330x210.gif", gen_package_id: 4},
+  {name: "CenturyLink Field", iframe_id: "century", button_id: "showCentury", description: "This is a test.", pricing: "10 bucks", location: "800 Occidental Ave S, Seattle, WA 98134", hours: "8:30 AM -- 5:00 PM", website: "http://www.centurylinkfield.com/", phone: "+1 206 381 7555", rating: "4.5", link: "330x210.gif", gen_package_id: 4},
 
   {name: "Sydney Opera House", description: "This is a test.", pricing: "10 bucks", location: "Bennelong Point, Sydney NSW 2000, Australia", link: "330x210.gif", gen_package_id: 5},
   {name: "Bondi Beach", description: "This is a test.", pricing: "10 bucks", location: "NSW 2026, Australia", link: "330x210.gif", gen_package_id: 5},

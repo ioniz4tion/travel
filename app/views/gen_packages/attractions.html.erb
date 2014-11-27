@@ -22,7 +22,7 @@
 						<div class="rating">
 							<span class="glyphicon glyphicon-star-empty"></span>
 							<div>
-								<p>4.0<span>/</span>5</p>
+								<p><%= attraction.rating %><span>/</span>5</p>
 							</div>
 						</div>
 					</div>
@@ -45,7 +45,7 @@
 							<td>
 								<span class="glyphicon glyphicon-globe"></span>
 								<div>
-									<a href="http://www.google.com" target="_blank">www.google.com</a>
+									<a href="<%= attraction.website %>" target="_blank"><%= attraction.website %></a>
 								</div>
 							</td>
 
@@ -56,14 +56,14 @@
 							<td>
 								<span class="glyphicon glyphicon-time"></span>
 								<div>
-									<p>XX:XX AM -- XX:XX PM</p>
+									<p><%= attraction.hours %></p>
 								</div>
 							</td>
 
 							<td>
 								<span class="glyphicon glyphicon-earphone"></span>
 								<div>
-									<p>(XXX) XXX-XXXX</p>
+									<p><%= attraction.phone %></p>
 								</div>
 							</td>
 
@@ -71,13 +71,13 @@
 
 					</table>
 
-					<button>Show in map</button>
+					<button id="<%= attraction.button_id %>">Show in map</button>
 
 				</div>
 
 				<div class="map">
 
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2689.289373635538!2d-122.34927700000004!3d47.620506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490151f4ed5b7f9%3A0xdb2ba8689ed0920d!2sSpace+Needle!5e0!3m2!1sen!2sus!4v1417050525679"></iframe>
+					<iframe id="<%= attraction.iframe_id %>" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2689.289373635538!2d-122.34927700000004!3d47.620506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490151f4ed5b7f9%3A0xdb2ba8689ed0920d!2sSpace+Needle!5e0!3m2!1sen!2sus!4v1417050525679"></iframe>
 
 				</div>
 

@@ -2,40 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@mixin hover-color($selector, $color, $fade-color) {
-	#{$selector}:hover {		
-		background-color: $color;
-		:after {
-			background-color: $fade-color;
-		}
-	}
-	#{$selector}-select {
-		background-color: $color !important;
-		:after {
-			background-color: $fade-color !important;
-		}		
-	}
-}
-
-@mixin rotate($degrees) {	
-	-webkit-transform: rotate($degrees);	
-	-moz-transform: rotate($degrees);	
-	-ms-transform: rotate($degrees);	
-	transform: rotate($degrees);
-}
-
-@mixin origin($origin) {
-	-webkit-transform-origin: $origin;
-	-moz-transform-origin: $origin;
-	-ms-transform-origin: $origin;
-	transform-origin: $origin;
-}
-
-@mixin translate($x, $y) {
-	-ms-transform: translate($x,$y); /* IE 9 */
-   	-webkit-transform: translate($x,$y); /* Chrome, Safari, Opera */
-    transform: translate($x,$y);
-}
+@import 'partials/imports.css.scss';
 
 form {
 	text-align: center;
@@ -43,7 +10,8 @@ form {
 
 .question {
 	text-align: center;
-	transition: all .8s;
+
+	@include transition(all .8s);
 
 	span {
 		position: relative;
@@ -64,14 +32,13 @@ form {
 	display:block;
 	text-align: left;
 	border-radius: 10px;
-
-	transition: all .3s;
-
 	background-color: #777;
 	margin: 30px;
-	padding:20px 50px;
+	padding: 20px 50px;
 	font-size: 24px;
 	overflow: hidden;
+
+	@include transition(all .3s);
 
 	label {
 		width: 100%;
@@ -85,26 +52,24 @@ form {
 		cursor: pointer;
 		:after {
 			cursor: pointer;
-			width:15% !important;
-			height:300% !important;
+			width: 15%;
+			height: 300%;
 		}
 	}
 
 	:after {
 		content: '';
-	    position: absolute;
-	    right: 0;
+    position: absolute;
+    right: 0;
 		top:0;
 		z-index: -1;
-
 		width:30%;
 		height:200%;
 		background-color: #aaa;		
 		
-		@include origin(0 0);
-		@include rotate(-20deg);
-
-	    transition: all .3s;	    
+		@include transform-origin(0 0);
+		@include transform(rotate(-20deg));
+		@include transition(all .3s);	    
 	}
 }
 
@@ -113,13 +78,14 @@ form {
 @include hover-color('.blue', #11f, #55f);
 
 .left-away {
-	@include translate(-1500px,0);
 	visibility: hidden;
+
+	@include transform(translate(-1500px,0));
 	//display: none;
 }
 
 .right-away {
-	@include translate(1500px,0);
+	@include transform(translate(1500px,0));
 	visibility: hidden;
 	display:none
 }
@@ -134,7 +100,7 @@ form {
 }
 
 button {
-	color: black !important;
+	color: #000;
 }
 
 .btn-slide {
@@ -146,41 +112,36 @@ button {
 #next {
 	color: #000;
 	position: relative;
-
-	transition: all .3s;
-
 	background-color: #dba218;
 	width: 220px;
 	//margin: 30px;
-	padding:20px 70px 20px 20px;
+	padding: 20px 70px 20px 20px;
 	font-size: 24px;
 	overflow: hidden;
 	border: none;
-
 	margin-left: 45px;
 	//margin-right: 30px;
-
 	text-align: left;
 	//text-indent: 20px;
+
+	@include transition(all .3s);	
+
 	&:after {
 		content: '';
-	    position: absolute;
-	    right: 0;
+    position: absolute;
+    right: 0;
 		top:0;
 		z-index: -1;
-
 		width:40%;
 		height:200%;
 		background-color: #ffcd3d;		
 		
-		@include origin(0 0);
-		@include rotate(-20deg);
-
-	    transition: all .3s;	    
+		@include transform-origin(0 0);
+		@include transform(rotate(-20deg));
+		@include transition(all .3s);	    
 	}
 
 	&:before {
-		transition: all .3s;
 		position: absolute;
 		left: auto;
 		top: auto;
@@ -191,15 +152,19 @@ button {
 		width: 30%;
 		line-height: 1;
 		font-size: 30px;
+
+		@include transition(all .3s);	
 	}
 
 	&:hover {
 		background-color: #c49308;
+
 		&:after {
-			width:25%;
-			height:300% !important;
+			width: 25%;
+			height: 300%;
 			background-color: #eb2;
 		}
+
 		&:before {
 			right: -10px;
 		}
@@ -209,36 +174,32 @@ button {
 #previous {
 	color: #000;
 	position: relative;
-
-	transition: all .3s;
-
 	background-color: #dba218;
 	//margin: 30px;
 	width: 220px;
-	padding:20px 20px 20px 0px;
+	padding: 20px 20px 20px 0px;
 	font-size: 24px;
 	overflow: hidden;
 	border: none;
-
 	//margin-left: 30px;
 	margin-right: 45px;
-
 	text-align: right;
+
+	@include transition(all .3s);	
+
 	&:after {
 		content: '';
-	    position: absolute;
-	    left: 0;
+    position: absolute;
+    left: 0;
 		bottom:0;
 		z-index: -1;
-
 		width:50%;
 		height:300%;
 		background-color: #ffcd3d;		
 		
-		@include origin(0 0);
-		@include rotate(20deg);
-
-	    transition: all .3s;	    
+		@include transform-origin(0 0);
+		@include transform(rotate(20deg));
+		@include transition(all .3s);	    
 	}
 
 	&:before {
@@ -257,10 +218,12 @@ button {
 
 	&:hover {
 		background-color: #c49308;
+
 		&:after {
 			width:37%;
 			background-color: #eb2;
 		}
+
 		&:before {
 			left: -30px;
 		}
@@ -269,16 +232,19 @@ button {
 
 .grey-left {
 	background-color: #444 !important;
+
 	&:after {
 		background-color: #555 !important;
 	}
 
 	&:hover {
 		cursor: default;
+
 		&:after {
 			width: 50% !important;
 			background-color: #555 !important;
 		}
+
 		&:before {
 			left: -20px !important;
 		}
@@ -287,16 +253,19 @@ button {
 
 .grey-right {
 	background-color: #444 !important;
+
 	&:after {
 		background-color: #555 !important;
 	}
 
 	&:hover {
 		cursor: default;
+
 		&:after {
 			width: 40% !important;
 			background-color: #555 !important;
 		}
+
 		&:before {
 			right: 0px !important;
 		}
@@ -321,11 +290,11 @@ input[type="radio"] {
 }
 
 #current {
-	@include translate(2px,-15px);
+	@include transform(translate(2px,-15px));
 }
 
 #number {
-	@include translate(-3px,2px);
+	@include transform(translate(-3px,2px));
 }
 
 .display {
@@ -334,7 +303,8 @@ input[type="radio"] {
 	left: 50%;
 	top: 50%;
 	margin: 0 auto;
-	@include translate(-50%, -50%);
+
+	@include transform(translate(-50%, -50%));
 }
 
 .controls {
