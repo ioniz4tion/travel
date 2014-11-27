@@ -16,63 +16,16 @@
 			</div>
 		</div>
 		<% i += 1 %>
-	<% end %><!--
-
-	<div class="question" id="q1">
-		<span>What kind of weather do you like?</span>
-		
-		<div class="answer-group">
-
-			<label for="hot" data-color="red" class="red answer">
-				<input type="radio" name="weather" id="hot" value="1">
-				<label for="hot">Hot Weather</label>
-			</label>
-
-			<label for="temperate" data-color="green" class="green answer">
-				<input type="radio" name="weather" id="temperate" value="2">
-				<label for="temperate">Temperate Weather</label>
-			</label>
-
-			<label for="cold" data-color="blue" class="blue answer">
-				<input type="radio" name="weather" id="cold" value="3">
-				<label for="cold">Cold Weather</label>
-			</label>
-		</div>		
-	</div>
-
-	<div class="question right-away" id="q2">
-		<span>What kind of vacation are you looking for?</span>
-		
-		<div class="answer-group">
-
-			<label for="exciting" data-color="red" class="red answer">
-				<input type="radio" name="kind" id="exciting" value="1">
-				<label for="exciting">Exciting</label>
-			</label>
-
-			<label for="normal" data-color="green" class="green answer">
-				<input type="radio" name="kind" id="normal" value="2">
-				<label for="normal">Normal</label>
-			</label>
-
-			<label for="relaxing" data-color="blue" class="blue answer">
-				<input type="radio" name="kind" id="relaxing" value="3">
-				<label for="relaxing">Relaxing</label>
-			</label>
-		</div>		
-	</div>-->
+	<% end %>
 
 	<div class="controls">
 		<button id="previous" class="grey-left btn-slide btn icon-arrow-left" type="button">Previous</button>
 		<div class="display">
 			<span id="current" class="count">1</span>
 			<span class="divider">/</span>
-			<span id="number" class="count">2</span>
+			<span id="number" class="count"><%= @questions.count %></span>
 		</div>
 		<button id="next" class="btn-slide btn icon-arrow-right" type="button">Next</button>
 	</div>
 
 </form>
-
-<%= @questions.inspect %>
-<%= @answers.inspect %>
