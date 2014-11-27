@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 	require 'rubygems'
 	require 'yahoo_weather'
 	require 'date'
+	
 	extend ActiveModel::Naming
 
 	before_filter :home_vars	

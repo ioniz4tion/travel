@@ -1,84 +1,58 @@
-<!--<header class="codrops-header">
-			<h1>Planner</h1>
-		</header>-->
+<form>
+	<div class="question" id="q1">
+		<span>What kind of weather do you like?</span>
+		
+		<div class="answer-group">
 
-		<form id="theForm" name="theForm" class="simform" autocomplete="off" method="post" action="login2.php">
+			<label for="hot" data-color="red" class="red answer">
+				<input type="radio" name="weather" id="hot" value="1">
+				<label for="hot">Hot Weather</label>
+			</label>
 
-				<div class="simform-inner">
+			<label for="temperate" data-color="green" class="green answer">
+				<input type="radio" name="weather" id="temperate" value="2">
+				<label for="temperate">Temperate Weather</label>
+			</label>
 
-					<ol class="questions">
-						<li>
-							<span><label for="q1">User</label></span>
-							<input id="q1" name="username" type="text"/>
-						</li>
-						<li>
-							<span><label for="q2">Password</label></span>
-							<input id="q2" name="password" type="password"/>
-						</li>
-					</ol>
+			<label for="cold" data-color="blue" class="blue answer">
+				<input type="radio" name="weather" id="cold" value="3">
+				<label for="cold">Cold Weather</label>
+			</label>
+		</div>		
+	</div>
 
-					<div class="controls">
+	<div class="question right-away" id="q2">
+		<span>What kind of vacation are you looking for?</span>
+		
+		<div class="answer-group">
 
-						<button class="next"></button>
-						<div class="progress"></div>
-						<span class="number">
-							<span class="number-current"></span>
-							<span class="number-total"></span>
-						</span>
-						<span class="error-message"></span>
+			<label for="exciting" data-color="red" class="red answer">
+				<input type="radio" name="kind" id="exciting" value="1">
+				<label for="exciting">Exciting</label>
+			</label>
 
-					</div>
+			<label for="normal" data-color="green" class="green answer">
+				<input type="radio" name="kind" id="normal" value="2">
+				<label for="normal">Normal</label>
+			</label>
 
-				</div>
+			<label for="relaxing" data-color="blue" class="blue answer">
+				<input type="radio" name="kind" id="relaxing" value="3">
+				<label for="relaxing">Relaxing</label>
+			</label>
+		</div>		
+	</div>
 
-				<span class="final-message"></span>
+	<div class="controls">
+		<button id="previous" class="grey-left btn-slide btn icon-arrow-left" type="button">Previous</button>
+		<div class="display">
+			<span id="current" class="count">1</span>
+			<span class="divider">/</span>
+			<span id="number" class="count">2</span>
+		</div>
+		<button id="next" class="btn-slide btn icon-arrow-right" type="button">Next</button>
+	</div>
 
-			</form>
+</form>
 
-		<script>
-			var theForm = document.getElementById( 'theForm' );
-
-			new stepsForm( theForm, {
-				onSubmit : function( form ) {
-					// hide form
-					classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
-
-					/*
-					form.submit()
-					or
-					AJAX request (maybe show loading indicator while we don't have an answer..)
-					*/
-
-					// let's just simulate something...
-					var messageEl = theForm.querySelector( '.final-message' );
-					messageEl.innerHTML = 'Logging in...';
-					classie.addClass( messageEl, 'show' );
-				}
-			} );
-		</script>
-		<script>
-			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-				menuRight = document.getElementById( 'cbp-spmenu-s2' ),
-				menuTop = document.getElementById( 'cbp-spmenu-s3' ),
-				menuBottom = document.getElementById( 'cbp-spmenu-s4' ),
-				showLeft = document.getElementById( 'showLeft' ),
-				showRight = document.getElementById( 'showRight' ),
-				showTop = document.getElementById( 'showTop' ),
-				showBottom = document.getElementById( 'showBottom' ),
-				showLeftPush = document.getElementById( 'showLeftPush' ),
-				showRightPush = document.getElementById( 'showRightPush' ),
-				body = document.body;
-
-			showLeftPush.onclick = function() {
-				classie.toggle( this, 'close' );
-				classie.toggle( body, 'cbp-spmenu-push-toright' );
-				classie.toggle( menuLeft, 'cbp-spmenu-open' );
-				disableOther( 'showLeftPush' );
-			};
-
-			function disableOther( button ) {
-				if( button !== 'showLeftPush' ) {
-					classie.toggle( showLeftPush, 'disabled' );
-				}
-			}
-		</script>
+<%= @questions.inspect %>

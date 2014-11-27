@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109231950) do
+ActiveRecord::Schema.define(version: 20141127032217) do
+
+  create_table "answers", force: true do |t|
+    t.text     "text"
+    t.integer  "score"
+    t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "question_id"
+  end
 
   create_table "gen_attraction_images", force: true do |t|
     t.string   "name"
@@ -32,6 +41,11 @@ ActiveRecord::Schema.define(version: 20141109231950) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "image_description"
+    t.string   "phone"
+    t.integer  "hours"
+    t.integer  "rating"
+    t.integer  "imap_id"
+    t.integer  "button_id"
   end
 
   create_table "gen_hotel_images", force: true do |t|
@@ -97,6 +111,12 @@ ActiveRecord::Schema.define(version: 20141109231950) do
   create_table "hol_packages", force: true do |t|
     t.string   "name"
     t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
