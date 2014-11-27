@@ -122,3 +122,18 @@ HolPackage.create!([
   {name: "Thanksgiving", link: "thanksgiving"},
   {name: "Valentine's Day", link: "valentines"}
 ])
+
+Question.create!([
+  {text: "What kind of weather do you like?"},
+  {text: "What kind of vacation are you looking for?"},
+  {text: "this is a test question"}
+])
+
+Answer.create!([
+  {text: "Hot Weather", color: "red", score: 100, question_id:1},
+  {text: "Temperate Weather", color: "green", score: 50, question_id:1},
+  {text: "Cold Weather", color: "blue", score: 0, question_id:1},
+  {text: "Exciting", color: "red", score: 100, question_id:2},
+  {text: "Normal", color: "green", score: 50, question_id:2},
+  {text: "Relaxing", color: "blue", score: 0, question_id:2},
+  ])
