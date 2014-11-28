@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/about' => 'about#about'
 
   get '/planner' => 'planner#planner'
+  match '/planner' => 'planner#suggest', via: :post
 
   get '/:city', to: 'gen_packages#home'
   get '/:city/hotels', to: 'gen_packages#hotels'

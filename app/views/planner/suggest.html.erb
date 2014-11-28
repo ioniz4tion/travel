@@ -1,0 +1,8 @@
+<div class="recommend">
+<span class="recommend-span">We Recommend a vacation to:</span>
+</div>
+
+<div class="city-container">
+	<span class="city-name"><%= @packages.first.name %></span>
+	<%= image_tag(@packages.first.image_link, class: "package-image") %>
+</div>

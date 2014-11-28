@@ -1,4 +1,4 @@
-<form>
+<%= form_tag('planner#suggest', id: "questions") do %>
 	<% i = 1 %>
 	<% @questions.each do |question| %>
 		<div class="question  <% if(i > 1)%><%= 'right-away' %><% end %>" id="q<%= i %>">
@@ -9,7 +9,7 @@
 				<% @answers[i - 1].each do |answer| %>
 
 					<label for="<%= i %><%= answer.label %>" data-color="<%= answer.color %>" class="<%= answer.color %> answer">
-						<input type="radio" name="weather" id="<%= i %><%= answer.label %>" value="<%= answer.score %>">
+						<input type="radio" name="<%= i %>" id="<%= i %><%= answer.label %>" value="<%= answer.score %>">
 						<label for="<%= i %><%= answer.label %>"><%= answer.text %></label>
 					</label>
 				<% end %>
@@ -28,4 +28,4 @@
 		<button id="next" class="btn-slide btn icon-arrow-right" type="button">Next</button>
 	</div>
 
-</form>
+<% end %>

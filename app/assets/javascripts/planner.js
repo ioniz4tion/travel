@@ -4,29 +4,32 @@ $(document).ready(function() {
 
 	$("#next").click(function(event) {
 		event.preventDefault();
+		if (currentQuestion == questionNumber) {
+			$("#questions").submit();
+		}
 		if (currentQuestion < questionNumber) {
-			$("#q" + currentQuestion).addClass("left-away").fadeOut(300,function(){
-				$("#q" + (currentQuestion + 1)).fadeIn().removeClass("right-away");
-				currentQuestion++;
+			currentQuestion++;
+			$("#q" + (currentQuestion - 1)).addClass("left-away").fadeOut(300,function(){
+				$("#q" + (currentQuestion)).fadeIn().removeClass("right-away");
 				if (currentQuestion == questionNumber) {
-					$("#next").addClass("grey-right");
+					$("#next").addClass("continue").text("Continue");
 				}
 				$("#previous").removeClass("grey-left");
 				$("#current").text(currentQuestion);
 			});
-		}		
+		}
 	});
 
 	$("#previous").click(function(event) {
 		event.preventDefault();
 		if (currentQuestion > 1) {
-			$("#q" + currentQuestion).addClass("right-away").fadeOut(300,function(){
-				$("#q" + (currentQuestion - 1)).fadeIn().removeClass("left-away");
-				currentQuestion--;
+			currentQuestion--;
+			$("#q" + (currentQuestion + 1)).addClass("right-away").fadeOut(300,function(){
+				$("#q" + (currentQuestion)).fadeIn().removeClass("left-away");
 				if (currentQuestion == 1) {
 					$("#previous").addClass("grey-left");
 				}
-				$("#next").removeClass("grey-right");
+				$("#next").removeClass("continue").text("Next");
 				$("#current").text(currentQuestion);
 			});
 		} 
