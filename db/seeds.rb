@@ -174,9 +174,9 @@ Answer.create!([
 
   AnswerValue.create!([
     {gen_package_id: 1, question_id: 1, score: 100},
-    {gen_package_id: 1, question_id: 2, score: 20},
+    {gen_package_id: 1, question_id: 2, score: 40},
     {gen_package_id: 1, question_id: 3, score: 100},
-    {gen_package_id: 1, question_id: 4, score: 30},
+    {gen_package_id: 1, question_id: 4, score: 15},
     {gen_package_id: 1, question_id: 5, score: 80},
     {gen_package_id: 2, question_id: 1, score: 20},
     {gen_package_id: 2, question_id: 2, score: 40},
@@ -188,7 +188,7 @@ Answer.create!([
     {gen_package_id: 3, question_id: 3, score: 60},
     {gen_package_id: 3, question_id: 4, score: 0},
     {gen_package_id: 3, question_id: 5, score: 60},
-    {gen_package_id: 4, question_id: 1, score: 35},
+    {gen_package_id: 4, question_id: 1, score: 20},
     {gen_package_id: 4, question_id: 2, score: 80},
     {gen_package_id: 4, question_id: 3, score: 80},
     {gen_package_id: 4, question_id: 4, score: 0},

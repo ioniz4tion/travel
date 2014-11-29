@@ -57,7 +57,7 @@ class PlannerController < ApplicationController
   	#5 list scores from least to greatest, pass them to the view 
 
   	#6 additional view data
-
+  	# render text: @packageRating.inspect
   	render layout: 'planner_layout'
   end
 end

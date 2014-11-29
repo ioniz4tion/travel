@@ -11,12 +11,19 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+
+//= require planner
+//= require maps
+//= require_self
 //= require_tree .
 
 //= require flipper
 
+
 //= require external/classie.js
 //= require external/stepsForm.js
 //= require external/modernizr.custom.js
+
+//= require turbolinks
