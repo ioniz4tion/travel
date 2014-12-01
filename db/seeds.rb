@@ -149,7 +149,9 @@ HolPackage.create!([
 Question.create!([
   {text: "What kind of weather do you like?"},
   {text: "What kind of vacation are you looking for?"},
-  {text: "this is a test question"}
+  {text: "Do you like the water/coast?"},
+  {text: "Would you like to go outside the United States?"},
+  {text: "Are you looking for a family freindly destination?"}
 ])
 
 Answer.create!([
@@ -159,4 +161,46 @@ Answer.create!([
   {text: "Exciting", label: "exciting", color: "red", score: 100, question_id:2},
   {text: "Normal", label: "normal", color: "green", score: 50, question_id:2},
   {text: "Relaxing", label: "relaxing", color: "blue", score: 0, question_id:2},
+  {text: "Yes", label: "yes", color: "red", score: 100, question_id:3},
+  {text: "Unsure", label: "no", color: "green", score: 50, question_id:3},
+  {text: "No", label: "unsure", color: "blue", score: 0, question_id:3},
+  {text: "Yes", label: "yes", color: "red", score: 100, question_id:4},
+  {text: "Unsure", label: "no", color: "green", score: 50, question_id:4},
+  {text: "No", label: "unsure", color: "blue", score: 0, question_id:4},
+  {text: "Yes", label: "yes", color: "red", score: 100, question_id:5},
+  {text: "Unsure", label: "no", color: "green", score: 50, question_id:5},
+  {text: "No", label: "unsure", color: "blue", score: 0, question_id:5}
   ])
+
+  AnswerValue.create!([
+    {gen_package_id: 1, question_id: 1, score: 100},
+    {gen_package_id: 1, question_id: 2, score: 40},
+    {gen_package_id: 1, question_id: 3, score: 100},
+    {gen_package_id: 1, question_id: 4, score: 15},
+    {gen_package_id: 1, question_id: 5, score: 80},
+    {gen_package_id: 2, question_id: 1, score: 20},
+    {gen_package_id: 2, question_id: 2, score: 40},
+    {gen_package_id: 2, question_id: 3, score: 70},
+    {gen_package_id: 2, question_id: 4, score: 90},
+    {gen_package_id: 2, question_id: 5, score: 65},
+    {gen_package_id: 3, question_id: 1, score: 30},
+    {gen_package_id: 3, question_id: 2, score: 50},
+    {gen_package_id: 3, question_id: 3, score: 60},
+    {gen_package_id: 3, question_id: 4, score: 0},
+    {gen_package_id: 3, question_id: 5, score: 60},
+    {gen_package_id: 4, question_id: 1, score: 20},
+    {gen_package_id: 4, question_id: 2, score: 80},
+    {gen_package_id: 4, question_id: 3, score: 80},
+    {gen_package_id: 4, question_id: 4, score: 0},
+    {gen_package_id: 4, question_id: 5, score: 80},
+    {gen_package_id: 5, question_id: 1, score: 95},
+    {gen_package_id: 5, question_id: 2, score: 90},
+    {gen_package_id: 5, question_id: 3, score: 88},
+    {gen_package_id: 5, question_id: 4, score: 95},
+    {gen_package_id: 5, question_id: 5, score: 75},
+    {gen_package_id: 6, question_id: 1, score: 60},
+    {gen_package_id: 6, question_id: 2, score: 40},
+    {gen_package_id: 6, question_id: 3, score: 50},
+    {gen_package_id: 6, question_id: 4, score: 0},
+    {gen_package_id: 6, question_id: 5, score: 90}
+])
