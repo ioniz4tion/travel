@@ -56,6 +56,7 @@ GEM
     minitest (5.4.2)
     multi_json (1.10.1)
     mysql2 (0.3.16)
+    pg (0.17.1)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -129,6 +130,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks (~> 1.0.0.rc1)
   mysql2
+  pg
   rails (= 4.1.6)
   rails_12factor
   sass-rails (~> 4.0.3)

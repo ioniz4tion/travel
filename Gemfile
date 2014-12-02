@@ -45,4 +45,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
