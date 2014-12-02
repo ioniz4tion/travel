@@ -6,26 +6,88 @@
 
 <div class="content">
 
-	<h1>Places to stay in <span><%= @city.name %></span></h1>
+	<h1>Places to stay <span>in <%= @city.name %></span></h1>
 
-	<% @city.gen_hotels.each do |hotel| %>
+	<ul>
 
-		<div>
+		<% @city.gen_hotels.each do |hotel| %>
 
-			<h2><%= hotel.name %></h2>
+			<li class="item">
+				<div>
+					
+					<div class="price-img">
+						<%= image_tag(hotel.link) %>
+						<div></div>
+						<p><%= hotel.pricing %></p>
+					</div>
 
-			<div class="img">
-				<%= image_tag(hotel.link) %>
-			</div>
+					<div class="description">
+						<h2><%= hotel.name %></h2>
+						<p><%= hotel.description %></p>
+						<div class="rating">
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<div>
+								<p><%= hotel.rating %><span>/</span>5</p>
+							</div>
+						</div>
+					</div>
 
-			<div class="text">
-				<p><%= hotel.description %></p>
-				<p>Pricing: <%= hotel.pricing %></p>
-				<p>Address: <%= hotel.address %></p>
-			</div>
+				</div>
 
-		</div>
+				<div>
 
-	<% end %>
+					<table>
+
+						<tr>
+
+							<td>
+								<span class="glyphicon glyphicon-map-marker"></span>
+								<div>
+									<p><%= hotel.address %></p>
+								</div>
+							</td>
+
+							<td>
+								<span class="glyphicon glyphicon-globe"></span>
+								<div>
+									<a href="<%= hotel.website_url %>" target="_blank"><%= hotel.website %></a>
+								</div>
+							</td>
+
+						</tr>
+
+						<tr>
+
+							<td>
+								<span class="glyphicon glyphicon-time"></span>
+								<div>
+									<p><%= hotel.hours %></p>
+								</div>
+							</td>
+
+							<td>
+								<span class="glyphicon glyphicon-earphone"></span>
+								<div>
+									<p><%= hotel.phone %></p>
+								</div>
+							</td>
+
+						</tr>
+
+					</table>
+
+					<button id="show<%= hotel.iframe_id %>">Show/hide map<span class="caret"></span></button>
+
+				</div>
+
+				<div class="map" id="<%= hotel.iframe_id %>">
+
+					<iframe src="<%= hotel.iframe_url %>"></iframe>
+
+				</div>
+
+			</li>
+
+		<% end %>
 
 </div>

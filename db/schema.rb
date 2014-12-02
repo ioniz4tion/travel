@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128035553) do
+ActiveRecord::Schema.define(version: 20141202032546) do
 
   create_table "answer_values", force: true do |t|
     t.integer  "score"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20141128035553) do
     t.string   "rating"
     t.string   "iframe_id"
     t.string   "button_id"
+    t.string   "website_url"
+    t.text     "iframe_url"
   end
 
   create_table "gen_hotel_images", force: true do |t|
@@ -77,6 +79,13 @@ ActiveRecord::Schema.define(version: 20141128035553) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "image_description"
+    t.string   "website_url"
+    t.text     "iframe_url"
+    t.string   "phone"
+    t.string   "website"
+    t.string   "hours"
+    t.string   "rating"
+    t.string   "iframe_id"
   end
 
   create_table "gen_images", force: true do |t|
@@ -118,6 +127,13 @@ ActiveRecord::Schema.define(version: 20141128035553) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "image_description"
+    t.string   "website_url"
+    t.text     "iframe_url"
+    t.string   "phone"
+    t.string   "website"
+    t.string   "hours"
+    t.string   "rating"
+    t.string   "iframe_id"
   end
 
   create_table "hol_packages", force: true do |t|

@@ -34,12 +34,14 @@
 			top: 0;
 			left: 0;
 			background: $yellow;
+			color: $dark-grey;
 			text-transform: uppercase;
 
 			@include transition(all 0.3s);
 
 			&:hover {
 				background: $blue;
+				color: $light-grey;
 			}
 		}
 

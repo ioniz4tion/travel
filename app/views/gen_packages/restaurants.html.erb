@@ -6,26 +6,88 @@
 
 <div class="content">
 
-	<h1>Places to eat in <span><%= @city.name %></span></h1>
+	<h1>Places to eat <span>in <%= @city.name %></span></h1>
 
-	<% @city.gen_restaurants.each do |restaurant| %>
+	<ul>
 
-		<div>
+		<% @city.gen_restaurants.each do |restaurant| %>
 
-			<h2><%= restaurant.name %></h2>
+			<li class="item">
+				<div>
+					
+					<div class="price-img">
+						<%= image_tag(restaurant.link) %>
+						<div></div>
+						<p><%= restaurant.pricing %></p>
+					</div>
 
-			<div class="img">
-				<%= image_tag(restaurant.link) %>
-			</div>
+					<div class="description">
+						<h2><%= restaurant.name %></h2>
+						<p><%= restaurant.description %></p>
+						<div class="rating">
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<div>
+								<p><%= restaurant.rating %><span>/</span>5</p>
+							</div>
+						</div>
+					</div>
 
-			<div class="text">
-				<p><%= restaurant.description %></p>
-				<p>Pricing: <%= restaurant.pricing %></p>
-				<p>Address: <%= restaurant.address %></p>
-			</div>
+				</div>
 
-		</div>
+				<div>
 
-	<% end %>
+					<table>
+
+						<tr>
+
+							<td>
+								<span class="glyphicon glyphicon-map-marker"></span>
+								<div>
+									<p><%= restaurant.address %></p>
+								</div>
+							</td>
+
+							<td>
+								<span class="glyphicon glyphicon-globe"></span>
+								<div>
+									<a href="<%= restaurant.website_url %>" target="_blank"><%= restaurant.website %></a>
+								</div>
+							</td>
+
+						</tr>
+
+						<tr>
+
+							<td>
+								<span class="glyphicon glyphicon-time"></span>
+								<div>
+									<p><%= restaurant.hours %></p>
+								</div>
+							</td>
+
+							<td>
+								<span class="glyphicon glyphicon-earphone"></span>
+								<div>
+									<p><%= restaurant.phone %></p>
+								</div>
+							</td>
+
+						</tr>
+
+					</table>
+
+					<button id="show<%= restaurant.iframe_id %>">Show/hide map<span class="caret"></span></button>
+
+				</div>
+
+				<div class="map" id="<%= restaurant.iframe_id %>">
+
+					<iframe src="<%= restaurant.iframe_url %>"></iframe>
+
+				</div>
+
+			</li>
+
+		<% end %>
 
 </div>

@@ -45,12 +45,6 @@
 		position: relative;
 	}
 
-	img {
-		width: 330px;
-		height: 210px;
-		margin-right: 20px;
-	}
-
 	.description {
 		display: inline-block;
 		width: 750px;
@@ -145,6 +139,40 @@
 		@include y-center;
 	}
 } */
+
+.price-img {
+	display: block;
+	width: 330px;
+	height: 210px;
+	margin-right: 20px;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	div {
+		position: absolute;
+		top: 70.95%;
+		left: 53.63%;
+		width: 195.58px;
+		height: 100px;
+		background: $dark-grey;
+
+		@include transform(rotate(-32.47deg));
+	}
+
+	p {
+		display: inline-block;
+		position: absolute;
+		bottom: $pricing-pos;
+		right: $pricing-pos;
+		font-size: 26px;
+	}
+}
 
 .caret {
   display: inline-block;
