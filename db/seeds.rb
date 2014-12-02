@@ -341,11 +341,13 @@ GenRestaurant.create!([
   },
 
   {
-    name: "Test",
-    description: "This is a test.",
-    pricing: "10 bucks",
-    address: "3343",
-    link: "www.hello.com",
+    name: "The Square",
+    description: "Seasonal Modern French haute cuisine in a sophisticated yet quietly casual, art-filled dining room.",
+    pricing: "$120.00-$140.00",
+    website: "squarerestaurant.com",
+    website_url: "javascript:void(0)",
+    address: "6-10 Bruton St London W1J 6PU United Kingdom",
+    link: "330x210.gif",
     gen_package_id: 2
   },
 
