@@ -113,19 +113,19 @@
 			color: $blue;
 		}
 
-		&.temp-now {
-			color: $light-grey;
-			font-size: 50px;
-			white-space: nowrap;
-			right: 0;
-
-			@include y-center;
-		}
-
 		&.slash {
 			margin: 0 5px;
 			font-size: 35px;
 		}
+	}
+
+	&.temp-now {
+		color: $light-grey;
+		font-size: 50px;
+		white-space: nowrap;
+		position: absolute;
+		bottom: 30%;
+		right: 0;
 	}
 
 	.weather-slide {
