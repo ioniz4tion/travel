@@ -5,6 +5,11 @@ class GenHotelsController < ApplicationController
   # GET /gen_hotels.json
   def index
     @gen_hotels = GenHotel.all
+    @city = GenPackage.find_by_name(params[:city])
+    @slideshow = []
+    GenPackage.find_by_name(params[:city]).gen_hotels.all.each do |package|
+      @slideshow << {name: package.name, link: package.link, description: package.image_description}
+    end
   end
 
   # GET /gen_hotels/1

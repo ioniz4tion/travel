@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/planner' => 'planner#planner'
   match '/planner' => 'planner#suggest', via: :post
 
-  get '/:city', to: 'gen_packages#home'
+  get '/:city', to: 'gen_packages#show'
   get '/:city/hotels', to: 'gen_hotels#index'
   get '/:city/restaurants', to: 'gen_restaurants#index'
   get '/:city/attractions', to: 'gen_attractions#index'

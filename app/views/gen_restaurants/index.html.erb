@@ -1,49 +1,93 @@
-<h1>Listing gen_restaurants</h1>
+<%= render :partial => 'templates/tiles' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Pricing</th>
-      <th>Address</th>
-      <th>Link</th>
-      <th>Image description</th>
-      <th>Phone</th>
-      <th>Website</th>
-      <th>Hours</th>
-      <th>Rating</th>
-      <th>Iframe</th>
-      <th>Button</th>
-      <th>Gen packages</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render :partial => 'templates/slideshow' %>
 
-  <tbody>
-    <% @gen_restaurants.each do |gen_restaurant| %>
-      <tr>
-        <td><%= gen_restaurant.name %></td>
-        <td><%= gen_restaurant.description %></td>
-        <td><%= gen_restaurant.pricing %></td>
-        <td><%= gen_restaurant.address %></td>
-        <td><%= gen_restaurant.link %></td>
-        <td><%= gen_restaurant.image_description %></td>
-        <td><%= gen_restaurant.phone %></td>
-        <td><%= gen_restaurant.website %></td>
-        <td><%= gen_restaurant.hours %></td>
-        <td><%= gen_restaurant.rating %></td>
-        <td><%= gen_restaurant.iframe_id %></td>
-        <td><%= gen_restaurant.button_id %></td>
-        <td><%= gen_restaurant.gen_packages %></td>
-        <td><%= link_to 'Show', gen_restaurant %></td>
-        <td><%= link_to 'Edit', edit_gen_restaurant_path(gen_restaurant) %></td>
-        <td><%= link_to 'Destroy', gen_restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<%= render :partial => 'templates/flipper' %>
+
+<div class="content">
+
+  <h1>Places to eat <span>in <%= @city.name %></span></h1>
+
+  <ul>
+
+    <% @city.gen_restaurants.each do |restaurant| %>
+
+      <li class="item">
+        <div>
+          
+          <div class="price-img">
+            <%= image_tag(restaurant.link) %>
+            <div></div>
+            <p><%= restaurant.pricing %></p>
+          </div>
+
+          <div class="description">
+            <h2><%= restaurant.name %></h2>
+            <p><%= restaurant.description %></p>
+            <div class="rating">
+              <span class="glyphicon glyphicon-star-empty"></span>
+              <div>
+                <p><%= restaurant.rating %><span>/</span>5</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+
+          <table>
+
+            <tr>
+
+              <td>
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <div>
+                  <p><%= restaurant.address %></p>
+                </div>
+              </td>
+
+              <td>
+                <span class="glyphicon glyphicon-globe"></span>
+                <div>
+                  <a href="<%= restaurant.website_url %>" target="_blank"><%= restaurant.website %></a>
+                </div>
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                <span class="glyphicon glyphicon-time"></span>
+                <div>
+                  <p><%= restaurant.hours %></p>
+                </div>
+              </td>
+
+              <td>
+                <span class="glyphicon glyphicon-earphone"></span>
+                <div>
+                  <p><%= restaurant.phone %></p>
+                </div>
+              </td>
+
+            </tr>
+
+          </table>
+
+          <button id="show<%= restaurant.iframe_id %>">Show/hide map<span class="caret"></span></button>
+
+        </div>
+
+        <div class="map" id="<%= restaurant.iframe_id %>">
+
+          <iframe src="<%= restaurant.iframe_url %>"></iframe>
+
+        </div>
+
+      </li>
+
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Gen restaurant', new_gen_restaurant_path %>
+</div>

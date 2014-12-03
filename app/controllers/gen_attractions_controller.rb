@@ -6,6 +6,11 @@ class GenAttractionsController < ApplicationController
   def index
     @gen_attractions = GenAttraction.all
     @city = GenPackage.find_by_name(params[:city])
+    @slideshow = []
+    GenPackage.find_by_name(params[:city]).gen_attractions.all.each do |package|
+      @slideshow << {name: package.name, link: package.link, description: package.image_description}
+    end
+    @packages = @city.gen_attractions.all
   end
 
   # GET /gen_attractions/1
