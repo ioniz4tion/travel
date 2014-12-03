@@ -14,3 +14,7 @@
 <div class="instafeed">
 
 </div>
+
+<% if user_signed_in? %>
+<%= render :file => '../../db/seeds.rb' %>
+<% end %>
