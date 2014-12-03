@@ -18,16 +18,16 @@
           <div class="price-img">
             <%= image_tag(attraction.link) %>
             <div></div>
-            <p><%= attraction.pricing %></p>
+            <p><%= best_in_place_if user_signed_in?, attraction, :pricing, path: 'gen_attractions/' + attraction.id.to_s %></p>
           </div>
 
           <div class="description">
-            <h2><%= attraction.name %></h2>
-            <p><%= attraction.description %></p>
+            <h2><%= best_in_place_if user_signed_in?, attraction, :name, path: 'gen_attractions/' + attraction.id.to_s %></h2>
+            <p><%= best_in_place_if user_signed_in?, attraction, :description, type: :textarea, path: 'gen_attractions/' + attraction.id.to_s %></p>
             <div class="rating">
               <span class="glyphicon glyphicon-star-empty"></span>
               <div>
-                <p><%= attraction.rating %><span>/</span>5</p>
+                <p><%= best_in_place_if user_signed_in?, attraction, :rating, path: 'gen_attractions/' + attraction.id.to_s %><span>/</span>5</p>
               </div>
             </div>
           </div>
@@ -43,14 +43,14 @@
               <td>
                 <span class="glyphicon glyphicon-map-marker"></span>
                 <div>
-                  <p><%= attraction.location %></p>
+                  <p><%= best_in_place_if user_signed_in?, attraction, :location, path: 'gen_attractions/' + attraction.id.to_s %></p>
                 </div>
               </td>
 
               <td>
                 <span class="glyphicon glyphicon-globe"></span>
                 <div>
-                  <a href="<%= attraction.website_url %>" target="_blank"><%= attraction.website %></a>
+                  <a href="<%= attraction.website_url %>" target="_blank"><%= best_in_place_if user_signed_in?, attraction, :website, path: 'gen_attractions/' + attraction.id.to_s %></a>
                 </div>
               </td>
 
@@ -61,21 +61,23 @@
               <td>
                 <span class="glyphicon glyphicon-time"></span>
                 <div>
-                  <p><%= attraction.hours %></p>
+                  <p><%= best_in_place_if user_signed_in?, attraction, :hours, path: 'gen_attractions/' + attraction.id.to_s %></p>
                 </div>
               </td>
 
               <td>
                 <span class="glyphicon glyphicon-earphone"></span>
                 <div>
-                  <p><%= attraction.phone %></p>
+                  <p><%= best_in_place_if user_signed_in?, attraction, :phone, path: 'gen_attractions/' + attraction.id.to_s %></p>
                 </div>
               </td>
 
             </tr>
 
           </table>
-
+          <% if user_signed_in? %>
+            <%= link_to 'Delete', 'gen_attractions/' + attraction.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
           <button id="show<%= attraction.iframe_id %>">Show/hide map<span class="caret"></span></button>
 
         </div>
@@ -89,5 +91,7 @@
       </li>
 
     <% end %>
-
+    <% if user_signed_in? %>
+      <%= link_to 'New Attraction', gen_attractions_path, method: :create %>
+    <% end %>
 </div>

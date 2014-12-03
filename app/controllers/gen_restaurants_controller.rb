@@ -35,15 +35,15 @@ class GenRestaurantsController < ApplicationController
   # POST /gen_restaurants
   # POST /gen_restaurants.json
   def create
-    @gen_restaurant = GenRestaurant.new(gen_restaurant_params)
+    @gen_restaurant = GenPackage.find_by_name(params[:city]).gen_restaurants.build(name: "Test")
 
     respond_to do |format|
       if @gen_restaurant.save
-        format.html { redirect_to @gen_restaurant, notice: 'Gen restaurant was successfully created.' }
-        format.json { render :show, status: :created, location: @gen_restaurant }
+        format.html { redirect_to gen_restaurants_path, notice: 'Gen restaurant was successfully created.' }
+        format.json { render :show, status: :created, location: gen_restaurants_path }
       else
         format.html { render :new }
-        format.json { render json: @gen_restaurant.errors, status: :unprocessable_entity }
+        format.json { render json: gen_restaurants_path.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,8 +53,8 @@ class GenRestaurantsController < ApplicationController
   def update
     respond_to do |format|
       if @gen_restaurant.update(gen_restaurant_params)
-        format.html { redirect_to @gen_restaurant, notice: 'Gen restaurant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @gen_restaurant }
+        format.html { redirect_to :gen_restaurant, notice: 'Gen restaurant was successfully updated.' }
+        format.json { respond_with_bip(@gen_restaurant) }
       else
         format.html { render :edit }
         format.json { render json: @gen_restaurant.errors, status: :unprocessable_entity }
@@ -75,6 +75,7 @@ class GenRestaurantsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_gen_restaurant
+      @city = GenPackage.find_by_name(params[:city])
       @gen_restaurant = GenRestaurant.find(params[:id])
     end
 

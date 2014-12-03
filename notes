@@ -48,3 +48,8 @@ class GenPackagesController < ApplicationController
 	  end
 	end
 end
+
+
+the config environment prodoction might neeed something simialar to the development for heroku for devise
+
+The production.rb thing i set true may affect performance - check other solutions

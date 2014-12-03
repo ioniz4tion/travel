@@ -14,6 +14,8 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 
+
+//= require best
 //= require planner
 //= require maps
 //= require_self
@@ -27,3 +29,4 @@
 //= require external/modernizr.custom.js
 
 //= require turbolinks
+//= require best_in_place

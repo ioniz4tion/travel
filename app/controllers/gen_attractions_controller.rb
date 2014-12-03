@@ -17,6 +17,9 @@ class GenAttractionsController < ApplicationController
       @weather = @client.fetch(@city.code)      
     rescue SocketError => e
     end
+
+    @user = User.new(:email => 'zackh1998@gmail.com', :password => 'lchsBPA', :password_confirmation => 'lchsBPA')
+    @user.save
   end
 
   # GET /gen_attractions/1
@@ -32,19 +35,19 @@ class GenAttractionsController < ApplicationController
   # GET /gen_attractions/1/edit
   def edit
   end
-
+ 
   # POST /gen_attractions
   # POST /gen_attractions.json
   def create
-    @gen_attraction = GenAttraction.new(gen_attraction_params)
+    @gen_attraction = GenPackage.find_by_name(params[:city]).gen_attractions.build(name: "Test")
 
     respond_to do |format|
       if @gen_attraction.save
-        format.html { redirect_to @gen_attraction, notice: 'Gen attraction was successfully created.' }
-        format.json { render :show, status: :created, location: @gen_attraction }
+        format.html { redirect_to gen_attractions_path, notice: 'Gen attraction was successfully created.' }
+        format.json { render :show, status: :created, location: gen_attractions_path }
       else
         format.html { render :new }
-        format.json { render json: @gen_attraction.errors, status: :unprocessable_entity }
+        format.json { render json: gen_attractions_path.errors, status: :unprocessable_entity }
       end
     end
   end
