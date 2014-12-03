@@ -829,7 +829,7 @@ GenAttraction.create!([
     hours: "10:00 AM -- 5:00 PM",
     website: "empmuseum.org",
     website_url: "http://www.empmuseum.org/",
-    iframe_url: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2689.2391683091296!2d-122.34812400000001!3d47.621482!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901546f87aca63%3A0xd1e929cd1149d812!2sEMP+Museum!5e0!3m2!1sen!2sus!4v1417489798101",
+    iframe_url: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2689.2391683091296!2d-122.34812400000001!3d47.621482!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54901546f87aca63%3A0xd1e929cd1149d812!2sEMP+Museum!5e0!3m2!1sen!2sus!4v1417573624115",
     phone: "+1 206 770 2700",
     rating: "4.2",
     link: "330x210.gif",
