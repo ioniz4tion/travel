@@ -9,16 +9,24 @@
 		<ul class="weather-bxslider"> -->
 			<% @weather.each do |city_weather| %>
 			<!-- <li> -->
-				<%= city_weather.doc["location"]["city"] %>
-				<br/>
-				<span>High:</span> <%= city_weather.forecasts[0].high %>&deg; F
-				<br/>
-				<span>Low:</span> <%= city_weather.forecasts[0].low %>&deg; F
-				
-				<div class="weather-graphic">
-					<span>Now:</span>
-					<div class="icon icon-cloud"></div>
-					<span><%= city_weather.forecasts[0].text %></span>
+
+				<div>
+
+					<p><%= city_weather.doc["location"]["city"] %></p>
+
+					<p>
+						<span class="temp-high"><%= city_weather.forecasts[0].high %>&deg; F</span>
+						<span class="slash">/</span>
+						<span class="temp-low"><%= city_weather.forecasts[0].low %>&deg; F</span>
+					</p>
+					
+					<div class="weather-graphic">
+						<span>Now:</span>
+						<div class="icon icon-cloud"></div>
+						<span><%= city_weather.forecasts[0].text %></span>
+						<span class="temp-now">32&deg; F</span>
+					</div>
+
 				</div>
 			<!-- </li> -->
 			<% end %>

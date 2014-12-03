@@ -50,6 +50,8 @@
 		span {
 			color: $light-grey;
 			font-size: 22px;
+
+			@include transition(all 0.3s);
 		}
 	}
 }
@@ -100,6 +102,30 @@
 		color: #898989;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
+
+		&.temp-high {
+			font-size: 50px;
+			color: #cd2020;
+		}
+
+		&.temp-low {
+			font-size: 25px;
+			color: $blue;
+		}
+
+		&.temp-now {
+			color: $light-grey;
+			font-size: 50px;
+			white-space: nowrap;
+			right: 0;
+
+			@include y-center;
+		}
+
+		&.slash {
+			margin: 0 5px;
+			font-size: 35px;
+		}
 	}
 
 	.weather-slide {
@@ -114,9 +140,20 @@
 			display: none;
 		}
 	}
+
+	> div {
+		width: 100%;
+		height: calc(100% - 18px);
+		position: relative;
+	}
 }
 
 .weather-graphic {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+
 	.icon {
 		font-size: 100px;
 		color: #787878;
