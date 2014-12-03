@@ -1,6 +1,4 @@
-User.create!([
-  {email: "zackh1998@gmail.com", encrypted_password: "$2a$10$DVaAPyvnhcvxZCAJMbrmY.t1LKqtclnEFRwo5bTEn8tbGYti1ayZq", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-12-03 04:31:42", last_sign_in_at: "2014-12-03 04:31:42", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
-])
+
 Answer.create!([
   {text: "Hot Weather", score: 100, color: "red", question_id: 1, label: "hot"},
   {text: "Temperate Weather", score: 50, color: "green", question_id: 1, label: "temperate"},
