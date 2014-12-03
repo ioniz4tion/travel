@@ -44,6 +44,13 @@
 	@include transform(translate(-50%, -50%));
 }
 
+@mixin x-center {
+	position: absolute;
+	left: 50%;
+
+	@include transform(translateX(-50%));
+}
+
 @mixin y-center {
 	position: absolute;
 	top: 50%;

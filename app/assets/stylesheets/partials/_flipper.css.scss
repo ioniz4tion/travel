@@ -52,6 +52,14 @@
 			font-size: 22px;
 
 			@include transition(all 0.3s);
+
+			&.glyphicon-plus {
+				margin-right: -4px;
+			}
+
+			&.glyphicon-remove {
+				margin-right: -1px;
+			}
 		}
 	}
 }
@@ -113,19 +121,23 @@
 			color: $blue;
 		}
 
-		&.temp-now {
-			color: $light-grey;
-			font-size: 50px;
-			white-space: nowrap;
-			right: 0;
-
-			@include y-center;
-		}
-
 		&.slash {
 			margin: 0 5px;
 			font-size: 35px;
 		}
+	}
+
+	.temp-now {
+		color: $light-grey;
+		font-size: 50px;
+		white-space: nowrap;
+	}
+
+	.weather-city {
+		text-transform: uppercase;
+		color: $yellow;
+		font-size: 35px;
+		padding-top: 20px;
 	}
 
 	.weather-slide {
@@ -146,6 +158,12 @@
 		height: calc(100% - 18px);
 		position: relative;
 	}
+
+	.hi-lo {
+		position: absolute;
+		top: 110px;
+		right: 0;
+	}
 }
 
 .weather-graphic {
@@ -155,8 +173,15 @@
 	text-align: center;
 
 	.icon {
-		font-size: 100px;
-		color: #787878;
+		font-size: 150px;
+		font-weight: lighter;
+		color: #525252;
+		position: absolute;
+		bottom: -10px;
+		right: 70px;
+		z-index: -1;
+
+		// @include x-center;
 	}
 }
 
