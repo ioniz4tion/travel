@@ -1,0 +1,1 @@
+json.extract! @gen_restaurant, :id, :name, :description, :pricing, :address, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id, :created_at, :updated_at

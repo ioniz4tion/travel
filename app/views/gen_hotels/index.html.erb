@@ -1,0 +1,47 @@
+<h1>Listing gen_hotels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Pricing</th>
+      <th>Address</th>
+      <th>Link</th>
+      <th>Image description</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Rating</th>
+      <th>Iframe</th>
+      <th>Button</th>
+      <th>Gen packages</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gen_hotels.each do |gen_hotel| %>
+      <tr>
+        <td><%= gen_hotel.name %></td>
+        <td><%= gen_hotel.description %></td>
+        <td><%= gen_hotel.pricing %></td>
+        <td><%= gen_hotel.address %></td>
+        <td><%= gen_hotel.link %></td>
+        <td><%= gen_hotel.image_description %></td>
+        <td><%= gen_hotel.phone %></td>
+        <td><%= gen_hotel.website %></td>
+        <td><%= gen_hotel.rating %></td>
+        <td><%= gen_hotel.iframe_id %></td>
+        <td><%= gen_hotel.button_id %></td>
+        <td><%= gen_hotel.gen_packages %></td>
+        <td><%= link_to 'Show', gen_hotel %></td>
+        <td><%= link_to 'Edit', edit_gen_hotel_path(gen_hotel) %></td>
+        <td><%= link_to 'Destroy', gen_hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gen hotel', new_gen_hotel_path %>

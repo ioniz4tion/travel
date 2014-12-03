@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
- before_filter :vars, :weather
+  before_filter :home_vars, :weather
 
-	def vars
-		@gen_package = GenPackage.all.order(:name)
-		@hol_package = HolPackage.all.order(:name)	
+	def home_vars
+		@gen_package = GenPackage.all
+		@hol_package = HolPackage.all
 	end
 
 	def weather
@@ -21,4 +21,10 @@ class ApplicationController < ActionController::Base
 		end		
 	end
 
+  def index
+  	@slideshow = []
+		GenPackage.all.each do |package|
+			@slideshow << {name: package.name, link: package.image_link, description: package.image_description}
+		end
+  end
 end
