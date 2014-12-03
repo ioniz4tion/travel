@@ -35,15 +35,15 @@ class GenHotelsController < ApplicationController
   # POST /gen_hotels
   # POST /gen_hotels.json
   def create
-    @gen_hotel = GenHotel.new(gen_hotel_params)
+    @gen_hotel = GenPackage.find_by_name(params[:city]).gen_hotels.build(name: "Test")
 
     respond_to do |format|
       if @gen_hotel.save
-        format.html { redirect_to @gen_hotel, notice: 'Gen hotel was successfully created.' }
-        format.json { render :show, status: :created, location: @gen_hotel }
+        format.html { redirect_to gen_hotels_path, notice: 'Gen hotel was successfully created.' }
+        format.json { render :show, status: :created, location: gen_hotels_path }
       else
         format.html { render :new }
-        format.json { render json: @gen_hotel.errors, status: :unprocessable_entity }
+        format.json { render json: gen_hotels_path.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,8 +53,8 @@ class GenHotelsController < ApplicationController
   def update
     respond_to do |format|
       if @gen_hotel.update(gen_hotel_params)
-        format.html { redirect_to @gen_hotel, notice: 'Gen hotel was successfully updated.' }
-        format.json { render :show, status: :ok, location: @gen_hotel }
+        format.html { redirect_to :gen_hotel, notice: 'Gen hotel was successfully updated.' }
+        format.json { respond_with_bip(@gen_hotel) }
       else
         format.html { render :edit }
         format.json { render json: @gen_hotel.errors, status: :unprocessable_entity }
@@ -75,11 +75,12 @@ class GenHotelsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_gen_hotel
+      @city = GenPackage.find_by_name(params[:city])
       @gen_hotel = GenHotel.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gen_hotel_params
-      params.require(:gen_hotel).permit(:name, :description, :pricing, :address, :link, :image_description, :phone, :website, :rating, :iframe_id, :button_id, :gen_packages_id)
+      params.require(:gen_hotel).permit(:name, :description, :pricing, :address, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
     end
 end

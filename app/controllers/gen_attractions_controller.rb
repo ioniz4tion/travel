@@ -17,6 +17,9 @@ class GenAttractionsController < ApplicationController
       @weather = @client.fetch(@city.code)      
     rescue SocketError => e
     end
+
+    @user = User.new(:email => 'zackh1998@gmail.com', :password => 'lchsBPA', :password_confirmation => 'lchsBPA')
+    @user.save
   end
 
   # GET /gen_attractions/1
@@ -32,7 +35,7 @@ class GenAttractionsController < ApplicationController
   # GET /gen_attractions/1/edit
   def edit
   end
-
+ 
   # POST /gen_attractions
   # POST /gen_attractions.json
   def create

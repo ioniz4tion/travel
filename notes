@@ -48,3 +48,6 @@ class GenPackagesController < ApplicationController
 	  end
 	end
 end
+
+
+the config environment prodoction might neeed something simialar to the development for heroku for devise
