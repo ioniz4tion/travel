@@ -11,6 +11,12 @@ class GenAttractionsController < ApplicationController
       @slideshow << {name: package.name, link: package.link, description: package.image_description}
     end
     @packages = @city.gen_attractions.all
+
+     begin
+      @client = YahooWeather::Client.new
+      @weather = @client.fetch(@city.code)      
+    rescue SocketError => e
+    end
   end
 
   # GET /gen_attractions/1

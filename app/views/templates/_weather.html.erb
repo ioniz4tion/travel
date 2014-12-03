@@ -7,6 +7,7 @@
 	<!-- <div class="weather-slide">
 
 		<ul class="weather-bxslider"> -->
+		<% if @weather.is_a? Array %>
 			<% @weather.each do |city_weather| %>
 			<!-- <li> -->
 				<%= city_weather.doc["location"]["city"] %>
@@ -22,6 +23,21 @@
 				</div>
 			<!-- </li> -->
 			<% end %>
+		<% else %>
+
+			<%= @weather.doc["location"]["city"] %>
+				<br/>
+				<span>High:</span> <%= @weather.forecasts[0].high %>&deg; F
+				<br/>
+				<span>Low:</span> <%= @weather.forecasts[0].low %>&deg; Fs
+				
+				<div class="weather-graphic">
+					<span>Now:</span>
+					<div class="icon icon-cloud"></div>
+					<span><%= @weather.forecasts[0].text %></span>
+				</div>
+
+		<% end %>
 		<!-- </ul>
 
 	</div> -->	

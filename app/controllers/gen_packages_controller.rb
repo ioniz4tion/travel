@@ -5,9 +5,16 @@ class GenPackagesController < ApplicationController
   # GET /gen_packages.json
   def index
     @gen_packages = GenPackage.all
+    @city = GenPackage.find_by_name(params[:city])
     @slideshow = []
     GenPackage.all.each do |package|
       @slideshow << {name: package.name, link: package.image_link, description: package.image_description}
+    end
+
+    begin
+      @client = YahooWeather::Client.new
+      @weather = @client.fetch(@city.code)      
+    rescue SocketError => e
     end
   end
 
