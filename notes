@@ -1,0 +1,50 @@
+class GenPackagesController < ApplicationController	
+	
+	def home
+		@city = GenPackage.find_by_name(params[:city])
+		@slideshow = []
+		GenPackage.find_by_name(params[:city]).gen_images.all.each do |package|
+			@slideshow << {name: package.name, link: package.link, description: package.description}
+		end
+	end
+
+	def hotels
+		@city = GenPackage.find_by_name(params[:city])
+		@slideshow = []
+		GenPackage.find_by_name(params[:city]).gen_hotels.all.each do |package|
+			@slideshow << {name: package.name, link: package.link, description: package.image_description}
+		end
+	end
+
+	def restaurants
+		@city = GenPackage.find_by_name(params[:city])
+		@slideshow = []
+		GenPackage.find_by_name(params[:city]).gen_restaurants.all.each do |package|
+			@slideshow << {name: package.name, link: package.link, description: package.image_description}
+		end
+	end
+
+	def attractions
+		@city = GenPackage.find_by_name(params[:city])
+		@slideshow = []
+		GenPackage.find_by_name(params[:city]).gen_attractions.all.each do |package|
+			@slideshow << {name: package.name, link: package.link, description: package.image_description}
+		end
+		@packages = @city.gen_attractions.all
+	end	
+
+	def update
+		render text: params.inspect
+	  @city = GenPackage.find params[:id]
+
+	  respond_to do |format|
+	    if @city.update_attributes(params[:name])
+	      format.html { redirect_to(@city, :notice => 'User was successfully updated.') }
+	      format.json { respond_with_bip(@city) }
+	    else
+	      format.html { render :action => "edit" }
+	      format.json { respond_with_bip(@city) }
+	    end
+	  end
+	end
+end
