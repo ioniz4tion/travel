@@ -21,6 +21,7 @@
 		top: 0;
 		left: 0;
 		z-index: -1;
+		background: $hover-color;
 
 		@include transform(rotateY(180deg));
 	}
@@ -40,6 +41,15 @@
 
 		&:hover {
 			background: $yellow;
+
+			span {
+				color: $dark-grey;
+			}
+		}
+
+		span {
+			color: $light-grey;
+			font-size: 22px;
 		}
 	}
 }
@@ -74,15 +84,22 @@
 .weather {
 	width: 100%;
 	height: 340px;
+	padding: 10px;
 	position: relative;
 	// border: 1px solid #e7e7e7;
 	// z-index: 1;
-	background: $dark-grey;
+	background: $hover-color;
 
 	@include backface-visibility(hidden);
 
 	button {
 		z-index: 1;
+	}
+
+	span {
+		color: #898989;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
 	}
 
 	.weather-slide {
@@ -96,6 +113,13 @@
 		.bx-controls {
 			display: none;
 		}
+	}
+}
+
+.weather-graphic {
+	.icon {
+		font-size: 100px;
+		color: #787878;
 	}
 }
 

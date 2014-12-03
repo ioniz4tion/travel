@@ -3,7 +3,7 @@
 .tiles {
 	display: $box-display;
 	width: 120px;
-	height: 700px;
+	height: 116 * 3px;
 	// border: 1px solid #e7e7e7;
 	position: absolute;
 	// top: 0;
@@ -30,11 +30,17 @@
 		color: $light-grey;
 	}
 
-	img {
+	.glyphicon {
 		display: block;
 		width: 50px;
 		height: 40px;
 		margin: 0 auto;
+		font-size: 35px;
+		position: relative;
+
+		&:before {
+			@include xy-center;
+		}
 	}
 
 	p {

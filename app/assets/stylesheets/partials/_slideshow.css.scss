@@ -10,6 +10,7 @@
 	// left: -4px;
 	// border: 1px solid #e7e7e7;
 	// color: $dark-grey;
+	overflow: hidden;
 
 	li {
 		height: 700px;
@@ -66,46 +67,70 @@
 }
 
 .slideshow-heading {
+	display: block;
+	max-width: 450px;
 	position: absolute;
 	top: 50px;
 	right: 50px;
+	text-align: right;
 }
 
 .arrow {
 	display: inline-block;
 	width: 100%;
 	height: 100%;
-	right: 10px;
+	// right: 10px;
 
 	&:before,
 	&:after {
 		content: '';
 		position: absolute;
-		right: 10px;
+		// right: 6px;
 
 		@include transition(background 0.3s ease);
 		@include arrow;
 	}
 
 	&:before {
-		top: $arrow-pos;
-
-		@include transform(rotate($arrow-rotate));
+		top: $arrow-y-pos;
 	}
 
 	&:after {
-		bottom: $arrow-pos;
-
-		@include transform(rotate(-$arrow-rotate));
+		bottom: $arrow-y-pos;
 	}
 
 	&.arrow-left {
+		&:before,
+		&:after {
+			right: $arrow-x-pos;
+		}
+
 		&:before {
 			@include transform(rotate(-$arrow-rotate));
 		}
 
 		&:after {
+			&:before,
+			&:after {
+
+			}
+
 			@include transform(rotate($arrow-rotate));
+		}
+	}
+
+	&.arrow-right {
+		&:before,
+		&:after {
+			left: $arrow-x-pos;
+		}
+
+		&:before {
+			@include transform(rotate($arrow-rotate));
+		}
+
+		&:after {
+			@include transform(rotate(-$arrow-rotate));
 		}
 	}
 }
@@ -114,7 +139,7 @@
 .bx-prev:hover {
 	.arrow:before,
 	.arrow:after {
-		background: $blue;
+		background: $yellow;
 	}
 }
 
@@ -228,31 +253,36 @@
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-	left: 10px;
+	left: -37px;
 	// background: url(/assets/controls.png) no-repeat 0 -32px;
+	border-top-right-radius: 37px;
+	border-bottom-right-radius: 37px;
 }
 
 .bx-wrapper .bx-next {
-	right: 10px;
+	right: -37px;
 	// background: url(/assets/controls.png) no-repeat -43px -32px;
+	border-top-left-radius: 37px;
+	border-bottom-left-radius: 37px;
 }
 
 .bx-wrapper .bx-prev:hover {
-	background-position: 0 0;
+	// background-position: 0 0;
 }
 
 .bx-wrapper .bx-next:hover {
-	background-position: -43px 0;
+	// background-position: -43px 0;
 }
 
 .bx-wrapper .bx-controls-direction a {
 	position: absolute;
 	top: 50%;
-	margin-top: -16px;
+	margin-top: -37px;
 	outline: 0;
-	width: 32px;
-	// height: 32px;
+	width: 74px;
+	height: 74px;
 	text-indent: -9999px;
+	background: $light-grey;
 	// z-index: 9999;
 }
 

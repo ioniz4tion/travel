@@ -1,27 +1,30 @@
 <div class="weather">
 
-	<button id="flipperBtn"></button>
+	<button id="flipperBtn"><span class="glyphicon glyphicon-plus"></span></button>
 
-	<div class="weather-slide">
+	<span>Weather Conditions</span>
 
-		<ul class="weather-bxslider">
+	<!-- <div class="weather-slide">
+
+		<ul class="weather-bxslider"> -->
 			<% @weather.each do |city_weather| %>
-			<li>
+			<!-- <li> -->
 				<%= city_weather.doc["location"]["city"] %>
 				<br/>
-				<%= city_weather.forecasts[0].high %>
+				<span>High:</span> <%= city_weather.forecasts[0].high %>&deg; F
 				<br/>
-				<%= city_weather.forecasts[0].low %>
-				<br/>
-				<%= city_weather.forecasts[0].text %>
-				<br/>
-				<%= city_weather.forecasts[0].date.inspect %>
-				<br/>
-			</li>
+				<span>Low:</span> <%= city_weather.forecasts[0].low %>&deg; F
+				
+				<div class="weather-graphic">
+					<span>Now:</span>
+					<div class="icon icon-cloud"></div>
+					<span><%= city_weather.forecasts[0].text %></span>
+				</div>
+			<!-- </li> -->
 			<% end %>
-		</ul>
+		<!-- </ul>
 
-	</div>	
+	</div> -->	
 
 	<!-- So I have a weather-format.txt file under the main travel folder. You can use it to see hwo to access what data. Basically if an @ sign precedes the data name in the text file you need to use a dot. Like @weather.lat
 	If the naem is not preceded by an @ but in qoutes, you need to access it with arrays. Like in the above @weather.doc["image"]["width"].

@@ -28,6 +28,14 @@
 	backface-visibility:         $visibility;
 }
 
+@mixin linear-gradient-2($direction, $webkit-direction, $color1, $color2) {
+	background: -ms-linear-gradient($direction, $color1, $color2);
+	background: -moz-linear-gradient($direction, $color1, $color2);
+	background: -webkit-linear-gradient($webkit-direction, $color1, $color2);
+	background: -o-linear-gradient($direction, $color1, $color2);
+	background: linear-gradient(to $direction, $color1, $color2);
+}
+
 @mixin xy-center {
 	position: absolute;
 	top: 50%;
@@ -47,8 +55,8 @@
 @mixin arrow {
 	display: inline-block;
 	width: 20px;
-	height: 5px;
-	background: $yellow;
+	height: 3px;
+	background: $dark-grey;
 	border-radius: 5px;
 
 	@include transition(all 0.3s ease);
