@@ -16,7 +16,7 @@
         <div>
 
           <div class="price-img">
-            <%= image_tag(attraction.link) %>
+            <%= image_tag(attraction.image_thumb.url) %>
             <div></div>
             <p><%= best_in_place_if user_signed_in?, attraction, :pricing, path: 'gen_attractions/' + attraction.id.to_s %></p>
           </div>
@@ -27,8 +27,21 @@
             <div class="rating">
               <span class="glyphicon glyphicon-star-empty"></span>
               <div>
-                <p><%= best_in_place_if user_signed_in?, attraction, :rating, path: 'gen_attractions/' + attraction.id.to_s %><span>/</span>5</p>
+                <p><%= best_in_place_if user_signed_in?, attraction, :rating, path: 'gen_attractions/' + attraction.id.to_s %><span>/</span>5</p>               
               </div>
+              <% if user_signed_in? %>
+               <%= form_for attraction, :url => 'gen_attractions/' + attraction.id.to_s, :html => { :multipart => true } do |form| %>
+              <%= form.file_field :image_thumb %>
+              <%= form.submit %>
+            <% end %>
+            <% end %>
+
+            <% if user_signed_in? %>
+               <%= form_for attraction, :url => 'gen_attractions/' + attraction.id.to_s, :html => { :multipart => true } do |form| %>
+              <%= form.file_field :image %>
+              <%= form.submit %>
+            <% end %>
+            <% end %>
             </div>
           </div>
 

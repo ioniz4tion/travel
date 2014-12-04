@@ -37,6 +37,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 gem 'best_in_place', '~> 3.0.0'
 gem 'devise', '~> 3.4.1'
+
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '~> 1.5.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
