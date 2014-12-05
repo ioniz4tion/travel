@@ -30,6 +30,7 @@
                 <p><%= best_in_place_if user_signed_in?, restaurant, :rating, path: 'gen_restaurants/' + restaurant.id.to_s %><span>/</span>5</p>                
               </div>
               <% if user_signed_in? %>
+              Thumbnail Image
               <%= form_for restaurant, :url => 'gen_restaurants/' + restaurant.id.to_s, :html => { :multipart => true } do |form| %>
               <%= form.file_field :image_thumb %>
               <%= form.submit %>
@@ -37,6 +38,7 @@
             <% end %>
 
             <% if user_signed_in? %>
+            Slideshow Image
               <%= form_for restaurant, :url => 'gen_restaurants/' + restaurant.id.to_s, :html => { :multipart => true } do |form| %>
               <%= form.file_field :image %>
               <%= form.submit %>
