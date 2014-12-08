@@ -14,7 +14,7 @@
  *Parker these two lines below make it so that this includes all of the css we have created into every single page, we might want to kill the two lines below. Or maybe its just one of the two, I'm not sure.
  *= require_tree .
  *= require_self
- *= require partials/flipper.css.scss
+ *= require partials/_flipper.css.scss
  */
 
 
