@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141204072725) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answer_values", force: true do |t|
     t.integer  "score"
     t.integer  "gen_package_id"
@@ -29,6 +32,15 @@ ActiveRecord::Schema.define(version: 20141204072725) do
     t.datetime "updated_at"
     t.integer  "question_id"
     t.string   "label"
+  end
+
+  create_table "gen_attraction_images", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.integer  "gen_attraction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "gen_attractions", force: true do |t|

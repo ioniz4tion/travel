@@ -6,7 +6,6 @@ gem 'rails', '4.1.6'
 #gem 'pg'
 gem 'rails_12factor'
 # Use mysql as the database for Active Record
-gem 'mysql2'
 gem 'seed_dump'
 gem 'yahoo_weather', '~> 1.1.1'
 # check out the forecast_io gem to see if it is any better than yahoo weather.
