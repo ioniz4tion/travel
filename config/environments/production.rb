@@ -81,4 +81,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.assets.initialize_on_precompile = false
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['bpa-travel'],
+      :access_key_id => ENV['AKIAIQA6SQA5VEAF733Q'],
+      :secret_access_key => ENV['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']
+    }
+  }
 end

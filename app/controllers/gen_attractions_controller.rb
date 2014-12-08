@@ -8,7 +8,7 @@ class GenAttractionsController < ApplicationController
     @city = GenPackage.find_by_name(params[:city])
     @slideshow = []
     GenPackage.find_by_name(params[:city]).gen_attractions.all.each do |package|
-      @slideshow << {name: package.name, link: package.link, description: package.image_description}
+      @slideshow << {name: package.name, link: package.image.url, description: package.image_description}
     end
     @packages = @city.gen_attractions.all
 
@@ -55,9 +55,10 @@ class GenAttractionsController < ApplicationController
   # PATCH/PUT /gen_attractions/1
   # PATCH/PUT /gen_attractions/1.json
   def update
+    #@gen_attraction = GenAttraction.create( gen_attraction_params )
     respond_to do |format|
       if @gen_attraction.update(gen_attraction_params)
-        format.html { redirect_to :gen_attraction, notice: 'Gen attraction was successfully updated.' }
+        format.html { redirect_to :gen_attractions, notice: 'Gen attraction was successfully updated.' }
         format.json { respond_with_bip(@gen_attraction) }
       else
         format.html { render :edit }
@@ -85,6 +86,6 @@ class GenAttractionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gen_attraction_params
-      params.require(:gen_attraction).permit(:name, :description, :pricing, :location, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
+      params.require(:gen_attraction).permit(:image, :image_thumb, :name, :description, :pricing, :location, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
     end
 end

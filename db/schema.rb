@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203040608) do
+ActiveRecord::Schema.define(version: 20141204072725) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answer_values", force: true do |t|
     t.integer  "score"
@@ -29,6 +32,15 @@ ActiveRecord::Schema.define(version: 20141203040608) do
     t.datetime "updated_at"
     t.integer  "question_id"
     t.string   "label"
+  end
+
+  create_table "gen_attraction_images", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.integer  "gen_attraction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "gen_attractions", force: true do |t|
@@ -49,6 +61,14 @@ ActiveRecord::Schema.define(version: 20141203040608) do
     t.string   "button_id"
     t.string   "website_url"
     t.text     "iframe_url"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "image_thumb_file_name"
+    t.string   "image_thumb_content_type"
+    t.integer  "image_thumb_file_size"
+    t.datetime "image_thumb_updated_at"
   end
 
   create_table "gen_hotel_images", force: true do |t|
@@ -77,6 +97,14 @@ ActiveRecord::Schema.define(version: 20141203040608) do
     t.string   "hours"
     t.string   "rating"
     t.string   "iframe_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "image_thumb_file_name"
+    t.string   "image_thumb_content_type"
+    t.integer  "image_thumb_file_size"
+    t.datetime "image_thumb_updated_at"
   end
 
   create_table "gen_images", force: true do |t|
@@ -125,6 +153,14 @@ ActiveRecord::Schema.define(version: 20141203040608) do
     t.string   "hours"
     t.string   "rating"
     t.string   "iframe_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "image_thumb_file_name"
+    t.string   "image_thumb_content_type"
+    t.integer  "image_thumb_file_size"
+    t.datetime "image_thumb_updated_at"
   end
 
   create_table "hol_packages", force: true do |t|

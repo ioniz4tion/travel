@@ -6,7 +6,6 @@ gem 'rails', '4.1.6'
 #gem 'pg'
 gem 'rails_12factor'
 # Use mysql as the database for Active Record
-gem 'mysql2'
 gem 'seed_dump'
 gem 'yahoo_weather', '~> 1.1.1'
 # check out the forecast_io gem to see if it is any better than yahoo weather.
@@ -37,6 +36,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 gem 'best_in_place', '~> 3.0.0'
 gem 'devise', '~> 3.4.1'
+
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '~> 1.5.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

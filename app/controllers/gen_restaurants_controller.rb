@@ -8,7 +8,7 @@ class GenRestaurantsController < ApplicationController
     @city = GenPackage.find_by_name(params[:city])
     @slideshow = []
     GenPackage.find_by_name(params[:city]).gen_restaurants.all.each do |package|
-      @slideshow << {name: package.name, link: package.link, description: package.image_description}
+      @slideshow << {name: package.name, link: package.image.url, description: package.image_description}
     end
 
      begin
@@ -53,7 +53,7 @@ class GenRestaurantsController < ApplicationController
   def update
     respond_to do |format|
       if @gen_restaurant.update(gen_restaurant_params)
-        format.html { redirect_to :gen_restaurant, notice: 'Gen restaurant was successfully updated.' }
+        format.html { redirect_to :gen_restaurants, notice: 'Gen restaurant was successfully updated.' }
         format.json { respond_with_bip(@gen_restaurant) }
       else
         format.html { render :edit }
@@ -81,6 +81,6 @@ class GenRestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gen_restaurant_params
-      params.require(:gen_restaurant).permit(:name, :description, :pricing, :address, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
+      params.require(:gen_restaurant).permit(:image, :image_thumb, :name, :description, :pricing, :address, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
     end
 end
