@@ -31,7 +31,7 @@ Rails.application.configure do
   #########
   #######
   #This being true may affect performance so I need to check
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
