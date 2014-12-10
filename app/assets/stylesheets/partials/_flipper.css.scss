@@ -145,7 +145,11 @@
 
 		.bx-wrapper,
 		.bx-viewport {
-			height: 340px;
+			height: 302px !important;
+
+			li {
+				height: 302px;
+			}
 		}
 
 		.bx-controls {
