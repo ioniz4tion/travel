@@ -40,6 +40,8 @@
 
 			</div>
 
+			</ul>
+
 		<% else %>
 
 			<div>
@@ -94,38 +96,8 @@
 
 				</div>
 
-			</div>
-
 		<% end %>
-		<!-- </ul>
 
-	</div> -->	
-
-	<!-- So I have a weather-format.txt file under the main travel folder. You can use it to see hwo to access what data. Basically if an @ sign precedes the data name in the text file you need to use a dot. Like @weather.lat
-	If the naem is not preceded by an @ but in qoutes, you need to access it with arrays. Like in the above @weather.doc["image"]["width"].
-	The forecasts are an exception. the gem does a special thing and turns it into a property of the weather object for us. This means you can access the forecasts by using @weather.forecasts[i].whatever
-	It is a 5-day forecast and the current day is 0, the 5th is index 4.
-	If you need to loop through them you can use 
-
-	@weather[0].forecasts.each do |forecast|
-		forecast.high
-		forecast.low
-		forecast.text
-		forecast.date.inspect
-	end
-
-	and you can loop through all forecasts from all cities with
-
-	@weather.each do |city_weather|
-		city_weather.doc["location"]["city"]
-		city_weather.forecasts.each do |forecast|
-			forecast.high
-			forecast.low
-			forecast.text
-			forecast.date.inspect
-		end
-	end
-
-	it just does the weather for the general packages for now. I'll add the codes for the holiday packages when I know what cities those will be at.
-	-->
+	</div>
+	
 </div>

@@ -13,20 +13,20 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= requrie jquery.bxslider
 
-
-//= require best
+//= require startup
 //= require planner
 //= require maps
-//= require_self
-//= require_tree .
-
 //= require flipper
 
+//= require_tree .
 
 //= require external/classie.js
 //= require external/stepsForm.js
 //= require external/modernizr.custom.js
 
+
 //= require turbolinks
 //= require best_in_place
+

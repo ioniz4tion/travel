@@ -1,0 +1,34 @@
+#!/bin/bash
+function pull {
+	heroku pgbackups:capture
+	curl -o latest.dump `heroku pgbackups:url`
+	pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d travel_development latest.dump
+}
+
+function push {
+	heroku pg:reset HEROKU_POSTGRESQL_MAROON
+	heroku pg:push travel_development HEROKU_POSTGRESQL_MAROON --app bpa-travel
+}
+
+function help {
+	echo "commands are heroku dbpush or herokudb pull. BE CAREFUL YOU DON'T LOST DATA!!!!"
+}
+
+ if [ $1 ]
+ then
+   case "$1" in
+     pull)
+     	pull
+     ;;
+     push)
+			push
+		 ;;
+     *)
+        help
+     ;;
+  	esac
+ else
+  help
+ fi
+  	
+

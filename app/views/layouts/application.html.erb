@@ -31,38 +31,5 @@
 
 		</div>
 
-		<!-- <script src="../../assets/javascripts/jquery-2.1.1.js"></script> -->
-
-		<script>
-			$(document).ready(function(){
-			  $('.bxslider').bxSlider();
-			  $('.weather-bxslider').bxSlider({
-			  	width: 360,
-			  	height: 340,
-			  	touchEnabled: false,
-			  	pager: false,
-			  	controls: false
-			  });
-			});
-
-			var slider = $('.bxslider').bxSlider({
-		    onSlideNext: doThis,
-		    onSlidePrev: doThis,
-		    onSlideBefore: doThis,
-		    onSlideAfter: doThis
-			});
-			var slider1 = $('.weather-bxslider').bxSlider({
-		    onSlideNext: doThis,
-		    onSlidePrev: doThis,
-		    onSlideBefore: doThis,
-		    onSlideAfter: doThis
-			});
-
-			function doThis(ele, old, newi){
-		    slider.goToSlide(newi);
-		    slider1.goToSlide(newi);
-			};
-		</script>
-
 	</body>
 </html>
