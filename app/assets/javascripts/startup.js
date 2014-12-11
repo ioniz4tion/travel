@@ -9,7 +9,6 @@ $(document).ready(function() {
   function doThis(ele, old, newi){
     slider.goToSlide(newi);
     slider1.goToSlide(newi);
-    console.log("called");
   };
 
   var slider = $('.bxslider').bxSlider({
@@ -20,7 +19,9 @@ $(document).ready(function() {
   });
   
   var slider1 = $('.weather-bxslider').bxSlider({
-  	touchEnabled: false,
+  	width: 360,
+    height: 340,
+    touchEnabled: false,
   	pager: false,
   	controls: false,
     onSlideNext: doThis,
