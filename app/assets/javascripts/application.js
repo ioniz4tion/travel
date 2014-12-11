@@ -30,21 +30,3 @@
 //= require turbolinks
 //= require best_in_place
 
-//more bx slider stuff
-var slider = $('.bxslider').bxSlider({
-  onSlideNext: doThis,
-  onSlidePrev: doThis,
-  onSlideBefore: doThis,
-  onSlideAfter: doThis
-});
-var slider1 = $('.weather-bxslider').bxSlider({
-  onSlideNext: doThis,
-  onSlidePrev: doThis,
-  onSlideBefore: doThis,
-  onSlideAfter: doThis
-});
-
-function doThis(ele, old, newi){
-  slider.goToSlide(newi);
-  slider1.goToSlide(newi);
-};
