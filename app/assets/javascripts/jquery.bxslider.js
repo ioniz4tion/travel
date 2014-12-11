@@ -64,9 +64,9 @@
 		autoControlsSelector: null,
 
 		// AUTO
-		auto: false,
-		pause: 4000,
-		autoStart: false,
+		auto: true,
+		pause: 5000,
+		autoStart: true,
 		autoDirection: 'next',
 		autoHover: false,
 		autoDelay: 0,
@@ -636,7 +636,7 @@
 		 * Appends prev / next controls to the controls element
 		 */
 		var appendControls = function(){
-			slider.controls.next = $('<a class="bx-next" href=""><span class="arrow"></span>' + slider.settings.nextText + '</a>');
+			slider.controls.next = $('<a class="bx-next" href=""><span class="arrow arrow-right"></span>' + slider.settings.nextText + '</a>');
 			slider.controls.prev = $('<a class="bx-prev" href=""><span class="arrow arrow-left"></span>' + slider.settings.prevText + '</a>');
 			// bind click actions to the controls
 			slider.controls.next.bind('click', clickNextBind);

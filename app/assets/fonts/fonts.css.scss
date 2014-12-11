@@ -40,3 +40,14 @@
        font-url('glyphicons-halflings-regular.ttf') format('truetype'),
        font-url('glyphicons-halflings-regular.svg') format('svg');
 }
+
+@font-face {
+	font-family: 'forecastfont';
+	src:url('iconvault_forecastfont.eot');
+	src:url('iconvault_forecastfont.eot?#iefix') format('embedded-opentype'),
+		url('iconvault_forecastfont.woff') format('woff'),
+		url('iconvault_forecastfont.ttf') format('truetype'),
+		url('iconvault_forecastfont.svg#iconvault_forecastfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

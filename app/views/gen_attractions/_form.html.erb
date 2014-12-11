@@ -1,0 +1,69 @@
+<%= form_for(@gen_attraction) do |f| %>
+  <% if @gen_attraction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gen_attraction.errors.count, "error") %> prohibited this gen_attraction from being saved:</h2>
+
+      <ul>
+      <% @gen_attraction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :pricing %><br>
+    <%= f.text_area :pricing %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :image_description %><br>
+    <%= f.text_area :image_description %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :hours %><br>
+    <%= f.text_field :hours %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.text_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :iframe_id %><br>
+    <%= f.text_field :iframe_id %>
+  </div>
+  <div class="field">
+    <%= f.label :button_id %><br>
+    <%= f.text_field :button_id %>
+  </div>
+  <div class="field">
+    <%= f.label :gen_package_id %><br>
+    <%= f.text_field :gen_package_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

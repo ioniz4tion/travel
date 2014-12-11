@@ -32,6 +32,17 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['bpa-travel'],
+      :access_key_id => ENV['AKIAIQA6SQA5VEAF733Q'],
+      :secret_access_key => ENV['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']
+    }
+  }
 end

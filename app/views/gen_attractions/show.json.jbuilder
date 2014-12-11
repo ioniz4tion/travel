@@ -1,0 +1,1 @@
+json.extract! @gen_attraction, :id, :name, :description, :pricing, :location, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id, :created_at, :updated_at

@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
-  get '/home' => 'home#index'
+  root 'application#index'
+  get '/home' => 'application#index'
 
   get '/calendar' => 'calendar#calendar'
 
@@ -13,15 +14,31 @@ Rails.application.routes.draw do
   get '/planner' => 'planner#planner'
   match '/planner' => 'planner#suggest', via: :post
 
-  get '/:city', to: 'gen_packages#home'
-  get '/:city/hotels', to: 'gen_packages#hotels'
-  get '/:city/restaurants', to: 'gen_packages#restaurants'
-  get '/:city/attractions', to: 'gen_packages#attractions'
+  get '/:city', to: 'gen_packages#index'
+  get '/:city/hotels', to: 'gen_hotels#index'
+  get '/:city/restaurants', to: 'gen_restaurants#index'
+  get '/:city/attractions', to: 'gen_attractions#index'
 
   get 'holiday/:city', to: 'hol_packages#home'
   get 'holiday/:city/hotels', to: 'hol_packages#hotels'
   get 'holiday/:city/restaurants', to: 'hol_packages#restaurants'
   get 'holiday/:city/attractions', to: 'hol_packages#attractions'
+
+  # namespace ':city/' do
+
+  scope(:path => '/:city') do
+
+    resources :gen_restaurants
+
+    resources :gen_hotels
+
+    resources :gen_attractions
+
+    resources :gen_packages
+
+  end
+
+  # end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

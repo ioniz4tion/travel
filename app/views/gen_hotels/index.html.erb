@@ -1,0 +1,116 @@
+<%= render :partial => 'templates/tiles' %>
+
+<%= render :partial => 'templates/slideshow' %>
+
+<%= render :partial => 'templates/flipper' %>
+
+<div class="content">
+
+  <h1>Places to stay <span>in <%= @city.name %></span></h1>
+
+  <ul>
+
+    <% @city.gen_hotels.each do |hotel| %>
+
+      <li class="item">
+        <div>
+          
+          <div class="price-img">
+            <%= image_tag(hotel.image_thumb.url) %>
+            <div></div>
+            <p><%= best_in_place_if user_signed_in?, hotel, :pricing, path: 'gen_hotels/' + hotel.id.to_s %></p>
+          </div>
+
+          <div class="description">
+            <h2><%= best_in_place_if user_signed_in?, hotel, :name, path: 'gen_hotels/' + hotel.id.to_s %></h2>
+            <p><%= best_in_place_if user_signed_in?, hotel, :description, type: :textarea, path: 'gen_hotels/' + hotel.id.to_s %></p>
+            <div class="rating">
+              <span class="glyphicon glyphicon-star-empty"></span>
+              <div>
+                <p><%= best_in_place_if user_signed_in?, hotel, :rating, path: 'gen_hotels/' + hotel.id.to_s %><span>/</span>5</p>
+              </div>
+              <% if user_signed_in? %>
+              
+              <%= form_for hotel, :url => 'gen_hotels/' + hotel.id.to_s, :html => { :multipart => true } do |form| %>
+              Thumbnail Image
+              <%= form.file_field :image_thumb %>
+              <%= form.submit %>
+            <% end %>
+            <% end %>
+
+            <% if user_signed_in? %>
+
+              <%= form_for hotel, :url => 'gen_hotels/' + hotel.id.to_s, :html => { :multipart => true } do |form| %>
+              Slideshow Image
+              <%= form.file_field :image %>
+              <%= form.submit %>
+            <% end %>
+            <% end %>
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+
+          <table>
+
+            <tr>
+
+              <td>
+                <span class="glyphicon glyphicon-map-marker"></span>
+                <div>
+                  <p><%= best_in_place_if user_signed_in?, hotel, :address, path: 'gen_hotels/' + hotel.id.to_s %></p>
+                </div>
+              </td>
+
+              <td>
+                <span class="glyphicon glyphicon-globe"></span>
+                <div>
+                  <a href="<%= hotel.website_url %>" target="_blank"><%= best_in_place_if user_signed_in?, hotel, :website, path: 'gen_hotels/' + hotel.id.to_s %></a>
+                </div>
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td>
+                <span class="glyphicon glyphicon-time"></span>
+                <div>
+                  <p><%= best_in_place_if user_signed_in?, hotel, :hours, path: 'gen_hotels/' + hotel.id.to_s %></p>
+                </div>
+              </td>
+
+              <td>
+                <span class="glyphicon glyphicon-earphone"></span>
+                <div>
+                  <p><%= best_in_place_if user_signed_in?, hotel, :phone, path: 'gen_hotels/' + hotel.id.to_s %></p>
+                </div>
+              </td>
+
+            </tr>
+
+          </table>
+          <% if user_signed_in? %>
+            <%= link_to 'Delete', 'gen_hotels/' + hotel.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+
+          <button id="show<%= hotel.iframe_id %>">Show/hide map<span class="caret"></span></button>
+
+        </div>
+
+        <div class="map" id="<%= hotel.iframe_id %>">
+
+          <iframe src="<%= hotel.iframe_url %>"></iframe>
+
+        </div>
+
+      </li>
+
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Hotel', gen_hotels_path, method: :create %>
+    <% end %>
+
+</div>

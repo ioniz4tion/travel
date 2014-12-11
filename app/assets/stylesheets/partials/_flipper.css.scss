@@ -21,6 +21,7 @@
 		top: 0;
 		left: 0;
 		z-index: -1;
+		background: $hover-color;
 
 		@include transform(rotateY(180deg));
 	}
@@ -40,6 +41,25 @@
 
 		&:hover {
 			background: $yellow;
+
+			span {
+				color: $dark-grey;
+			}
+		}
+
+		span {
+			color: $light-grey;
+			font-size: 22px;
+
+			@include transition(all 0.3s);
+
+			&.glyphicon-plus {
+				margin-right: -4px;
+			}
+
+			&.glyphicon-remove {
+				margin-right: -1px;
+			}
 		}
 	}
 }
@@ -74,10 +94,11 @@
 .weather {
 	width: 100%;
 	height: 340px;
+	padding: 10px;
 	position: relative;
 	// border: 1px solid #e7e7e7;
 	// z-index: 1;
-	background: $dark-grey;
+	background: $hover-color;
 
 	@include backface-visibility(hidden);
 
@@ -85,17 +106,86 @@
 		z-index: 1;
 	}
 
+	span {
+		color: #898989;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+
+		&.temp-high {
+			font-size: 50px;
+			color: #cd2020;
+		}
+
+		&.temp-low {
+			font-size: 25px;
+			color: $blue;
+		}
+
+		&.slash {
+			margin: 0 5px;
+			font-size: 35px;
+		}
+	}
+
+	.temp-now {
+		color: $light-grey;
+		font-size: 50px;
+		white-space: nowrap;
+	}
+
+	.weather-city {
+		text-transform: uppercase;
+		color: $yellow;
+		font-size: 35px;
+		padding-top: 20px;
+	}
+
 	.weather-slide {
 		z-index: -1;
 
 		.bx-wrapper,
 		.bx-viewport {
-			height: 340px;
+			height: 302px !important;
+
+			li {
+				height: 302px;
+			}
 		}
 
 		.bx-controls {
 			display: none;
 		}
+	}
+
+	> div {
+		width: 100%;
+		height: calc(100% - 18px);
+		position: relative;
+	}
+
+	.hi-lo {
+		position: absolute;
+		top: 110px;
+		right: 0;
+	}
+}
+
+.weather-graphic {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+
+	.icon {
+		font-size: 150px;
+		font-weight: lighter;
+		color: #525252;
+		position: absolute;
+		bottom: -10px;
+		right: 70px;
+		z-index: -1;
+
+		// @include x-center;
 	}
 }
 
@@ -104,3 +194,4 @@
 	
 	@include backface-visibility(hidden);
 }
+//test

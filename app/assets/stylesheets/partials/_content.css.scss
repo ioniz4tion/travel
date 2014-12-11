@@ -29,6 +29,10 @@
 		border: none;
 		outline: none;
 		float: right;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -39,12 +43,6 @@
 
 	div {
 		position: relative;
-	}
-
-	img {
-		width: 330px;
-		height: 210px;
-		margin-right: 20px;
 	}
 
 	.description {
@@ -142,9 +140,61 @@
 	}
 } */
 
+.price-img {
+	display: block;
+	width: 330px;
+	height: 210px;
+	margin-right: 20px;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	div {
+		position: absolute;
+		top: 70.95%;
+		left: 53.63%;
+		width: 195.58px;
+		height: 100px;
+		background: $dark-grey;
+
+		@include transform(rotate(-32.47deg));
+	}
+
+	p {
+		display: inline-block;
+		position: absolute;
+		bottom: $pricing-pos;
+		right: $pricing-pos;
+		font-size: 26px;
+	}
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 8px;
+  vertical-align: middle;
+  border-top: $caret-size solid;
+  border-right: $caret-size solid transparent;
+  border-left: $caret-size solid transparent;
+
+  @include transition(all 0.3s);
+
+  &.open {
+  	@include transform(rotate(180deg));
+  }
+}
+
 .map {
 	height: 0;
 	overflow: hidden;
+	margin-top: 10px;
 
 	@include transition(all 0.3s);
 
@@ -158,4 +208,17 @@
 		height: 600px;
 		border: none;
 	}
+}
+
+.about-img {
+	display: block;
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	overflow: hidden;
+}
+
+.about-description {
+	left: 220px !important;
+	width: 880px !important;
 }

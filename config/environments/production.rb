@@ -27,7 +27,11 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+
+  #########
+  #######
+  #This being true may affect performance so I need to check
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -75,4 +79,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.assets.initialize_on_precompile = false
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['bpa-travel'],
+      :access_key_id => ENV['AKIAIQA6SQA5VEAF733Q'],
+      :secret_access_key => ENV['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']
+    }
+  }
 end

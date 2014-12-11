@@ -1,0 +1,128 @@
+class GenPackagesController < ApplicationController	
+	
+	def home
+		@city = GenPackage.find_by_name(params[:city])
+		@slideshow = []
+		GenPackage.find_by_name(params[:city]).gen_images.all.each do |package|
+			@slideshow << {name: package.name, link: package.link, description: package.description}
+		end
+	end
+
+	def hotels
+		@city = GenPackage.find_by_name(params[:city])
+		@slideshow = []
+		GenPackage.find_by_name(params[:city]).gen_hotels.all.each do |package|
+			@slideshow << {name: package.name, link: package.link, description: package.image_description}
+		end
+	end
+
+	def restaurants
+		@city = GenPackage.find_by_name(params[:city])
+		@slideshow = []
+		GenPackage.find_by_name(params[:city]).gen_restaurants.all.each do |package|
+			@slideshow << {name: package.name, link: package.link, description: package.image_description}
+		end
+	end
+
+	def attractions
+		@city = GenPackage.find_by_name(params[:city])
+		@slideshow = []
+		GenPackage.find_by_name(params[:city]).gen_attractions.all.each do |package|
+			@slideshow << {name: package.name, link: package.link, description: package.image_description}
+		end
+		@packages = @city.gen_attractions.all
+	end	
+
+	def update
+		render text: params.inspect
+	  @city = GenPackage.find params[:id]
+
+	  respond_to do |format|
+	    if @city.update_attributes(params[:name])
+	      format.html { redirect_to(@city, :notice => 'User was successfully updated.') }
+	      format.json { respond_with_bip(@city) }
+	    else
+	      format.html { render :action => "edit" }
+	      format.json { respond_with_bip(@city) }
+	    end
+	  end
+	end
+end
+
+
+the config environment prodoction might neeed something simialar to the development for heroku for devise
+
+The production.rb thing i set true may affect performance - check other solutions
+
+
+
+<!-- <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= best_in_place @gen_attraction, :name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @gen_attraction.description %>
+</p>
+
+<p>
+  <strong>Pricing:</strong>
+  <%= @gen_attraction.pricing %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @gen_attraction.location %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @gen_attraction.link %>
+</p>
+
+<p>
+  <strong>Image description:</strong>
+  <%= @gen_attraction.image_description %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @gen_attraction.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @gen_attraction.website %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @gen_attraction.hours %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @gen_attraction.rating %>
+</p>
+
+<p>
+  <strong>Iframe:</strong>
+  <%= @gen_attraction.iframe_id %>
+</p>
+
+<p>
+  <strong>Button:</strong>
+  <%= @gen_attraction.button_id %>
+</p>
+
+<p>
+  <strong>Gen packages:</strong>
+  <%= @gen_attraction.gen_packages %>
+</p>
+
+<%= link_to 'Edit', edit_gen_attraction_path(@gen_attraction) %> |
+<%= link_to 'Back', gen_attractions_path %>
+ -->

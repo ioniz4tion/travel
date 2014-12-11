@@ -21,6 +21,11 @@ module Travel
     # config.i18n.default_locale = :de
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.initialize_on_precompile = false
+
+    config.paperclip_defaults = {:storage => :s3, :s3_credentials => 
+          {:bucket => 'bpa-travel', :access_key_id => 'AKIAIQA6SQA5VEAF733Q', :secret_access_key => '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' }
+      }
     
   end
 end

@@ -1,0 +1,21 @@
+@import 'imports.css.scss';
+
+pre {
+	// width: 100px;
+	// height: 100px;
+	// border-radius: 50px;
+	// background: $light-grey;
+
+	-webkit-animation-name: animation;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+}
+
+@-webkit-keyframes animation {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
