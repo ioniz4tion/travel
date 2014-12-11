@@ -7,34 +7,38 @@
 		<% if @weather.is_a? Array %>
 
 			<div class="weather-slide">
-			<ul class="weather-bxslider">
+				<ul class="weather-bxslider">
 
-			<% @weather.each do |city_weather| %>
+					<% @weather.each do |city_weather| %>
 
-				<li>
+						<li>
 
-					<div>
+							<div>
 
-						<p class="weather-city"><%= city_weather.doc["location"]["city"] %></p>
+								<p class="weather-city"><%= city_weather.doc["location"]["city"] %></p>
 
-						<div class="hi-lo">
-							<span class="temp-high"><%= city_weather.forecasts[0].high %>&deg; F</span>
-							<span class="slash">/</span>
-							<span class="temp-low"><%= city_weather.forecasts[0].low %>&deg; F</span>
-						</div>
-						
-						<div class="weather-graphic">
-							<span>Now:</span>
-							<p class="temp-now">32&deg; F</p>
-							<span><%= city_weather.forecasts[0].text %></span>
-							<div class="icon icon-cloud"></div>
-						</div>
+								<div class="hi-lo">
+									<span class="temp-high"><%= city_weather.forecasts[0].high %>&deg; F</span>
+									<span class="slash">/</span>
+									<span class="temp-low"><%= city_weather.forecasts[0].low %>&deg; F</span>
+								</div>
+								
+								<div class="weather-graphic">
+									<span>Now:</span>
+									<p class="temp-now">32&deg; F</p>
+									<span><%= city_weather.forecasts[0].text %></span>
+									<div class="icon icon-cloud"></div>
+								</div>
 
-					</div>
+							</div>
 
-				</li>
+						</li>
 
-			<% end %>
+					<% end %>
+
+				</ul>
+
+			</div>
 
 		<% else %>
 
@@ -53,27 +57,39 @@
 					<p class="temp-now"><%= @weather.condition.temp %>&deg; F</p>
 					<span><%= @weather.forecasts[0].text %></span>
 
-					<% text = @weather.forecasts[0].text
+					<%= @weather.condition.code %>
 
-					if text == 'Mostly Clear' || text == 'Partly Sunny' || text == 'Partly Cloudy' %>
-						<div class="icon icon-basecloud"></div>
-						<div class="icon icon-sunny"></div>
+					<%
+					code = @weather.condition.code
+					text = @weather.forecasts[0].text
 
-					<% elsif text == 'Showers' || text == 'Showers Late' %>
-						<div class="icon icon-basecloud"></div>
-						<div class="icon icon-showers"></div>
+					case code
 
-					<% elsif text == 'Rain' %>
-						<div class="icon icon-basecloud"></div>
-						<div class="icon icon-rainy"></div>
+						when 26, 28
+							if text == "PM Showers" %>
+								<div class="icon icon-basecloud"></div>
+								<div class="icon icon-showers"></div>
+							<% else %>
+								<div class="icon icon-cloud"></div>
+							<% end %>
 
-					<% elsif text == 'Mostly Cloudy' || text == 'Cloudy' %>
-						<div class="icon icon-cloud"></div>
+						<% when 11, 12, 40 %>
+							<div class="icon icon-basecloud"></div>
+							<div class="icon icon-showers"></div>
 
-					<% elsif text == 'Scattered Thunderstorms' %>
-						<div class="icon icon-basecloud"></div>
-						<div class="icon icon-thunder"></div>
-					
+						<% when 29, 33
+							if text == "Rain/Wind" %>
+								<div class="icon icon-windyraincloud"></div>
+								<div class="icon icon-windyrain"></div>
+							<% elsif text == "Partly Cloudy/Wind" %>
+								<div class="icon icon-basecloud"></div>
+								<div class="icon icon-windy"></div>
+								<div class="icon icon-sunny"></div>
+							<% else %>
+								<div class="icon icon-basecloud"></div>
+								<div class="icon icon-windy"></div>
+							<% end %>
+						
 					<% end %>
 
 				</div>
