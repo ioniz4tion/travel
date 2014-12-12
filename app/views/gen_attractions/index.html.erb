@@ -10,7 +10,7 @@
 
   <ul>
 
-    <% @city.gen_attractions.each do |attraction| %>
+    <% @city.gen_attractions.order(:name).each do |attraction| %>
 
       <li class="item">
         <div>
@@ -92,14 +92,20 @@
             </tr>
 
           </table>
+          
           <% if user_signed_in? %>
             <%= link_to 'Delete', 'gen_attractions/' + attraction.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
-          <button id="show<%= attraction.iframe_id %>">Show/hide map<span class="caret"></span></button>
+          <button id="show<%= attraction.id %>">Show/hide map<span class="caret"></span></button>
 
         </div>
 
-        <div class="map" id="<%= attraction.iframe_id %>">
+        <div class="map" id="<%= attraction.id %>">
+
+          <% if user_signed_in? %>
+          IFrame Url:
+            <%= best_in_place_if user_signed_in?, attraction, :iframe_url, type: :textarea, path: 'gen_attractions/' + attraction.id.to_s %>
+          <% end %>
 
           <iframe src="<%= attraction.iframe_url %>"></iframe>
 
