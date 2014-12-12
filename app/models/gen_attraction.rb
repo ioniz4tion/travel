@@ -1,23 +1,13 @@
 class GenAttraction < ActiveRecord::Base
 	belongs_to :gen_package
-	has_many :gen_attraction_images
-
-	# has_attached_file :image, :styles => { :large => "720x700>", :thumb => "330x210>" }, :default_url => "/images/:style/missing.png"
+	has_many :gen_attraction_images	
   
-	has_attached_file :image,
-	                  :storage => :s3,
-	                  :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
+	has_attached_file :image,	                  
 	                  :default_url => "720x700.gif"
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   
-has_attached_file :image_thumb,
-	                  :storage => :s3,
-	                  :s3_credentials => Proc.new{|a| a.instance.s3_credentials },
+	has_attached_file :image_thumb,	                  
 	                  :default_url => "330x210.gif"
 	validates_attachment_content_type :image_thumb, :content_type => /\Aimage\/.*\Z/
-
-  def s3_credentials
-    {:bucket => 'bpa-travel', :access_key_id => 'AKIAIQA6SQA5VEAF733Q', :secret_access_key => '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' }
-  end
 
 end
