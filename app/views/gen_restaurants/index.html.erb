@@ -10,7 +10,7 @@
 
   <ul>
 
-    <% @city.gen_restaurants.each do |restaurant| %>
+    <% @city.gen_restaurants.order(:name).each do |restaurant| %>
 
       <li class="item">
         <div>
@@ -96,11 +96,16 @@
             <%= link_to 'Delete', 'gen_restaurants/' + restaurant.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
 
-          <button id="show<%= restaurant.iframe_id %>">Show/hide map<span class="caret"></span></button>
+          <button id="show<%= restaurant.id %>">Show/hide map<span class="caret"></span></button>
 
         </div>
 
-        <div class="map" id="<%= restaurant.iframe_id %>">
+        <div class="map" id="<%= restaurant.id %>">
+
+          <% if user_signed_in? %>
+          IFrame Url:
+            <%= best_in_place_if user_signed_in?, restaurant, :iframe_url, type: :textarea, path: 'gen_restaurants/' + restaurant.id.to_s %>
+          <% end %>
 
           <iframe src="<%= restaurant.iframe_url %>"></iframe>
 
