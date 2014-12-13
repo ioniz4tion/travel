@@ -25,9 +25,45 @@
 							
 							<div class="weather-graphic">
 								<span>Now:</span>
-								<p class="temp-now">32&deg; F</p>
+								<p class="temp-now"><%= city_weather.condition.temp %>&deg; F</p>
 								<span><%= city_weather.forecasts[0].text %></span>
-								<div class="icon icon-cloud"></div>
+								<!-- <div class="icon icon-cloud"></div> -->
+
+								<% text = city_weather.forecasts[0].text
+
+								case text
+
+									when "Cloudy", "Mostly Cloudy" %>
+										<div class="icon icon-cloud"></div>
+
+									<% when "PM Showers", "Showers" %>
+										<div class="icon icon-basecloud"></div>
+										<div class="icon icon-showers"></div>
+
+									<% when "Partly Cloudy" %>
+										<div class="icon icon-basecloud"></div>
+										<div class="icon icon-sunny"></div>
+
+									<% when "Partly Cloudy/Wind" %>
+										<div class="icon icon-basecloud"></div>
+										<div class="icon icon-windy"></div>
+										<div class="icon icon-sunny"></div>
+
+									<% when "Rain/Wind Late" %>
+										<div class="icon icon-windyraincloud"></div>
+										<div class="icon icon-windyrain"></div>
+
+									<% when "Rain/Wind" %>
+										<div class="icon icon-windyraincloud"></div>
+										<div class="icon icon-windyrain"></div>
+
+									<% when "Clouds Early/Clearing Late" %>
+										<div class="icon icon-2 icon-basecloud"></div>
+										<div class="icon icon-2 icon-sunny"></div>
+										<div class="icon icon-moon"></div>
+									
+								<% end %>
+
 							</div>
 
 						</div>
@@ -57,38 +93,35 @@
 				<p class="temp-now"><%= @weather.condition.temp %>&deg; F</p>
 				<span><%= @weather.forecasts[0].text %></span>
 
-				<%= @weather.condition.code %>
+				<% @weather.forecasts[0].code %>
 
-				<%
-				code = @weather.condition.code
-				text = @weather.forecasts[0].text
+				<% text = @weather.forecasts[0].text
 
-				case code
+				case text
 
-					when 26, 28
-						if text == "PM Showers" %>
-							<div class="icon icon-basecloud"></div>
-							<div class="icon icon-showers"></div>
-						<% else %>
-							<div class="icon icon-cloud"></div>
-						<% end %>
+					when "Cloudy", "Mostly Cloudy" %>
+						<div class="icon icon-cloud"></div>
 
-					<% when 11, 12, 40 %>
+					<% when "PM Showers", "Showers" %>
 						<div class="icon icon-basecloud"></div>
 						<div class="icon icon-showers"></div>
 
-					<% when 29, 33
-						if text == "Rain/Wind" %>
-							<div class="icon icon-windyraincloud"></div>
-							<div class="icon icon-windyrain"></div>
-						<% elsif text == "Partly Cloudy/Wind" %>
-							<div class="icon icon-basecloud"></div>
-							<div class="icon icon-windy"></div>
-							<div class="icon icon-sunny"></div>
-						<% else %>
-							<div class="icon icon-basecloud"></div>
-							<div class="icon icon-windy"></div>
-						<% end %>
+					<% when "Partly Cloudy" %>
+						<div class="icon icon-basecloud"></div>
+						<div class="icon icon-sunny"></div>
+
+					<% when "Partly Cloudy/Wind" %>
+						<div class="icon icon-basecloud"></div>
+						<div class="icon icon-windy"></div>
+						<div class="icon icon-sunny"></div>
+
+					<% when "Rain/Wind Late" %>
+						<div class="icon icon-windyraincloud"></div>
+						<div class="icon icon-windyrain"></div>
+
+					<% when "Rain/Wind" %>
+						<div class="icon icon-windyraincloud"></div>
+						<div class="icon icon-windyrain"></div>
 					
 				<% end %>
 
