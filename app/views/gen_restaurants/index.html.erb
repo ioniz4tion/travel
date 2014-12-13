@@ -55,7 +55,10 @@
               <td>
                 <span class="glyphicon glyphicon-globe"></span>
                 <div>
-                  <a href="<%= restaurant.website_url %>" target="_blank"><%= bip(restaurant, :website) %></a>
+                  <a href="<%= restaurant.website %>" target="_blank"><%= login_text("Short URL: ") %><%= bip(restaurant, :short_url) %></a>
+                  <% if user_signed_in? %>
+                    Actual URL: <%= bip(restaurant, :website) %>
+                  <% end %>
                 </div>
               </td>
 

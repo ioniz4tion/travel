@@ -81,6 +81,6 @@ class GenHotelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gen_hotel_params
-      params.require(:gen_hotel).permit(:iframe_url, :image, :image_thumb, :name, :description, :pricing, :address, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
+      params.require(:gen_hotel).permit(:short_url, :iframe_url, :image, :image_thumb, :name, :description, :pricing, :address, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
     end
 end
