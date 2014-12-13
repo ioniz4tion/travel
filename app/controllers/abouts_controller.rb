@@ -18,17 +18,32 @@ class AboutsController < ApplicationController
   end
 
   def edit
-  end
+  end  
 
   def create
-    @about = About.new(about_params)
-    @about.save
-    respond_with(@about)
+    @about = About.new(name: "Default")
+
+    respond_to do |format|
+      if @about.save
+        format.html { redirect_to :abouts, notice: 'Person was successfully created.' }
+        format.json { render :show, status: :created, location: abouts_path }
+      else
+        format.html { render :new }
+        format.json { render json: abouts_path.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
-    @about.update(about_params)
-    respond_with(@about)
+    respond_to do |format|
+      if @about.update(about_params)
+        format.html { redirect_to :abouts, notice: 'Person was successfully updated.' }
+        format.json { respond_with_bip(@about) }
+      else
+        format.html { render :edit }
+        format.json { render json: @about.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

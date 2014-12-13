@@ -18,34 +18,22 @@
           <div class="price-img">
             <%= image_tag(restaurant.image_thumb.url) %>
             <div></div>
-            <p><%= best_in_place_if user_signed_in?, restaurant, :pricing, path: 'gen_restaurants/' + restaurant.id.to_s %></p>
+            <p><%= bip(restaurant, :pricing) %></p>
           </div>
 
           <div class="description">
-            <h2><%= best_in_place_if user_signed_in?, restaurant, :name, path: 'gen_restaurants/' + restaurant.id.to_s %></h2>
-            <p><%= best_in_place_if user_signed_in?, restaurant, :description, type: :textarea, path: 'gen_restaurants/' + restaurant.id.to_s %></p>
+            <h2><%= bip(restaurant, :name) %></h2>
+            <p><%= bip(restaurant, :description, :textarea) %></p>
             <div class="rating">
               <span class="glyphicon glyphicon-star-empty"></span>
               <div>
-                <p><%= best_in_place_if user_signed_in?, restaurant, :rating, path: 'gen_restaurants/' + restaurant.id.to_s %><span>/</span>5</p>                
+                <p><%= bip(restaurant, :rating) %><span>/</span>5</p>                
               </div>
-              <% if user_signed_in? %>
-              
-              <%= form_for restaurant, :url => 'gen_restaurants/' + restaurant.id.to_s, :html => { :multipart => true } do |form| %>
-              Thumbnail Image
-              <%= form.file_field :image_thumb %>
-              <%= form.submit %>
-            <% end %>
-            <% end %>
 
-            <% if user_signed_in? %>
-            
-              <%= form_for restaurant, :url => 'gen_restaurants/' + restaurant.id.to_s, :html => { :multipart => true } do |form| %>
-              Slideshow Image
-              <%= form.file_field :image %>
-              <%= form.submit %>
-            <% end %>
-            <% end %>
+              <%= cms_upload(restaurant, :image_thumb, "Thumbnail Image") %>
+
+              <%= cms_upload(restaurant, :image, "Slideshow Image") %>
+
             </div>
           </div>
 
@@ -60,14 +48,14 @@
               <td>
                 <span class="glyphicon glyphicon-map-marker"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, restaurant, :address, path: 'gen_restaurants/' + restaurant.id.to_s %></p>
+                  <p><%= bip(restaurant, :address) %></p>
                 </div>
               </td>
 
               <td>
                 <span class="glyphicon glyphicon-globe"></span>
                 <div>
-                  <a href="<%= restaurant.website_url %>" target="_blank"><%= best_in_place_if user_signed_in?, restaurant, :website, path: 'gen_restaurants/' + restaurant.id.to_s %></a>
+                  <a href="<%= restaurant.website_url %>" target="_blank"><%= bip(restaurant, :website) %></a>
                 </div>
               </td>
 
@@ -78,23 +66,22 @@
               <td>
                 <span class="glyphicon glyphicon-time"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, restaurant, :hours, path: 'gen_restaurants/' + restaurant.id.to_s %></p>
+                  <p><%= bip(restaurant, :hours) %></p>
                 </div>
               </td>
 
               <td>
                 <span class="glyphicon glyphicon-earphone"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, restaurant, :phone, path: 'gen_restaurants/' + restaurant.id.to_s %></p>
+                  <p><%= bip(restaurant, :phone) %></p>
                 </div>
               </td>
 
             </tr>
 
           </table>
-          <% if user_signed_in? %>
-            <%= link_to 'Delete', 'gen_restaurants/' + restaurant.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+
+          <%= cms_delete(restaurant) %>
 
           <button id="show<%= restaurant.id %>">Show/hide map<span class="caret"></span></button>
 
@@ -104,7 +91,7 @@
 
           <% if user_signed_in? %>
           IFrame Url:
-            <%= best_in_place_if user_signed_in?, restaurant, :iframe_url, type: :textarea, path: 'gen_restaurants/' + restaurant.id.to_s %>
+            <%= bip(restaurant, :iframe_url, :textarea) %>
           <% end %>
 
           <iframe src="<%= restaurant.iframe_url %>"></iframe>
@@ -114,8 +101,7 @@
       </li>
 
     <% end %>
-    <% if user_signed_in? %>
-      <%= link_to 'New Restaurant', gen_restaurants_path, method: :create %>
-    <% end %>
+
+    <%= cms_add(gen_restaurants_path, "New Restaurant") %>
 
 </div>

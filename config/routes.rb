@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :bpas
+
+  resources :copyrights
+
   resources :abouts
 
   devise_for :users
@@ -11,7 +15,11 @@ Rails.application.routes.draw do
 
   get '/calendar' => 'calendar#calendar'
 
-  get '/about' => 'abouts#index'
+  resources :about, controller: 'abouts'
+
+  resources :copyrights
+
+  resources :bpas
 
   get '/planner' => 'planner#planner'
   match '/planner' => 'planner#suggest', via: :post
