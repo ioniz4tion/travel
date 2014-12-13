@@ -13,7 +13,7 @@ class GenPackagesController < ApplicationController
 
     begin
       @client = YahooWeather::Client.new
-      @weather = @client.fetch(@city.code)      
+      @weather = @client.fetch(@city.code)
     rescue SocketError => e
     end
   end
@@ -53,8 +53,8 @@ class GenPackagesController < ApplicationController
   def update
     respond_to do |format|
       if @gen_package.update(gen_package_params)
-        format.html { redirect_to @gen_package.name, notice: 'Gen package was successfully updated.' }
-        format.json { render :show, status: :ok, location: @gen_package.name }
+        format.html { redirect_to :gen_packages, notice: 'Gen hotel was successfully updated.' }
+        format.json { respond_with_bip(@gen_package) }
       else
         format.html { render :edit }
         format.json { render json: @gen_package.errors, status: :unprocessable_entity }

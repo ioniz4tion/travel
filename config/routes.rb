@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   resources :bpas
 
+  resources :gen_packages
+
   get '/planner' => 'planner#planner'
   match '/planner' => 'planner#suggest', via: :post
 
