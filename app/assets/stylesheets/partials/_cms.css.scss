@@ -1,0 +1,15 @@
+@import 'imports.css.scss';
+
+input,
+textarea {
+	color: #000;
+	background: #fff;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	outline: none;
+
+	&:focus {
+		border: 1px solid $yellow;
+	}
+}
