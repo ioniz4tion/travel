@@ -53,8 +53,8 @@ class GenPackagesController < ApplicationController
   def update
     respond_to do |format|
       if @gen_package.update(gen_package_params)
-        format.html { redirect_to @gen_package, notice: 'Gen package was successfully updated.' }
-        format.json { render :show, status: :ok, location: @gen_package }
+        format.html { redirect_to @gen_package.name, notice: 'Gen package was successfully updated.' }
+        format.json { render :show, status: :ok, location: @gen_package.name }
       else
         format.html { render :edit }
         format.json { render json: @gen_package.errors, status: :unprocessable_entity }

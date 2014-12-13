@@ -10,7 +10,7 @@
 		<span class="nav-heading">General Packages</span>
 
 		<div class="nav-list general">
-			<% @gen_package.each do |package| %>
+			<% @gen_package.order(:name).each do |package| %>
 				<div>
 					<%= link_to("/#{package.name}") do %>
 						<span><%= package.name %></span>
