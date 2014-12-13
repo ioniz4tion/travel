@@ -38,4 +38,43 @@ module ApplicationHelper
 		end
 	end
 
+	def pick_weather(yahoo_text)
+		
+		case yahoo_text
+
+			when "Cloudy", "Mostly Cloudy"
+				'<div class="icon icon-cloud"></div>'.html_safe
+
+			when "Sunny", "Mostly Clear", "Mostly Sunny"
+				'<div class="icon icon-sun"></div>'.html_safe
+
+			when "PM Showers", "Showers"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-showers"></div>'.html_safe
+
+			when "Partly Cloudy"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-sunny"></div>'.html_safe
+
+			when "Partly Cloudy/Wind"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-windy"></div>
+				<div class="icon icon-sunny"></div>'.html_safe
+
+			when "Rain/Wind Late"
+				'<div class="icon icon-windyraincloud"></div>
+				<div class="icon icon-windyrain"></div>'.html_safe
+
+			when "Rain/Wind"
+				'<div class="icon icon-windyraincloud"></div>
+				<div class="icon icon-windyrain"></div>'.html_safe
+
+			when "Clouds Early/Clearing Late"
+				'<div class="icon icon-2 icon-basecloud"></div>
+				<div class="icon icon-2 icon-sunny"></div>
+				<div class="icon icon-moon"></div>'.html_safe
+			
+		end		
+	end
+
 end
