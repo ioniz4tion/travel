@@ -18,34 +18,22 @@
           <div class="price-img">
             <%= image_tag(hotel.image_thumb.url) %>
             <div></div>
-            <p><%= best_in_place_if user_signed_in?, hotel, :pricing, path: 'gen_hotels/' + hotel.id.to_s %></p>
+            <p><%= bip(hotel, :pricing) %></p>
           </div>
 
           <div class="description">
-            <h2><%= best_in_place_if user_signed_in?, hotel, :name, path: 'gen_hotels/' + hotel.id.to_s %></h2>
-            <p><%= best_in_place_if user_signed_in?, hotel, :description, type: :textarea, path: 'gen_hotels/' + hotel.id.to_s %></p>
+            <h2><%= bip(hotel, :name) %></h2>
+            <p><%= bip(hotel, :description, :textarea) %></p>
             <div class="rating">
               <span class="glyphicon glyphicon-star-empty"></span>
               <div>
-                <p><%= best_in_place_if user_signed_in?, hotel, :rating, path: 'gen_hotels/' + hotel.id.to_s %><span>/</span>5</p>
+                <p><%= bip(hotel, :rating) %><span>/</span>5</p>
               </div>
-              <% if user_signed_in? %>
-              
-              <%= form_for hotel, :url => 'gen_hotels/' + hotel.id.to_s, :html => { :multipart => true } do |form| %>
-              Thumbnail Image
-              <%= form.file_field :image_thumb %>
-              <%= form.submit %>
-            <% end %>
-            <% end %>
 
-            <% if user_signed_in? %>
+              <%= cms_upload(hotel, :image_thumb, "Thumbnail Image") %>
 
-              <%= form_for hotel, :url => 'gen_hotels/' + hotel.id.to_s, :html => { :multipart => true } do |form| %>
-              Slideshow Image
-              <%= form.file_field :image %>
-              <%= form.submit %>
-            <% end %>
-            <% end %>
+              <%= cms_upload(hotel, :image, "Slideshow Image") %>
+
             </div>
           </div>
 
@@ -60,14 +48,14 @@
               <td>
                 <span class="glyphicon glyphicon-map-marker"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, hotel, :address, path: 'gen_hotels/' + hotel.id.to_s %></p>
+                  <p><%= bip(hotel, :address) %></p>
                 </div>
               </td>
 
               <td>
                 <span class="glyphicon glyphicon-globe"></span>
                 <div>
-                  <a href="<%= hotel.website_url %>" target="_blank"><%= best_in_place_if user_signed_in?, hotel, :website, path: 'gen_hotels/' + hotel.id.to_s %></a>
+                  <a href="<%= hotel.website_url %>" target="_blank"><%= bip(hotel, :website) %></a>
                 </div>
               </td>
 
@@ -78,23 +66,22 @@
               <td>
                 <span class="glyphicon glyphicon-time"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, hotel, :hours, path: 'gen_hotels/' + hotel.id.to_s %></p>
+                  <p><%= bip(hotel, :hours) %></p>
                 </div>
               </td>
 
               <td>
                 <span class="glyphicon glyphicon-earphone"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, hotel, :phone, path: 'gen_hotels/' + hotel.id.to_s %></p>
+                  <p><%= bip(hotel, :phone) %></p>
                 </div>
               </td>
 
             </tr>
 
           </table>
-          <% if user_signed_in? %>
-            <%= link_to 'Delete', 'gen_hotels/' + hotel.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+
+          <%= cms_delete(hotel) %>
 
           <button id="show<%= hotel.id %>">Show/hide map<span class="caret"></span></button>
 
@@ -104,7 +91,7 @@
 
         <% if user_signed_in? %>
           IFrame Url:
-            <%= best_in_place_if user_signed_in?, hotel, :iframe_url, type: :textarea, path: 'gen_hotels/' + hotel.id.to_s %>
+            <%= bip(hotel, :iframe_url, :textarea) %>
           <% end %>
 
           <iframe src="<%= hotel.iframe_url %>"></iframe>
@@ -114,8 +101,7 @@
       </li>
 
     <% end %>
-    <% if user_signed_in? %>
-      <%= link_to 'New Hotel', gen_hotels_path, method: :create %>
-    <% end %>
+
+    <%= cms_add(gen_hotels_path, "New Hotel") %>
 
 </div>

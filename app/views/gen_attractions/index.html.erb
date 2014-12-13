@@ -18,34 +18,22 @@
           <div class="price-img">
             <%= image_tag(attraction.image_thumb.url) %>
             <div></div>
-            <p><%= best_in_place_if user_signed_in?, attraction, :pricing, path: 'gen_attractions/' + attraction.id.to_s %></p>
+            <p><%= bip(attraction, :pricing) %></p>
           </div>
 
           <div class="description">
-            <h2><%= best_in_place_if user_signed_in?, attraction, :name, path: 'gen_attractions/' + attraction.id.to_s %></h2>
-            <p><%= best_in_place_if user_signed_in?, attraction, :description, type: :textarea, path: 'gen_attractions/' + attraction.id.to_s %></p>
+            <h2><%= bip(attraction, :name) %></h2>
+            <p><%= bip(attraction, :description, :textarea) %></p>
             <div class="rating">
               <span class="glyphicon glyphicon-star-empty"></span>
               <div>
-                <p><%= best_in_place_if user_signed_in?, attraction, :rating, path: 'gen_attractions/' + attraction.id.to_s %><span>/</span>5</p>               
+                <p><%= bip(attraction, :rating) %><span>/</span>5</p>               
               </div>
-              <% if user_signed_in? %>
-              
-               <%= form_for attraction, :url => 'gen_attractions/' + attraction.id.to_s, :html => { :multipart => true } do |form| %>
-               Thumbnail Image
-              <%= form.file_field :image_thumb %>
-              <%= form.submit %>
-            <% end %>
-            <% end %>
 
-            <% if user_signed_in? %>
-           
-               <%= form_for attraction, :url => 'gen_attractions/' + attraction.id.to_s, :html => { :multipart => true } do |form| %>
-                Slideshow Image
-              <%= form.file_field :image %>
-              <%= form.submit %>
-            <% end %>
-            <% end %>
+              <%= cms_upload(attraction, :image_thumb, "Thumbnail Image") %>
+
+              <%= cms_upload(attraction, :image, "Slideshow Image") %>
+
             </div>
           </div>
 
@@ -60,14 +48,14 @@
               <td>
                 <span class="glyphicon glyphicon-map-marker"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, attraction, :location, path: 'gen_attractions/' + attraction.id.to_s %></p>
+                  <p><%= bip(attraction, :location) %></p>
                 </div>
               </td>
 
               <td>
                 <span class="glyphicon glyphicon-globe"></span>
                 <div>
-                  <a href="<%= attraction.website_url %>" target="_blank"><%= best_in_place_if user_signed_in?, attraction, :website, path: 'gen_attractions/' + attraction.id.to_s %></a>
+                  <a href="<%= attraction.website_url %>" target="_blank"><%= bip(attraction, :website) %></a>
                 </div>
               </td>
 
@@ -78,14 +66,14 @@
               <td>
                 <span class="glyphicon glyphicon-time"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, attraction, :hours, path: 'gen_attractions/' + attraction.id.to_s %></p>
+                  <p><%= bip(attraction, :hours) %></p>
                 </div>
               </td>
 
               <td>
                 <span class="glyphicon glyphicon-earphone"></span>
                 <div>
-                  <p><%= best_in_place_if user_signed_in?, attraction, :phone, path: 'gen_attractions/' + attraction.id.to_s %></p>
+                  <p><%= bip(attraction, :phone) %></p>
                 </div>
               </td>
 
@@ -93,9 +81,8 @@
 
           </table>
           
-          <% if user_signed_in? %>
-            <%= link_to 'Delete', 'gen_attractions/' + attraction.id.to_s, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+          <%= cms_delete(attraction) %>
+
           <button id="show<%= attraction.id %>">Show/hide map<span class="caret"></span></button>
 
         </div>
@@ -104,7 +91,7 @@
 
           <% if user_signed_in? %>
           IFrame Url:
-            <%= best_in_place_if user_signed_in?, attraction, :iframe_url, type: :textarea, path: 'gen_attractions/' + attraction.id.to_s %>
+            <%= bip(attraction, :iframe_url, :textarea) %>
           <% end %>
 
           <iframe src="<%= attraction.iframe_url %>"></iframe>
@@ -114,7 +101,7 @@
       </li>
 
     <% end %>
-    <% if user_signed_in? %>
-      <%= link_to 'New Attraction', gen_attractions_path, method: :create %>
-    <% end %>
+    
+    <%= cms_add(gen_attractions_path, "New Attraction") %>
+
 </div>

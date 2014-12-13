@@ -1,0 +1,17 @@
+<%= form_for(@bpa) do |f| %>
+  <% if @bpa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bpa.errors.count, "error") %> prohibited this bpa from being saved:</h2>
+
+      <ul>
+      <% @bpa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

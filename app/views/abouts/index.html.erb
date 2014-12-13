@@ -1,0 +1,58 @@
+<div class="content">
+
+  <h1>About <span>Us</span></h1>
+
+  <ul>
+
+    <% @abouts.each do |about| %>
+
+    <li class="item">
+      <div>
+
+        <div class="about-img">
+          <%= image_tag(about.image.url) %>
+        </div>
+
+        <%= cms_upload(about, :image, "Upload Portrait") %>
+
+        <div class="description about-description">
+          <h2><%= bip(about, :name) %></h2>
+          <p><%= bip(about, :description, :textarea) %></p>
+        </div>
+
+      </div>
+
+      <div>
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span class="glyphicon glyphicon-envelope"></span>
+              <div>
+                <a href="mailto:<%= about.email %>"><%= bip(about, :email) %></a>
+              </div>
+            </td>
+
+            <td>
+              <span class="glyphicon glyphicon-earphone"><%= bip(about, :phone) %></span>
+            </td>
+
+          </tr>
+
+        </table>
+
+      </div>
+
+      <%= cms_delete(about) %>
+
+    </li>
+
+    <% end %>   
+
+  </ul>
+
+  <%= cms_add(abouts_path, "Add Person") %>
+
+</div>

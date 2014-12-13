@@ -1,0 +1,23 @@
+<h1>Listing copyrights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @copyrights.each do |copyright| %>
+      <tr>
+        <td><%= link_to 'Show', copyright %></td>
+        <td><%= link_to 'Edit', edit_copyright_path(copyright) %></td>
+        <td><%= link_to 'Destroy', copyright, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Copyright', new_copyright_path %>
