@@ -1,6 +1,6 @@
 @import 'imports.css.scss';
 
-input,
+input:not([type="file"]),
 textarea {
 	color: #000;
 	background: #fff;
@@ -10,6 +10,19 @@ textarea {
 	outline: none;
 
 	&:focus {
-		border: 1px solid $yellow;
+		border: 1px solid $blue;
+	}
+}
+
+input {
+	&[type="submit"],[type="file"] {
+		font-size: 14px;
+		margin-bottom: 5px;
+		margin-left: 5px;
+	}
+
+	&[value="Log in"] {
+		margin-top: 5px;
+		margin-left: 0;
 	}
 }
