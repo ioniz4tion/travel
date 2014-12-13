@@ -81,6 +81,6 @@ class GenRestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gen_restaurant_params
-      params.require(:gen_restaurant).permit(:iframe_url, :image, :image_thumb, :name, :description, :pricing, :address, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
+      params.require(:gen_restaurant).permit(:short_url, :iframe_url, :image, :image_thumb, :name, :description, :pricing, :address, :link, :image_description, :phone, :website, :hours, :rating, :iframe_id, :button_id, :gen_packages_id)
     end
 end

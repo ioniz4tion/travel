@@ -32,4 +32,10 @@ module ApplicationHelper
     end
 	end
 
+	def login_text(text)
+		if user_signed_in?
+			text
+		end
+	end
+
 end
