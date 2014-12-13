@@ -174,7 +174,7 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	text-align: center;
+	text-align: right;
 
 	.icon {
 		font-size: 150px;
@@ -186,6 +186,10 @@
 		z-index: -1;
 
 		// @include x-center;
+	}
+
+	.icon-2 {
+		right: 200px;
 	}
 }
 
