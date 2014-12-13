@@ -1,4 +1,6 @@
 class PlannerController < ApplicationController
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
+
   def planner
 
   	@questions = Question.all
@@ -8,6 +10,18 @@ class PlannerController < ApplicationController
   		@answers << question.answers
   	end
   	render layout: 'planner_layout'
+  end
+
+  def update   
+    respond_to do |format|
+      if @question.update(question_params)
+        format.html { redirect_to :planner, notice: 'Question was successfully updated.' }
+        format.json { respond_with_bip(@question) }
+      else
+        format.html { render :edit }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def suggest
@@ -60,4 +74,15 @@ class PlannerController < ApplicationController
   	# render text: @packageRating.inspect
   	render layout: 'planner_layout'
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_question      
+      @question = Question.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def question_params
+      params.require(:gen_restaurant).permit(:text)
+    end
 end
