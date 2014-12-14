@@ -1,18 +1,37 @@
-<div style="width:200px;height:250px;border:1px solid #2D6AB4;background-color:#F0F0F0;">
-	<div style="background-color:#2D6AB4;height:18px;text-align:center;width:196px; margin:2px 0px 0px 2px;">
-		<span>Currency Converter</span>
-	</div>
-	<script type="text/javascript">
-		var fm="USD";
-		var ft="EUR";
-		var hb="2D6AB4";
-		var hc="FFFFFF";
-		var bb="F0F0F0";
-		var bo="2D6AB4";
-		var tz="timezone";
-		var wh="200x250";
-		var lg="en";
-	</script>
-	<script type="text/javascript" src="http://www.fxexchangerate.com/converter.php">
-	</script>
+<div class="converter">
+	<span class="title">Currency Converter</span><br/>
+	<span class="prompt">Amount:</span><input type="text" id="amount" name="amount"><br/>
+	<span class="prompt">From:</span>
+	<select id="from" name="from">
+		<option value="USD">US Dollar(USD)</option>
+		<option value="EUR">Euro(EUR)</option>
+		<option value="GBP">British Pound(GBP)</option>
+		<option value="AUD">Australian Dollar(AUD)</option>
+	</select><br/>
+	<span class="prompt">To:</span>
+	<select id="to" name="to">
+		<option value="USD">US Dollar(USD)</option>
+		<option selected="true" value="EUR">Euro(EUR)</option>
+		<option value="GBP">British Pound(GBP)</option>
+		<option value="AUD">Australian Dollar(AUD)</option>
+	</select><br/>
+	<span class="prompt">Result:</span><span id="result"></span>
+
 </div>
+
+<script type="text/javascript">
+	var request = function() {
+		var amount = $("#amount").val();
+		var from = $("#from").val();
+		var to = $("#to").val();
+		$.ajax({url:"/convert", data: {amount: amount, from: from, to: to}, success:function(data){
+			$("#result").text(data);
+		}});
+	}
+
+	$("#amount").keyup(request);
+	$("#from").change(request);
+	$("#to").change(request);
+
+	
+</script>

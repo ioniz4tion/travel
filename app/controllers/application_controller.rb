@@ -38,4 +38,20 @@ class ApplicationController < ActionController::Base
 
   def converter
   end
+
+  def convert
+  	require 'money'
+  	require 'money/bank/google_currency'
+
+  	Money::Bank::GoogleCurrency.ttl_in_seconds = 86400
+  	Money.default_bank = Money::Bank::GoogleCurrency.new
+
+  	money = params[:amount].to_money(params[:from])
+  	result = money.exchange_to(params[:to])
+  	result = "#{result} #{params[:to]}"
+
+  	respond_to do |format|
+  		format.html { render html: result, status: :ok }
+  	end
+  end
 end
