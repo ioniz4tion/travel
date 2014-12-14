@@ -29,8 +29,8 @@
 								<span><%= city_weather.forecasts[0].text %></span>
 								<!-- <div class="icon icon-cloud"></div> -->
 
-								<% text = city_weather.forecasts[0].text
-								pick_weather(text) %>
+								<% text = city_weather.forecasts[0].text %>
+								<%= pick_weather(text) %>
 
 							</div>
 
@@ -63,8 +63,8 @@
 
 				<% @weather.forecasts[0].code %>
 
-				<% text = @weather.forecasts[0].text
-				pick_weather(text) %>
+				<% text = @weather.forecasts[0].text %>
+				<%= pick_weather(text) %>
 
 			</div>
 
