@@ -65,6 +65,11 @@ module ApplicationHelper
 				'<div class="icon icon-basecloud"></div>
 				<div class="icon icon-showers"></div>'.html_safe
 
+			when "Showers Late"
+					'<div class="icon icon-basecloud"></div>
+					<div class="icon icon-showers"></div>
+					<div class="icon icon-night"></div>'.html_safe
+
 			when "Partly Cloudy"
 				'<div class="icon icon-basecloud"></div>
 				<div class="icon icon-sunny"></div>'.html_safe

@@ -10,6 +10,22 @@ footer {
 		// border: 1px solid $light-grey;
 	}
 
+	.share-this {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-content: space-around;
+
+		height: 105px;
+		background: $hover-color;
+		float: left;
+
+		img {
+			margin: auto;
+		}
+	}
+
 	.social {
 		display: flex;
 		flex-direction: row;
@@ -18,6 +34,8 @@ footer {
 		align-content: space-around;
 
 		margin-bottom: 20px;
+		float: right;
+		width: calc(100% - 64px);
 
 		div {
 			width: 20%;
@@ -58,9 +76,10 @@ footer {
 .copy {
 	margin: 0 auto;
 	text-align: center;
+	clear: both;
 
 	span {
-		// color: $hover-color;
+		color: $span-color;
 		margin: 0 5px;
 
 		&.copyline {

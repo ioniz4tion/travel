@@ -107,7 +107,7 @@
 	}
 
 	span {
-		color: #898989;
+		color: $span-color;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
 
@@ -179,7 +179,7 @@
 	.icon {
 		font-size: 150px;
 		font-weight: lighter;
-		color: #525252;
+		color: $icon-color;
 		position: absolute;
 		bottom: -10px;
 		right: 70px;
@@ -197,5 +197,10 @@
 	background: $light-grey;
 	
 	@include backface-visibility(hidden);
+	
+	span {
+		color: $span-color;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+	}
 }
-//test

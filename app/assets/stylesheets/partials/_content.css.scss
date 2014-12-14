@@ -3,7 +3,7 @@
 .content {
 	width: 100%;
 	padding: 50px;
-	background: #676767;
+	background: $very-light-grey;
 	color: $light-grey;
 
 	h1 {
@@ -65,7 +65,8 @@
 	}
 
 	.rating {
-		.glyphicon {
+		.glyphicon,
+		.eleganticon {
 			font-size: 28px;
 			color: $yellow;
 			margin-right: 10px;
@@ -94,7 +95,8 @@
 			vertical-align: middle;
 		}
 
-		.glyphicon {
+		.glyphicon,
+		.eleganticon {
 			// float: left;
 			font-size: 24px;
 			margin-right: 10px;
@@ -114,7 +116,7 @@
 		}
 
 		a {
-			color: $light-grey;
+			color: $link-color;
 
 			@include transition(all 0.3s);
 
