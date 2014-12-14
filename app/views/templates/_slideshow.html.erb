@@ -51,7 +51,7 @@
 	  	</div>
 	  </li> -->
 
-		<% @slideshow.each do |slide| %>
+		<% @slideshow.order(:name).each do |slide| %>
 	  	<li>
 	  		<div>
 	  			<!-- <a href="">Learn More</a> -->
