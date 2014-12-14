@@ -168,32 +168,33 @@
 		top: 110px;
 		right: 0;
 	}
-}
 
-.weather-graphic {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	text-align: right;
-
-	.icon {
-		font-size: 150px;
-		font-weight: lighter;
-		color: $icon-color;
+	.weather-graphic {
 		position: absolute;
-		bottom: -10px;
-		right: 70px;
-		z-index: -1;
+		bottom: 0;
+		right: 0;
+		text-align: right;
 
-		// @include x-center;
-	}
+		.icon {
+			font-size: 150px;
+			font-weight: lighter;
+			color: $icon-color;
+			position: absolute;
+			bottom: -10px;
+			right: 70px;
+			z-index: -1;
 
-	.icon-2 {
-		right: 200px;
+			// @include x-center;
+		}
+
+		.icon-2 {
+			right: 200px;
+		}
 	}
 }
 
 .weather-more {
+	padding: 10px;
 	background: $light-grey;
 	
 	@include backface-visibility(hidden);
@@ -202,5 +203,125 @@
 		color: $span-color;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
+
+		&.temp-high {
+			font-size: 40px;
+			color: #cd2020;
+		}
+
+		&.temp-low {
+			font-size: 20px;
+			color: $blue;
+		}
+
+		&.slash {
+			margin: 0 5px;
+			font-size: 30px;
+		}
+	}
+
+	.weather-city {
+		text-transform: uppercase;
+		color: $yellow;
+		font-size: 35px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	> div:not(.weather-back-slide),
+	li > div {
+		width: calc(100% - 20px);
+		height: 564px;
+		position: absolute;
+	}
+
+	> div:not(.weather-back-slide) {
+		top: 126px;
+	}
+
+	li > div {
+		top: 100px;
+	}
+
+	.forecast {
+		width: 100%;
+		height: calc(20% - 20px);
+		// padding: 10px;
+		position: relative;
+		// border-bottom: 1px solid $light-grey;
+	}
+
+	.hi-lo {
+		position: absolute;
+		top: 20px;
+		right: 10px;
+		z-index: 21;
+
+		// @include transform(translateY(-30%));
+	}
+
+	.weather-graphic {
+		position: absolute;
+		// bottom: 0;
+		left: 0;
+		width: 100%;
+		height: calc(100% - 18px);
+		text-align: right;
+
+		div {
+			position: relative;
+			height: 100%;
+		}
+
+		.icon {
+			font-size: 90px;
+			font-weight: lighter;
+			color: $icon-color;
+			position: absolute;
+			bottom: 10px;
+			// bottom: -10px;
+			// right: 70px;
+			z-index: -1;
+
+			// @include x-center;
+		}
+
+		.icon-2 {
+			left: 90px;
+		}
+
+		span {
+			position: absolute;
+			left: 100px;
+			bottom: -2px;
+			text-align: left;
+		}
+	}
+
+	hr {
+		width: 90%;
+		height: 1px;
+		margin: 10px auto;
+		border: none;
+		outline: none;
+
+		@include hr-fade($hover-color, $light-grey, 25%, 75%);
+	}
+
+	.weather-back-slide {
+		z-index: -1;
+
+		.bx-wrapper,
+		.bx-viewport {
+			height: 662px !important;
+
+			li {
+				height: 662px;
+			}
+		}
+
+		.bx-controls {
+			display: none;
+		}
 	}
 }

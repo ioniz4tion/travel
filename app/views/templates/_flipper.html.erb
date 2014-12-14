@@ -6,10 +6,248 @@
 		<%= render :partial => 'templates/weather' %>
 
 		<div class="back weather-more">
-		
+
 			<button id="flipperClose"><span class="glyphicon glyphicon-remove"></span></button>
 
 			<span>5-Day Forecast</span>
+
+			<% if @weather.is_a? Array %>
+
+				<div class="weather-back-slide">
+					<ul class="weather-back-bxslider">
+
+						<% @weather.each do |city_weather| %>
+
+							<li>
+
+								<p class="weather-city"><%= city_weather.doc["location"]["city"] %></p>
+
+								<div>
+
+									<div class="forecast">
+										<span><%= city_weather.forecasts[0].day %>, <%= city_weather.forecasts[0].date %></span>
+
+										<div class="hi-lo">
+											<span class="temp-high"><%= city_weather.forecasts[0].high %>&deg; F</span>
+											<span class="slash">/</span>
+											<span class="temp-low"><%= city_weather.forecasts[0].low %>&deg; F</span>
+										</div>
+
+										<div class="weather-graphic">
+											<div>
+												<% text = city_weather.forecasts[0].text %>
+												<%= pick_weather(text) %>
+												<span><%= city_weather.forecasts[0].text %></span>
+											</div>
+										</div>
+
+									</div>
+
+									<hr>
+
+									<div class="forecast">
+										<span><%= city_weather.forecasts[1].day %>, <%= city_weather.forecasts[1].date %></span>
+
+										<div class="hi-lo">
+											<span class="temp-high"><%= city_weather.forecasts[1].high %>&deg; F</span>
+											<span class="slash">/</span>
+											<span class="temp-low"><%= city_weather.forecasts[1].low %>&deg; F</span>
+										</div>
+
+										<div class="weather-graphic">
+											<div>
+												<% text = city_weather.forecasts[1].text %>
+												<%= pick_weather(text) %>
+												<span><%= city_weather.forecasts[1].text %></span>
+											</div>
+										</div>
+
+									</div>
+
+									<hr>
+
+									<div class="forecast">
+										<span><%= city_weather.forecasts[2].day %>, <%= city_weather.forecasts[2].date %></span>
+
+										<div class="hi-lo">
+											<span class="temp-high"><%= city_weather.forecasts[2].high %>&deg; F</span>
+											<span class="slash">/</span>
+											<span class="temp-low"><%= city_weather.forecasts[2].low %>&deg; F</span>
+										</div>
+
+										<div class="weather-graphic">
+											<div>
+												<% text = city_weather.forecasts[2].text %>
+												<%= pick_weather(text) %>
+												<span><%= city_weather.forecasts[2].text %></span>
+											</div>
+										</div>
+
+									</div>
+
+									<hr>
+
+									<div class="forecast">
+										<span><%= city_weather.forecasts[3].day %>, <%= city_weather.forecasts[3].date %></span>
+
+										<div class="hi-lo">
+											<span class="temp-high"><%= city_weather.forecasts[3].high %>&deg; F</span>
+											<span class="slash">/</span>
+											<span class="temp-low"><%= city_weather.forecasts[3].low %>&deg; F</span>
+										</div>
+
+										<div class="weather-graphic">
+											<div>
+												<% text = city_weather.forecasts[3].text %>
+												<%= pick_weather(text) %>
+												<span><%= city_weather.forecasts[3].text %></span>
+											</div>
+										</div>
+
+									</div>
+
+									<hr>
+
+									<div class="forecast">
+										<span><%= city_weather.forecasts[4].day %>, <%= city_weather.forecasts[4].date %></span>
+
+										<div class="hi-lo">
+											<span class="temp-high"><%= city_weather.forecasts[4].high %>&deg; F</span>
+											<span class="slash">/</span>
+											<span class="temp-low"><%= city_weather.forecasts[4].low %>&deg; F</span>
+										</div>
+
+										<div class="weather-graphic">
+											<div>
+												<% text = city_weather.forecasts[4].text %>
+												<%= pick_weather(text) %>
+												<span><%= city_weather.forecasts[4].text %></span>
+											</div>
+										</div>
+
+									</div>
+
+								</div>
+
+							</li>
+
+						<% end %>
+
+					</ul>
+				</div>
+
+			<% else %>
+
+				<p class="weather-city"><%= @weather.doc["location"]["city"] %></p>
+
+				<div>
+
+					<div class="forecast">
+						<span><%= @weather.forecasts[0].day %>, <%= @weather.forecasts[0].date %></span>
+
+						<div class="hi-lo">
+							<span class="temp-high"><%= @weather.forecasts[0].high %>&deg; F</span>
+							<span class="slash">/</span>
+							<span class="temp-low"><%= @weather.forecasts[0].low %>&deg; F</span>
+						</div>
+
+						<div class="weather-graphic">
+							<div>
+								<% text = @weather.forecasts[0].text %>
+								<%= pick_weather(text) %>
+								<span><%= @weather.forecasts[0].text %></span>
+							</div>
+						</div>
+
+					</div>
+
+					<hr>
+
+					<div class="forecast">
+						<span><%= @weather.forecasts[1].day %>, <%= @weather.forecasts[1].date %></span>
+
+						<div class="hi-lo">
+							<span class="temp-high"><%= @weather.forecasts[1].high %>&deg; F</span>
+							<span class="slash">/</span>
+							<span class="temp-low"><%= @weather.forecasts[1].low %>&deg; F</span>
+						</div>
+
+						<div class="weather-graphic">
+							<div>
+								<% text = @weather.forecasts[1].text %>
+								<%= pick_weather(text) %>
+								<span><%= @weather.forecasts[1].text %></span>
+							</div>
+						</div>
+
+					</div>
+
+					<hr>
+
+					<div class="forecast">
+						<span><%= @weather.forecasts[2].day %>, <%= @weather.forecasts[2].date %></span>
+
+						<div class="hi-lo">
+							<span class="temp-high"><%= @weather.forecasts[2].high %>&deg; F</span>
+							<span class="slash">/</span>
+							<span class="temp-low"><%= @weather.forecasts[2].low %>&deg; F</span>
+						</div>
+
+						<div class="weather-graphic">
+							<div>
+								<% text = @weather.forecasts[2].text %>
+								<%= pick_weather(text) %>
+								<span><%= @weather.forecasts[2].text %></span>
+							</div>
+						</div>
+
+					</div>
+
+					<hr>
+
+					<div class="forecast">
+						<span><%= @weather.forecasts[3].day %>, <%= @weather.forecasts[3].date %></span>
+
+						<div class="hi-lo">
+							<span class="temp-high"><%= @weather.forecasts[3].high %>&deg; F</span>
+							<span class="slash">/</span>
+							<span class="temp-low"><%= @weather.forecasts[3].low %>&deg; F</span>
+						</div>
+
+						<div class="weather-graphic">
+							<div>
+								<% text = @weather.forecasts[3].text %>
+								<%= pick_weather(text) %>
+								<span><%= @weather.forecasts[3].text %></span>
+							</div>
+						</div>
+
+					</div>
+
+					<hr>
+
+					<div class="forecast">
+						<span><%= @weather.forecasts[4].day %>, <%= @weather.forecasts[4].date %></span>
+
+						<div class="hi-lo">
+							<span class="temp-high"><%= @weather.forecasts[4].high %>&deg; F</span>
+							<span class="slash">/</span>
+							<span class="temp-low"><%= @weather.forecasts[4].low %>&deg; F</span>
+						</div>
+
+						<div class="weather-graphic">
+							<div>
+								<% text = @weather.forecasts[4].text %>
+								<%= pick_weather(text) %>
+								<span><%= @weather.forecasts[4].text %></span>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			<% end %>
 
 		</div>
 

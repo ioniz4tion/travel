@@ -36,6 +36,14 @@
 	background: linear-gradient(to $direction, $color1, $color2);
 }
 
+@mixin hr-fade($color1, $color2, $stop1, $stop2) {
+	background: -ms-linear-gradient(right, $color1, $color2 $stop1, $color2 $stop2, $color1);
+	background: -moz-linear-gradient(right, $color1, $color2 $stop1, $color2 $stop2, $color1);
+	background: -webkit-linear-gradient(left, $color1, $color2 $stop1, $color2 $stop2, $color1);
+	background: -o-linear-gradient(right, $color1, $color2 $stop1, $color2 $stop2, $color1);
+	background: linear-gradient(to right, $color1, $color2 $stop1, $color2 $stop2, $color1);
+}
+
 @mixin xy-center {
 	position: absolute;
 	top: 50%;

@@ -61,7 +61,7 @@ module ApplicationHelper
 			when "Sunny", "Mostly Clear", "Mostly Sunny"
 				'<div class="icon icon-sun"></div>'.html_safe
 
-			when "PM Showers", "Showers"
+			when "PM Showers", "Showers", "AM Showers"
 				'<div class="icon icon-basecloud"></div>
 				<div class="icon icon-showers"></div>'.html_safe
 
@@ -83,14 +83,25 @@ module ApplicationHelper
 				'<div class="icon icon-windyraincloud"></div>
 				<div class="icon icon-windyrain"></div>'.html_safe
 
-			when "Rain/Wind"
+			when "Rain/Wind", "PM Showers/Wind"
 				'<div class="icon icon-windyraincloud"></div>
 				<div class="icon icon-windyrain"></div>'.html_safe
 
 			when "Clouds Early/Clearing Late"
-				'<div class="icon icon-2 icon-basecloud"></div>
-				<div class="icon icon-2 icon-sunny"></div>
+				'<div class="icon icon-2 icon-cloud"></div>
 				<div class="icon icon-moon"></div>'.html_safe
+
+			when "Scattered Thunderstorms"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-thunder"></div>'.html_safe
+
+			when "AM Clouds/PM Sun"
+				'<div class="icon icon-cloud"></div>
+				<div class="icon icon-2 icon-sun"></div>'.html_safe
+
+			when "Rain"
+				'<div class="icon icon-basecloud"></div>
+				<div class="icon icon-rainy"></div>'.html_safe
 			
 		end		
 	end

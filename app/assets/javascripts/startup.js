@@ -9,9 +9,10 @@ $(document).ready(function() {
   function doThis(ele, old, newi){
     slider.goToSlide(newi);
     slider1.goToSlide(newi);
+    slider2.goToSlide(newi);
   };
 
-  if ($('.weather-bxslider').length) {
+  if ($('.weather-bxslider').length || $('.weather-back-bxslider').length) {
 
     var slider = $('.bxslider').bxSlider({
       onSlideNext: doThis,
@@ -27,11 +28,26 @@ $(document).ready(function() {
       pager: false,
       controls: false,
       infiniteloop: true,
+      auto: false,
       onSlideNext: doThis,
       onSlidePrev: doThis,
       onSlideBefore: doThis,
       onSlideAfter: doThis
     });
+
+    var slider2 = $('.weather-back-bxslider').bxSlider({
+      width: 340,
+      height: 662,
+      touchEnabled: false,
+      pager: false,
+      controls: false,
+      infiniteloop: true,
+      auto: false,
+      onSlideNext: doThis,
+      onSlidePrev: doThis,
+      onSlideBefore: doThis,
+      onSlideAfter: doThis
+    })
 
   } else {
     var slider = $('.bxslider').bxSlider();
