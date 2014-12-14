@@ -4,10 +4,10 @@ class GenHotelsController < ApplicationController
   # GET /gen_hotels
   # GET /gen_hotels.json
   def index
-    @gen_hotels = GenHotel.all
+    @gen_hotels = GenHotel.all.order(:name)
     @city = GenPackage.find_by_name(params[:city])
     @slideshow = []
-    GenPackage.find_by_name(params[:city]).gen_hotels.all.each do |package|
+    GenPackage.find_by_name(params[:city]).gen_hotels.all.order(:name).each do |package|
       @slideshow << {name: package.name, link: package.image.url, description: package.image_description}
     end
 

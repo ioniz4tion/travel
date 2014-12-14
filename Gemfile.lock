@@ -59,6 +59,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
+    google_currency (3.1.0)
+      money (~> 6.0)
     hike (1.2.3)
     httparty (0.13.3)
       json (~> 1.8)
@@ -79,6 +81,10 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.4.3)
+    monetize (1.0.0)
+      money (~> 6.4.0)
+    money (6.4.0)
+      i18n (>= 0.6.4, <= 0.7.0.beta1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     nokogiri (1.6.5)
@@ -170,9 +176,12 @@ DEPENDENCIES
   best_in_place (~> 3.0.0)
   coffee-rails (~> 4.0.0)
   devise (~> 3.4.1)
+  google_currency
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks (~> 1.0.0.rc1)
+  monetize
+  money
   paperclip (~> 4.2)
   pg
   rails (= 4.1.6)

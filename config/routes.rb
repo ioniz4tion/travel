@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/calendar' => 'calendar#calendar'
 
   get '/converter' => 'application#converter'
+  get '/convert' => 'application#convert'
 
   resources :about, controller: 'abouts'
 
