@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def index
   	@slideshow = []
-		GenPackage.all.each do |package|
+		GenPackage.all.order(:name).each do |package|
 			@slideshow << {name: package.name, link: package.image_link, description: package.image_description}
 		end
 		begin
@@ -34,5 +34,8 @@ class ApplicationController < ActionController::Base
 			end
 		rescue SocketError => e
 		end
+  end
+
+  def converter
   end
 end

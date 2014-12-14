@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get '/calendar' => 'calendar#calendar'
 
+  get '/converter' => 'application#converter'
+
   resources :about, controller: 'abouts'
 
   resources :copyrights
@@ -25,6 +27,13 @@ Rails.application.routes.draw do
 
   get '/planner' => 'planner#planner'
   match '/planner' => 'planner#suggest', via: :post
+
+  put '/planner/q/:id' => 'planner#update_question'
+  put '/planner/a/:id' => 'planner#update_answer'
+  put '/planner/av/:id' => 'planner#update_answer_value'
+  post '/planner/add' => 'planner#create'
+  delete '/planner/delete/:id' => 'planner#destroy'
+
 
   get '/:city', to: 'gen_packages#index'
   get '/:city/hotels', to: 'gen_hotels#index'

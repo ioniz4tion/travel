@@ -6,10 +6,23 @@ module ApplicationHelper
 				type: type
 	end
 
-	def cms_delete(model)
+	def bip_url(model, column, url, show = true, type = "input")
+		if show || user_signed_in?
+			best_in_place_if user_signed_in?, model, 
+					column, path: url + '/' + model.id.to_s,
+					type: type
+		end
+	end
+
+	def cms_delete(model, url = false)
 		if user_signed_in?
-      link_to 'Delete', model.class.table_name.to_s + '/' + model.id.to_s, 
-      		method: :delete, data: { confirm: 'Are you sure?' }
+			if url == false
+	      link_to 'Delete', model.class.table_name.to_s + '/' + model.id.to_s, 
+	      		method: :delete, data: { confirm: 'Are you sure?' }
+    	else
+    		link_to 'Delete', url + '/' + model.id.to_s, 
+	      		method: :delete, data: { confirm: 'Are you sure?' }
+    	end
     end
 	end
 
@@ -34,7 +47,7 @@ module ApplicationHelper
 
 	def login_text(text)
 		if user_signed_in?
-			text
+			text.html_safe
 		end
 	end
 
