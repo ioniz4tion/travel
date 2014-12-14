@@ -4,10 +4,10 @@ class GenRestaurantsController < ApplicationController
   # GET /gen_restaurants
   # GET /gen_restaurants.json
   def index
-    @gen_restaurants = GenRestaurant.all
+    @gen_restaurants = GenRestaurant.all.order(:name)
     @city = GenPackage.find_by_name(params[:city])
     @slideshow = []
-    GenPackage.find_by_name(params[:city]).gen_restaurants.all.each do |package|
+    GenPackage.find_by_name(params[:city]).gen_restaurants.all.order(:name).each do |package|
       @slideshow << {name: package.name, link: package.image.url, description: package.image_description}
     end
 
