@@ -58,7 +58,7 @@ module ApplicationHelper
 			when "Cloudy", "Mostly Cloudy"
 				'<div class="icon icon-cloud"></div>'.html_safe
 
-			when "Sunny", "Mostly Clear", "Mostly Sunny"
+			when "Sunny", "Mostly Clear", "Mostly Sunny", "Clear"
 				'<div class="icon icon-sun"></div>'.html_safe
 
 			when "PM Showers", "Showers", "AM Showers"
@@ -99,7 +99,7 @@ module ApplicationHelper
 				'<div class="icon icon-cloud"></div>
 				<div class="icon icon-2 icon-sun"></div>'.html_safe
 
-			when "Rain"
+			when "Rain", "PM Rain"
 				'<div class="icon icon-basecloud"></div>
 				<div class="icon icon-rainy"></div>'.html_safe
 			

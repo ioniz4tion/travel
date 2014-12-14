@@ -34,6 +34,20 @@
 			text-decoration: underline;
 		}
 	}
+
+	hr {
+		width: 90%;
+		height: 1px;
+		margin: 20px auto;
+		border: none;
+		outline: none;
+
+		@include hr-fade($very-light-grey, $yellow, 25%, 75%);
+
+		&:last-child {
+			display: none;
+		}
+	}
 }
 
 .item {

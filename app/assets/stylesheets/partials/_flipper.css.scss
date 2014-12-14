@@ -305,7 +305,7 @@
 		border: none;
 		outline: none;
 
-		@include hr-fade($hover-color, $light-grey, 25%, 75%);
+		@include hr-fade($hover-color, $yellow, 25%, 75%);
 	}
 
 	.weather-back-slide {
