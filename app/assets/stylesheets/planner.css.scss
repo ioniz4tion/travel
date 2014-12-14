@@ -13,7 +13,7 @@ form {
 
 	@include transition(all .8s);
 
-	span {
+	.span-question {
 		position: relative;
 		margin-top: 30px;
 		display: block;
