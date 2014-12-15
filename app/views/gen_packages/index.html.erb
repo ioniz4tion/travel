@@ -8,4 +8,25 @@
 
 	<h1><%= bip(@city, :name) %></h1>
 
+	<% if user_signed_in? %>
+		City Image: <%= cms_upload_url(@city, :image, "Slideshow Image", @city.name + "/update") %>
+	<% end %>
+
+	<% i = 0 %>
+	<% @city.gen_package_paragraphs.each do |paragraph| %>
+		<div class="<%= i%2 ? 'left' : 'right' %>">
+			<p><%= bip_url(paragraph, :text, @city.name + "/p/update") %></p>
+			<% if !(paragraph.image.url) %>
+				<%= image_tag(paragraph.image.url) %>
+			<% end %>
+			<%= cms_upload_url(paragraph, :image, "Paragraph Image", @city.name + "/p/update") %>
+		</div>
+		<%= cms_delete(paragraph, @city.name + "/p/destroy") %>
+
+	  <% i += 1 %>
+	<% end %>
+
+	<br/>
+	<%= cms_add(@city.name + "/p/new", "New Paragraph") %>
+
 </div>

@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   def index
   	@slideshow = []
 		GenPackage.all.order(:name).each do |package|
-			@slideshow << {name: package.name, link: package.image_link, description: package.image_description}
+			@slideshow << {name: package.name, link: package.image.url, description: package.image_description}
 		end
 		begin
 			@client = YahooWeather::Client.new

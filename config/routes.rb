@@ -37,6 +37,16 @@ Rails.application.routes.draw do
 
 
   get '/:city', to: 'gen_packages#index'
+  put '/:city/p/update/:id' => 'gen_packages#update_paragraph'
+  patch '/:city/p/update/:id' => 'gen_packages#update_paragraph'
+
+  put '/:city/update/:id' => 'gen_packages#update'
+  patch '/:city/update/:id' => 'gen_packages#update'
+
+  post '/:city/p/new' => 'gen_packages#create_paragraph'
+  delete '/:city/p/destroy/:id' => 'gen_packages#destroy_paragraph'
+
+
   get '/:city/hotels', to: 'gen_hotels#index'
   get '/:city/restaurants', to: 'gen_restaurants#index'
   get '/:city/attractions', to: 'gen_attractions#index'

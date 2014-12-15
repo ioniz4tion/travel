@@ -45,6 +45,19 @@ module ApplicationHelper
     end
 	end
 
+	def cms_upload_url(model, type, text, url)
+		if user_signed_in?
+			capture do
+	      form_for model, url: url + '/' + model.id.to_s, 
+	      		:html => { :multipart => true } do |form|
+	        concat form.label text
+	        concat form.file_field type
+	        concat form.submit
+	      end
+	    end
+    end
+	end
+
 	def login_text(text)
 		if user_signed_in?
 			text.html_safe
