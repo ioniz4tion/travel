@@ -10,7 +10,14 @@
 
 	<% if user_signed_in? %>
 		City Image: <%= cms_upload_url(@city, :image, "Slideshow Image", @city.name + "/update") %>
-	<% end %>
+	<% end %>	
+
+  <% if user_signed_in? %>
+    IFrame Url:
+      <%= bip(@city, :iframe_url, :textarea) %>
+    <% end %>
+
+    <iframe src="<%= @city.iframe_url %>"></iframe>
 
 	<% i = 0 %>
 	<% @city.gen_package_paragraphs.each do |paragraph| %>

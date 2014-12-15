@@ -83,7 +83,7 @@ class GenPackagesController < ApplicationController
   def update
     respond_to do |format|
       if @gen_package.update(gen_package_params)
-        format.html { redirect_to "/" + params[:city], notice: 'Gen hotel was successfully updated.' }
+        format.html { redirect_to "/" + params[:city], notice: 'Picture was successfully updated.' }
         format.json { respond_with_bip(@gen_package) }
       else
         format.html { render :edit }
@@ -110,7 +110,7 @@ class GenPackagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gen_package_params
-      params.require(:gen_package).permit(:image, :name, :code, :description, :image_name, :image_link, :image_description)
+      params.require(:gen_package).permit(:iframe_url, :image, :name, :code, :description, :image_name, :image_link, :image_description)
     end
 
     def set_paragraph
