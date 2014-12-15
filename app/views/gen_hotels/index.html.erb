@@ -25,7 +25,7 @@
             <h2><%= bip(hotel, :name) %></h2>
             <p><%= bip(hotel, :description, :textarea) %></p>
             <div class="rating">
-              <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="eleganticon icon_star"></span>
               <div>
                 <p><%= bip(hotel, :rating) %><span class="slash">/</span>5</p>
               </div>
@@ -46,14 +46,14 @@
             <tr>
 
               <td>
-                <span class="glyphicon glyphicon-map-marker"></span>
+                <span class="eleganticon icon_pin_alt"></span>
                 <div>
                   <p><%= bip(hotel, :address) %></p>
                 </div>
               </td>
 
               <td>
-                <span class="glyphicon glyphicon-globe"></span>
+                <span class="eleganticon icon_globe-2"></span>
                 <div>
                   <a href="<%= hotel.website %>" target="_blank"><%= login_text("Short URL: ") %><%= bip(hotel, :short_url) %></a>
                   <% if user_signed_in? %>
@@ -67,14 +67,14 @@
             <tr>
 
               <td>
-                <span class="glyphicon glyphicon-time"></span>
+                <span class="eleganticon icon_clock_alt"></span>
                 <div>
                   <p><%= bip(hotel, :hours) %></p>
                 </div>
               </td>
 
               <td>
-                <span class="glyphicon glyphicon-earphone"></span>
+                <span class="eleganticon icon_phone"></span>
                 <div>
                   <p><%= bip(hotel, :phone) %></p>
                 </div>
@@ -102,6 +102,8 @@
         </div>
 
       </li>
+
+    <hr>
 
     <% end %>
 
