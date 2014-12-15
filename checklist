@@ -1,18 +1,18 @@
 Zack:
---- Planner
+~~~ Planner
 XXX Planner CMS
 XXX about CMS
 XXX login/logout
---- Currency
+XXX Currency
 --- Time Zone
 XXX website url
 --- reformat message thing
---- Logo
+XXX Logo
 ~~~ BPA contotrller
 XXX Copyright controller
 XXX Washington to Washington DC
---- Partial for attractions/hotels/restaurants
---- Helper for weather
+~~~ Partial for attractions/hotels/restaurants
+XXX Helper for weather
 
 
 Parker:
