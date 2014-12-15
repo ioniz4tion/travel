@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -43,6 +43,8 @@ gem 'aws-sdk', '~> 1.5.7'
 gem 'google_currency'
 gem 'monetize'
 gem 'money'
+
+gem 'timezone'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

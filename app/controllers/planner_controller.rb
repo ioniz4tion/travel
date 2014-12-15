@@ -95,9 +95,9 @@ class PlannerController < ApplicationController
   	@packageScore = []
 
   	i = 0
-  	GenPackage.all.each do |package|
+  	GenPackage.all.order(:id).each do |package|
   		@packageScore << []  		
-  		package.answer_values.all.each do |score|
+  		package.answer_values.all.order(:id).each do |score|
   			@packageScore[i] << score.score
   		end
   		i += 1
@@ -118,10 +118,10 @@ class PlannerController < ApplicationController
   		i += 1
   	end
 
-  	sort = @packageRating.sort
+  	@sort = @packageRating.sort
   	@packageOrder = []
   	for i in 0..(packageNumber - 1) do 
-  		@packageOrder << @packageRating.index(sort[i]) + 1  		
+  		@packageOrder << @packageRating.index(@sort[i]) + 1  		
   	end
 
   	@packages = []
