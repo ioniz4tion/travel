@@ -1,18 +1,18 @@
 Zack:
---- Planner
+~~~ Planner
 XXX Planner CMS
 XXX about CMS
 XXX login/logout
---- Currency
+XXX Currency
 --- Time Zone
 XXX website url
 --- reformat message thing
---- Logo
+XXX Logo
 ~~~ BPA contotrller
 XXX Copyright controller
 XXX Washington to Washington DC
---- Partial for attractions/hotels/restaurants
---- Helper for weather
+~~~ Partial for attractions/hotels/restaurants
+XXX Helper for weather
 
 
 Parker:
@@ -28,7 +28,7 @@ XXX resizing pictures
 XXX Consider putting gradient line in between the things
 --- Picture of map/restyle show/hide map
 ~~~ popup of map possibly
---- Maps Slideshow
+~~~ Maps Slideshow
 --- css currency
 --- css time zone
 
