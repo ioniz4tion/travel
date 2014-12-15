@@ -1,0 +1,58 @@
+<div class="content">
+
+	<h1 class="title">Time Zone Calculator</h1>
+
+	<table id="timezone-converter">
+
+		<tr>
+			<th>Amount</th>
+			<td><input type="time" id="time" name="time"></td>
+		</tr>
+
+		<tr>
+			<th>From</th>
+			<td>
+				<select id="from" name="from">
+					<% @timezones.each do |timezone| %>
+						<option value="<%= timezone %>"><%= timezone %></option>
+					<% end %>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<th>To</th>
+			<td>
+				<select id="to" name="to">
+					<% @timezones.each do |timezone| %>
+						<option value="<%= timezone %>"><%= timezone %></option>
+					<% end %>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<th>Result</th>
+			<td><span id="result"></span></td>
+		</tr>
+
+	</table>
+
+</div>
+
+<script type="text/javascript">
+	var request = function() {
+		var time = $("#time").val();
+		var from = $("#from").val();
+		var to = $("#to").val();
+		$.ajax({url:"/time_convert", data: {time: time, from: from, to: to}, success:function(data){
+			$("#result").text(data);
+		}});
+	}
+
+	$("#time").keyup(request);
+	$("#from").change(request);
+	$("#to").change(request);
+
+	
+</script>

@@ -54,4 +54,23 @@ class ApplicationController < ActionController::Base
   		format.html { render html: result, status: :ok }
   	end
   end
+
+  def time
+  	require 'timezone'
+
+  	@timezones = Timezone::Zone.names
+  end
+
+  def time_convert
+  	require 'timezone'
+
+  	timezone = Timezone::Zone.new :zone => params[:from]
+		start = timezone.time params[:time]
+		end_timezone = Timezone::Zone.new :zone => params[:to]
+		result = end_timezone.time start
+
+  	respond_to do |format|
+  		format.html { render html: result, status: :ok }
+  	end
+  end
 end

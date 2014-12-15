@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get '/converter' => 'application#converter'
   get '/convert' => 'application#convert'
 
+  get '/time' => 'application#time'
+  get '/time_convert' => 'application#time_convert'
+
   resources :about, controller: 'abouts'
 
   resources :copyrights
