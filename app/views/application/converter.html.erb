@@ -1,21 +1,44 @@
-<div class="converter">
-	<span class="title">Currency Converter</span><br/>
-	<span class="prompt">Amount:</span><input type="text" id="amount" name="amount"><br/>
-	<span class="prompt">From:</span>
-	<select id="from" name="from">
-		<option value="USD">US Dollar(USD)</option>
-		<option value="EUR">Euro(EUR)</option>
-		<option value="GBP">British Pound(GBP)</option>
-		<option value="AUD">Australian Dollar(AUD)</option>
-	</select><br/>
-	<span class="prompt">To:</span>
-	<select id="to" name="to">
-		<option value="USD">US Dollar(USD)</option>
-		<option selected="true" value="EUR">Euro(EUR)</option>
-		<option value="GBP">British Pound(GBP)</option>
-		<option value="AUD">Australian Dollar(AUD)</option>
-	</select><br/>
-	<span class="prompt">Result:</span><span id="result"></span>
+<div class="content">
+
+	<h1 class="title">Currency Converter</h1>
+
+	<table id="converter">
+
+		<tr>
+			<th>Amount</th>
+			<td><input type="text" id="amount" name="amount"></td>
+		</tr>
+
+		<tr>
+			<th>From</th>
+			<td>
+				<select id="from" name="from">
+					<option value="USD">US Dollar(USD)</option>
+					<option value="EUR">Euro(EUR)</option>
+					<option value="GBP">British Pound(GBP)</option>
+					<option value="AUD">Australian Dollar(AUD)</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<th>To</th>
+			<td>
+				<select id="to" name="to">
+					<option value="USD">US Dollar(USD)</option>
+					<option selected="true" value="EUR">Euro(EUR)</option>
+					<option value="GBP">British Pound(GBP)</option>
+					<option value="AUD">Australian Dollar(AUD)</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<th>Result</th>
+			<td><span id="result"></span></td>
+		</tr>
+
+	</table>
 
 </div>
 

@@ -1,0 +1,40 @@
+@import 'imports.css.scss';
+
+#converter {
+	width: 30%;
+	margin: 0 auto;
+
+	td,
+	th {
+		text-align: right;
+		padding: 20px;
+		// width: 50%;
+	}
+
+	tr {
+		&:first-child {
+			td,
+			th {
+				padding-top: 0;
+			}
+		}
+
+		&:last-child {
+			td,
+			th {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	th,
+	label {
+		text-transform: uppercase;
+		color: $yellow;
+		font-weight: normal;
+	}
+
+	select {
+		color: #000;
+	}
+}
