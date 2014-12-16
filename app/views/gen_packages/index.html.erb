@@ -8,16 +8,9 @@
 
 	<h1><%= bip(@city, :name) %></h1>
 
-	<% if user_signed_in? %>
-		City Image: <%= cms_upload_url(@city, :image, "Slideshow Image", @city.name + "/update") %>
-	<% end %>	
-
   <% if user_signed_in? %>
-    IFrame Url:
-      <%= bip(@city, :iframe_url, :textarea) %>
-    <% end %>
-
-    <iframe src="<%= @city.iframe_url %>"></iframe>
+		City Image: <%= cms_upload_url(@city, :image, "Slideshow Image", @city.name + "/update") %>
+	<% end %>
 
 	<% i = 0 %>
 	<% @city.gen_package_paragraphs.each do |paragraph| %>
@@ -34,6 +27,13 @@
 	<% end %>
 
 	<br/>
-	<%= cms_add(@city.name + "/p/new", "New Paragraph") %>
+	<%= cms_add(@city.name + "/p/new", "New Paragraph") %><br>	
+
+  <% if user_signed_in? %>
+    IFrame Url:
+      <%= bip(@city, :iframe_url, :textarea) %>
+  <% end %>
+
+  <iframe src="<%= @city.iframe_url %>"></iframe>
 
 </div>

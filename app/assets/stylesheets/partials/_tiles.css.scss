@@ -22,7 +22,15 @@
 		@include transition(all 0.3s);
 
 		&:hover {
-			background: $hover-color;
+			background: $yellow;
+
+			a {
+				color: $dark-grey;
+			}
+
+			p span {
+				color: $dark-grey;
+			}
 		}
 	}
 
