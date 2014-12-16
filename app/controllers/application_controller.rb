@@ -66,11 +66,11 @@ class ApplicationController < ActionController::Base
 
   	d = params[:date]
 		t = params[:time]
-		dt = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone)
+		dt = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, params[:from])
 
-  	start = dt.in_time_zone(params[:from])
+  	# start = dt.in_time_zone(params[:from])
 
-  	result = start.in_time_zone(params[:to])
+  	result = dt.in_time_zone(params[:to])
 
    	#timezone = Timezone::Zone.new :zone => params[:from]
 		#result = timezone.time params[:time]
