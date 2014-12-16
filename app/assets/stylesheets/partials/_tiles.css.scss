@@ -17,25 +17,29 @@
 		width: 100%;
 		height: 116px;
 		// border: 1px solid $light-grey;
-		padding: 15px 0;
 
-		@include transition(all 0.3s);
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding: 15px 0;
+			color: $light-grey;
 
-		&:hover {
-			background: $yellow;
-
-			a {
-				color: $dark-grey;
-			}
+			@include transition(all 0.3s);
 
 			p span {
+				@include transition(all 0.3s);
+			}
+
+			&:hover {
+				background: $yellow;
 				color: $dark-grey;
+
+				p span {
+					color: $dark-grey;
+				}
 			}
 		}
-	}
-
-	a {
-		color: $light-grey;
 	}
 
 	.glyphicon,
