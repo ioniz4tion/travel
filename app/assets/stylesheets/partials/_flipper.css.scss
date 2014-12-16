@@ -19,14 +19,22 @@
 		visibility: visible;
 		opacity: 1;
 
-		@include transition(all ease-in 0.5s 0.5s)
+		@include transition(all linear 0s 0.25s)
 	}
 
 	.weather-more {
 		visibility: hidden;
 		opacity: 0;
 
-		@include transition(all ease-in 0.5s 0)
+		@include transition(all linear 0s 0.25s)
+	}
+
+	.logo,
+	.weather,
+	.weather-more {
+		* {
+			visibility: inherit !important;
+		}
 	}
 
 	&.flipper-open {
@@ -37,14 +45,14 @@
 			visibility: hidden;
 			opacity: 0;
 
-			@include transition(all ease-in 0.5s 0)
+			@include transition(all linear 0s 0.25s)
 		}
 
 		.weather-more {
 			visibility: visible;
 			opacity: 1;
 
-			@include transition(all ease-in 0.5s 0.5s)
+			@include transition(all linear 0s 0.25s)
 		}
 	}
 
