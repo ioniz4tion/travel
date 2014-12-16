@@ -36,6 +36,38 @@
 	perspective:         $value;
 }
 
+@mixin flex {
+	-ms-display: flex;
+	-ms-flex-direction: row;
+	-ms-flex-wrap: wrap;
+	-ms-justify-content: space-around;
+	-ms-align-content: space-around;
+
+	-moz-display: flex;
+	-moz-flex-direction: row;
+	-moz-flex-wrap: wrap;
+	-moz-justify-content: space-around;
+	-moz-align-content: space-around;
+
+	-webkit-display: flex;
+	-webkit-flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	-webkit-justify-content: space-around;
+	-webkit-align-content: space-around;
+
+	-o-display: flex;
+	-o-flex-direction: row;
+	-o-flex-wrap: wrap;
+	-o-justify-content: space-around;
+	-o-align-content: space-around;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: space-around;
+}
+
 @mixin linear-gradient-2($direction, $webkit-direction, $color1, $color2) {
 	background: -ms-linear-gradient($direction, $color1, $color2);
 	background: -moz-linear-gradient($direction, $color1, $color2);

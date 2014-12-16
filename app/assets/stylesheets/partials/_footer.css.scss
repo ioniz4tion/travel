@@ -11,32 +11,25 @@ footer {
 	}
 
 	.share-this {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		align-content: space-around;
-
 		height: 105px;
 		background: $hover-color;
 		float: left;
 
+		@include flex;
+
 		img {
 			margin: auto;
+			width: 64px;
+			height: 64px;
 		}
 	}
 
 	.social {
-		display: flex;
-		display: flexbox;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		align-content: space-around;
-
 		margin-bottom: 20px;
 		float: right;
 		width: calc(100% - 64px);
+		
+		@include flex;
 
 		div {
 			width: 20%;
