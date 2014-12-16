@@ -12,7 +12,7 @@
 	position: relative;
 	transform-style: preserve-3d;
 
-	@include transition(transform ease 1s);
+	@include transition(all 1s);
 
 	.logo,
 	.weather {
