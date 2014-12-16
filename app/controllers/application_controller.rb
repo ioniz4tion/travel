@@ -64,11 +64,11 @@ class ApplicationController < ActionController::Base
   def time_convert
   	require 'timezone'
 
-  # 	timezone = Timezone::Zone.new :zone => params[:from]
-		# start = timezone.time params[:time]
+   	timezone = Timezone::Zone.new :zone => params[:from]
+		result = timezone.time params[:time]
 		# end_timezone = Timezone::Zone.new :zone => params[:to]
 		# result = end_timezone.time start
-    result = 5
+   # result = 5
   	respond_to do |format|
   		format.html { render html: result, status: :ok }
   	end
