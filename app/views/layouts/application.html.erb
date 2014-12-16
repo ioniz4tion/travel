@@ -15,14 +15,13 @@
 	
 	<body>
 
+	<p class="notice invisible" id="notice"><%= flash[:notice] %></p>      
+
 		<div class="container">
 
 			<%= render :partial => "templates/nav" %>
 
-			<div class="main">
-
-			<p class="notice"><%= flash[:notice] %></p>
-      <p class="alert"><%= flash[:alert] %></p>
+			<div class="main">			
 
 				<%= yield %>
 

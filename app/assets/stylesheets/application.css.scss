@@ -24,3 +24,22 @@
 .actions {
 	color: black;
 }
+
+.invisible {
+	display: none;
+	visibility: hidden;
+}
+
+.notice {
+	position: fixed;
+	right: 30px;
+	top: 30px;
+	background-color: #555;
+	color: #e6b122;
+	font-size: 32px;
+	z-index: 50;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #000;
+
+}

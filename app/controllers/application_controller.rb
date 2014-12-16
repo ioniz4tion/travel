@@ -58,27 +58,63 @@ class ApplicationController < ActionController::Base
   def time
   	require 'timezone'
 
-  	@timezones = Timezone::Zone.names
+  	@timezones = Timezone::Zone.names.sort
   end
 
   def time_convert
-  	#require 'timezone'
+  	require 'timezone'
   	require 'date'
   	require 'time'
 
-  	d = params[:date]
-		t = params[:time]
+    Time.zone = params[:from]
+    temp = Time.zone.parse(params[:time])
+    final_time = temp.in_time_zone(params[:to])
 
-  	d = Date.parse(d)
-		t = Time.parse(t)
 
-  	
-		dt = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec)
+    
+  
+    if final_time.hour > 12 and final_time.hour <= 23
+      result = (final_time.hour - 12).to_s
+      type = "PM"
+    elsif final_time.hour == 12
+      result = (final_time.hour).to_s
+      type = "PM"
+    elsif final_time.hour == 0
+      result = (final_time.hour + 12).to_s
+      type = "AM"
+    else
+      result = final_time.hour.to_s
+      type = "AM"
+    end
 
-		start = dt.in_time_zone(params[:from])
-  	# start = dt.in_time_zone(params[:from])
+    if final_time.min < 10
+      result = result.to_s + ":0" + final_time.min.to_s
+    else
+      result = result.to_s + ":" + final_time.min.to_s
+    end
 
-  	result = dt.in_time_zone(start)
+    if final_time.sec < 10
+      result = result.to_s + ".0" + final_time.sec.to_s
+    else
+      result = result.to_s + "." + final_time.sec.to_s
+    end
+
+    result = result.to_s + " " + type + " " + params[:to].to_s
+  # 	#d = params[:date]
+		# t = params[:time]
+
+  # 	#d = Date.parse(d)
+		# t = Time.parse(t)
+
+  # 	timezone = Timezone::Zone.new :zone => params[:from]
+		# #dt = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec)
+  # 	# start = dt.in_time_zone(params[:from])
+  #   result = timezone.time(t)
+
+  #   result = result.in_time_zone(params[:to])
+    #standard = dt.utc
+    #timezone = Timezone::Zone.new :zone => params[:to]
+  	#result = standard.in_time_zone(params[:to])
 
    	#timezone = Timezone::Zone.new :zone => params[:from]
 		#result = timezone.time params[:time]

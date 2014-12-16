@@ -144,4 +144,11 @@ $(document).ready(function() {
     });
   });
 
+  if ($("#notice").text().trim().length != false) { 
+    $("#notice").removeClass("invisible");         
+    setTimeout(function() { 
+      $("#notice").fadeOut();
+    }, 4500);
+  }
+
 });	
