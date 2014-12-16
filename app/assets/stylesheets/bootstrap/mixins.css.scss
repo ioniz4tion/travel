@@ -37,25 +37,25 @@
 }
 
 @mixin flex {
-	-ms-display: flex;
+	    display: -ms-flex;
 	-ms-flex-direction: row;
 	-ms-flex-wrap: wrap;
 	-ms-justify-content: space-around;
 	-ms-align-content: space-around;
 
-	-moz-display: flex;
+	     display: -moz-flex;
 	-moz-flex-direction: row;
 	-moz-flex-wrap: wrap;
 	-moz-justify-content: space-around;
 	-moz-align-content: space-around;
 
-	-webkit-display: flex;
+	        display: -webkit-flex;
 	-webkit-flex-direction: row;
 	-webkit-flex-wrap: wrap;
 	-webkit-justify-content: space-around;
 	-webkit-align-content: space-around;
 
-	-o-display: flex;
+	   display: -o-flex;
 	-o-flex-direction: row;
 	-o-flex-wrap: wrap;
 	-o-justify-content: space-around;
