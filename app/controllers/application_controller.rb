@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
 			GenPackage.all.order(:name).each do |package|
 				@weather.push(@client.fetch(package.code))
 			end
-		rescue SocketError => e
+		rescue Exception => e
 		end
   end
 

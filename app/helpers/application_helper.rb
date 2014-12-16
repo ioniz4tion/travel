@@ -112,7 +112,7 @@ module ApplicationHelper
 				'<div class="icon icon-cloud"></div>
 				<div class="icon icon-2 icon-sun"></div>'.html_safe
 
-			when "Rain", "PM Rain"
+			when "Rain", "PM Rain", "AM Light Rain"
 				'<div class="icon icon-basecloud"></div>
 				<div class="icon icon-rainy"></div>'.html_safe
 			
