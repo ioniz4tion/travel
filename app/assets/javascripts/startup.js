@@ -64,82 +64,84 @@ $(document).ready(function() {
 
   $flipperBtn.click(function() {
     $flipper.addClass('flipper-open').delay(1000).show(0, function() {
-        slideNum = slider.getCurrentSlide();
-        slider.reloadSlider({
-          startSlide: slideNum,
-          onSlideNext: doThis,
-          onSlidePrev: doThis,
-          onSlideBefore: doThis,
-          onSlideAfter: doThis
-        });
-        slider1.reloadSlider({
-          startSlide: slideNum,
-          width: 360,
-          height: 340,
-          touchEnabled: false,
-          pager: false,
-          controls: false,
-          infiniteloop: true,
-          auto: false,
-          onSlideNext: doThis,
-          onSlidePrev: doThis,
-          onSlideBefore: doThis,
-          onSlideAfter: doThis
-        });
-        slider2.reloadSlider({
-          startSlide: slideNum,
-          width: 340,
-          height: 662,
-          touchEnabled: false,
-          pager: false,
-          controls: false,
-          infiniteloop: true,
-          auto: false,
-          onSlideNext: doThis,
-          onSlidePrev: doThis,
-          onSlideBefore: doThis,
-          onSlideAfter: doThis
-        });
+      slideNum = slider.getCurrentSlide();
+      slider.reloadSlider({
+        startSlide: slideNum,
+        onSlideNext: doThis,
+        onSlidePrev: doThis,
+        onSlideBefore: doThis,
+        onSlideAfter: doThis
+      });
+      slider1.reloadSlider({
+        startSlide: slideNum,
+        width: 360,
+        height: 340,
+        touchEnabled: false,
+        pager: false,
+        controls: false,
+        infiniteloop: true,
+        auto: false,
+        onSlideNext: doThis,
+        onSlidePrev: doThis,
+        onSlideBefore: doThis,
+        onSlideAfter: doThis
+      });
+      slider2.reloadSlider({
+        startSlide: slideNum,
+        width: 340,
+        height: 662,
+        touchEnabled: false,
+        pager: false,
+        controls: false,
+        infiniteloop: true,
+        auto: false,
+        onSlideNext: doThis,
+        onSlidePrev: doThis,
+        onSlideBefore: doThis,
+        onSlideAfter: doThis
+      });
+    });
   });
 
   $flipperClose.click(function() {
     $flipper.removeClass('flipper-open').delay(1000).show(0, function() {
-        slideNum = slider.getCurrentSlide();
-        slider.reloadSlider({
-          startSlide: slideNum,
-          onSlideNext: doThis,
-          onSlidePrev: doThis,
-          onSlideBefore: doThis,
-          onSlideAfter: doThis
-        });
-        slider1.reloadSlider({
-          startSlide: slideNum,
-          width: 360,
-          height: 340,
-          touchEnabled: false,
-          pager: false,
-          controls: false,
-          infiniteloop: true,
-          auto: false,
-          onSlideNext: doThis,
-          onSlidePrev: doThis,
-          onSlideBefore: doThis,
-          onSlideAfter: doThis
-        });
-        slider2.reloadSlider({
-          startSlide: slideNum,
-          width: 340,
-          height: 662,
-          touchEnabled: false,
-          pager: false,
-          controls: false,
-          infiniteloop: true,
-          auto: false,
-          onSlideNext: doThis,
-          onSlidePrev: doThis,
-          onSlideBefore: doThis,
-          onSlideAfter: doThis
-        });
+      slideNum = slider.getCurrentSlide();
+      slider.reloadSlider({
+        startSlide: slideNum,
+        onSlideNext: doThis,
+        onSlidePrev: doThis,
+        onSlideBefore: doThis,
+        onSlideAfter: doThis
+      });
+      slider1.reloadSlider({
+        startSlide: slideNum,
+        width: 360,
+        height: 340,
+        touchEnabled: false,
+        pager: false,
+        controls: false,
+        infiniteloop: true,
+        auto: false,
+        onSlideNext: doThis,
+        onSlidePrev: doThis,
+        onSlideBefore: doThis,
+        onSlideAfter: doThis
+      });
+      slider2.reloadSlider({
+        startSlide: slideNum,
+        width: 340,
+        height: 662,
+        touchEnabled: false,
+        pager: false,
+        controls: false,
+        infiniteloop: true,
+        auto: false,
+        onSlideNext: doThis,
+        onSlidePrev: doThis,
+        onSlideBefore: doThis,
+        onSlideAfter: doThis
+      });
+    });
   });
 
 });	

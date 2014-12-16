@@ -14,8 +14,38 @@
 
 	@include transition(transform 1s);
 
+	.logo,
+	.weather {
+		visibility: visible;
+		opacity: 1;
+
+		@include transition(all ease-in 0.5s 0.5s)
+	}
+
+	.weather-more {
+		visibility: hidden;
+		opacity: 0;
+
+		@include transition(all ease-in 0.5s 0)
+	}
+
 	&.flipper-open {
 		@include transform(rotateY(180deg));
+
+		.logo,
+		.weather {
+			visibility: hidden;
+			opacity: 0;
+
+			@include transition(all ease-in 0.5s 0)
+		}
+
+		.weather-more {
+			visibility: visible;
+			opacity: 1;
+
+			@include transition(all ease-in 0.5s 0.5s)
+		}
 	}
 
 	.back {
@@ -74,7 +104,7 @@
 	z-index: 1;
 	background: $dark-blue;
 
-	@include backface-visibility(hidden);
+	// @include backface-visibility(hidden);
 
 	a {
 		display: block;
@@ -104,7 +134,7 @@
 	// z-index: 1;
 	background: $hover-color;
 
-	@include backface-visibility(hidden);
+	// @include backface-visibility(hidden);
 
 	button {
 		z-index: 1;
@@ -201,7 +231,7 @@
 	padding: 10px;
 	background: $light-grey;
 	
-	@include backface-visibility(hidden);
+	// @include backface-visibility(hidden);
 	
 	span {
 		color: $span-color;
