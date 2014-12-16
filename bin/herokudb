@@ -7,7 +7,7 @@ function pull {
 
 function push {
 	heroku pg:reset HEROKU_POSTGRESQL_MAROON
-	heroku pg:push travel_development HEROKU_POSTGRESQL_MAROON --app bpa-travel
+	heroku pg:push travel_development HEROKU_POSTGRESQL_MAROON --app worldwidewanderings
 }
 
 function help {
