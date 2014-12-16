@@ -9,7 +9,7 @@ nav {
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 
-	@include flex;
+	@include nav-flex;
 
 	> div {
 		display: inline-block;
