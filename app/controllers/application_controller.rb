@@ -64,7 +64,11 @@ class ApplicationController < ActionController::Base
   def time_convert
   	#require 'timezone'
 
-  	start = params[:time].in_time_zone(params[:from])
+  	d = params[:date]
+		t = params[:time]
+		dt = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone)
+
+  	start = dt.in_time_zone(params[:from])
 
   	result = start.in_time_zone(params[:to])
 

@@ -5,8 +5,13 @@
 	<table class="calculator">
 
 		<tr>
-			<th>Amount</th>
-			<td><input type="datetime" id="time" name="time"></td>
+			<th>Date</th>
+			<td><input type="date" id="date" name="date"></td>
+		</tr>
+
+		<tr>
+			<th>Time</th>
+			<td><input type="time" id="time" name="time"></td>
 		</tr>
 
 		<tr>
@@ -42,14 +47,17 @@
 
 <script type="text/javascript">
 	var request = function() {
+		var date = $("#date").val();
 		var time = $("#time").val();
 		var from = $("#from").val();
 		var to = $("#to").val();
-		$.ajax({url:"/time_convert", data: {time: time, from: from, to: to}, success:function(data){
+
+		$.ajax({url:"/time_convert", data: {date: date, time: time, from: from, to: to}, success:function(data){
 			$("#result").text(data);
 		}});
 	}
 
+	$("#date").keyup(request);
 	$("#time").keyup(request);
 	$("#from").change(request);
 	$("#to").change(request);
