@@ -62,14 +62,13 @@ nav {
 
 .dropdown {
 	padding: 15px 20px;
-	position: relative;
+	// position: relative;
 
 	&:hover,
 	&:focus {
 		> div {
 			opacity: 1;
 			visibility: visible;
-			// top: 100%;
 
 			@include transition(all 0.3s);
 		}
@@ -83,21 +82,16 @@ nav {
 	visibility: hidden;
 	position: absolute;
 	// top: 200%;
-	top: 100%;
-	width: 1201px;
+	// top: 100%;
+	// width: 1201px;
 	max-height: 225px;
 	padding: 25px;
 	z-index: 9999;
+	top: 65px;
+	left: 0;
+	right: 0;
 
 	// @include transition(all 0.1s);
-
-	&.general {
-		left: -95px;
-	}
-
-	&.holiday {
-		left: -317px;
-	}
 
 	div {
 		display: inline-block;
