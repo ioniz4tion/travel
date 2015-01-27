@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
 	end
 
   def sitemap
+    render layout: nil
+    headers['Content-Type'] = 'application/xml'
+    
   end
 
 	# def weather
