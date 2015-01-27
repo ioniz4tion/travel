@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
 		@hol_package = HolPackage.all
 	end
 
+  def sitemap
+  end
+
 	# def weather
 	# 	begin
 	# 		@client = YahooWeather::Client.new

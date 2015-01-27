@@ -3,8 +3,9 @@
 .flipper-container {
 	display: $box-display;
 	width: 360px;
-	position: relative;
-	left: 840px;
+	position: absolute;
+	// left: 840px;
+	right: 0;
 	
 	@include perspective(1500px);
 }
