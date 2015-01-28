@@ -65,7 +65,7 @@
 		top: 0;
 		left: 0;
 		z-index: -1;
-		background: $hover-color;
+		background: $dark-grey;
 
 		@include transform(rotateY(180deg));
 	}
@@ -142,7 +142,7 @@
 	position: relative;
 	// border: 1px solid #e7e7e7;
 	// z-index: 1;
-	background: $hover-color;
+	background: $dark-grey;
 
 	// @include backface-visibility(hidden);
 

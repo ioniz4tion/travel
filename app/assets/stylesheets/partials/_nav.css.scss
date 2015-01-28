@@ -3,11 +3,20 @@
 nav {
 	width: 100%;
 	height: 65px;
-	background: $dark-grey;
+	background: transparent;
 	// border: 1px solid #e7e7e7;
 	z-index: 9999;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
+
+	a {
+		color: $light-grey;
+	}
+}
+
+.nav-right {
+	height: 100%;
+	float: right;
 
 	@include nav-flex;
 
@@ -24,7 +33,7 @@ nav {
 			background: $hover-color;
 			color: $yellow;
 
-			span {
+			> span {
 				color: $yellow;
 			}
 		}
@@ -54,10 +63,6 @@ nav {
 			top: 7px;
 		}
 	}
-
-	a {
-		color: $light-grey;
-	}
 }
 
 .dropdown {
@@ -69,6 +74,7 @@ nav {
 		> div {
 			opacity: 1;
 			visibility: visible;
+			// max-height: 400px;
 
 			@include transition(all 0.3s);
 		}
@@ -84,49 +90,94 @@ nav {
 	// top: 200%;
 	// top: 100%;
 	// width: 1201px;
-	max-height: 225px;
+	min-width: 222px;
+	// max-height: 0px;
 	padding: 25px;
+	padding-left: 0px;
 	z-index: 9999;
 	top: 65px;
-	left: 0;
+	// left: 0;
 	right: 0;
+	// overflow-x: visible;
+	// overflow-y: hidden;
 
-	// @include transition(all 0.1s);
+	@include transition(all 0.3s);
+}
 
-	div {
-		display: inline-block;
-		width: 187px;
-		padding: 5px;
+.nav-item {
+	display: block;
+	// width: 187px;
+	padding: 20px 0;
+	position: relative;
 
-		> a {
-			display: inline-block;
-			margin-bottom: 10px;
+	&:hover {
+		span {
+			background: $yellow;
+			color: $dark-grey;
+
+			&:after {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		ul {
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 
 	span {
+		padding: 5px;
+		padding-left: 25px;
 		font-weight: bolder;
 		color: $yellow;
+		position: relative;
 
 		@include transition(all 0.3s);
+
+		&:after {
+			content: '';
+			width: 0;
+			height: 0;
+			border: 14px solid transparent;
+			border-right: 14px solid $yellow;
+			position: absolute;
+			top: 0;
+			right: 100%;
+			opacity: 0;
+			visibility: hidden;
+
+			@include transition(all 0.3s);
+		}
 	}
-	
+
 	ul {
 		list-style: none;
 		margin: 0;
+		right: 100%;
+		opacity: 0;
+		visibility: hidden;
+		background: $dark-grey;
+		z-index: -1;
+		padding: 5px 15px 10px 10px;
 
-		li {
-			margin: 5px 0;
-			padding-left: 5px;
+		@include transition(all 0.3s);
+		@include y-center;
+	}
 
-			a {
-				// padding-left: 10px;
-			}
+	li {
+		margin: 5px 0;
+		padding-left: 5px;
+		text-align: right;
+
+		a {
+			// padding-left: 10px;
 		}
+	}
 
-		li:last-child {
-			margin-bottom: 0;
-		}
+	li:last-child {
+		margin-bottom: 0;
 	}
 
 	a {
@@ -139,10 +190,6 @@ nav {
 		&:hover {
 			background: $yellow;
 			color: $dark-grey;
-
-			span {
-				color: $dark-grey;
-			}
 		}
 	}
 }

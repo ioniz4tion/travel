@@ -3,7 +3,7 @@
 .tiles {
 	display: $box-display;
 	width: 120px;
-	height: 700px;
+	height: $slideshow-height;
 	// border: 1px solid #e7e7e7;
 	float: left;
 	text-transform: uppercase;

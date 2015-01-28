@@ -3,7 +3,7 @@
 .slideshow {
 	display: $box-display;
 	width: calc(100% - 480px);
-	height: 700px;
+	height: $slideshow-height;
 	position: relative;
 	// top: 65px;
 	// left: 120px;
@@ -13,7 +13,7 @@
 	overflow: hidden;
 
 	li {
-		height: 700px;
+		height: $slideshow-height;
 
 			div {
 			position: relative;
@@ -23,6 +23,8 @@
 
 			img {
 				z-index: -1;
+				width: 100%;
+				margin-left: -1px;
 				
 				@include xy-center;
 			}
@@ -64,7 +66,7 @@
 
 	.bx-wrapper,
 	.bx-viewport {
-		height: 700px !important;
+		height: $slideshow-height !important;
 	}
 }
 
