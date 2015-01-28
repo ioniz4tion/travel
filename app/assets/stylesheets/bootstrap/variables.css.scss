@@ -12,7 +12,8 @@ $link-color: #86b4df;
 
 $box-display: inline-block;
 
-$nav-height: 65px;
+$nav-height: 85px;
+$dropdown-padding-y: ($nav-height - 35px) / 2;
 
 $arrow-y-pos: 29px;
 $arrow-x-pos: 12px;

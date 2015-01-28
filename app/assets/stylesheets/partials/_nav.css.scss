@@ -1,4 +1,5 @@
 @import 'imports.css.scss';
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
 
 nav {
 	width: 100%;
@@ -74,8 +75,33 @@ nav {
 	}
 }
 
+.nav-header {
+	height: 100%;
+	position: absolute;
+	left: 0;
+	font-family: 'Montserrat';
+	font-size: 24px;
+	font-weight: bold;
+
+	a {
+		display: block;
+		height: 100%;
+		padding: 29px;
+
+		&:hover {
+			span {
+				color: $blue;
+			}
+		}
+	}
+
+	span {
+		@include transition(all 0.3s);
+	}
+}
+
 .dropdown {
-	padding: 15px 20px;
+	padding: $dropdown-padding-y 25px;
 	position: relative;
 
 	&:hover,
@@ -91,7 +117,7 @@ nav {
 }
 
 .nav-list {
-	// width: 100%;
+	width: 100%;
 	background: $hover-color;
 	opacity: 0;
 	visibility: hidden;
@@ -104,7 +130,7 @@ nav {
 	padding: 25px;
 	padding-left: 0px;
 	z-index: 9999;
-	top: 65px;
+	top: $nav-height;
 	// left: 0;
 	right: 0;
 	// overflow-x: visible;
