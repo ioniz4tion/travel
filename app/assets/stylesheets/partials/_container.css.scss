@@ -1,9 +1,10 @@
+@import 'imports.css.scss';
+
 .container {
 	// padding: 0 75.5px;
 	display: block;
 	width: 100%;
 	position: relative;
-	margin: 0 auto;
 	margin-bottom: 50px;
 	overflow: hidden;
 
@@ -20,8 +21,9 @@
 // 	}
 // }
 
-// .main {
+.main {
+	margin-top: $nav-height;
 // 	position: relative;
 // 	width: 100%;
 // 	overflow: auto;
-// }
+}

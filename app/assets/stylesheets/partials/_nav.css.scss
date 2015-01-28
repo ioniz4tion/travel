@@ -2,12 +2,20 @@
 
 nav {
 	width: 100%;
-	height: 65px;
-	background: transparent;
+	height: $nav-height;
+	position: fixed;
+	top: 0;
+	background: $body-bg;
 	// border: 1px solid #e7e7e7;
 	z-index: 9999;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
+
+	@include transition(top 0.2s ease-in-out);
+
+	&.nav-up {
+		top: -$nav-height;
+	}
 
 	a {
 		color: $light-grey;
@@ -17,6 +25,7 @@ nav {
 .nav-right {
 	height: 100%;
 	float: right;
+	// margin-right: 10%;
 
 	@include nav-flex;
 
@@ -67,7 +76,7 @@ nav {
 
 .dropdown {
 	padding: 15px 20px;
-	// position: relative;
+	position: relative;
 
 	&:hover,
 	&:focus {
