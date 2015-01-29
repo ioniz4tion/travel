@@ -13,10 +13,15 @@
 		height: 600px;
 		border: none;
 		// margin-bottom: 25px;
+
+		@media (min-height: 901px) {
+			height: 800px;
+		}
 	}
 
 	h1 {
 		margin: 0 0 50px 0;
+		font-family: 'Montserrat';
 		text-transform: uppercase;
 		color: $yellow;
 
@@ -232,6 +237,16 @@
 		width: 100%;
 		height: 600px;
 		border: none;
+	}
+}
+
+@media (min-height: 901px) {
+	.map.open {
+		height: 800px;
+
+		iframe {
+			height: 800px;
+		}
 	}
 }
 

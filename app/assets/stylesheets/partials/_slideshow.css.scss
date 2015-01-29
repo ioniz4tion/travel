@@ -71,6 +71,21 @@
 	}
 }
 
+@media (min-height: 901px) {
+	.slideshow {
+		height: 900px !important;
+
+		li {
+			height: 900px !important;
+		}
+
+		.bx-wrapper,
+		.bx-viewport {
+			height: 900px !important;
+		}
+	}
+}
+
 .slideshow-heading {
 	display: block;
 	max-width: 450px;
