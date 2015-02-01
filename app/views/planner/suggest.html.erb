@@ -5,8 +5,10 @@
 
 	<div class="city-container">
 		<span class="city-name"><%= @packages.first.name %></span>
-		<%= image_tag(@packages.first.image_link, class: "package-image") %>
+		<%= image_tag(@packages.first.image.url, class: "package-image") %>
 	</div>
+
+	<input type="text" name="id" id="city_id" style="display:none" value="<%= @packages.first.id %>">
 
 
 	<div class="controls">
@@ -17,23 +19,59 @@
 <% end %>
 
 <div id="cities">
-	<% @packages.each do |package| %>
-		<div class="city-box">
-		<div class="hi-lo">
-				<%= image_tag(package.image_link) %>
-			</div>
-			<span><%= package.name %></span>
 
-			
+	<div class="down">
+		<div id="arrows">
+		</div>		
+	</div>
 
-			<div class="weather-graphic">
-				<div>								
-					<span>1st Choice</span>
-				</div>
-			</div>
+	<div class="content">
 
-		</div>
+	  <h1>Pick a city</h1>
 
-		<hr>
-	<% end %>	
+	  <ul>
+
+	  <% i = 1 %>
+	    <% @packages.each do |package| %>
+
+
+	      <li class="item">
+	        <div>
+	          
+	          <div class="price-img">
+	            <%= image_tag(package.image.url) %>	            
+	          </div>
+
+	          <div class="description">
+	            <h2><%= i.ordinalize %> - <%= package.name %></h2>
+	            <p><%= package.gen_package_paragraphs.first.text %></p>     
+	          </div>
+
+	          <button id="choose<%= package.id %>" class="choose btn btn-1 btn-1b" type="button">Choose</button>
+
+	          
+
+	        </div>
+
+	        <div>	                    
+
+	          <button id="show<%= package.id %>">Show/hide map<span class="caret"></span></button>
+
+	        </div>
+
+	        <div class="map" id="<%= package.id %>">	        
+
+	          <iframe src="<%= package.iframe_url %>"></iframe>
+
+	        </div>
+
+	      </li>
+
+	    <hr>
+	    <% i += 1 %>
+	    <% end %>	    
+
+	  </ul>
+
+	</div>
 </div>

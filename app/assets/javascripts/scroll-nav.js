@@ -4,7 +4,7 @@
 // var delta = 5;
 // var navbarHeight = $('nav').height();
 
-/*$(document).ready(function() {
+$(document).ready(function() {
 	var didScroll;
 	var lastScrollTop = 0;
 	var delta = 5;
@@ -43,4 +43,4 @@
 	  
 	  lastScrollTop = st;
 	}
-});*/
+});
