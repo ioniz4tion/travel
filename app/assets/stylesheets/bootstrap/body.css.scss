@@ -2,7 +2,8 @@
 @import 'mixins.css.scss';
 
 body {
-	background: $body-bg;
+	background: $body-bg url(/assets/footer_lodyas.png);
+	background-size: 50% auto;
 	color: $light-grey;
 	font-family: 'lato';
 	-webkit-font-smoothing: antialiased;

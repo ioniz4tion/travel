@@ -1,0 +1,140 @@
+@import 'imports.css.scss';
+
+.animation {
+	position: relative;
+
+	&.nav-animation {
+		display: inline-block;
+		width: $outer-width-nav;
+		height: 100%;
+	}
+
+	span.eleganticon {
+		display: block;
+		color: $blue;
+		
+		@include xy-center;
+	}
+
+	.circle {
+		border: 1px solid $span-color;
+		border-radius: 50%;
+		z-index: -1;
+
+		@include xy-center;
+	}
+
+	.w {
+		color: $yellow;
+		font-family: 'Montserrat';
+		font-weight: bold;
+		text-transform: uppercase;
+		z-index: 1;
+
+		@include xy-center;
+		@include transition(all 1s);
+	}
+}
+
+.animation.nav-animation {
+	span.eleganticon {
+		font-size: 20px;
+	}
+
+	.circle {
+		&.inner {
+			width: $inner-width-nav;
+			height: $inner-width-nav;
+
+			.w {
+				@include transform(translate(-50%, -50%) rotate(45deg) translateX($inner-width-nav / 2) rotate(-45deg));
+				@include animation(orbit-inner-nav 4s linear infinite);
+			}
+		}
+
+		&.middle {
+			width: $middle-width-nav;
+			height: $middle-width-nav;
+
+			.w {
+				@include transform(translate(-50%, -50%) rotate(45deg) translateX($middle-width-nav / 2) rotate(-45deg));
+				@include animation(orbit-middle-nav 7.5s linear infinite);
+			}
+		}
+
+		&.outer {
+			width: $outer-width-nav;
+			height: $outer-width-nav;
+
+			.w {
+				@include transform(translate(-50%, -50%) rotate(45deg) translateX($outer-width-nav / 2) rotate(-45deg));
+				@include animation(orbit-outer-nav 10s linear infinite);
+			}
+		}
+	}
+
+	.w {
+		font-size: 12px;
+	}
+}
+
+.animation.logo {
+	span.eleganticon {
+		font-size: 75px;
+
+		@include transform(translate(calc(-50% - 3px), calc(-50% - 3px)));
+	}
+
+	.circle {
+		&.inner {
+			width: $inner-width;
+			height: $inner-width;
+
+			.w {
+				@include transform(translate(-50%, -50%) rotate(45deg) translateX($inner-width / 2) rotate(-45deg));
+				@include animation(orbit-inner 4s linear infinite);
+			}
+		}
+
+		&.middle {
+			width: $middle-width;
+			height: $middle-width;
+
+			.w {
+				@include transform(translate(-50%, -50%) rotate(45deg) translateX($middle-width / 2) rotate(-45deg));
+				@include animation(orbit-middle 7.5s linear infinite);
+			}
+		}
+
+		&.outer {
+			width: $outer-width;
+			height: $outer-width;
+
+			.w {
+				@include transform(translate(-50%, -50%) rotate(45deg) translateX($outer-width / 2) rotate(-45deg));
+				@include animation(orbit-outer 10s linear infinite);
+			}
+		}
+	}
+
+	.w {
+		font-size: 25px;
+	}
+}
+
+.logo:hover {
+	.circle {
+		border: 1px solid transparent;
+	}
+
+	.w {
+		// -webkit-animation: none !important;
+		// @include transform(translate(-50%, -50%) rotate(0deg) translateX(0) rotate(0deg) !important);
+		font-size: 50px;
+		-webkit-animation-play-state: paused !important;
+	}
+
+	// .inner .w {
+	// 	// -webkit-animation: none;
+	// }
+}
