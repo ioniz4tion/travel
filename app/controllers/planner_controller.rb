@@ -12,7 +12,7 @@ class PlannerController < ApplicationController
   	Question.all.order(:id).each do |question|
   		@answers << question.answers.order(:id)
   	end
-  	render layout: 'planner_layout'
+  	#render layout: 'planner_layout'
   end
 
   def update_question
@@ -132,7 +132,7 @@ class PlannerController < ApplicationController
 
   	#6 additional view data
   	# render text: @packageRating.inspect
-  	render layout: 'planner_layout'
+  	#render layout: 'planner_layout'
   end
 
   private
