@@ -49,3 +49,18 @@
     0% { @include transform(translate(-50%, -50%) rotate(0deg) translateX($outer-width / 2) rotate(0deg)); }
     100% { @include transform(translate(-50%, -50%) rotate(360deg) translateX($outer-width / 2) rotate(-360deg)); }
 }
+
+@include keyframes(orbit-inner-nav) {
+    0% { @include transform(translate(-50%, -50%) rotate(0deg) translateX($inner-width-nav / 2) rotate(0deg)); }
+    100% { @include transform(translate(-50%, -50%) rotate(360deg) translateX($inner-width-nav / 2) rotate(-360deg)); }
+}
+
+@include keyframes(orbit-middle-nav) {
+    0% { @include transform(translate(-50%, -50%) rotate(0deg) translateX($middle-width-nav / 2) rotate(0deg)); }
+    100% { @include transform(translate(-50%, -50%) rotate(-360deg) translateX($middle-width-nav / 2) rotate(360deg)); }
+}
+
+@include keyframes(orbit-outer-nav) {
+    0% { @include transform(translate(-50%, -50%) rotate(0deg) translateX($outer-width-nav / 2) rotate(0deg)); }
+    100% { @include transform(translate(-50%, -50%) rotate(360deg) translateX($outer-width-nav / 2) rotate(-360deg)); }
+}
