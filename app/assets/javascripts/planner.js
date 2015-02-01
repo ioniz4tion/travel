@@ -47,6 +47,8 @@ $(document).ready(function() {
 	//suggest page code
 
 	$("#another").click(function() {
-		$("#cities").slideUp();
+		$("#cities").addClass("show");
+		$("body").addClass("no-overflow");
+		$("nav").addClass("hidden");
 	});
 });
