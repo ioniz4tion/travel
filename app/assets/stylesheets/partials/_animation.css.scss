@@ -12,8 +12,11 @@
 	span.eleganticon {
 		display: block;
 		color: $blue;
+		opacity: 1;
+		z-index: -1;
 		
 		@include xy-center;
+		@include transition(all 2s);
 	}
 
 	.circle {
@@ -22,6 +25,7 @@
 		z-index: -1;
 
 		@include xy-center;
+		@include transition(all 1s);
 	}
 
 	.w {
@@ -123,18 +127,49 @@
 }
 
 .logo:hover {
+	.eleganticon {
+		opacity: 0.5;
+
+		@include transform(translate(calc(-50% - 3px), calc(-50% - 3px)) scale(2) !important);
+	}
+
 	.circle {
 		border: 1px solid transparent;
 	}
+}
 
-	.w {
-		// -webkit-animation: none !important;
-		// @include transform(translate(-50%, -50%) rotate(0deg) translateX(0) rotate(0deg) !important);
-		font-size: 50px;
-		-webkit-animation-play-state: paused !important;
+.text {
+	position: absolute;
+	color: $light-grey;
+	font-size: 45px;
+	font-weight: bold;
+	text-transform: uppercase;
+	overflow: hidden;
+
+	&.orld {
+		top: 90px;
+		left: 128px;
 	}
 
-	// .inner .w {
-	// 	// -webkit-animation: none;
-	// }
+	&.ide {
+		left: 150px;
+		
+		@include y-center;
+	}
+
+	&.anderings {
+		top: 200px;
+		left: 63px;
+	}
+
+	span {
+		position: relative;
+		right: 100%;
+
+		@include transition(all 1s);
+
+		&.show {
+			right: 0;
+		}
+	}
 }

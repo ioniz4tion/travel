@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-	var innerGoTo = [50, 25];
-	var middleGoTo = [130, 205];
-	var outerGoTo = [160, 400];
+	var innerGoTo = [69, 79];
+	var middleGoTo = [165, 205];
+	var outerGoTo = [153, 331];
 
 	$('.logo').mouseenter(function() {
 
@@ -37,6 +37,23 @@ $(document).ready(function() {
 			'top' : outerTranslate[1] + 'px'
 		});
 
+		$('.w').css({
+			'font-size' : '45px',
+			    '-ms-animation-play-state' : 'paused',
+			   '-moz-animation-play-state' : 'paused',
+			'-webkit-animation-play-state' : 'paused',
+			     '-o-animation-play-state' : 'paused',
+			        'animation-play-state' : 'paused'
+		});
+
+		setTimeout(function() {
+			$('.text span').css('right', '0');
+			// $('.logo .eleganticon').css({
+			// 	'font-size' : '200px',
+			// 	'opacity' : '0.5'
+			// });
+		}, 1000);
+
 		// console.log(inner);
 		// console.log(middle);
 		// console.log(outer);
@@ -44,10 +61,29 @@ $(document).ready(function() {
 	});
 
 	$('.logo').mouseleave(function() {
-		$('.inner .w, .middle .w, .outer .w').css({
-			'left' : '50%',
-			'top' : '50%'
-		});
+
+		setTimeout(function() {
+			$('.inner .w, .middle .w, .outer .w').css({
+				'left' : '50%',
+				'top' : '50%'
+			});
+
+			$('.w').css({
+				'font-size' : '25px',
+				    '-ms-animation-play-state' : 'running',
+				   '-moz-animation-play-state' : 'running',
+				'-webkit-animation-play-state' : 'running',
+				     '-o-animation-play-state' : 'running',
+				        'animation-play-state' : 'running'
+			});
+		}, 1000);
+		
+		$('.text span').css('right', '100%');
+		// $('.logo .eleganticon').css({
+		// 	'font-size' : '75px',
+		// 	'opacity' : '1'
+		// });
+
 	});
 
 });
