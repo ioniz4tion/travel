@@ -1,3 +1,5 @@
+//planner page code
+
 $(document).ready(function() {
 	var currentQuestion = 1;
 	var questionNumber = $('.question').length;
@@ -40,5 +42,13 @@ $(document).ready(function() {
 		$("#q" + currentQuestion + " .answer").removeClass("selected")
 		.removeClass("red-select blue-select green-select");
 		$(this).addClass("selected").addClass(color + "-select");
+	});
+
+	//suggest page code
+
+	$("#another").click(function() {
+		$("#cities").addClass("show");
+		$("body").addClass("no-overflow");
+		$("nav").addClass("hidden");
 	});
 });

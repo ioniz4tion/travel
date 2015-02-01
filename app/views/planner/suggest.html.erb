@@ -1,8 +1,39 @@
-<div class="recommend">
-<span class="recommend-span">We Recommend a vacation to:</span>
-</div>
+<%= form_tag('planner#suggest', id: "questions") do %>
+	<div class="recommend">
+		<span class="recommend-span">We Recommend a vacation to:</span>
+	</div>
 
-<div class="city-container">
-	<span class="city-name"><%= @packages.first.name %></span>
-	<%= image_tag(@packages.first.image_link, class: "package-image") %>
+	<div class="city-container">
+		<span class="city-name"><%= @packages.first.name %></span>
+		<%= image_tag(@packages.first.image_link, class: "package-image") %>
+	</div>
+
+
+	<div class="controls">
+		<button id="another" class="btn-slide btn btn-1 btn-1b" type="button">Pick Another</button>
+		<button id="next" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
+	</div>
+
+<% end %>
+
+<div id="cities">
+	<% @packages.each do |package| %>
+		<div class="city-box">
+		<div class="hi-lo">
+				<%= image_tag(package.image_link) %>
+			</div>
+			<span><%= package.name %></span>
+
+			
+
+			<div class="weather-graphic">
+				<div>								
+					<span>1st Choice</span>
+				</div>
+			</div>
+
+		</div>
+
+		<hr>
+	<% end %>	
 </div>
