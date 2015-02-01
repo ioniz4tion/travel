@@ -98,6 +98,10 @@ nav {
 	span {
 		@include transition(all 0.3s);
 	}
+
+	.first-letter {
+		color: $blue;
+	}
 }
 
 .dropdown {
