@@ -32,7 +32,9 @@ Rails.application.routes.draw do
   resources :gen_packages
 
   get '/planner' => 'planner#planner'
-  match '/planner' => 'planner#suggest', via: :post
+  match '/planner/suggest' => 'planner#suggest', via: :post
+
+  get '/planner/suggest/another' => 'planner#another'
 
   put '/planner/q/:id' => 'planner#update_question'
   put '/planner/a/:id' => 'planner#update_answer'

@@ -49,6 +49,29 @@ $(document).ready(function() {
 	$("#another").click(function() {
 		$("#cities").addClass("show");
 		$("body").addClass("no-overflow");
-		$("nav").addClass("hidden");
 	});
+
+	$(".down").click(function() {
+		$("#cities").removeClass("show");
+		$("body").removeClass("no-overflow");
+	});
+
+	$(".choose").click(function() {
+		$("#cities").removeClass("show");
+		$("body").removeClass("no-overflow");
+		choose = parseInt(this.id.replace("choose",""));
+		request(choose);
+
+		
+	});
+
+	var request = function(choose) {
+		$.ajax({url:"/planner/suggest/another", data: {choose: choose}, success:function(data){
+			data = JSON.parse(data);
+			$(".city-name").text(data[1]);
+			$(".package-image").attr("src", data[2]);
+			$("#city_id").val(data[0]);
+
+		}});
+	}
 });

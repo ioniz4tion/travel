@@ -345,13 +345,14 @@ input[type="radio"] {
 	background-color: #dba218;
 	//margin: 30px;
 	width: 220px;
-	padding: 20px 20px 20px 0px;
+	padding: 20px 10px 20px 10px;
 	font-size: 24px;
 	overflow: hidden;
 	border: none;
 	//margin-left: 30px;
 	margin-right: 45px;
-	text-align: right;
+	text-decoration: none;
+	//text-align: right;
 
 	@include transition(all .3s);	
 
@@ -393,20 +394,111 @@ input[type="radio"] {
 	overflow: hidden;
 }
 
-.hidden {
-	display:none;
-}
-
 #cities {
+	overflow: auto;
 	z-index: 10000;
 	width: 100%;
 	height: 100%;	
 	position: fixed;
 	top: 100%;
 	transition: all 2s;
-	//left:0;
 	background-color: #444;
-	//display: none;
+
+	.down {
+		width: 100%;
+		height: 60px;
+		background-color: #333;
+		position: fixed;
+		z-index:10001;
+		text-align: center;
+
+		@include transition(background 0.3s ease);
+		@include transition(all 0.5s ease);
+
+		#arrows {
+			&:after, &:before {
+				content: '';
+				position: absolute;
+				top: 50%;				
+				display: inline-block;
+				width: 40px;
+				height: 6px;
+				background: #fff;
+				border-radius: 5px;
+				box-shadow: 0 0 10px rgba(200,200,200,0.7);
+			}
+			&:after {				
+				@include transform(translateY(-50%) rotate(-25deg));
+				left:49.7%;
+			}		
+			&:before {
+				@include transform(translateY(-50%) rotate(25deg));
+				right:49.7%;
+			}
+		}
+
+		&:hover {
+			background-color: #444;
+			cursor: pointer;
+			#arrows {
+			&:after, &:before {
+					background: #dba218;
+				}
+			}
+		}
+	}
+
+	.content {
+		padding-top: 80px;
+	}
+
+	.choose {
+		color: #000;
+		position: relative;
+		background-color: #dba218;
+		//margin: 30px;
+		width: 220px;
+		padding: 20px 10px 20px 10px;
+		font-size: 24px;
+		overflow: hidden;
+		border: none;
+		//margin-left: 30px;
+		margin-right: 45px;
+		text-decoration: none;
+		//text-align: right;
+
+		@include transition(all .3s);	
+
+		&:after {
+			background-color: #36648f;
+		}
+
+		&:before {
+			transition: all .3s;
+			position: absolute;
+			left: -20px;
+			top: auto;
+			bottom: auto;
+			right: auto;
+			z-index: 2;
+			height: 100%;
+			width: 30%;
+			line-height: 1;
+			font-size: 30px;
+		}
+
+		&:hover {
+			background-color: #dba218;
+
+			&:after {			
+				background-color: #36648f;
+			}
+		}
+		position: absolute;
+		bottom: initial;
+		top:30%;
+		right:0;
+	}
 
 	.city-box {
 		padding: 20px;
@@ -444,8 +536,8 @@ input[type="radio"] {
 	}
 	img {
 
-		width: 80px;
-		height: 80px;
+		//width: 80px;
+		//height: 80px;
 	}
 
 	.hi-lo {

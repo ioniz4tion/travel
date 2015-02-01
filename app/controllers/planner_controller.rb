@@ -110,7 +110,7 @@ class PlannerController < ApplicationController
   		@packageRating << 0
   		k=1
   		package.each do |score|
-  			data = params[k.to_s.to_sym].to_i
+  			data = params[k.to_s.to_sym].to_i        
   			rating = (score - data).abs  			
   			@packageRating[i - 1] += rating
   			k += 1
@@ -121,7 +121,9 @@ class PlannerController < ApplicationController
   	@sort = @packageRating.sort
   	@packageOrder = []
   	for i in 0..(packageNumber - 1) do 
-  		@packageOrder << @packageRating.index(@sort[i]) + 1  		
+  		@packageOrder << @packageRating.index(@sort[i]) + 1
+      #This fixes error when there is two of the same scores
+      @packageRating[@packageOrder[i] - 1] = -10
   	end
 
   	@packages = []
@@ -133,6 +135,20 @@ class PlannerController < ApplicationController
   	#6 additional view data
   	# render text: @packageRating.inspect
   	#render layout: 'planner_layout'
+  end
+
+  def another
+    package = GenPackage.find_by_id(params[:choose])
+
+    array = []
+    array << package.id
+    array << package.name
+    array << package.image.url
+    # result = package.to_json(only: [:id,:name,:image])
+    result = array.to_json
+    respond_to do |format|
+      format.html { render json: result, status: :ok }
+    end
   end
 
   private
