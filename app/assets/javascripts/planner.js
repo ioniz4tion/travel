@@ -89,4 +89,12 @@ $(document).ready(function() {
 		//$('#' + buttonId + ' span').toggleClass('open');
 		$('#' + idValue).toggleClass("fliptest").show();
 	});
+
+	$("button").click(function() {
+		event.preventDefault();
+	});
+
+	$('.hotel-card').click(function() {
+		$(this).toggleClass("selected-card");
+	});
 });

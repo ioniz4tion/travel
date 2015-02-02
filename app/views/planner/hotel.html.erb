@@ -1,3 +1,5 @@
+<%= form_tag('/planner/hotel', id: "suggest") do %>
+
 <div class="card-flex">
 
 	<% @package.gen_hotels.order(:name).each do |hotel| %>
@@ -75,7 +77,7 @@
 
 			    </table>
 
-			    <button id="show<%= hotel.id %>">Show/hide map<span class="caret"></span></button>
+			    <button id="show<%= hotel.id %>">Show Map</button>
 
 			  </div>
 
@@ -83,6 +85,7 @@
 		    <div class="back back-flip">
 	        <div class="map open"> 
 	          <iframe src="<%= hotel.iframe_url %>"></iframe>
+	          <button id="show<%= hotel.id %>">Hide Map</button>
 	        </div>
 	      </div>
 
@@ -93,3 +96,9 @@
 	<% end %>
 
 </div>
+
+<div class="controls">	
+	<button id="suggest-continue" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
+</div>
+
+<% end %>

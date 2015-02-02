@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-@mixin transition($transition) {
+@mixin transition($transition...) {
 	-ms-transition:     $transition;
 	-moz-transition:    $transition;
 	-webkit-transition: $transition;
