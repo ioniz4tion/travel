@@ -60,9 +60,11 @@ $(document).ready(function() {
 		$("#cities").removeClass("show");
 		$("body").removeClass("no-overflow");
 		choose = parseInt(this.id.replace("choose",""));
-		request(choose);
+		request(choose);		
+	});
 
-		
+	$("#suggest-continue").click(function() {
+		$("#suggest").submit();
 	});
 
 	var request = function(choose) {
@@ -74,4 +76,17 @@ $(document).ready(function() {
 
 		}});
 	}
+
+	// hotel page code
+
+	$('.hotel-card button').click(function() {
+		var idValue = $(this).attr('id'),
+				buttonId = $(this).attr('id'),
+				idValue = idValue.replace('show','');
+
+		console.log(idValue);
+		//$('#' + idValue).toggleClass('open');
+		//$('#' + buttonId + ' span').toggleClass('open');
+		$('#' + idValue).toggleClass("fliptest").show();
+	});
 });

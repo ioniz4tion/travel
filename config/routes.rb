@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
   get '/planner/suggest/another' => 'planner#another'
 
+  match '/planner/hotel' => 'planner#hotel', via: :post
+
   put '/planner/q/:id' => 'planner#update_question'
   put '/planner/a/:id' => 'planner#update_answer'
   put '/planner/av/:id' => 'planner#update_answer_value'

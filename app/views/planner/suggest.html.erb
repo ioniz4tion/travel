@@ -1,4 +1,4 @@
-<%= form_tag('planner#suggest', id: "questions") do %>
+<%= form_tag('/planner/hotel', id: "suggest") do %>
 	<div class="recommend">
 		<span class="recommend-span">We Recommend a vacation to:</span>
 	</div>
@@ -13,7 +13,7 @@
 
 	<div class="controls">
 		<button id="another" class="btn-slide btn btn-1 btn-1b" type="button">Pick Another</button>
-		<button id="next" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
+		<button id="suggest-continue" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
 	</div>
 
 <% end %>
