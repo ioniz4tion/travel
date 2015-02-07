@@ -111,7 +111,7 @@ button {
 	border-radius: 10px;
 }
 
-#next {
+#next,#suggest-continue {
 	color: #000;
 	position: relative;
 	background-color: #dba218;
@@ -547,5 +547,260 @@ input[type="radio"] {
 		font-family: 'Montserrat';
 
 		// @include transform(translateY(-30%));
+	}
+}
+
+.card-flex {
+	padding-top: 50px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.hotel-card {
+	display: inline-block;
+	text-align: center;
+	width: 330px;
+	vertical-align: middle;
+	cursor: pointer;
+	position: relative;
+
+	@include perspective(1500px);
+	@include transition(all .3s);
+
+	&:hover {
+		@include transform(translateY(-10px));
+	}
+
+	.flipper-card {
+		position: relative;
+		transform-style: preserve-3d;
+
+		@include transition(all 1s, box-shadow .2s);
+		box-shadow: 4px 4px 25px black;
+	}	
+
+	.front {
+		visibility: visible;
+		opacity: 1;
+		background-color: #676767;
+		@include transition(all linear 0s 0.25s);
+	}
+
+	.back {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		visibility: hidden;
+		opacity: 0;
+		z-index: -1;
+
+		@include transition(all linear 0s 0.25s);
+		@include transform(rotateY(180deg));
+	}
+
+	// .front,
+	// .back-flip {
+	// 	* {
+	// 		visibility: inherit !important;
+	// 	}
+	// }
+
+	.fliptest {
+		@include transform(rotateY(180deg));
+
+		.front {
+			visibility: hidden;
+			opacity: 0;
+
+			@include transition(all linear 0s 0.25s);
+		}
+
+		.back-flip {
+			visibility: visible;
+			opacity: 1;
+
+			@include transition(all linear 0s 0.25s);
+		}
+	}
+
+	h2 {
+		font-size: 32px;
+		height: 80px;
+		width:100%;
+		display: inline-block;
+		position: relative;
+		span {
+			left:0;
+			width:100%;
+			@include y-center();
+			color: #e6b122;
+			padding:5px;
+		}
+	}
+
+	.description {
+		display: inline-block;
+		text-align: left;
+		padding: 10px;
+
+		p {
+			line-height: 1.25;
+			text-indent: 20px;
+		}
+	}
+
+	.rating {
+		
+		.glyphicon,
+		.eleganticon {
+			font-size: 28px;
+			color: $yellow;
+		}
+
+		div {
+			display: inline-block;
+		}
+
+		p {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 22px;
+			text-indent: 5px;
+
+			.slash {
+				color: #898989;
+				margin: 0 5px;
+			}
+		}
+	}
+
+	table {
+		text-align: left;
+		td {
+			height: 40px;
+			padding-left: 5px;
+			vertical-align: middle;
+		}
+
+		.glyphicon,
+		.eleganticon {
+			// float: left;
+			font-size: 24px;
+			margin-right: 5px;
+			color: #898989;
+		}
+
+		div {
+			display: inline-block;
+		}
+
+		p,
+		a {
+			display: table-cell;
+			line-height: 24px;
+			// height: 24px;
+			vertical-align: middle;
+		}
+
+		a {
+			color: $link-color;
+
+			@include transition(all 0.3s);
+
+			&:hover {
+				color: $yellow;
+			}
+		}
+	}
+
+	.caret {
+	  display: inline-block;
+	  width: 0;
+	  height: 0;
+	  margin-left: 8px;
+	  vertical-align: middle;
+	  border-top: $caret-size solid;
+	  border-right: $caret-size solid transparent;
+	  border-left: $caret-size solid transparent;
+
+	  @include transition(all 0.3s);
+
+	  &.open {
+	  	@include transform(rotate(180deg));
+	  }
+	}
+
+	.map {
+		height: 0;
+		overflow: hidden;
+		margin-top: 0px;
+
+		@include transition(all 0.3s);
+
+		&.open {
+			height: 100%;
+		}
+
+		iframe {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+	}
+
+	/*@media (min-height: 901px) {
+		.map.open {
+			height: 800px;
+
+			iframe {
+				height: 800px;
+			}
+		}
+	}*/
+
+	button {
+		display: block;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		outline: none;
+		border: none;
+		background: $blue;
+
+		@include transition(all 0.3s);
+
+		&:hover {
+			background: $yellow;
+
+			span {
+				color: $dark-grey;
+			}
+		}
+
+		span {
+			color: $light-grey;
+			font-size: 22px;
+
+			@include transition(all 0.3s);
+
+			&.glyphicon-plus {
+				margin-right: -4px;
+			}
+
+			&.glyphicon-remove {
+				margin-right: -1px;
+			}
+		}
+	}
+}
+
+.selected-card {
+	.flipper-card {
+		box-shadow: 0px 0px 20px white;
 	}
 }

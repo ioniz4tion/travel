@@ -1,0 +1,104 @@
+<%= form_tag('/planner/hotel', id: "suggest") do %>
+
+<div class="card-flex">
+
+	<% @package.gen_hotels.order(:name).each do |hotel| %>
+
+		<div class="hotel-card">
+
+			<div class="flipper-card" id="<%= hotel.id %>">
+
+				<div class="front">
+
+					<h2><span><%= hotel.name %></span></h2>
+
+					<div class="price-img">
+					  <%= image_tag(hotel.image_thumb.url) %>
+					  <div></div>
+					  <p><%= hotel.pricing %></p>
+					</div>
+
+					
+					<div class="description"> 
+						<div class="rating">
+		          <span class="eleganticon icon_star"></span>
+		          <div>
+		            <p><%= hotel.rating %><span class="slash">/</span>5</p>
+		          </div>
+		        </div>       
+		        <p><%= hotel.description %></p>        
+		      </div>
+
+		      <table>
+
+			      <tr>
+
+			        <td>
+			          <span class="eleganticon icon_pin_alt"></span>
+			          <div>
+			            <p><%= hotel.address %></p>
+			          </div>
+			        </td>
+
+		       </tr>
+
+		       <tr>
+
+			        <td>
+			          <span class="eleganticon icon_globe-2"></span>
+			          <div>
+			            <a href="<%= hotel.website %>" target="_blank"><%= hotel.short_url %></a>
+			          </div>
+			        </td>
+
+			      </tr>
+
+			      <tr>
+
+			        <td>
+			          <span class="eleganticon icon_clock_alt"></span>
+			          <div>
+			            <p><%= hotel.hours %></p>
+			          </div>
+			        </td>
+
+			      </tr>
+
+			      <tr>
+
+			        <td>
+			          <span class="eleganticon icon_phone"></span>
+			          <div>
+			            <p><%= hotel.phone %></p>
+			          </div>
+			        </td>
+
+			      </tr>
+
+			    </table>
+
+			    <button id="show<%= hotel.id %>">Show Map</button>
+
+			  </div>
+
+
+		    <div class="back back-flip">
+	        <div class="map open"> 
+	          <iframe src="<%= hotel.iframe_url %>"></iframe>
+	          <button id="show<%= hotel.id %>">Hide Map</button>
+	        </div>
+	      </div>
+
+      </div>
+
+		</div>
+
+	<% end %>
+
+</div>
+
+<div class="controls">	
+	<button id="suggest-continue" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
+</div>
+
+<% end %>
