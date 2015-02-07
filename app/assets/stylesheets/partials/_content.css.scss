@@ -14,7 +14,7 @@
 		border: none;
 		// margin-bottom: 25px;
 
-		@media (min-height: 901px) {
+		@media (min-width: 1000px) {
 			height: 800px;
 		}
 	}
@@ -46,6 +46,10 @@
 		float: right;
 
 		@include transition(all 0.3s);
+
+		@media (max-width: 960px) {
+			clear: both;
+		}
 
 		&:hover {
 			// text-decoration: underline;
@@ -89,16 +93,25 @@
 	margin-top: 30px;
 	position: relative;
 
-	div {
+	> div {
 		position: relative;
 	}
 
 	.description {
 		display: inline-block;
-		width: 750px;
-		position: absolute;
-		top: 0;
-		left: 350px;
+		width: calc(100% - 350px);
+		// position: relative;
+		// top: 0;
+		// left: 350px;
+		float: right;
+
+		@media (max-width: 960px) {
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+			float: none;
+			clear: both;
+		}
 
 		h2 {
 			display: inline-block;
@@ -137,10 +150,16 @@
 	}
 
 	table {
+		clear: both;
+
 		td {
 			height: 50px;
 			padding: 10px;
 			vertical-align: middle;
+
+			@media (max-width: 960px) {
+				display: block;
+			}
 		}
 
 		.glyphicon,
@@ -193,10 +212,18 @@
 .price-img {
 	display: block;
 	width: 330px;
-	height: 210px;
+	// height: 210px;
 	margin-right: 20px;
 	position: relative;
 	overflow: hidden;
+	float: left;
+
+	@media (max-width: 960px) {
+		width: 90%;
+		margin: 0 auto;
+		float: none;
+		clear: both;
+	}
 
 	img {
 		display: block;
@@ -260,7 +287,17 @@
 	}
 }
 
-@media (min-height: 901px) {
+@media (max-width: 960px) {
+	.map.open {
+		height: 400px;
+
+		iframe {
+			height: 400px;
+		}
+	}
+}
+
+@media (min-width: 1000px) {
 	.map.open {
 		height: 800px;
 

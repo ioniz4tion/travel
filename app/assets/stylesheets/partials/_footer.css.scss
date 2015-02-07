@@ -6,6 +6,10 @@ footer {
 	// border: 1px solid #e7e7e7;
 	margin-top: 50px;
 
+	@media (max-width: 960px) {
+		// margin-top: 166px;
+	}
+
 	> div {
 		// border: 1px solid $light-grey;
 	}
