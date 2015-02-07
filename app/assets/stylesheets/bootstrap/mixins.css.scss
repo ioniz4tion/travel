@@ -126,6 +126,16 @@
 	// @include arrow-shadow(rgba(200, 200, 200, 0.7));
 }
 
+@mixin nav-arrow {
+	display: inline-block;
+	width: 30px;
+	height: 5px;
+	background: $light-grey;
+	border-radius: 5px;
+
+	@include transition(all 0.3s);
+}
+
 @mixin arrow-shadow($color) {
 	box-shadow: 0 0 10px $color;
 }

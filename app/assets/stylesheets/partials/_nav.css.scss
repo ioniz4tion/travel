@@ -21,6 +21,32 @@ nav {
 	a {
 		color: $light-grey;
 	}
+
+	button {
+		display: none;
+		position: absolute;
+		right: 0;
+		border: none;
+		outline: none;
+		background: $blue;
+
+		@include transition(all 0.3s);
+
+		@media #{$tablet} {
+			display: block;
+			width: $nav-height;
+			height: $nav-height;
+		}
+
+		&:hover {
+			background: $yellow;
+
+			.nav-arrow:before,
+			.nav-arrow:after {
+				background: $dark-grey;
+			}
+		}
+	}
 }
 
 .nav-right {
@@ -243,5 +269,59 @@ nav {
 				color: $dark-grey;
 			}
 		}
+	}
+}
+
+.nav-arrow {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		right: 50%;
+
+		// @include xy-center;
+		@include transition(background 0.3s);
+		@include nav-arrow;
+	}
+
+	&:before {
+		top: $nav-arrow-y-pos;
+
+		@include transform(translateX(50%) rotate(180deg - $arrow-rotate));
+	}
+
+	&:after {
+		bottom: $nav-arrow-y-pos;
+
+		@include transform(translateX(50%) rotate(-180deg + $arrow-rotate));
+	}
+
+	&.open {
+		&:before {
+			@include transform(translateX(50%) rotate($arrow-rotate));
+		}
+
+		&:after {
+			@include transform(translateX(50%) rotate(-$arrow-rotate));
+		}
+	}
+}
+
+.nav-mobile {
+	width: 240px;
+	position: fixed;
+	top: $nav-height;
+	bottom: 0;
+	right: -240px;
+	background: $body-bg;
+
+	@include transition(all 0.3s);
+
+	&.open {
+		right: 0;
 	}
 }
