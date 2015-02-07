@@ -128,7 +128,7 @@
 	.rating {
 		.glyphicon,
 		.eleganticon {
-			font-size: 28px;
+			font-size: 1.75rem;
 			color: $yellow;
 			margin-right: 10px;
 		}
@@ -140,7 +140,7 @@
 		p {
 			display: table-cell;
 			vertical-align: middle;
-			font-size: 22px;
+			font-size: 1.375rem;
 
 			.slash {
 				color: #898989;
@@ -165,7 +165,7 @@
 		.glyphicon,
 		.eleganticon {
 			// float: left;
-			font-size: 24px;
+			font-size: 1.5rem;
 			margin-right: 10px;
 			color: #898989;
 		}
@@ -233,13 +233,15 @@
 
 	div {
 		position: absolute;
-		top: 70.95%;
-		left: 53.63%;
+		// top: 70.95%;
+		// left: 53.63%;
+		bottom: 0;
+		right: 0;
 		width: 195.58px;
 		height: 100px;
 		background: $dark-grey;
 
-		@include transform(rotate(-32.47deg));
+		@include transform(translate(21.5%, 40%) rotate(-32.47deg));
 	}
 
 	p {
@@ -247,7 +249,7 @@
 		position: absolute;
 		bottom: $pricing-pos;
 		right: $pricing-pos;
-		font-size: 26px;
+		font-size: 1.625rem;
 	}
 }
 

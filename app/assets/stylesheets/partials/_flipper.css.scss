@@ -93,7 +93,7 @@
 
 		span {
 			color: $light-grey;
-			font-size: 22px;
+			font-size: 1.375rem;
 
 			@include transition(all 0.3s);
 
@@ -157,25 +157,25 @@
 		letter-spacing: 1.5px;
 
 		&.temp-high {
-			font-size: 50px;
+			font-size: 3.125rem;
 			color: #cd2020;
 		}
 
 		&.temp-low {
-			font-size: 25px;
+			font-size: 1.5625rem;
 			color: $blue;
 		}
 
 		&.slash {
 			margin: 0 5px;
-			font-size: 35px;
+			font-size: 2.1875rem;
 		}
 	}
 
 	.temp-now {
 		font-family: 'Montserrat';
 		color: $light-grey;
-		font-size: 50px;
+		font-size: 3.125rem;
 		white-space: nowrap;
 	}
 
@@ -183,7 +183,7 @@
 		font-family: 'Montserrat';
 		text-transform: uppercase;
 		color: $yellow;
-		font-size: 35px;
+		font-size: 2.1875rem;
 		padding-top: 20px;
 	}
 
@@ -224,7 +224,7 @@
 		text-align: right;
 
 		.icon {
-			font-size: 150px;
+			font-size: 9.375rem;
 			font-weight: lighter;
 			color: $icon-color;
 			position: absolute;
@@ -253,18 +253,18 @@
 		letter-spacing: 1.5px;
 
 		&.temp-high {
-			font-size: 40px;
+			font-size: 2.5rem;
 			color: #cd2020;
 		}
 
 		&.temp-low {
-			font-size: 20px;
+			font-size: 1.25rem;
 			color: $blue;
 		}
 
 		&.slash {
 			margin: 0 5px;
-			font-size: 30px;
+			font-size: 1.875rem;
 		}
 	}
 
@@ -272,7 +272,7 @@
 		font-family: 'Montserrat';
 		text-transform: uppercase;
 		color: $yellow;
-		font-size: 35px;
+		font-size: 2.1875rem;
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
@@ -324,7 +324,7 @@
 		}
 
 		.icon {
-			font-size: 90px;
+			font-size: 5.625rem;
 			font-weight: lighter;
 			color: $icon-color;
 			position: absolute;

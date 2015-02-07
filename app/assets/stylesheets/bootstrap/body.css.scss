@@ -1,10 +1,25 @@
 @import 'variables.css.scss';
 @import 'mixins.css.scss';
 
+html {
+	font-size: 16px;
+
+	@media #{$tablet} {
+		// font-size: 22px;
+
+		// & *,
+		// & *:before,
+		// & *:after {
+		// 	font-size: 22px;
+		// }
+	}
+}
+
 body {
 	background: $body-bg;
 	background-size: 50% auto;
 	color: $light-grey;
 	font-family: 'lato';
+	// font-size: 16px;
 	-webkit-font-smoothing: antialiased;
 }

@@ -60,7 +60,7 @@
 
 		span {
 			color: $blue;
-			font-size: 24px;
+			font-size: 1.5rem;
 			font-variant: small-caps;
 			font-weight: bold;
 			padding: 5px;
@@ -84,20 +84,20 @@
 	}
 }
 
-@media (min-height: 901px) {
-	.slideshow {
-		height: 900px !important;
+// @media (min-height: 901px) {
+// 	.slideshow {
+// 		height: 900px !important;
 
-		li {
-			height: 900px !important;
-		}
+// 		li {
+// 			height: 900px !important;
+// 		}
 
-		.bx-wrapper,
-		.bx-viewport {
-			height: 900px !important;
-		}
-	}
-}
+// 		.bx-wrapper,
+// 		.bx-viewport {
+// 			height: 900px !important;
+// 		}
+// 	}
+// }
 
 .slideshow-heading {
 	display: block;
