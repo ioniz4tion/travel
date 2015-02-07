@@ -12,7 +12,7 @@
 	// color: $dark-grey;
 	overflow: hidden;
 
-	@media (max-width: 960px) {
+	@media #{$tablet} {
 		width: calc(100% - 360px);
 		height: $slideshow-height - 116px;
 	}
@@ -20,7 +20,7 @@
 	li {
 		height: $slideshow-height;
 
-		@media (max-width: 960px) {
+		@media #{$tablet} {
 			height: $slideshow-height - 116px;
 		}
 
@@ -78,7 +78,7 @@
 	.bx-viewport {
 		height: $slideshow-height !important;
 
-		@media (max-width: 960px) {
+		@media #{$tablet} {
 			height: $slideshow-height - 116px !important;
 		}
 	}

@@ -13,7 +13,7 @@ nav {
 	letter-spacing: 1.5px;
 
 	@include transition(top 0.2s ease-in-out);
-
+	
 	&.nav-up {
 		top: -$nav-height;
 	}
@@ -29,6 +29,10 @@ nav {
 	// margin-right: 10%;
 
 	@include nav-flex;
+
+	@media #{$tablet} {
+		display: none;
+	}
 
 	> div {
 		display: inline-block;

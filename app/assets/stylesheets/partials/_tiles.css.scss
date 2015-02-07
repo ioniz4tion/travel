@@ -11,7 +11,7 @@
 	font-size: 14px;
 	background: $blue;
 
-	@media (max-width: 960px) {
+	@media #{$tablet} {
 		position: absolute;
 		top: $slideshow-height - 31px;
 		left: 0;
@@ -24,7 +24,7 @@
 		height: 116px;
 		// border: 1px solid $light-grey;
 
-		@media (max-width: 960px) {
+		@media #{$tablet} {
 			display: inline-block;
 			width: 33.33333%;
 			float: left;
