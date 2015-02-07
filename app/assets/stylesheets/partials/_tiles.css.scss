@@ -11,10 +11,24 @@
 	font-size: 14px;
 	background: $blue;
 
+	@media (max-width: 960px) {
+		position: absolute;
+		top: $slideshow-height - 31px;
+		left: 0;
+		width: calc(100% - 360px);
+		height: 116px;
+	}
+
 	> div {
 		width: 100%;
 		height: 116px;
 		// border: 1px solid $light-grey;
+
+		@media (max-width: 960px) {
+			display: inline-block;
+			width: 33.33333%;
+			float: left;
+		}
 
 		a {
 			display: block;

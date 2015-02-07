@@ -39,10 +39,18 @@
 						<span><%= package.name %></span>
 
 						<ul>
-							<li><%= link_to "About","/#{package.name}" %></li>
-							<li><%= link_to "Hotels","/#{package.name}/hotels" %></li>
-							<li><%= link_to "Restaurants","/#{package.name}/restaurants" %></li>
-							<li><%= link_to "Attractions","/#{package.name}/attractions" %></li>
+							<li><%= link_to("/#{package.name}") do %>
+								About<span class="eleganticon icon_info_alt"></span>
+							<% end %></li>
+							<li><%= link_to("/#{package.name}/hotels") do %>
+								Hotels<span class="eleganticon icon_building"></span>
+							<% end %></li>
+							<li><%= link_to("/#{package.name}/restaurants") do %>
+								Restaurants<span class="eleganticon icon_mug"></span>
+							<% end %></li>
+							<li><%= link_to("/#{package.name}/attractions") do %>
+								Attractions<span class="eleganticon icon_camera_alt"></span>
+							<% end %></li>
 						</ul>
 
 					</div>

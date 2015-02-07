@@ -12,8 +12,17 @@
 	// color: $dark-grey;
 	overflow: hidden;
 
+	@media (max-width: 960px) {
+		width: calc(100% - 360px);
+		height: $slideshow-height - 116px;
+	}
+
 	li {
 		height: $slideshow-height;
+
+		@media (max-width: 960px) {
+			height: $slideshow-height - 116px;
+		}
 
 			div {
 			position: relative;
@@ -23,9 +32,9 @@
 
 			img {
 				z-index: -1;
-				min-width: 100%;
-				min-height: 100%;
-				margin-left: -1px;
+				min-width: calc(100% + 1px);
+				// min-height: 100%;
+				// margin-left: -1px;
 				
 				@include xy-center;
 			}
@@ -68,6 +77,10 @@
 	.bx-wrapper,
 	.bx-viewport {
 		height: $slideshow-height !important;
+
+		@media (max-width: 960px) {
+			height: $slideshow-height - 116px !important;
+		}
 	}
 }
 
