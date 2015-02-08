@@ -552,9 +552,14 @@ input[type="radio"] {
 }
 
 .card-flex {
-	padding-top: 50px;
+	padding-top: 20px;
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
+
+	input[type="checkbox"] {
+		display: none;
+	}
 }
 
 .hotel-card {
@@ -599,6 +604,14 @@ input[type="radio"] {
 
 		@include transition(all linear 0s 0.25s);
 		@include transform(rotateY(180deg));
+	}
+
+	.price-img {
+		width: 330px !important;
+	}
+
+	img {
+		width: 330px !important;
 	}
 
 	// .front,

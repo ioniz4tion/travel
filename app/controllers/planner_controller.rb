@@ -152,7 +152,31 @@ class PlannerController < ApplicationController
   end
 
   def hotel
-    @package = GenPackage.find_by_id(params[:id])
+    if params[:city_id] != nil      
+      session[:city_id] = params[:city_id]
+    end
+    @package = GenPackage.find_by_id(session[:city_id])
+  end
+
+  def restaurant
+    if params[:hotel_id] != nil
+      session[:hotel_id] = params[:hotel_id]
+    end
+    @package = GenPackage.find_by_id(session[:city_id])
+  end
+
+  def attraction
+    if params[:restaurant_id] != nil
+      session[:restaurant_id] = params[:restaurant_id]
+    end
+    @package = GenPackage.find_by_id(session[:city_id])
+  end
+
+  def display
+    if params[:attraction_id] != nil
+      session[:attraction_id] = params[:attraction_id]
+    end
+    @package = GenPackage.find_by_id(session[:city_id])
   end
 
   private

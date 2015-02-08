@@ -33,10 +33,21 @@ Rails.application.routes.draw do
 
   get '/planner' => 'planner#planner'
   match '/planner/suggest' => 'planner#suggest', via: :post
+  get '/planner/suggest' => 'planner#suggest'
 
   get '/planner/suggest/another' => 'planner#another'
 
   match '/planner/hotel' => 'planner#hotel', via: :post
+  get '/planner/hotel' => 'planner#hotel'
+
+  match '/planner/restaurant' => 'planner#restaurant', via: :post
+  get '/planner/restaurant' => 'planner#restaurant'
+
+  match '/planner/attraction' => 'planner#attraction', via: :post
+  get '/planner/attraction' => 'planner#attraction'
+
+  match '/planner/display' => 'planner#display', via: :post
+  get '/planner/display' => 'planner#display'
 
   put '/planner/q/:id' => 'planner#update_question'
   put '/planner/a/:id' => 'planner#update_answer'
