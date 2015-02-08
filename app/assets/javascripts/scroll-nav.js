@@ -16,7 +16,7 @@ $(document).ready(function() {
 	});
 
 	setInterval(function() {
-	  if (didScroll && $(window).width() >= 961) {
+	  if (didScroll && $(window).width() >= 1001) {
 	    hasScrolled();
 	    didScroll = false;
 	  }

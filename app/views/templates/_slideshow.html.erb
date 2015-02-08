@@ -4,7 +4,7 @@
 
 		<% @slideshow.each do |slide| %>
 	  	<li>
-	  		<div style="background: url(<%= slide[:link] %>); background-size: cover;">
+	  		<div style="background:url(<%= slide[:link] %>); background-position:center; background-size:cover;">
 	  			<!-- <a href="">Learn More</a> -->
 		  		<span class="slideshow-heading"><%= slide[:name] %></span>
 		  		<!--<%= image_tag(slide[:link]) %>-->
