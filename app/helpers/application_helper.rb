@@ -115,6 +115,9 @@ module ApplicationHelper
 			when "Rain", "PM Rain", "AM Light Rain"
 				'<div class="icon icon-basecloud"></div>
 				<div class="icon icon-rainy"></div>'.html_safe
+
+			else
+				'<div class="icon icon-cloud"></div>'.html_safe
 			
 		end		
 	end

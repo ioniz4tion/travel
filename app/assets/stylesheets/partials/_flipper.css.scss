@@ -159,6 +159,10 @@
 
 	// @include backface-visibility(hidden);
 
+	@media #{$hd} {
+		height: 438.143px;
+	}
+
 	button {
 		z-index: 1;
 	}
