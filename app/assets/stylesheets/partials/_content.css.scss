@@ -322,12 +322,12 @@
 	}
 }
 
-@media (min-width: 1000px) {
+@media #{$hd} {
 	.map.open {
-		// height: 800px;
+		height: 800px;
 
 		iframe {
-			// height: 800px;
+			height: 800px;
 		}
 	}
 }
