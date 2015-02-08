@@ -53,7 +53,7 @@
 		border: none;
 		outline: none;
 		float: right;
-		font-size: 1rem;
+		font-size: 1.25rem;
 
 		@include transition(all 0.3s);
 
@@ -109,11 +109,15 @@
 
 	.description {
 		display: inline-block;
-		width: calc(100% - 350px);
+		width: calc(100% - 420px);
 		// position: relative;
 		// top: 0;
 		// left: 350px;
 		float: right;
+
+		@media #{$hd} {
+			width: calc(100% - 525px);
+		}
 
 		@media #{$tablet} {
 			display: block;
@@ -133,7 +137,7 @@
 		p {
 			line-height: 1.25;
 			margin-bottom: 10px;
-			font-size: 1rem;
+			font-size: 1.25rem;
 		}
 	}
 
@@ -177,7 +181,7 @@
 		.glyphicon,
 		.eleganticon {
 			// float: left;
-			font-size: 1.5rem;
+			font-size: 1.875rem;
 			margin-right: 10px;
 			color: #898989;
 		}
@@ -189,8 +193,8 @@
 		p,
 		a {
 			display: table-cell;
-			line-height: 1.5rem;
-			font-size: 1rem;
+			line-height: 1.875rem;
+			font-size: 1.25rem;
 			// height: 24px;
 			vertical-align: middle;
 		}
@@ -224,16 +228,22 @@
 
 .price-img {
 	display: block;
-	width: 330px;
+	width: 400px;
 	// height: 210px;
 	margin-right: 20px;
 	position: relative;
 	overflow: hidden;
 	float: left;
 
+	@media #{$hd} {
+		width: 400px * 1.25;
+		margin-right: 20px * 1.25;
+	}
+
 	@media #{$tablet} {
 		width: 90%;
 		margin: 0 auto;
+		margin-bottom: 25px;
 		float: none;
 		clear: both;
 	}
@@ -314,10 +324,10 @@
 
 @media (min-width: 1000px) {
 	.map.open {
-		height: 800px;
+		// height: 800px;
 
 		iframe {
-			height: 800px;
+			// height: 800px;
 		}
 	}
 }
@@ -328,9 +338,21 @@
 	height: 200px;
 	border-radius: 100px;
 	overflow: hidden;
+	float: left;
+
+	@media #{$tablet} {
+		margin: 0 auto;
+		margin-bottom: 20px;
+		float: none;
+	}
 }
 
 .about-description {
-	left: 220px !important;
-	width: 880px !important;
+	width: calc(100% - 220px) !important;
+	float: right;
+
+	@media #{$tablet} {
+		width: 100% !important;
+		float: none;
+	}
 }

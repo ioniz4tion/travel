@@ -21,6 +21,12 @@
       <li class="item">
         <div>
 
+          <div class="price-img">
+            <%= image_tag(attraction.image_thumb.url) %>
+            <div></div>
+            <p><%= bip(attraction, :pricing) %></p>
+          </div>
+
           <div class="description">
             <h2><%= bip(attraction, :name) %></h2>
             <p><%= bip(attraction, :description, :textarea) %></p>
@@ -35,12 +41,6 @@
               <%= cms_upload(attraction, :image, "Slideshow Image") %>
 
             </div>
-          </div>
-
-          <div class="price-img">
-            <%= image_tag(attraction.image_thumb.url) %>
-            <div></div>
-            <p><%= bip(attraction, :pricing) %></p>
           </div>
 
         </div>
