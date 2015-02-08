@@ -18,6 +18,7 @@
 //= require startup
 //= require planner
 //= require maps
+//= require mobile-nav
 //= require flipper
 
 //= require_tree .

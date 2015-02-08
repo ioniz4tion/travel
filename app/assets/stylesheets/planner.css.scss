@@ -450,6 +450,10 @@ input[type="radio"] {
 
 	.content {
 		padding-top: 80px;
+
+		.pick-content {
+			overflow: hidden;
+		}
 	}
 
 	.choose {
@@ -465,6 +469,7 @@ input[type="radio"] {
 		//margin-left: 30px;
 		margin-right: 45px;
 		text-decoration: none;
+		float: none;
 		//text-align: right;
 
 		@include transition(all .3s);	
@@ -494,10 +499,6 @@ input[type="radio"] {
 				background-color: #36648f;
 			}
 		}
-		position: absolute;
-		bottom: initial;
-		top:30%;
-		right:0;
 	}
 
 	.city-box {
