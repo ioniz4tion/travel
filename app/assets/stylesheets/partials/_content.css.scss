@@ -7,6 +7,10 @@
 	background: $very-light-grey;
 	color: $light-grey;
 
+	@media #{$tablet} {
+		margin-top: 113px;
+	}
+
 	> iframe {
 		display: block;
 		width: 100%;
@@ -22,6 +26,7 @@
 	h1 {
 		margin: 0 0 50px 0;
 		font-family: 'Montserrat';
+		font-size: 2rem;
 		text-transform: uppercase;
 		color: $yellow;
 
@@ -118,11 +123,13 @@
 			display: inline-block;
 			font-variant: small-caps;
 			margin-bottom: 20px;
+			font-size: 1.5rem;
 		}
 
 		p {
 			line-height: 1.25;
 			margin-bottom: 10px;
+			font-size: 1rem;
 		}
 	}
 
@@ -178,7 +185,8 @@
 		p,
 		a {
 			display: table-cell;
-			line-height: 24px;
+			line-height: 1.5rem;
+			font-size: 1rem;
 			// height: 24px;
 			vertical-align: middle;
 		}
