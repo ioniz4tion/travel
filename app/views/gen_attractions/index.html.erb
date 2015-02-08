@@ -36,10 +36,6 @@
                 <p><%= bip(attraction, :rating) %><span class="slash">/</span>5</p>               
               </div>
 
-              <%= cms_upload(attraction, :image_thumb, "Thumbnail Image") %>
-
-              <%= cms_upload(attraction, :image, "Slideshow Image") %>
-
             </div>
           </div>
 
@@ -109,6 +105,9 @@
           <iframe src="<%= attraction.iframe_url %>"></iframe>
 
         </div>
+
+        <%= cms_upload(attraction, :image_thumb, "Thumbnail Image") %>
+        <%= cms_upload(attraction, :image, "Slideshow Image") %>
 
       </li>
 

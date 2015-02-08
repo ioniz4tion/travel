@@ -36,10 +36,6 @@
                 <p><%= bip(restaurant, :rating) %><span class="slash">/</span>5</p>                
               </div>
 
-              <%= cms_upload(restaurant, :image_thumb, "Thumbnail Image") %>
-
-              <%= cms_upload(restaurant, :image, "Slideshow Image") %>
-
             </div>
           </div>
 
@@ -106,6 +102,9 @@
           <iframe src="<%= restaurant.iframe_url %>"></iframe>
 
         </div>
+
+        <%= cms_upload(restaurant, :image_thumb, "Thumbnail Image") %>
+        <%= cms_upload(restaurant, :image, "Slideshow Image") %>
 
       </li>
 
