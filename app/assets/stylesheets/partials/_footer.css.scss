@@ -39,6 +39,11 @@ footer {
 			width: 20%;
 			height: 100%;
 			// border: 1px solid $light-grey;
+
+			@media #{$tablet} {
+				width: 40%;
+				margin-bottom: 20px;
+			}
 		}
 
 		a {

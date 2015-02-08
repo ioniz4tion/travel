@@ -226,6 +226,10 @@ nav {
 		}
 	}
 
+	.eleganticon {
+		font-weight: normal;
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;
@@ -312,16 +316,85 @@ nav {
 }
 
 .nav-mobile {
-	width: 240px;
+	display: none;
+	width: $mobile-nav-width;
+	padding: 25px;
 	position: fixed;
 	top: $nav-height;
 	bottom: 0;
-	right: -240px;
+	right: -$mobile-nav-width;
 	background: $body-bg;
+	overflow: auto;
+	text-align: right;
 
 	@include transition(all 0.3s);
 
+	@media #{$tablet} {
+		display: block;
+	}
+
 	&.open {
 		right: 0;
+	}
+
+	& > div > div {
+		// padding: 10px 0;
+	}
+
+	.nav-heading {
+		display: block;
+		color: $span-color;
+		font-weight: bolder;
+		margin-bottom: 10px;
+	}
+
+	.package-name {
+		display: block;
+		padding: 10px 0;
+		color: $yellow;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.mobile-nav-list {
+		height: 0;
+		margin-right: 10px;
+		overflow: hidden;
+		list-style: none;
+
+		@include transition(all 0.3s);
+
+		&.open {
+			height: 38px * 4;
+		}
+
+		li {
+			margin: 5px 0;
+		}
+
+		a {
+			display: inline-block;
+			padding: 5px;
+
+			@include transition(all 0.3s);
+
+			&:hover {
+				background: $yellow;
+				color: $dark-grey;
+
+				span {
+					color: $dark-grey;
+				}
+			}
+		}
+
+		.eleganticon {
+			color: $yellow;
+			padding-left: 25px;
+
+			@include transition(all 0.3s);
+		}
 	}
 }

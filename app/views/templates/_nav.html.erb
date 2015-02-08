@@ -83,6 +83,40 @@
 
 	<button><span class="nav-arrow"></span></button>
 
-	<div class="nav-mobile"></div>
+	<div class="nav-mobile">
+
+		<div>
+			<span class="nav-heading">General Packages</span>
+
+			<% @gen_package.order(:name).each do |package| %>
+				<div>
+					<span class="package-name"><%= package.name %></span>
+
+					<ul class="mobile-nav-list">
+
+						<li><%= link_to("/#{package.name}") do %>
+							About<span class="eleganticon icon_info_alt"></span>
+						<% end %></li>
+
+						<li><%= link_to("/#{package.name}/hotels") do %>
+							Hotels<span class="eleganticon icon_building"></span>
+						<% end %></li>
+
+						<li><%= link_to("/#{package.name}/restaurants") do %>
+							Restaurants<span class="eleganticon icon_mug"></span>
+						<% end %></li>
+
+						<li><%= link_to("/#{package.name}/attractions") do %>
+							Attractions<span class="eleganticon icon_camera_alt"></span>
+						<% end %></li>
+
+					</ul>
+
+				</div>
+			<% end %>
+
+		</div>
+
+	</div>
 
 </nav>
