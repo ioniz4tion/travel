@@ -606,6 +606,14 @@ input[type="radio"] {
 		@include transform(rotateY(180deg));
 	}
 
+	.price-img {
+		width: 330px !important;
+	}
+
+	img {
+		width: 330px !important;
+	}
+
 	// .front,
 	// .back-flip {
 	// 	* {
