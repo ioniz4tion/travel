@@ -12,6 +12,11 @@
 	// color: $dark-grey;
 	overflow: hidden;
 
+	@media #{$hd} {
+		width: calc(100% - 582.857px);
+		height: 900px;
+	}
+
 	@media #{$tablet} {
 		width: calc(100% - 360px);
 		height: $slideshow-height - 116px;
@@ -23,6 +28,10 @@
 
 	li {
 		height: $slideshow-height;
+
+		@media #{$hd} {
+			height: 900px;
+		}
 
 		@media #{$tablet} {
 			height: $slideshow-height - 116px;
@@ -81,6 +90,10 @@
 	.bx-wrapper,
 	.bx-viewport {
 		height: $slideshow-height !important;
+
+		@media #{$hd} {
+			height: 900px !important;
+		}
 
 		@media #{$tablet} {
 			height: $slideshow-height - 116px !important;

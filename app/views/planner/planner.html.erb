@@ -1,3 +1,9 @@
+<meta name="description" content="Take a short quiz on your ideal vacation and we'll recommend the best destination for you!">
+
+<title>Travel Planner - 
+
+<%= render :partial => 'templates/head' %>
+
 <%= form_tag('planner/suggest', id: "questions") do %>
 	<% i = 1 %>
 	<% @questions.each do |question| %>
