@@ -161,6 +161,7 @@
 
 	@media #{$hd} {
 		height: 438.143px;
+		padding: 10px * 1.25;
 	}
 
 	button {
@@ -171,20 +172,38 @@
 		color: $span-color;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
+		font-size: 1rem;
+
+		@media #{$hd} {
+			font-size: 1.25rem;
+		}
 
 		&.temp-high {
 			font-size: 3.125rem;
 			color: #cd2020;
+
+			@media #{$hd} {
+				font-size: 3.125rem * 1.25;
+			}
 		}
 
 		&.temp-low {
 			font-size: 1.5625rem;
 			color: $blue;
+
+			@media #{$hd} {
+				font-size: 1.5625rem * 1.25;
+			}
 		}
 
 		&.slash {
 			margin: 0 5px;
 			font-size: 2.1875rem;
+
+			@media #{$hd} {
+				margin: 0.5px * 2;
+				font-size: 2.1875rem * 1.25;
+			}
 		}
 	}
 
@@ -193,6 +212,10 @@
 		color: $light-grey;
 		font-size: 3.125rem;
 		white-space: nowrap;
+
+		@media #{$hd} {
+			font-size: 3.125rem * 1.25;
+		}
 	}
 
 	.weather-city {
@@ -201,6 +224,11 @@
 		color: $yellow;
 		font-size: 2.1875rem;
 		padding-top: 20px;
+
+		@media #{$hd} {
+			font-size: 2.1875rem * 1.25;
+			padding-top: 20px * 1.25;
+		}
 	}
 
 	.weather-slide {
@@ -210,11 +238,18 @@
 		.bx-viewport {
 			height: 302px !important;
 
+			@media #{$hd} {
+				height: 302px * 1.25 !important;
+			}
+
 			li {
 				height: 302px;
+
+				@media #{$hd} {
+					height: 302px * 1.25;
+				}
 			}
 		}
-
 		.bx-controls {
 			display: none;
 		}
@@ -224,6 +259,10 @@
 		width: 100%;
 		height: calc(100% - 18px);
 		position: relative;
+
+		@media #{$hd} {
+			height: calc(100% - 22.5px);
+		}
 	}
 
 	.hi-lo {
@@ -231,6 +270,10 @@
 		top: 110px;
 		right: 0;
 		font-family: 'Montserrat';
+
+		@media #{$hd} {
+			top: 110px * 1.25;
+		}
 	}
 
 	.weather-graphic {
@@ -249,10 +292,20 @@
 			z-index: -1;
 
 			// @include x-center;
+
+			@media #{$hd} {
+				font-size: 9.375rem * 1.25;
+				bottom: -10px * 1.25;
+				right: 70px * 1.25;
+			}
 		}
 
 		.icon-2 {
 			right: 200px;
+
+			@media #{$hd} {
+				right: 200px * 1.25;
+			}
 		}
 	}
 }
@@ -262,25 +315,46 @@
 	background: $light-grey;
 	
 	// @include backface-visibility(hidden);
+
+	@media #{$hd} {
+		padding: 10px * 1.25;
+	}
 	
 	span {
 		color: $span-color;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
+		font-size: 1rem;
+
+		@media #{$hd} {
+			font-size: 1.25rem;
+		}
 
 		&.temp-high {
 			font-size: 2.5rem;
 			color: #cd2020;
+
+			@media #{$hd} {
+				font-size: 2.5rem * 1.25;
+			}
 		}
 
 		&.temp-low {
 			font-size: 1.25rem;
 			color: $blue;
+
+			@media #{$hd} {
+				font-size: 1.25rem * 1.25;
+			}
 		}
 
 		&.slash {
 			margin: 0 5px;
 			font-size: 1.875rem;
+
+			@media #{$hd} {
+				font-size: 1.875rem * 1.25;
+			}
 		}
 	}
 
@@ -291,6 +365,12 @@
 		font-size: 2.1875rem;
 		padding-top: 10px;
 		padding-bottom: 10px;
+
+		@media #{$hd} {
+			font-size: 2.1875rem * 1.25;
+			padding-top: 10px * 1.25;
+			padding-bottom: 10px * 1.25;
+		}
 	}
 
 	> div:not(.weather-back-slide),
@@ -298,14 +378,27 @@
 		width: calc(100% - 20px);
 		height: 564px;
 		position: absolute;
+
+		@media #{$hd} {
+			width: calc(100% - 25px);
+			height: 564px * 1.25;
+		}
 	}
 
 	> div:not(.weather-back-slide) {
 		top: 126px;
+
+		@media #{$hd} {
+			top: 126px * 1.25;
+		}
 	}
 
 	li > div {
 		top: 100px;
+
+		@media #{$hd} {
+			top: 100px * 1.25;
+		}
 	}
 
 	.forecast {
@@ -314,6 +407,10 @@
 		// padding: 10px;
 		position: relative;
 		// border-bottom: 1px solid $light-grey;
+
+		@media #{$hd} {
+			width: calc(100% - 25px);
+		}
 	}
 
 	.hi-lo {
@@ -324,6 +421,11 @@
 		font-family: 'Montserrat';
 
 		// @include transform(translateY(-30%));
+
+		@media #{$hd} {
+			top: 20px * 1.25;
+			right: 10px * 1.25;
+		}
 	}
 
 	.weather-graphic {
@@ -333,6 +435,10 @@
 		width: 100%;
 		height: calc(100% - 18px);
 		text-align: right;
+
+		@media #{$hd} {
+			height: calc(100% - 22.5px);
+		}
 
 		div {
 			position: relative;
@@ -350,10 +456,19 @@
 			z-index: -1;
 
 			// @include x-center;
+
+			@media #{$hd} {
+				font-size: 5.625rem * 1.25;
+				bottom: 10px * 1.25;
+			}
 		}
 
 		.icon-2 {
 			left: 90px;
+
+			@media #{$hd} {
+				left: 90px * 1.25;
+			}
 		}
 
 		span {
@@ -361,6 +476,11 @@
 			left: 100px;
 			bottom: -2px;
 			text-align: left;
+
+			@media #{$hd} {
+				left: 100px * 1.25;
+				bottom: -2px * 1.25;
+			}
 		}
 	}
 
@@ -372,6 +492,11 @@
 		outline: none;
 
 		@include hr-fade($hover-color, $yellow, 25%, 75%);
+
+		@media #{$hd} {
+			height: 1.25px;
+			margin: 10px * 1.25 auto;
+		}
 	}
 
 	.weather-back-slide {
@@ -381,8 +506,16 @@
 		.bx-viewport {
 			height: 662px !important;
 
+			@media #{$hd} {
+				height: 662px * 1.3 !important;
+			}
+
 			li {
 				height: 662px;
+
+				@media #{$hd} {
+					height: 662px * 1.3;
+				}
 			}
 		}
 
