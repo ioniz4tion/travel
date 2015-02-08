@@ -17,6 +17,10 @@
 		height: $slideshow-height - 116px;
 	}
 
+	@media #{$phone} {
+		width: 100%;
+	}
+
 	li {
 		height: $slideshow-height;
 

@@ -8,6 +8,10 @@
 	right: 0;
 	
 	@include perspective(1500px);
+
+	@media #{$phone} {
+		position: relative;
+	}
 }
 
 .flipper {
