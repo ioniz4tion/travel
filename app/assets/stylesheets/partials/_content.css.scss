@@ -58,7 +58,9 @@
 		@include transition(all 0.3s);
 
 		@media #{$tablet} {
-			clear: both;
+			position: relative;
+			// float: none;
+			margin-bottom: 20px;
 		}
 
 		&:hover {
@@ -298,6 +300,7 @@
 	height: 0;
 	overflow: hidden;
 	margin-top: 10px;
+	clear: both;
 
 	@include transition(all 0.3s);
 
