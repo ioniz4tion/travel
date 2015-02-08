@@ -78,6 +78,8 @@ GEM
     json (1.8.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    meta-tags (2.0.0)
+      actionpack (>= 3.0.0)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -181,6 +183,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks (~> 1.0.0.rc1)
+  meta-tags
   monetize
   money
   paperclip (~> 4.2)

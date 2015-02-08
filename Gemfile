@@ -45,6 +45,8 @@ gem 'monetize'
 gem 'money'
 
 gem 'timezone'
+
+gem 'meta-tags'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
