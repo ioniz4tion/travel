@@ -2,61 +2,12 @@
 
 	<ul class="bxslider">
 
-	  <!-- <li>
-	  	<div>
-	  		<img src="/assets/720x700.gif">
-	  		<p>This text is here as a test</p>
-	  	</div>
-	  </li>
-
-	  <li>
-	  	<div>
-	  		<img src="/assets/720x700.gif">
-	  		<p>This text is here as a test</p>
-	  	</div>
-	  </li>
-
-	  <li>
-	  	<div>
-	  		<img src="/assets/720x700.gif">
-	  		<p>This text is here as a test</p>
-	  	</div>
-	  </li>
-
-	  <li>
-	  	<div>
-	  		<img src="/assets/720x700.gif">
-	  		<p>This text is here as a test</p>
-	  	</div>
-	  </li>
-
-	  <li>
-	  	<div>
-	  		<img src="/assets/720x700.gif">
-	  		<p>This text is here as a test</p>
-	  	</div>
-	  </li>
-
-	  <li>
-	  	<div>
-	  		<img src="/assets/720x700.gif">
-	  		<p>This text is here as a test</p>
-	  	</div>
-	  </li>
-
-	  <li>
-	  	<div>
-	  		<img src="/assets/720x700.gif">
-	  		<p>This text is here as a test</p>
-	  	</div>
-	  </li> -->
-
 		<% @slideshow.each do |slide| %>
 	  	<li>
-	  		<div>
+	  		<div style="background: url(<%= slide[:link] %>); background-size: cover;">
 	  			<!-- <a href="">Learn More</a> -->
 		  		<span class="slideshow-heading"><%= slide[:name] %></span>
-		  		<%= image_tag(slide[:link]) %>
+		  		<!--<%= image_tag(slide[:link]) %>-->
 		  		<!-- <p><%= slide[:description] %></p> -->
 		  	</div>
 	  	</li>
