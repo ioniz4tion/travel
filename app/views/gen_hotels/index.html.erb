@@ -31,9 +31,6 @@
             <h2><%= bip(hotel, :name) %></h2>
             <p><%= bip(hotel, :description, :textarea) %></p>
 
-            <%= cms_upload(hotel, :image_thumb, "Thumbnail Image") %>
-            <%= cms_upload(hotel, :image, "Slideshow Image") %>
-
             <div class="rating">
               <span class="eleganticon icon_star"></span>
               <div>
@@ -106,6 +103,9 @@
           <iframe src="<%= hotel.iframe_url %>"></iframe>
 
         </div>
+
+        <%= cms_upload(hotel, :image_thumb, "Thumbnail Image") %>
+        <%= cms_upload(hotel, :image, "Slideshow Image") %>
 
       </li>
 
