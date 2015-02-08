@@ -4,29 +4,29 @@
 
 <%= render :partial => 'templates/head' %>
 
-<%= form_tag('/planner/restaurant', id: "suggest") do %>
+<%= form_tag('/planner/attraction', id: "suggest") do %>
 
 <div class="recommend">
-		<span class="recommend-span">Pick a hotel</span>
-	</div>
+	<span class="recommend-span">Pick one or more restaurants</span>
+</div>
 
 <div class="card-flex">	
 
-	<% @package.gen_hotels.order(:name).each do |hotel| %>
-		<input type="radio" value="<%= hotel.id %>" id="<%= hotel.id %>" name="hotel_id">
-		<label for="<%= hotel.id %>">
+	<% @package.gen_restaurants.order(:name).each do |restaurant| %>
+		<input type="checkbox" value="<%= restaurant.id %>" id="<%= restaurant.id %>" name="restaurant_id[]">
+		<label for="<%= restaurant.id %>">
 		<div class="hotel-card">
 
-			<div class="flipper-card" id="<%= hotel.id %>">
+			<div class="flipper-card" id="<%= restaurant.id %>">
 
 				<div class="front">
 
-					<h2><span><%= hotel.name %></span></h2>
+					<h2><span><%= restaurant.name %></span></h2>
 
 					<div class="price-img">
-					  <%= image_tag(hotel.image_thumb.url) %>
+					  <%= image_tag(restaurant.image_thumb.url) %>
 					  <div></div>
-					  <p><%= hotel.pricing %></p>
+					  <p><%= restaurant.pricing %></p>
 					</div>
 
 					
@@ -34,10 +34,10 @@
 						<div class="rating">
 		          <span class="eleganticon icon_star"></span>
 		          <div>
-		            <p><%= hotel.rating %><span class="slash">/</span>5</p>
+		            <p><%= restaurant.rating %><span class="slash">/</span>5</p>
 		          </div>
 		        </div>       
-		        <p><%= hotel.description %></p>        
+		        <p><%= restaurant.description %></p>        
 		      </div>
 
 		      <table>
@@ -47,7 +47,7 @@
 			        <td>
 			          <span class="eleganticon icon_pin_alt"></span>
 			          <div>
-			            <p><%= hotel.address %></p>
+			            <p><%= restaurant.address %></p>
 			          </div>
 			        </td>
 
@@ -58,7 +58,7 @@
 			        <td>
 			          <span class="eleganticon icon_globe-2"></span>
 			          <div>
-			            <a href="<%= hotel.website %>" target="_blank"><%= hotel.short_url %></a>
+			            <a href="<%= restaurant.website %>" target="_blank"><%= restaurant.short_url %></a>
 			          </div>
 			        </td>
 
@@ -69,7 +69,7 @@
 			        <td>
 			          <span class="eleganticon icon_clock_alt"></span>
 			          <div>
-			            <p><%= hotel.hours %></p>
+			            <p><%= restaurant.hours %></p>
 			          </div>
 			        </td>
 
@@ -80,7 +80,7 @@
 			        <td>
 			          <span class="eleganticon icon_phone"></span>
 			          <div>
-			            <p><%= hotel.phone %></p>
+			            <p><%= restaurant.phone %></p>
 			          </div>
 			        </td>
 
@@ -88,15 +88,15 @@
 
 			    </table>
 
-			    <button id="show<%= hotel.id %>">Show Map</button>
+			    <button id="show<%= restaurant.id %>">Show Map</button>
 
 			  </div>
 
 
 		    <div class="back back-flip">
 	        <div class="map open"> 
-	          <iframe src="<%= hotel.iframe_url %>"></iframe>
-	          <button id="show<%= hotel.id %>">Hide Map</button>
+	          <iframe src="<%= restaurant.iframe_url %>"></iframe>
+	          <button id="show<%= restaurant.id %>">Hide Map</button>
 	        </div>
 	      </div>
 
