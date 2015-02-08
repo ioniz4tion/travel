@@ -30,15 +30,15 @@
           <div class="description">
             <h2><%= bip(hotel, :name) %></h2>
             <p><%= bip(hotel, :description, :textarea) %></p>
+
+            <%= cms_upload(hotel, :image_thumb, "Thumbnail Image") %>
+            <%= cms_upload(hotel, :image, "Slideshow Image") %>
+
             <div class="rating">
               <span class="eleganticon icon_star"></span>
               <div>
                 <p><%= bip(hotel, :rating) %><span class="slash">/</span>5</p>
               </div>
-
-              <%= cms_upload(hotel, :image_thumb, "Thumbnail Image") %>
-
-              <%= cms_upload(hotel, :image, "Slideshow Image") %>
 
             </div>
           </div>
