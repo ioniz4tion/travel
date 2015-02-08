@@ -4,7 +4,7 @@
 
 	<head>
 
-		<title>World Wide Wanderings</title>
+		<!-- <title>World Wide Wanderings</title> -->
 		<link rel="icon" type="image/png" href="/assets/favicon32.gif">
 
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -22,19 +22,7 @@
 		  ga('create', 'UA-58992704-1', 'auto');
 		  ga('send', 'pageview');
 
-		</script>
-
-	</head>
-	
-	<body>
-
-	<p class="notice invisible" id="notice"><%= flash[:notice] %></p>      
-
-		<div class="container">
-
-			<%= render :partial => "templates/nav" %>
-
-			<div class="main">			
+		</script>	
 
 				<%= yield %>
 

@@ -11,6 +11,10 @@
 	font-size: 0.875rem;
 	background: $blue;
 
+	@media #{$hd} {
+		height: 900px;
+	}
+
 	@media #{$tablet} {
 		position: absolute;
 		top: $slideshow-height - 31px;

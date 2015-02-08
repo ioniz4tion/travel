@@ -9,6 +9,10 @@
 	
 	@include perspective(1500px);
 
+	@media #{$hd} {
+		width: 462.857px;
+	}
+
 	@media #{$phone} {
 		position: relative;
 	}
@@ -119,6 +123,10 @@
 	background: $dark-grey;
 
 	// @include backface-visibility(hidden);
+
+	@media #{$hd} {
+		height: 462.857px;
+	}
 
 	a {
 		display: block;
