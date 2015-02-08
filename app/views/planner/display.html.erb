@@ -4,5 +4,8 @@ Hotel: <%= @package.gen_hotels.find_by_id(session[:hotel_id]).name %>
 <br/>
 Restaurant: <%= @package.gen_restaurants.find_by_id(session[:restaurant_id]).name %>
 <br/>
-Attraction: <%= @package.gen_attractions.find_by_id(session[:attraction_id]).name %>
+Attraction: <% session[:attraction_id].each do |attraction| %> 
+	<%= @package.gen_attractions.find_by_id(attraction).name %>
+	<br/>
+	<% end %>
 <br/>
