@@ -16,10 +16,10 @@ $(document).ready(function() {
 	});
 
 	setInterval(function() {
-	  if (didScroll && $(window).width() >= 1001) {
+	  // if (didScroll && $(window).width() >= 1001) {
 	    hasScrolled();
 	    didScroll = false;
-	  }
+	  // }
 	}, 250);
 
 	function hasScrolled() {

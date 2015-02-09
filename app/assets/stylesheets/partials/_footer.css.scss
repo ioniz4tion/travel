@@ -44,6 +44,12 @@ footer {
 				width: 40%;
 				margin-bottom: 20px;
 			}
+
+			span {
+				@media #{$phone} {
+					display: none;
+				}
+			}
 		}
 
 		a {
@@ -66,6 +72,10 @@ footer {
 			width: 20%;
 			margin: 0 auto;
 			margin-bottom: 10px;
+
+			@media #{$phone} {
+				width: 75%;
+			}
 		}
 
 		span {

@@ -24,6 +24,7 @@
 
 	@media #{$phone} {
 		width: 100%;
+		height: 400px;
 	}
 
 	li {
@@ -37,11 +38,19 @@
 			height: $slideshow-height - 116px;
 		}
 
+		@media #{$phone} {
+			height: 400px;
+		}
+
 			div {
 			position: relative;
 			width: 100%;
 			height: 100%;
 			padding: 50px;
+
+			@media #{$phone} {
+				padding: 20px;
+			}
 
 			img {
 				z-index: -1;
@@ -98,6 +107,10 @@
 		@media #{$tablet} {
 			height: $slideshow-height - 116px !important;
 		}
+
+		@media #{$phone} {
+			height: 400px !important;
+		}
 	}
 }
 
@@ -123,6 +136,11 @@
 	top: 50px;
 	right: 50px;
 	text-align: right;
+
+	@media #{$phone} {
+		top: 20px;
+		right: 20px;
+	}
 }
 
 .arrow {

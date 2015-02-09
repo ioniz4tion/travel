@@ -127,7 +127,7 @@
 }
 
 .logo:hover {
-	.eleganticon {
+	.desktop .eleganticon {
 		opacity: 0.5;
 
 		@include transform(translate(calc(-50% - 3px), calc(-50% - 3px)) scale(2) !important);

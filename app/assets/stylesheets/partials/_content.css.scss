@@ -13,6 +13,7 @@
 
 	@media #{$phone} {
 		margin-top: 0;
+		padding: 20px;
 	}
 
 	> iframe {
@@ -61,6 +62,10 @@
 			position: relative;
 			// float: none;
 			margin-bottom: 20px;
+		}
+
+		@media #{$phone} {
+			font-size: 1rem;
 		}
 
 		&:hover {
@@ -134,12 +139,20 @@
 			font-variant: small-caps;
 			margin-bottom: 20px;
 			font-size: 1.5rem;
+
+			@media #{$phone} {
+				font-size: 1rem;
+			}
 		}
 
 		p {
 			line-height: 1.25;
 			margin-bottom: 10px;
 			font-size: 1.25rem;
+
+			@media #{$phone} {
+				font-size: 1rem;
+			}
 		}
 	}
 
@@ -149,6 +162,10 @@
 			font-size: 1.75rem;
 			color: $yellow;
 			margin-right: 10px;
+
+			@media #{$phone} {
+				font-size: 1.4rem;
+			}
 		}
 
 		div {
@@ -159,6 +176,10 @@
 			display: table-cell;
 			vertical-align: middle;
 			font-size: 1.375rem;
+
+			@media #{$phone} {
+				font-size: 1.1rem;
+			}
 
 			.slash {
 				color: #898989;
@@ -177,6 +198,7 @@
 
 			@media #{$tablet} {
 				display: block;
+				padding: 10px 0;
 			}
 		}
 
@@ -186,6 +208,10 @@
 			font-size: 1.875rem;
 			margin-right: 10px;
 			color: #898989;
+
+			@media #{$phone} {
+				font-size: 1.5rem;
+			}
 		}
 
 		div {
@@ -199,6 +225,11 @@
 			font-size: 1.25rem;
 			// height: 24px;
 			vertical-align: middle;
+
+			@media #{$phone} {
+				line-height: 1.5rem;
+				font-size: 1rem;
+			}
 		}
 
 		a {
@@ -244,7 +275,7 @@
 	}
 
 	@media #{$tablet} {
-		width: 90%;
+		width: 100%;
 		margin: 0 auto;
 		margin-bottom: 25px;
 		float: none;
@@ -276,6 +307,10 @@
 		bottom: $pricing-pos;
 		right: $pricing-pos;
 		font-size: 1.625rem;
+
+		@media #{$phone} {
+			// font-size: 1.3rem;
+		}
 	}
 }
 

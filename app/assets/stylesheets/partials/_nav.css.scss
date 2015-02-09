@@ -132,6 +132,12 @@ nav {
 		@include transition(all 0.3s);
 	}
 
+	.hide {
+		@media #{$phone} {
+			display: none;
+		}
+	}
+
 	.first-letter {
 		color: $yellow;
 	}
