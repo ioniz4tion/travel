@@ -8,6 +8,11 @@ footer {
 
 	@media #{$tablet} {
 		// margin-top: 166px;
+		clear: both;
+	}
+
+	@media #{$phone} {
+		margin-top: 20px;
 	}
 
 	> div {
@@ -34,6 +39,10 @@ footer {
 		// width: calc(100% - 64px);
 		
 		@include flex;
+
+		@media #{$tablet-only} {
+			padding-top: 50px;
+		}
 
 		div {
 			width: 20%;

@@ -1,6 +1,6 @@
-$phone: "(max-width: 500px), (max-device-width: 500px)";
+$phone: "(max-width: 800px), (max-device-width: 800px)";
 $tablet: "(max-width: 1000px), (max-device-width: 1000px)";
-$tablet-only: "(min-width: 701px) and (max-width: 1000px), (min-device-width: 701px) and (max-device-width: 1000px)";
+$tablet-only: "(min-width: 801px) and (max-width: 1000px), (min-device-width: 801px) and (max-device-width: 1000px)";
 $hd: "(min-width: 1800px) and (min-height: 900px)";
 
 $body-bg: #131313;
@@ -21,6 +21,8 @@ $nav-height: 85px;
 $dropdown-padding-y: ($nav-height - 35px) / 2;
 
 $mobile-nav-width: 320px;
+
+$hd-text-translate: 51.5px;
 
 $inner-width: 150px;
 $middle-width: 222px;

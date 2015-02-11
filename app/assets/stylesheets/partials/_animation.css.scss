@@ -149,17 +149,31 @@
 	&.orld {
 		top: 90px;
 		left: 128px;
+
+		@media #{$hd} {
+			top: 90px + $hd-text-translate;
+			left: 128px + $hd-text-translate;
+		}
 	}
 
 	&.ide {
 		left: 150px;
 		
 		@include y-center;
+
+		@media #{$hd} {
+			left: 150px + $hd-text-translate;
+		}
 	}
 
 	&.anderings {
 		top: 200px;
 		left: 63px;
+
+		@media #{$hd} {
+			top: 200px + $hd-text-translate;
+			left: 63px + $hd-text-translate;
+		}
 	}
 
 	span {

@@ -3,14 +3,19 @@
 .flipper-container {
 	display: $box-display;
 	width: 360px;
-	position: absolute;
+	// position: absolute;
 	// left: 840px;
-	right: 0;
+	// right: 0;
+	float: right;
 	
 	@include perspective(1500px);
 
 	@media #{$hd} {
 		width: 462.857px;
+	}
+
+	@media #{$tablet-only} {
+		width: 280px;
 	}
 
 	@media #{$phone} {
@@ -163,6 +168,10 @@
 			text-transform: uppercase;
 			color: $light-grey;
 			line-height: 1.25;
+
+			@media #{$tablet-only} {
+				font-size: 30px;
+			}
 
 			span {
 				color: $yellow;

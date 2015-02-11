@@ -23,6 +23,10 @@
 		height: 116px;
 	}
 
+	@media #{$tablet-only} {
+		width: calc(100% - 280px);
+	}
+
 	@media #{$phone} {
 		position: relative;
 		top: 0;
