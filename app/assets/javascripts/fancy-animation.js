@@ -1,3 +1,16 @@
+window.onload = function() {
+	var tl = new TimelineMax();
+	var w = document.getElementsByClassName('w');
+
+	tl.to(w[0], 1, {x: -75})
+	  .to(w[1], 1, {x: -111, xPercent: -50})
+	  .to(w[2], 1, {x: -147, xPercent: -50})
+
+	  .to(w[0], 1, {x: 75, yoyo: true, repeat: -1});
+
+	  	  tl.play(3);
+};
+
 $(document).ready(function() {
 
 	var innerGoTo = [69, 79];
@@ -6,10 +19,7 @@ $(document).ready(function() {
 	var animateCheck = false;
 
 
-	var tl = new TimelineMax();
-	var w = document.getElementsByClassName('w');
-
-	tl.insert( new TweenMax.to(w[0], 1, {left: "-=150", repeat: -1,yoyo: true}));
+	
 
 	//TweenMax.to(w[0], 1, {x: "-=75", y: "-=75", repeat: -1, yoyo: true});
 
