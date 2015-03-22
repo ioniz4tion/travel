@@ -39,7 +39,14 @@
 		}
 	}
 
+	.ws {
+		position: relative;
+
+		@include xy-center;
+	}
+
 	.w {
+		position: absolute;
 		color: $yellow;
 		font-family: 'Montserrat';
 		font-weight: bold;
@@ -49,6 +56,19 @@
 
 		@include xy-center;
 		@include transition(all 1s);
+
+		&.inner {
+			// @include transform(translate(-50%, -50%) translate($inner-width / 2, 0));
+			top: $inner-width / 2;
+		}
+
+		&.middle {
+
+		}
+
+		&.outer {
+
+		}
 	}
 }
 
