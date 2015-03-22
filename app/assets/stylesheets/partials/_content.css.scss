@@ -6,6 +6,7 @@
 	padding: 50px;
 	background: $very-light-grey;
 	color: $light-grey;
+	overflow: auto;
 
 	@media #{$tablet} {
 		margin-top: 113px;

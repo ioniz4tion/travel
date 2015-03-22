@@ -11,10 +11,11 @@ class GenRestaurantsController < ApplicationController
       @slideshow << {name: package.name, link: package.image.url, description: package.image_description}
     end
 
-     begin
+    begin
       @client = YahooWeather::Client.new
+      @weather= []
       @weather = @client.fetch(@city.code)      
-    rescue SocketError => e
+    rescue Exception => e
     end
   end
 
