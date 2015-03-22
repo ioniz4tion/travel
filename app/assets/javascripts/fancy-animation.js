@@ -6,10 +6,9 @@ window.onload = function() {
 	tl.to(w[0], 1, {x: -75})
 	  .to(w[1], 1, {x: -111, xPercent: -50})
 	  .to(w[2], 1, {x: -147, xPercent: -50})
-
 	  .to(w[0], 1, {x: 75, yoyo: true, repeat: -1});
 
-	  	  tl.play(3);
+	  	  tl.play();
 };
 $(document).ready(function() {
 
