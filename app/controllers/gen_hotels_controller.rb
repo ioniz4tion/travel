@@ -14,7 +14,7 @@ class GenHotelsController < ApplicationController
      begin
       @client = YahooWeather::Client.new
       @weather = @client.fetch(@city.code)      
-    rescue SocketError => e
+    rescue Exception => e
     end
   end
 
