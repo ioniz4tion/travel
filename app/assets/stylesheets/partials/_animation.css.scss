@@ -1,0 +1,115 @@
+@import 'imports.css.scss';
+
+.animation {
+	position: relative;
+
+	span.eleganticon {
+		display: block;
+		color: $blue;
+		opacity: 1;
+		z-index: -1;
+		font-size: 75px;
+		
+		@include xy-center;
+		@include transition(all 2s);
+		@include transform(translate(calc(-50% - 3px), calc(-50% - 3px)));
+	}
+
+	.circle {
+		border: 1px solid $span-color;
+		border-radius: 50%;
+		z-index: -1;
+
+		@include xy-center;
+		@include transition(all 1s);
+
+		&.inner {
+			width: $inner-width;
+			height: $inner-width;
+		}
+
+		&.middle {
+			width: $middle-width;
+			height: $middle-width;
+		}
+
+		&.outer {
+			width: $outer-width;
+			height: $outer-width;
+		}
+	}
+
+	.w {
+		color: $yellow;
+		font-family: 'Montserrat';
+		font-weight: bold;
+		text-transform: uppercase;
+		z-index: 1;
+		font-size: 25px;
+
+		@include xy-center;
+		@include transition(all 1s);
+	}
+}
+
+.logo:hover {
+	.desktop .eleganticon {
+		opacity: 0.5;
+
+		@include transform(translate(calc(-50% - 3px), calc(-50% - 3px)) scale(2) !important);
+	}
+
+	.circle {
+		border: 1px solid transparent;
+	}
+}
+
+.text {
+	position: absolute;
+	color: $light-grey;
+	font-size: 45px;
+	font-weight: bold;
+	text-transform: uppercase;
+	overflow: hidden;
+
+	&.orld {
+		top: 90px;
+		left: 128px;
+
+		@media #{$hd} {
+			top: 90px + $hd-text-translate;
+			left: 128px + $hd-text-translate;
+		}
+	}
+
+	&.ide {
+		left: 150px;
+		
+		@include y-center;
+
+		@media #{$hd} {
+			left: 150px + $hd-text-translate;
+		}
+	}
+
+	&.anderings {
+		top: 200px;
+		left: 63px;
+
+		@media #{$hd} {
+			top: 200px + $hd-text-translate;
+			left: 63px + $hd-text-translate;
+		}
+	}
+
+	span {
+		position: relative;
+		right: 100%;
+
+		@include transition(all 1s);
+
+		&.show {
+			right: 0;
+		}
+	}
+}
