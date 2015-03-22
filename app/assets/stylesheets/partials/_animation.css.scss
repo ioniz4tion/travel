@@ -53,7 +53,7 @@
 
 			.w {
 				@include transform(translate(-50%, -50%) rotate(45deg) translateX($inner-width-nav / 2) rotate(-45deg));
-				//@include animation(orbit-inner-nav 4s linear infinite);
+				@include animation(orbit-inner-nav 4s linear infinite);
 			}
 		}
 
@@ -97,7 +97,7 @@
 
 			.w {
 				@include transform(translate(-50%, -50%) rotate(0deg) translateX($inner-width / 2) rotate(0deg));
-				//@include animation(orbit-inner 4s linear infinite);
+				@include animation(orbit-inner 4s linear infinite);
 			}
 		}
 
