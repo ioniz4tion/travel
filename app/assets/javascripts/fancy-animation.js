@@ -3,13 +3,14 @@ window.onload = function() {
 	var tl = new TimelineMax();
 	var w = document.getElementsByClassName('w');
 
-	tl.to(w[0], 1, {x: -75})
-	  .to(w[1], 1, {x: -111, xPercent: -50})
-	  .to(w[2], 1, {x: -147, xPercent: -50})
-	  .to(w[0], 1, {x: 75, yoyo: true, repeat: -1});
-
-	  	  tl.play();
+	tl.to(w[0], 0, {x: -75, xPercent: -50})
+	  .to(w[1], 0, {x: -111, xPercent: -50})
+	  .to(w[2], 0, {x: -147, xPercent: -50})
+	  .insert(new TweenMax.to(w[0], 1, {x: 75, yoyo: true, repeat: -1, ease: Sine.easeInOut}))
+	  .insert(new TweenMax.to(w[0], 1, {rotateY: 360, yoyo: true, repeat: -1, ease: Sine.easeInOut}));
 };
+
+
 $(document).ready(function() {
 
 	var innerGoTo = [69, 79];
