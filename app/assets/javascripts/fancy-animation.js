@@ -5,157 +5,165 @@ $(document).ready(function() {
 	var outerGoTo = [153, 331];
 	var animateCheck = false;
 
-	$('.logo').mouseenter(function() {
 
-		inner = $('.inner .w').position();
-		middle = $('.middle .w').position();
-		outer = $('.outer .w').position();
+	var tl = new TimelineMax();
+	var w = document.getElementsByClassName('w');
 
-		innerTranslate = [];
-		innerTranslate[0] = innerGoTo[0] - inner.left;
-		innerTranslate[1] = innerGoTo[1] - inner.top;
+	tl.insert( new TweenMax.to(w[0], 1, {left: "-=150", repeat: -1,yoyo: true}));
 
-		middleTranslate = [];
-		middleTranslate[0] = middleGoTo[0] - middle.left;
-		middleTranslate[1] = middleGoTo[1] - middle.top;
+	//TweenMax.to(w[0], 1, {x: "-=75", y: "-=75", repeat: -1, yoyo: true});
 
-		outerTranslate = [];
-		outerTranslate[0] = outerGoTo[0] - outer.left;
-		outerTranslate[1] = outerGoTo[1] - outer.top;
+	// $('.logo').mouseenter(function() {
 
-		$('.inner .w').css({
-			'left' : innerTranslate[0] + 'px',
-			'top' : innerTranslate[1] + 'px'
-		});
+	// 	inner = $('.inner .w').position();
+	// 	middle = $('.middle .w').position();
+	// 	outer = $('.outer .w').position();
 
-		$('.middle .w').css({
-			'left' : middleTranslate[0] + 'px',
-			'top' : middleTranslate[1] + 'px'
-		});
+	// 	innerTranslate = [];
+	// 	innerTranslate[0] = innerGoTo[0] - inner.left;
+	// 	innerTranslate[1] = innerGoTo[1] - inner.top;
 
-		$('.outer .w').css({
-			'left' : outerTranslate[0] + 'px',
-			'top' : outerTranslate[1] + 'px'
-		});
+	// 	middleTranslate = [];
+	// 	middleTranslate[0] = middleGoTo[0] - middle.left;
+	// 	middleTranslate[1] = middleGoTo[1] - middle.top;
 
-		$('.w').css({
-			'font-size' : '45px',
-			    '-ms-animation-play-state' : 'paused',
-			   '-moz-animation-play-state' : 'paused',
-			'-webkit-animation-play-state' : 'paused',
-			     '-o-animation-play-state' : 'paused',
-			        'animation-play-state' : 'paused'
-		});
+	// 	outerTranslate = [];
+	// 	outerTranslate[0] = outerGoTo[0] - outer.left;
+	// 	outerTranslate[1] = outerGoTo[1] - outer.top;
 
-		setTimeout(function() {
-			$('.text span').css('right', '0');
-			// $('.logo .eleganticon').css({
-			// 	'font-size' : '200px',
-			// 	'opacity' : '0.5'
-			// });
-		}, 1000);
+	// 	$('.inner .w').css({
+	// 		'left' : innerTranslate[0] + 'px',
+	// 		'top' : innerTranslate[1] + 'px'
+	// 	});
 
-		animateCheck = true;
+	// 	$('.middle .w').css({
+	// 		'left' : middleTranslate[0] + 'px',
+	// 		'top' : middleTranslate[1] + 'px'
+	// 	});
 
-		// console.log(inner);
-		// console.log(middle);
-		// console.log(outer);
+	// 	$('.outer .w').css({
+	// 		'left' : outerTranslate[0] + 'px',
+	// 		'top' : outerTranslate[1] + 'px'
+	// 	});
 
-	});
+	// 	$('.w').css({
+	// 		'font-size' : '45px',
+	// 		    '-ms-animation-play-state' : 'paused',
+	// 		   '-moz-animation-play-state' : 'paused',
+	// 		'-webkit-animation-play-state' : 'paused',
+	// 		     '-o-animation-play-state' : 'paused',
+	// 		        'animation-play-state' : 'paused'
+	// 	});
 
-	$('.logo').mouseleave(function() {
+	// 	setTimeout(function() {
+	// 		$('.text span').css('right', '0');
+	// 		// $('.logo .eleganticon').css({
+	// 		// 	'font-size' : '200px',
+	// 		// 	'opacity' : '0.5'
+	// 		// });
+	// 	}, 1000);
 
-		setTimeout(function() {
-			$('.inner .w, .middle .w, .outer .w').css({
-				'left' : '50%',
-				'top' : '50%'
-			});
+	// 	animateCheck = true;
 
-			$('.w').css({
-				'font-size' : '25px',
-				    '-ms-animation-play-state' : 'running',
-				   '-moz-animation-play-state' : 'running',
-				'-webkit-animation-play-state' : 'running',
-				     '-o-animation-play-state' : 'running',
-				        'animation-play-state' : 'running'
-			});
-		}, 1000);
+	// 	// console.log(inner);
+	// 	// console.log(middle);
+	// 	// console.log(outer);
+
+	// });
+
+	// // $('.logo').mouseleave(function() {
+
+	// 	// setTimeout(function() {
+	// 	// 	$('.inner .w, .middle .w, .outer .w').css({
+	// 	// 		'left' : '50%',
+	// 	// 		'top' : '50%'
+	// 	// 	});
+
+	// 	// 	$('.w').css({
+	// 	// 		'font-size' : '25px',
+	// 	// 		    '-ms-animation-play-state' : 'running',
+	// 	// 		   '-moz-animation-play-state' : 'running',
+	// 	// 		'-webkit-animation-play-state' : 'running',
+	// 	// 		     '-o-animation-play-state' : 'running',
+	// 	// 		        'animation-play-state' : 'running'
+	// 	// 	});
+	// 	// }, 1000);
 		
-		$('.text span').css('right', '100%');
+	// 	// $('.text span').css('right', '100%');
 
-		//animateCheck = false;
-		// $('.logo .eleganticon').css({
-		// 	'font-size' : '75px',
-		// 	'opacity' : '1'
-		// });
+	// 	//animateCheck = false;
+	// 	// $('.logo .eleganticon').css({
+	// 	// 	'font-size' : '75px',
+	// 	// 	'opacity' : '1'
+	// 	// });
 
-	});
+	// // });
 
-	setInterval(function () {
-		var logoHover = $('.logo').is(':hover');
-		if (logoHover == false && animateCheck == true) {
+	// // setInterval(function () {
+	// // 	var logoHover = $('.logo').is(':hover');
+	// // 	if (logoHover == false && animateCheck == true) {
 
-			/*setTimeout(function() {
-			$('.inner .w, .middle .w, .outer .w').css({
-				'left' : '50%',
-				'top' : '50%'
-			});*/
+	// 		/*setTimeout(function() {
+	// 		$('.inner .w, .middle .w, .outer .w').css({
+	// 			'left' : '50%',
+	// 			'top' : '50%'
+	// 		});*/
 
-			/*$('.w').css({
-				'font-size' : '25px',
-				    '-ms-animation-play-state' : 'running',
-				   '-moz-animation-play-state' : 'running',
-				'-webkit-animation-play-state' : 'running',
-				     '-o-animation-play-state' : 'running',
-				        'animation-play-state' : 'running'
-			});
-		}, 1000);*/
+	// 		/*$('.w').css({
+	// 			'font-size' : '25px',
+	// 			    '-ms-animation-play-state' : 'running',
+	// 			   '-moz-animation-play-state' : 'running',
+	// 			'-webkit-animation-play-state' : 'running',
+	// 			     '-o-animation-play-state' : 'running',
+	// 			        'animation-play-state' : 'running'
+	// 		});
+	// 	}, 1000);*/
 		
-		$('.text span').css('right', '100%');
-		//animateCheck = false;
+	// 	// $('.text span').css('right', '100%');
+	// 	// //animateCheck = false;
 
-		}
-		if (logoHover == true) {
-			//inner = $('.inner .w').position();
-		//middle = $('.middle .w').position();
-		//outer = $('.outer .w').position();
+	// 	// }
+	// 	// if (logoHover == true) {
+	// 		//inner = $('.inner .w').position();
+	// 	//middle = $('.middle .w').position();
+	// 	//outer = $('.outer .w').position();
 
-		// //innerTranslate = [];
-		// innerTranslate[0] = innerGoTo[0] - inner.left;
-		// innerTranslate[1] = innerGoTo[1] - inner.top;
+	// 	// //innerTranslate = [];
+	// 	// innerTranslate[0] = innerGoTo[0] - inner.left;
+	// 	// innerTranslate[1] = innerGoTo[1] - inner.top;
 
-		// middleTranslate = [];
-		// middleTranslate[0] = middleGoTo[0] - middle.left;
-		// middleTranslate[1] = middleGoTo[1] - middle.top;
+	// 	// middleTranslate = [];
+	// 	// middleTranslate[0] = middleGoTo[0] - middle.left;
+	// 	// middleTranslate[1] = middleGoTo[1] - middle.top;
 
-		// outerTranslate = [];
-		// outerTranslate[0] = outerGoTo[0] - outer.left;
-		// outerTranslate[1] = outerGoTo[1] - outer.top;
+	// 	// outerTranslate = [];
+	// 	// outerTranslate[0] = outerGoTo[0] - outer.left;
+	// 	// outerTranslate[1] = outerGoTo[1] - outer.top;
 
-		/*$('.inner .w').css({
-			'left' : innerTranslate[0] + 'px',
-			'top' : innerTranslate[1] + 'px'
-		});
+	// 	/*$('.inner .w').css({
+	// 		'left' : innerTranslate[0] + 'px',
+	// 		'top' : innerTranslate[1] + 'px'
+	// 	});
 
-		$('.middle .w').css({
-			'left' : middleTranslate[0] + 'px',
-			'top' : middleTranslate[1] + 'px'
-		});
+	// 	$('.middle .w').css({
+	// 		'left' : middleTranslate[0] + 'px',
+	// 		'top' : middleTranslate[1] + 'px'
+	// 	});
 
-		$('.outer .w').css({
-			'left' : outerTranslate[0] + 'px',
-			'top' : outerTranslate[1] + 'px'
-		});*/
-				$('.w').css({
-			'font-size' : '45px',
-			    '-ms-animation-play-state' : 'paused',
-			   '-moz-animation-play-state' : 'paused',
-			'-webkit-animation-play-state' : 'paused',
-			     '-o-animation-play-state' : 'paused',
-			        'animation-play-state' : 'paused'
-		});
+	// 	$('.outer .w').css({
+	// 		'left' : outerTranslate[0] + 'px',
+	// 		'top' : outerTranslate[1] + 'px'
+	// 	});*/
+	// 			$('.w').css({
+	// 		'font-size' : '45px',
+	// 		    '-ms-animation-play-state' : 'paused',
+	// 		   '-moz-animation-play-state' : 'paused',
+	// 		'-webkit-animation-play-state' : 'paused',
+	// 		     '-o-animation-play-state' : 'paused',
+	// 		        'animation-play-state' : 'paused'
+	// 	});
 
-		}
-	}, 100);
+	// 	}
+	// }, 100);
 
 });
