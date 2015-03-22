@@ -55,7 +55,7 @@
 		font-size: 25px;
 
 		@include xy-center;
-		@include transition(all 1s);
+		// @include transition(all 1s);
 
 		&.inner {
 			// @include transform(translate(-50%, -50%) translate($inner-width / 2, 0));
