@@ -1,11 +1,28 @@
+// <<<<<<< HEAD
 // $(document).ready(function() {
 
-	var tween = new TweenMax.to('.w.inner', 1, {top: '-75px', ease:Linear.easeNone});
+	// var tween = new TweenMax.to('.w.inner', 1, {top: '-75px', ease:Linear.easeNone});
 	
 	// var innerGoTo = [69, 79];
 	// var middleGoTo = [165, 205];
 	// var outerGoTo = [153, 331];
 	// var animateCheck = false;
+// =======
+$(document).ready(function() {
+
+	var innerGoTo = [69, 79];
+	var middleGoTo = [165, 205];
+	var outerGoTo = [153, 331];
+	var animateCheck = false;
+
+
+	var tl = new TimelineMax();
+	var w = document.getElementsByClassName('w');
+
+	tl.insert( new TweenMax.to(w[0], 1, {left: "-=150", repeat: -1,yoyo: true}));
+
+	//TweenMax.to(w[0], 1, {x: "-=75", y: "-=75", repeat: -1, yoyo: true});
+// >>>>>>> 1e98a41993d3c551469a17f4b83c7f1b542d3dc4
 
 	// $('.logo').mouseenter(function() {
 
@@ -65,6 +82,7 @@
 
 	// });
 
+<<<<<<< HEAD
 	// $('.logo').mouseleave(function() {
 
 	// 	setTimeout(function() {
@@ -84,6 +102,27 @@
 	// 	}, 1000);
 		
 	// 	$('.text span').css('right', '100%');
+=======
+	// // $('.logo').mouseleave(function() {
+
+	// 	// setTimeout(function() {
+	// 	// 	$('.inner .w, .middle .w, .outer .w').css({
+	// 	// 		'left' : '50%',
+	// 	// 		'top' : '50%'
+	// 	// 	});
+
+	// 	// 	$('.w').css({
+	// 	// 		'font-size' : '25px',
+	// 	// 		    '-ms-animation-play-state' : 'running',
+	// 	// 		   '-moz-animation-play-state' : 'running',
+	// 	// 		'-webkit-animation-play-state' : 'running',
+	// 	// 		     '-o-animation-play-state' : 'running',
+	// 	// 		        'animation-play-state' : 'running'
+	// 	// 	});
+	// 	// }, 1000);
+		
+	// 	// $('.text span').css('right', '100%');
+>>>>>>> 1e98a41993d3c551469a17f4b83c7f1b542d3dc4
 
 	// 	//animateCheck = false;
 	// 	// $('.logo .eleganticon').css({
@@ -91,11 +130,19 @@
 	// 	// 	'opacity' : '1'
 	// 	// });
 
+<<<<<<< HEAD
 	// });
 
 	// setInterval(function () {
 	// 	var logoHover = $('.logo').is(':hover');
 	// 	if (logoHover == false && animateCheck == true) {
+=======
+	// // });
+
+	// // setInterval(function () {
+	// // 	var logoHover = $('.logo').is(':hover');
+	// // 	if (logoHover == false && animateCheck == true) {
+>>>>>>> 1e98a41993d3c551469a17f4b83c7f1b542d3dc4
 
 	// 		/*setTimeout(function() {
 	// 		$('.inner .w, .middle .w, .outer .w').css({
@@ -113,11 +160,19 @@
 	// 		});
 	// 	}, 1000);*/
 		
+<<<<<<< HEAD
 	// 	$('.text span').css('right', '100%');
 	// 	//animateCheck = false;
 
 	// 	}
 	// 	if (logoHover == true) {
+=======
+	// 	// $('.text span').css('right', '100%');
+	// 	// //animateCheck = false;
+
+	// 	// }
+	// 	// if (logoHover == true) {
+>>>>>>> 1e98a41993d3c551469a17f4b83c7f1b542d3dc4
 	// 		//inner = $('.inner .w').position();
 	// 	//middle = $('.middle .w').position();
 	// 	//outer = $('.outer .w').position();
@@ -160,4 +215,8 @@
 	// 	}
 	// }, 100);
 
+<<<<<<< HEAD
 // });
+=======
+});
+>>>>>>> 1e98a41993d3c551469a17f4b83c7f1b542d3dc4
