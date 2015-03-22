@@ -1,5 +1,6 @@
 @import 'imports.css.scss';
 
+<<<<<<< HEAD
  .animation {
  	position: relative;
 
@@ -10,14 +11,27 @@
 		height: 100%;
 	}
 
+=======
+.animation {
+	position: relative;
+
+>>>>>>> 74d412a1bdb2c578517697bd00ea8fcdd4956688
 	span.eleganticon {
 		display: block;
 		color: $blue;
 		opacity: 1;
 		z-index: -1;
+<<<<<<< HEAD
 		
 		@include xy-center;
 		@include transition(all 2s);
+=======
+		font-size: 75px;
+		
+		@include xy-center;
+		@include transition(all 2s);
+		@include transform(translate(calc(-50% - 3px), calc(-50% - 3px)));
+>>>>>>> 74d412a1bdb2c578517697bd00ea8fcdd4956688
 	}
 
 	.circle {
@@ -27,6 +41,7 @@
 
 		@include xy-center;
 		@include transition(all 1s);
+<<<<<<< HEAD
 	}
 
 	.w {
@@ -99,31 +114,55 @@
 				@include transform(translate(-50%, -50%) rotate(0deg) translateX($inner-width / 2) rotate(0deg));
 				@include animation(orbit-inner 4s linear infinite);
 			}
+=======
+
+		&.inner {
+			width: $inner-width;
+			height: $inner-width;
+>>>>>>> 74d412a1bdb2c578517697bd00ea8fcdd4956688
 		}
 
 		&.middle {
 			width: $middle-width;
 			height: $middle-width;
+<<<<<<< HEAD
 
 			.w {
 				@include transform(translate(-50%, -50%) rotate(45deg) translateX($middle-width / 2) rotate(-45deg));
 				@include animation(orbit-middle 7.5s linear infinite);
 			}
+=======
+>>>>>>> 74d412a1bdb2c578517697bd00ea8fcdd4956688
 		}
 
 		&.outer {
 			width: $outer-width;
 			height: $outer-width;
+<<<<<<< HEAD
 
 			.w {
 				@include transform(translate(-50%, -50%) rotate(45deg) translateX($outer-width / 2) rotate(-45deg));
 				@include animation(orbit-outer 10s linear infinite);
 			}
+=======
+>>>>>>> 74d412a1bdb2c578517697bd00ea8fcdd4956688
 		}
 	}
 
 	.w {
+<<<<<<< HEAD
 		font-size: 25px;
+=======
+		color: $yellow;
+		font-family: 'Montserrat';
+		font-weight: bold;
+		text-transform: uppercase;
+		z-index: 1;
+		font-size: 25px;
+
+		@include xy-center;
+		@include transition(all 1s);
+>>>>>>> 74d412a1bdb2c578517697bd00ea8fcdd4956688
 	}
 }
 
