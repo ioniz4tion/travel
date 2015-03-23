@@ -1,11 +1,13 @@
 window.onload = function() {
 
-	var wInner = $('.w.inner');
+	var tl = new TimelineMax();
+	var w = document.getElementsByClassName('w');
 
-	var wInnerAnimate = function() {
-		TweenMax.to(wInner, 1, {top: '0', left: '75px', repeat: -1, yoyo: true});
-	};
+	tl.to(w[0], 0, {x: -75, xPercent: -50, y: -75, yPercent: -50})
+	  .to(w[1], 0, {x: -111, xPercent: -50})
+	  .to(w[2], 0, {x: -147, xPercent: -50})
+	  .insert(new TweenMax.to(w[0], 1, {x: 75, yoyo: true, repeat: -1, ease: Circ.easeInOut}))
+	  .insert(new TweenMax.to(w[0], 1, {yoyo: true, repeat: -1, ease: Circ.easeInOut}))
+	  .insert(new TweenMax.to(w[0], 1, {y: 75, yoyo: true, repeat: -1, ease: Circ.easeInOut}))
 
-	wInnerAnimate();
-
-};
+}

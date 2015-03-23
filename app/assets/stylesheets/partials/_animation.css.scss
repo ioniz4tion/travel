@@ -55,11 +55,10 @@
 		font-size: 25px;
 
 		@include xy-center;
-		// @include transition(all 1s);
 
 		&.inner {
 			// @include transform(translate(-50%, -50%) translate($inner-width / 2, 0));
-			top: $inner-width / 2;
+			//top: $inner-width / 2;
 		}
 
 		&.middle {
