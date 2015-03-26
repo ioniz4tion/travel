@@ -111,8 +111,9 @@
 	margin-top: 30px;
 	position: relative;
 
-	> div {
+	> div:not(.map) {
 		position: relative;
+		overflow: auto;
 	}
 
 	.description {

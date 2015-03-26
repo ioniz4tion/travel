@@ -16,13 +16,17 @@ window.onload = function() {
 	  .insert(new TweenMax.to(w[2], 5, {x: 147, yoyo: true, repeat: -1, ease: Sine.easeInOut, delay: 2.5}))
 	  .insert(new TweenMax.to(w[2], 5, {y: 147, yoyo: true, repeat: -1, ease: Sine.easeInOut}));
 
-	t2.insert(new TweenMax.to(w[0], 1, {x: -67, ease: Sine.easeInOut}))
-	  .insert(new TweenMax.to(w[0], 1, {y: -57, ease: Sine.easeInOut}))
-	  .insert(new TweenMax.to(w[1], 1, {x: -45, ease: Sine.easeInOut}))
-	  .insert(new TweenMax.to(w[1], 1, {y: -2, ease: Sine.easeInOut}))
-	  .insert(new TweenMax.to(w[2], 1, {x: -126, ease: Sine.easeInOut}))
-	  .insert(new TweenMax.to(w[2], 1, {y: 53, ease: Sine.easeInOut}))
-	  .insert(new TweenMax.to(text, 1, {right: 0, ease: Power2.easeInOut}));
+	function start() {
+		t1.play();
+		alert("test");
+	};
+
+	t2.to(w[0], 1, {x: -67, y: -57, ease: Sine.easeInOut}, "w")
+	  .to(w[1], 1, {x: -45, y: -2, ease: Sine.easeInOut}, "w")
+	  .to(w[2], 1, {x: -126, y: 53, ease: Sine.easeInOut}, "w")
+		.to(text, 1, {right: 0, ease: Power2.easeInOut});
+	t2.eventCallback("onReverseComplete", start);
+	// t2.eventCallback("onReverseCompleteParams",[t1]);
 
 	//rotate.to(w[0], 1, {y: "+=75", yoyo: true, repeat: -1, ease: Sine.easeInOut})
 	tl.play(4);
@@ -34,7 +38,7 @@ window.onload = function() {
 	});
 
 	$('.logo').mouseleave(function() {
-		tl.play();
+		// tl.delay(2.5).play();
 		t2.reverse();
 	});
 
