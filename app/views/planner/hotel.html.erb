@@ -15,9 +15,9 @@
 	<% @package.gen_hotels.order(:name).each do |hotel| %>
 		<input type="radio" value="<%= hotel.id %>" id="<%= hotel.id %>" name="hotel_id">
 		<label for="<%= hotel.id %>">
-		<div class="hotel-card">
+		<div class="hotel-card" id="hotel-card<%= hotel.id %>">
 
-			<div class="flipper-card" id="<%= hotel.id %>">
+			<div class="flipper-card" id="card<%= hotel.id %>">
 
 				<div class="front">
 

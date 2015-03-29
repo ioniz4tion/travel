@@ -38,7 +38,7 @@ $(document).ready(function() {
 	})
 
 	$(".answer").click(function() {
-		var color = $(this).attr('data-color');
+		var color = $(this).attr('data-cshoolor');
 		$("#q" + currentQuestion + " .answer").removeClass("selected")
 		.removeClass("red-select blue-select green-select");
 		$(this).addClass("selected").addClass(color + "-select");
@@ -84,10 +84,12 @@ $(document).ready(function() {
 				buttonId = $(this).attr('id'),
 				idValue = idValue.replace('show','');
 
+		
+		$('#card' + idValue).toggleClass('flipper-open');
+		$('#hotel-card' + idValue).toggleClass("selected-card");
+		$('#' + buttonId + ' span').toggleClass('flipper-open');
+		$('#card' + idValue).toggleClass("fliptest").show();
 		console.log(idValue);
-		//$('#' + idValue).toggleClass('open');
-		//$('#' + buttonId + ' span').toggleClass('open');
-		$('#' + idValue).toggleClass("fliptest").show();
 	});
 
 	$("button").click(function() {

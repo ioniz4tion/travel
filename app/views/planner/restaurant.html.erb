@@ -15,9 +15,9 @@
 	<% @package.gen_restaurants.order(:name).each do |restaurant| %>
 		<input type="checkbox" value="<%= restaurant.id %>" id="<%= restaurant.id %>" name="restaurant_id[]">
 		<label for="<%= restaurant.id %>">
-		<div class="hotel-card">
+		<div class="hotel-card" id="hotel-card<%= restaurant.id %>">
 
-			<div class="flipper-card" id="<%= restaurant.id %>">
+			<div class="flipper-card" id="card<%= restaurant.id %>">
 
 				<div class="front">
 
