@@ -55,20 +55,7 @@
 		font-size: 25px;
 
 		@include xy-center;
-		//@include transition(all 1s);
-
-		&.inner {
-			// @include transform(translate(-50%, -50%) translate($inner-width / 2, 0));
-			//top: $inner-width / 2;
-		}
-
-		&.middle {
-
-		}
-
-		&.outer {
-
-		}
+		@include transition(font-size 1s);
 	}
 }
 
@@ -81,6 +68,10 @@
 
 	.circle {
 		border: 1px solid transparent;
+	}
+
+	.w {
+		font-size: 45px;
 	}
 }
 
@@ -126,7 +117,7 @@
 		position: relative;
 		right: 100%;
 
-		@include transition(all 1s);
+		//@include transition(all 1s);
 
 		&.show {
 			right: 0;
