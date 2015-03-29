@@ -14,101 +14,36 @@ window.onload = function() {
 	  .insert(new TweenMax.to(w[2], 5, {x: 147, yoyo: true, repeat: -1, ease: Sine.easeInOut, delay: 2.5}))
 	  .insert(new TweenMax.to(w[2], 5, {y: 147, yoyo: true, repeat: -1, ease: Sine.easeInOut}));
 
-	//rotate.to(w[0], 1, {y: "+=75", yoyo: true, repeat: -1, ease: Sine.easeInOut})
+	
 	tl.play(4);
 
 };
+i = 0;
 
+var mouse = {x: 0, y: 0};
 
-$(document).ready(function() {
+document.addEventListener('mousemove', function(e){ 
+    mouse.x = e.clientX || e.pageX; 
+    mouse.y = e.clientY || e.pageY 
+}, false);
+setInterval(function () {
 
-	var innerGoTo = [69, 79];
-	var middleGoTo = [165, 205];
-	var outerGoTo = [153, 331];
-	var animateCheck = false;
+	//if(Math.random() < .3) {
+	  var span = document.createElement("span");
+	  span.innerHTML = "$";
+	  span.setAttribute("class", "dollar");
+	  span.setAttribute("id", "dollar" + i);
 
+	  $('#calculator').append(span);
 
-	
+	  var sign = Math.random() < 0.5 ? -1 : 1;
+	  var sign2 = Math.random() < 0.5 ? -1 : 1;
 
-	//TweenMax.to(w[0], 1, {x: "-=75", y: "-=75", repeat: -1, yoyo: true});
-// >>>>>>> 1e98a41993d3c551469a17f4b83c7f1b542d3dc4
+	  $('#dollar' + i).css({top: mouse.y - 10, left: mouse.x - 10});
+	  TweenMax.to($('#dollar' + i), 2.5, {x: Math.random() * sign * 150 + 50, y: Math.random() * sign2 * 150 + 50, scale: .3, opacity: 0});
 
-	// $('.logo').mouseenter(function() {
+		i++;
 
-	// 	inner = $('.inner .w').position();
-	// 	middle = $('.middle .w').position();
-	// 	outer = $('.outer .w').position();
-
-	// 	innerTranslate = [];
-	// 	innerTranslate[0] = innerGoTo[0] - inner.left;
-	// 	innerTranslate[1] = innerGoTo[1] - inner.top;
-
-	// 	middleTranslate = [];
-	// 	middleTranslate[0] = middleGoTo[0] - middle.left;
-	// 	middleTranslate[1] = middleGoTo[1] - middle.top;
-
-	// 	outerTranslate = [];
-	// 	outerTranslate[0] = outerGoTo[0] - outer.left;
-	// 	outerTranslate[1] = outerGoTo[1] - outer.top;
-
-	// 	$('.inner .w').css({
-	// 		'left' : innerTranslate[0] + 'px',
-	// 		'top' : innerTranslate[1] + 'px'
-	// 	});
-
-	// 	$('.middle .w').css({
-	// 		'left' : middleTranslate[0] + 'px',
-	// 		'top' : middleTranslate[1] + 'px'
-	// 	});
-
-	// 	$('.outer .w').css({
-	// 		'left' : outerTranslate[0] + 'px',
-	// 		'top' : outerTranslate[1] + 'px'
-	// 	});
-
-	// 	$('.w').css({
-	// 		'font-size' : '45px',
-	// 		    '-ms-animation-play-state' : 'paused',
-	// 		   '-moz-animation-play-state' : 'paused',
-	// 		'-webkit-animation-play-state' : 'paused',
-	// 		     '-o-animation-play-state' : 'paused',
-	// 		        'animation-play-state' : 'paused'
-	// 	});
-
-	// 	setTimeout(function() {
-	// 		$('.text span').css('right', '0');
-	// 		// $('.logo .eleganticon').css({
-	// 		// 	'font-size' : '200px',
-	// 		// 	'opacity' : '0.5'
-	// 		// });
-	// 	}, 1000);
-
-	// 	animateCheck = true;
-
-	// 	// console.log(inner);
-	// 	// console.log(middle);
-	// 	// console.log(outer);
-	// 			   '-moz-animation-play-state' : 'running',
-	// 			'-webkit-animation-play-state' : 'running',
-	// 			     '-o-animation-play-state' : 'running',
-	// 			        'animation-play-state' : 'running'
-	// 		});
-	// 	}, 1000);
-		
-	// 	$('.text span').css('right', '100%');
-
-	// 	// outerTranslate[0] = outerGoTo[0] - outer.left;
-	// 	// outerTranslate[1] = outerGoTo[1] - outer.top;
-
-	// 	/*$('.inner .w').css({
-	// 		'left' : innerTranslate[0] + 'px',
-	// 		'top' : innerTranslate[1] + 'px'
-	// 	});
-
-	// 	$('.middle .w').css({
-	// 		'left' : middleTranslate[0] + 'px',
-	// 		'top' : middleTranslate[1] + 'px'
-	// 	});
-
-});
+	//}
+}, 75);
 

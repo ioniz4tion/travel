@@ -37,4 +37,13 @@
 	select {
 		color: #000;
 	}
+
+}
+
+.dollar {
+	font-size: 36px;
+	color: green;
+	position: fixed;
+	cursor: default;
+	pointer-events: none;
 }
