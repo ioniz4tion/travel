@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var currentQuestion = 1;
 	var questionNumber = $('.question').length;
 
-	$("#next").click(function(event) {
+	$("#nxt").click(function(event) {
 		event.preventDefault();
 		if (currentQuestion == questionNumber) {
 			$("#questions").submit();
@@ -14,24 +14,24 @@ $(document).ready(function() {
 			$("#q" + (currentQuestion - 1)).addClass("left-away").fadeOut(300,function(){
 				$("#q" + (currentQuestion)).fadeIn().removeClass("right-away");
 				if (currentQuestion == questionNumber) {
-					$("#next").addClass("continue").text("Continue");
+					$("#nxt").addClass("continue");
 				}
-				$("#previous").removeClass("grey-left");
+				$("#prvs").removeClass("disabled");
 				$("#current").text(currentQuestion);
 			});
 		}
 	});
 
-	$("#previous").click(function(event) {
+	$("#prvs").click(function(event) {
 		event.preventDefault();
 		if (currentQuestion > 1) {
 			currentQuestion--;
 			$("#q" + (currentQuestion + 1)).addClass("right-away").fadeOut(300,function(){
 				$("#q" + (currentQuestion)).fadeIn().removeClass("left-away");
 				if (currentQuestion == 1) {
-					$("#previous").addClass("grey-left");
+					$("#prvs").addClass("disabled");
 				}
-				$("#next").removeClass("continue").text("Next");
+				$("#nxt").removeClass("continue");
 				$("#current").text(currentQuestion);
 			});
 		} 

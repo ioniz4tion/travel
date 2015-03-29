@@ -4,80 +4,86 @@
 
 <%= render :partial => 'templates/head' %>
 
-<%= form_tag('/planner/hotel', id: "suggest") do %>
-	<div class="recommend">
-		<span class="recommend-span">We Recommend a vacation to:</span>
+<div class="content">
+
+	<h1 class="title"><span>Our</span> Suggestion</h1>
+
+	<%= form_tag('/planner/hotel', id: "suggest") do %>
+		<div class="recommend">
+			<span class="recommend-span">We Recommend a vacation to:</span>
+		</div>
+
+		<div class="city-container">
+			<span class="city-name"><%= @packages.first.name %></span>
+			<%= image_tag(@packages.first.image.url, class: "package-image") %>
+		</div>
+
+		<input type="text" name="city_id" id="city_id" style="display:none" value="<%= @packages.first.id %>">
+
+
+		<div class="controls">
+			<button id="another" class="btn-slide btn btn-1 btn-1b" type="button">Pick Another</button>
+			<button id="suggest-continue" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
+		</div>
+
+	<% end %>
+
+	<div id="cities">
+
+		<div class="down">
+			<div id="arrows">
+			</div>		
+		</div>
+
+		<div class="content">
+
+		  <h1>Pick a city</h1>
+
+		  <ul>
+
+		  <% i = 1 %>
+		    <% @packages.each do |package| %>
+
+
+		      <li class="item">
+		        <div class="pick-content">
+		          
+		          <div class="price-img">
+		            <%= image_tag(package.image.url) %>	            
+		          </div>
+
+		          <div class="description">
+		            <h2><%= i.ordinalize %> - <%= package.name %></h2>
+		            <p><%= package.gen_package_paragraphs.first.text %></p>     
+		          </div>
+
+		          <button id="choose<%= package.id %>" class="choose btn btn-1 btn-1b" type="button">Choose</button>
+
+		          
+
+		        </div>
+
+		        <div>	                    
+
+		          <button id="show<%= package.id %>">Show/hide map<span class="caret"></span></button>
+
+		        </div>
+
+		        <div class="map" id="<%= package.id %>">	        
+
+		          <iframe src="<%= package.iframe_url %>"></iframe>
+
+		        </div>
+
+		      </li>
+
+		    <hr>
+		    <% i += 1 %>
+		    <% end %>	    
+
+		  </ul>
+
+		</div>
 	</div>
 
-	<div class="city-container">
-		<span class="city-name"><%= @packages.first.name %></span>
-		<%= image_tag(@packages.first.image.url, class: "package-image") %>
-	</div>
-
-	<input type="text" name="city_id" id="city_id" style="display:none" value="<%= @packages.first.id %>">
-
-
-	<div class="controls">
-		<button id="another" class="btn-slide btn btn-1 btn-1b" type="button">Pick Another</button>
-		<button id="suggest-continue" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
-	</div>
-
-<% end %>
-
-<div id="cities">
-
-	<div class="down">
-		<div id="arrows">
-		</div>		
-	</div>
-
-	<div class="content">
-
-	  <h1>Pick a city</h1>
-
-	  <ul>
-
-	  <% i = 1 %>
-	    <% @packages.each do |package| %>
-
-
-	      <li class="item">
-	        <div class="pick-content">
-	          
-	          <div class="price-img">
-	            <%= image_tag(package.image.url) %>	            
-	          </div>
-
-	          <div class="description">
-	            <h2><%= i.ordinalize %> - <%= package.name %></h2>
-	            <p><%= package.gen_package_paragraphs.first.text %></p>     
-	          </div>
-
-	          <button id="choose<%= package.id %>" class="choose btn btn-1 btn-1b" type="button">Choose</button>
-
-	          
-
-	        </div>
-
-	        <div>	                    
-
-	          <button id="show<%= package.id %>">Show/hide map<span class="caret"></span></button>
-
-	        </div>
-
-	        <div class="map" id="<%= package.id %>">	        
-
-	          <iframe src="<%= package.iframe_url %>"></iframe>
-
-	        </div>
-
-	      </li>
-
-	    <hr>
-	    <% i += 1 %>
-	    <% end %>	    
-
-	  </ul>
-
-	</div>
 </div>

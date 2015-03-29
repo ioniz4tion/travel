@@ -4,55 +4,60 @@
 
 <%= render :partial => 'templates/head' %>
 
-<%= form_tag('planner/suggest', id: "questions") do %>
-	<% i = 1 %>
-	<% @questions.each do |question| %>
-		<div class="question  <% if(i > 1)%><%= 'right-away' %><% end %>" id="q<%= i %>">
-			<span class="span-question"><%= bip_url(question, :text, 'planner/q') %></span>
+<div class="content">
 
-			<div class="answer-group">
+	<h1 class="title"><span>Travel</span> Planner</h1>
 
-				<% @answers[i - 1].each do |answer| %>
+	<%= form_tag('planner/suggest', id: "questions") do %>
+		<% i = 1 %>
+		<% @questions.each do |question| %>
+			<div class="question  <% if(i > 1)%><%= 'right-away' %><% end %>" id="q<%= i %>">
+				<span class="span-question"><%= bip_url(question, :text, 'planner/q') %></span>
 
-					<label for="<%= i %><%= answer.id %>" data-color="<%= answer.color %>" class="<%= answer.color %> answer">
-						<input type="radio" name="<%= i %>" id="<%= i %><%= answer.id %>" value="<%= answer.score %>">
-						<label for="<%= i %><%= answer.id %>"><%= bip_url(answer, :text, 'planner/a') %>
-								<%= login_text("<br/>") %><%= bip_url(answer, :color, 'planner/a', false) %>
-								<%= login_text("<br/>") %><%= bip_url(answer, :score, 'planner/a', false) %>
+				<div class="answer-group">
+
+					<% @answers[i - 1].each do |answer| %>
+
+						<label for="<%= i %><%= answer.id %>" class="answer">
+							<input type="radio" name="<%= i %>" id="<%= i %><%= answer.id %>" value="<%= answer.score %>">
+							<label for="<%= i %><%= answer.id %>"><%= bip_url(answer, :text, 'planner/a') %>
+									<%= login_text("<br/>") %><%= bip_url(answer, :color, 'planner/a', false) %>
+									<%= login_text("<br/>") %><%= bip_url(answer, :score, 'planner/a', false) %>
+							</label>
 						</label>
-					</label>
+					<% end %>
+				</div>
+
+				<% if user_signed_in? %>
+					<% question.answer_values.order(:id).each do |value| %>
+						<%= value.package.name %>:
+						<%= bip_url(value, :score, 'planner/av') %>
+						<br/>
+
+					<% end %>
 				<% end %>
+
+				<%= cms_delete(question, 'planner/delete') %>
+
 			</div>
 
-			<% if user_signed_in? %>
-				<% question.answer_values.order(:id).each do |value| %>
-					<%= value.package.name %>:
-					<%= bip_url(value, :score, 'planner/av') %>
-					<br/>
+			<% i += 1 %>
+		<% end %>
 
-				<% end %>
-			<% end %>
-
-			<%= cms_delete(question, 'planner/delete') %>
-
+		<div class="controls">
+			<button id="prvs" class="plnr-btn disabled"><span class="planner-arrow arrow-left"></span></button>
+			<div class="display">
+				<span id="current" class="count">1</span>
+				<span class="divider">/</span>
+				<span id="number" class="count"><%= @questions.count %></span>
+			</div>
+			<button id="nxt" class="plnr-btn"><span class="planner-arrow arrow-right"></span><span class="planner-arrow arrow2 arrow-right"></span></button>
 		</div>
 
-		<% i += 1 %>
+		<% if user_signed_in? %>
+			<%= cms_add('planner/add', 'Add Question') %>
+		<% end %>
+
 	<% end %>
 
-	<div class="controls">
-		<button id="previous" class="grey-left btn-slide btn icon-arrow-left" type="button">Previous</button>
-		<div class="display">
-			<span id="current" class="count">1</span>
-			<span class="divider">/</span>
-			<span id="number" class="count"><%= @questions.count %></span>
-		</div>
-		<button id="next" class="btn-slide btn icon-arrow-right" type="button">Next</button>
-	</div>
-
-	<% if user_signed_in? %>
-		<%= cms_add('planner/add', 'Add Question') %>
-	<% end %>
-
-<% end %>
-
+</div>

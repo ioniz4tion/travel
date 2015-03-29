@@ -144,7 +144,7 @@ nav {
 }
 
 .dropdown {
-	padding: $dropdown-padding-y 25px;
+	padding: $dropdown-padding-y 25px + 19.5px;
 	position: relative;
 
 	&:hover,

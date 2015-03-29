@@ -4,8 +4,103 @@
 
 @import 'partials/imports.css.scss';
 
+.plnr-btn {
+	width: 22px;
+	height: 50px;
+	position: relative;
+	background: transparent;
+	outline: none;
+	border: none;
+
+	&#prvs {
+		margin-right: 75px;
+	}
+
+	&#nxt {
+		margin-left: 75px;
+
+		.planner-arrow {
+			float: left;
+		}
+	}
+
+	&:hover {
+		.planner-arrow::before,
+		.planner-arrow::after {
+			background: $yellow;
+		}
+	}
+
+	&.disabled {
+		visibility: hidden;
+	}
+
+	&.continue {
+		width: 44px;
+
+		&:hover .planner-arrow::before,
+		&:hover .planner-arrow::after {
+			background: #1c1 !important;
+		}
+
+		.arrow2 {
+			visibility: visible;
+		}
+	}
+}
+
+.planner-arrow {
+	display: inline-block;
+	width: 22px;
+	height: 100%;
+	position: relative;
+	
+	&::before,
+	&::after, {
+		content: '';
+		position: absolute;
+		right: 50%;
+
+		@include transition(background 0.3s);
+		@include planner-arrow;
+	}
+
+	&:before {
+		top: $plnr-arrow-pos;
+
+		@include transform(translateX(50%) rotate(180deg - $arrow-rotate));
+	}
+
+	&:after {
+		bottom: $plnr-arrow-pos;
+
+		@include transform(translateX(50%) rotate(-180deg + $arrow-rotate));
+	}
+
+	&.arrow-right {
+		&:before,
+		&:after {
+			left: -4px;
+		}
+
+		&:before {
+			@include transform(rotate($arrow-rotate));
+		}
+
+		&:after {
+			@include transform(rotate(-$arrow-rotate));
+		}
+	}
+
+	&.arrow2 {
+		visibility: hidden;
+		float: right;
+	}
+}
+
 form {
 	text-align: center;
+	overflow: hidden;
 }
 
 .question {
@@ -27,18 +122,22 @@ form {
 }
 
 .answer {
-	color: #000;
+	color: $light-grey;
 	position: relative;
-	display:block;
-	text-align: left;
-	border-radius: 10px;
-	background-color: #777;
+	display: block;
+	text-align: center;
+	background-color: $blue;
 	margin: 30px;
 	padding: 20px 50px;
 	font-size: 24px;
 	overflow: hidden;
 
 	@include transition(all .3s);
+
+	&:not(.selected):hover {
+		background: $dark-blue;
+		// color: $dark-grey;
+	}
 
 	label {
 		width: 100%;
@@ -57,20 +156,20 @@ form {
 		}
 	}
 
-	:after {
-		content: '';
-    position: absolute;
-    right: 0;
-		top:0;
-		z-index: -1;
-		width:30%;
-		height:200%;
-		background-color: #aaa;		
+	// :after {
+	// 	content: '';
+ //    position: absolute;
+ //    right: 0;
+	// 	top:0;
+	// 	z-index: -1;
+	// 	width:30%;
+	// 	height:200%;
+	// 	background-color: #aaa;		
 		
-		@include transform-origin(0 0);
-		@include transform(rotate(-20deg));
-		@include transition(all .3s);	    
-	}
+	// 	@include transform-origin(0 0);
+	// 	@include transform(rotate(-20deg));
+	// 	@include transition(all .3s);	    
+	// }
 }
 
 @include hover-color('.red', #f11, #f55);
@@ -98,37 +197,32 @@ form {
 	:after {
 		width: 15%;
 	}
-	box-shadow: 0 0 10px 1px #fff;
+	// box-shadow: 0 0 10px 1px #fff;
+	background: $yellow;
+	color: $dark-grey;
 }
 
 button {
 	color: #000;
 }
 
-.btn-slide {
-	margin: 0 auto;
-	display: inline-block;
-	border-radius: 10px;
-}
-
-#next,#suggest-continue {
+#previous,
+#next,
+#suggest-continue {
 	color: #000;
 	position: relative;
 	background-color: #dba218;
 	width: 220px;
 	//margin: 30px;
-	padding: 20px 70px 20px 20px;
 	font-size: 24px;
 	overflow: hidden;
 	border: none;
-	margin-left: 45px;
 	//margin-right: 30px;
-	text-align: left;
 	//text-indent: 20px;
 
 	@include transition(all .3s);	
 
-	&:after {
+	/* &:after {
 		content: '';
     position: absolute;
     right: 0;
@@ -156,7 +250,7 @@ button {
 		font-size: 30px;
 
 		@include transition(all .3s);	
-	}
+	} */
 
 	&:hover {
 		background-color: #c49308;
@@ -174,22 +268,21 @@ button {
 }
 
 #previous {
-	color: #000;
-	position: relative;
-	background-color: #dba218;
-	//margin: 30px;
-	width: 220px;
 	padding: 20px 20px 20px 0px;
-	font-size: 24px;
-	overflow: hidden;
-	border: none;
-	//margin-left: 30px;
-	margin-right: 45px;
 	text-align: right;
+	margin-right: 45px;
+}
 
-	@include transition(all .3s);	
+#next,
+#suggest-continue {
+	padding: 20px 70px 20px 20px;
+	text-align: left;
+	margin-left: 45px;
+}
 
-	&:after {
+#previous {
+
+	/* &:after {
 		content: '';
     position: absolute;
     left: 0;
@@ -202,9 +295,9 @@ button {
 		@include transform-origin(0 0);
 		@include transform(rotate(20deg));
 		@include transition(all .3s);	    
-	}
+	} */
 
-	&:before {
+	/* &:before {
 		transition: all .3s;
 		position: absolute;
 		left: -20px;
@@ -216,7 +309,7 @@ button {
 		width: 30%;
 		line-height: 1;
 		font-size: 30px;
-	}
+	} */
 
 	&:hover {
 		background-color: #c49308;
@@ -250,14 +343,6 @@ button {
 		&:before {
 			left: -20px !important;
 		}
-	}
-}
-
-.continue {
-	background-color: #1c1 !important;
-
-	&:after {
-		background-color: #47ff47 !important;
 	}
 }
 
@@ -300,7 +385,13 @@ input[type="radio"] {
 	margin-top: 70px;
 	position: relative;
 
+	.btn-slide {
+		margin: 0 auto;
+		display: inline-block;
+		// border-radius: 10px;
+	}
 }
+
 .city-container {
 	text-align: center;
 	position: relative;
@@ -775,7 +866,7 @@ input[type="radio"] {
 		}
 	}*/
 
-	button {
+	button:not(.plnr-btn) {
 		display: block;
 		width: 50px;
 		height: 50px;
