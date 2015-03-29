@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   root 'application#index'
   get '/home' => 'application#index'
 
+  get '/contact' => 'application#contact'
+
+  get '/w3c' => 'application#w3c'
+
   get '/sitemap.xml' => 'application#sitemap'
 
   get '/calendar' => 'calendar#calendar'

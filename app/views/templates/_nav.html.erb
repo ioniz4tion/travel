@@ -24,7 +24,7 @@
 
 	<div class="nav-right">
 
-		<div class="dropdown">
+		<div class="dropdown destinations">
 			<span class="nav-heading">Destinations</span>
 
 			<div class="nav-list">
@@ -53,31 +53,44 @@
 
 		</div>
 
-		<!-- <div class="dropdown">
-			<span class="nav-heading">Holiday Packages</span>
+		<div class="dropdown about">
+			<span class="nav-heading">About Us</span>
 
 			<div class="nav-list">
-				<% @hol_package.order(:name).each do |package| %>
-					<div class="nav-item">
-						<span><%= package.name %></span>
 
-						<ul>
-							<li><%= link_to "Hotels","/holiday/#{package.name}/hotels" %></li>
-							<li><%= link_to "Restaurants","/holiday/#{package.name}/restaurants" %></li>
-							<li><%= link_to "Attractions","/holiday/#{package.name}/attractions" %></li>
-						</ul>
-					
+				<%= link_to('/contact') do %>
+					<div class="nav-item">
+						<span>Contact Us</span>
 					</div>
 				<% end %>
+
+				<%= link_to('/about') do %>
+					<div class="nav-item">
+						<span>The Developers</span>
+					</div>
+				<% end %>
+
+				<%= link_to('/bpas') do %>
+					<div class="nav-item">
+						<span>BPA</span>
+					</div>
+				<% end %>
+
+				<%= link_to('/copyrights') do %>
+					<div class="nav-item">
+						<span>Copyrights</span>
+					</div>
+				<% end %>
+
+				<%= link_to('/w3c') do %>
+					<div class="nav-item">
+						<span>Validation</span>
+					</div>
+				<% end %>
+
 			</div>
 
-		</div> -->
-
-		<!-- <div>
-			<%= link_to('/calendar') do %>
-				<span class="nav-heading">Calendar</span>
-			<% end %>
-		</div> -->
+		</div>
 
 	</div>
 
@@ -86,7 +99,7 @@
 	<div class="nav-mobile">
 
 		<div>
-			<span class="nav-heading">General Packages</span>
+			<span class="nav-heading">Destinations</span>
 
 			<% @gen_package.order(:name).each do |package| %>
 				<div>

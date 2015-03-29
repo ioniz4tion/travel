@@ -99,7 +99,7 @@
 }
 
 form {
-	text-align: center;
+	// text-align: center;
 	overflow: hidden;
 }
 
@@ -118,7 +118,7 @@ form {
 
 .answer-group {
 	margin: 0 auto;
-	width: 450px;
+	max-width: 450px;
 }
 
 .answer {
@@ -421,7 +421,6 @@ input[type="radio"] {
 .recommend {
 	position: relative;	
 	text-align: center;
-	
 }
 
 .recommend-span {

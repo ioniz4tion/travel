@@ -43,9 +43,6 @@
 	<div class="copy">
 		<p>
 			<span class="copyline">&copy; 2015 World Wide Wanderings</span><span>|</span>
-			<%= link_to 'About Us', '/about' %><span>|</span>
-			<%= link_to 'Copyrights', '/copyrights' %><span>|</span>
-			<%= link_to 'BPA', '/bpas' %><span>|</span>
 			<% if user_signed_in? %>
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 			<% else %>

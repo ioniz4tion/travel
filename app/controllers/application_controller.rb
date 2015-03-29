@@ -131,4 +131,11 @@ class ApplicationController < ActionController::Base
   		format.html { render html: result, status: :ok }
   	end
   end
+
+  def contact
+  end
+
+  def w3c
+  end
+  
 end
