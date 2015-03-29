@@ -15,9 +15,9 @@
 	<% @package.gen_attractions.order(:name).each do |attraction| %>
 		<input type="checkbox" value="<%= attraction.id %>" id="<%= attraction.id %>" name="attraction_id[]">
 		<label for="<%= attraction.id %>">
-		<div class="hotel-card">
+		<div class="hotel-card" id="hotel-card<%= attraction.id %>">
 
-			<div class="flipper-card" id="<%= attraction.id %>">
+			<div class="flipper-card" id="card<%= attraction.id %>">
 
 				<div class="front">
 

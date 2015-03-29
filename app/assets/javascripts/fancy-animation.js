@@ -1,4 +1,4 @@
-window.onload = function() {
+$(document).ready(function() {
 
 	var t1 = new TimelineMax();
 	var t2 = new TimelineMax();
@@ -41,4 +41,4 @@ window.onload = function() {
 	$('.logo').mouseleave(function() {
 		t2.reverse();
 	});
-};
+});
