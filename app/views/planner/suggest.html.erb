@@ -9,21 +9,36 @@
 	<h1><span>Our</span> Suggestion</h1>
 
 	<%= form_tag('/planner/hotel', id: "suggest") do %>
-		<div class="recommend">
+		<!-- <div class="recommend">
 			<span class="recommend-span">We recommend a vacation to:</span>
-		</div>
+		</div> -->
 
-		<div class="city-container">
-			<span class="city-name"><%= @packages.first.name %></span>
-			<%= image_tag(@packages.first.image.url, class: "package-image") %>
-		</div>
+		<ul>
+
+	    <li class="item">
+	      <div>
+
+	        <div class="price-img">
+	          <%= image_tag(@packages.first.image.url) %>
+	        </div>
+
+	        <div class="description">
+	          <h2><%= @packages.first.name %></h2>
+	          <p><%= @packages.first.gen_package_paragraphs.first.text %></p>
+	        </div>
+
+	      </div>
+	    </li>
+
+	  </ul>
 
 		<input type="text" name="city_id" id="city_id" style="display:none" value="<%= @packages.first.id %>">
 
 
 		<div class="controls">
-			<button id="another" class="btn-slide btn btn-1 btn-1b" type="button">Pick Another</button>
-			<button id="suggest-continue" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
+			<button id="another" class="plnr-btn" type="button">Pick Another</button>
+			<div class="spacer"></div>
+			<button id="suggest-continue" class="plnr-btn continue" type="button"><span class="planner-arrow arrow-right"></span><span class="planner-arrow arrow2 arrow-right"></span></button>
 		</div>
 
 	<% end %>

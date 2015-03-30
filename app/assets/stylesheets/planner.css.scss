@@ -7,17 +7,18 @@
 .plnr-btn {
 	width: 22px;
 	height: 50px;
-	position: relative;
+	position: absolute;
 	background: transparent;
 	outline: none;
 	border: none;
 
 	&#prvs {
-		margin-right: 75px;
+		right: calc(50% + 75px);
 	}
 
-	&#nxt {
-		margin-left: 75px;
+	&#nxt,
+	&#suggest-continue {
+		left: calc(50% + 75px);
 
 		.planner-arrow {
 			float: left;
@@ -96,6 +97,17 @@
 		visibility: hidden;
 		float: right;
 	}
+}
+
+.spacer {
+	display: inline-block;
+	width: 20px;
+	height: 50px;
+	margin: 0 auto;
+	position: relative;
+	left: 50%;
+
+	@include transform(translateX(-50%));
 }
 
 form {
@@ -206,21 +218,21 @@ button {
 	color: #000;
 }
 
-#previous,
-#next,
-#suggest-continue {
-	color: #000;
-	position: relative;
-	background-color: #dba218;
-	width: 220px;
+// #previous,
+// #next,
+// #suggest-continue {
+	// color: #000;
+	// position: relative;
+	// background-color: #dba218;
+	// width: 220px;
 	//margin: 30px;
-	font-size: 24px;
-	overflow: hidden;
-	border: none;
+	// font-size: 24px;
+	// overflow: hidden;
+	// border: none;
 	//margin-right: 30px;
 	//text-indent: 20px;
 
-	@include transition(all .3s);	
+	// @include transition(all .3s);	
 
 	/* &:after {
 		content: '';
@@ -252,20 +264,20 @@ button {
 		@include transition(all .3s);	
 	} */
 
-	&:hover {
-		background-color: #c49308;
+// 	&:hover {
+// 		background-color: #c49308;
 
-		&:after {
-			width: 25%;
-			height: 300%;
-			background-color: #eb2;
-		}
+// 		&:after {
+// 			width: 25%;
+// 			height: 300%;
+// 			background-color: #eb2;
+// 		}
 
-		&:before {
-			right: -10px;
-		}
-	}
-}
+// 		&:before {
+// 			right: -10px;
+// 		}
+// 	}
+// }
 
 #previous {
 	padding: 20px 20px 20px 0px;
@@ -273,12 +285,12 @@ button {
 	margin-right: 45px;
 }
 
-#next,
-#suggest-continue {
-	padding: 20px 70px 20px 20px;
-	text-align: left;
-	margin-left: 45px;
-}
+// #next,
+// #suggest-continue {
+// 	padding: 20px 70px 20px 20px;
+// 	text-align: left;
+// 	margin-left: 45px;
+// }
 
 #previous {
 
@@ -373,17 +385,22 @@ input[type="radio"] {
 
 .display {
 	display: inline-block;
-	position: absolute;
-	left: 50%;
-	top: 50%;
+	// position: absolute;
+	// left: 50%;
+	// top: 50%;
 	margin: 0 auto;
+	position: relative;
+	left: 50%;
 
-	@include transform(translate(-50%, -50%));
+	@include transform(translateX(-50%));
+
+	// @include transform(translate(-50%, -50%));
 }
 
 .controls {
 	margin-top: 70px;
 	position: relative;
+	overflow: auto;
 
 	.btn-slide {
 		margin: 0 auto;
@@ -413,7 +430,7 @@ input[type="radio"] {
 	display: block;
 	height: 500px;
 	margin: 0 auto;
-	box-shadow: 4px 4px 5px 5px #000;
+	// box-shadow: 4px 4px 5px 5px #000;
 	margin-bottom: 10px;
 	//width: 500px;
 }
@@ -430,23 +447,21 @@ input[type="radio"] {
 }
 
 #another {
-	color: #000;
-	position: relative;
-	background-color: #dba218;
-	//margin: 30px;
+	color: $light-grey;
+	position: absolute;
+	right: calc(50% + 75px);
+	background-color: $blue;
 	width: 220px;
-	padding: 20px 10px 20px 10px;
+	padding: 10px;
 	font-size: 24px;
 	overflow: hidden;
 	border: none;
-	//margin-left: 30px;
-	margin-right: 45px;
 	text-decoration: none;
-	//text-align: right;
+	text-transform: uppercase;
 
 	@include transition(all .3s);	
 
-	&:after {
+	/* &:after {
 		background-color: #36648f;
 	}
 
@@ -462,14 +477,15 @@ input[type="radio"] {
 		width: 30%;
 		line-height: 1;
 		font-size: 30px;
-	}
+	} */
 
 	&:hover {
-		background-color: #dba218;
+		background: $yellow;
+		color: $dark-grey;
 
-		&:after {			
-			background-color: #36648f;
-		}
+		// &:after {			
+		// 	background-color: #36648f;
+		// }
 	}
 }
 
