@@ -1,3 +1,6 @@
+<% hotel = @package.gen_hotels.find_by_id(session[:hotel_id]) %>
+
+
 <title>Travel Planner - 
 
 <%= render :partial => 'templates/head' %>
@@ -7,13 +10,14 @@
 	<h1><span>Trip</span> Summary</h1>
 
 <!-- city -->
+	<h3>Destination</h3>
 	<ul>
 
     <li class="item">
       <div>
 
         <div class="price-img">
-          <%= image_tag("w3c.svg") %>
+          <%= image_tag(@package.image.url) %>
         </div>
 
         <div class="description">
@@ -27,18 +31,19 @@
   </ul>
 
 <!-- hotel -->
+	<h3>Hotel</h3>
   <ul>
 
     <li class="item">
       <div>
 
         <div class="price-img">
-          <%= image_tag("w3c.svg") %>
+          <%= image_tag(hotel.image.url) %>
         </div>
 
         <div class="description">
-          <h2><%= @package.name %></h2>
-          <p><%= @package.gen_package_paragraphs.first.text %></p>
+          <h2><%= hotel.name %></h2>
+          <p><%= hotel.description %></p>
         </div>
 
       </div>
@@ -52,22 +57,16 @@
             <td>
               <span class="eleganticon icon_pin_alt"></span>
               <div>
-                <p><%= bip(attraction, :location) %></p>
+                <p><%= hotel.address %></p>
               </div>
             </td>
 
             <td>
               <span class="eleganticon icon_globe-2"></span>
               <div>
-                <a href="<%= attraction.website %>" target="_blank"><%= login_text("Short URL: ") %><%= bip(attraction, :short_url) %></a>                  
+                <a href="<%= hotel.website %>" target="_blank"><%= login_text("Short URL: ") %><%= hotel.short_url %></a>                  
               </div>                
             </td>
-
-            <% if user_signed_in? %>
-              <td>
-                Actual URL: <%= bip(attraction, :website) %>
-              </td>
-            <% end %>
 
           </tr>
 
@@ -76,14 +75,14 @@
             <td>
               <span class="eleganticon icon_clock_alt"></span>
               <div>
-                <p><%= bip(attraction, :hours) %></p>
+                <p><%= hotel.hours %></p>
               </div>
             </td>
 
             <td>
               <span class="eleganticon icon_phone"></span>
               <div>
-                <p><%= bip(attraction, :phone) %></p>
+                <p><%= hotel.phone %></p>
               </div>
             </td>
 
@@ -96,18 +95,22 @@
   </ul>
 
 <!-- list of restaurants -->
+	<h3>Restaurants</h3>
   <ul>
+
+  <% session[:restaurant_id].each do |restaurant_find| %> 
+	<% restaurant = @package.gen_restaurants.find_by_id(restaurant_find) %>
 
     <li class="item">
       <div>
 
         <div class="price-img">
-          <%= image_tag("w3c.svg") %>
+          <%= image_tag(restaurant.image.url) %>
         </div>
 
         <div class="description">
-          <h2><%= @package.name %></h2>
-          <p><%= @package.gen_package_paragraphs.first.text %></p>
+          <h2><%= restaurant.name %></h2>
+          <p><%= restaurant.description %></p>
         </div>
 
       </div>
@@ -121,22 +124,16 @@
             <td>
               <span class="eleganticon icon_pin_alt"></span>
               <div>
-                <p><%= bip(attraction, :location) %></p>
+                <p><%= restaurant.address %></p>
               </div>
             </td>
 
             <td>
               <span class="eleganticon icon_globe-2"></span>
               <div>
-                <a href="<%= attraction.website %>" target="_blank"><%= login_text("Short URL: ") %><%= bip(attraction, :short_url) %></a>                  
+                <a href="<%= restaurant.website %>" target="_blank"><%= login_text("Short URL: ") %><%= restaurant.short_url %></a>                  
               </div>                
             </td>
-
-            <% if user_signed_in? %>
-              <td>
-                Actual URL: <%= bip(attraction, :website) %>
-              </td>
-            <% end %>
 
           </tr>
 
@@ -145,14 +142,14 @@
             <td>
               <span class="eleganticon icon_clock_alt"></span>
               <div>
-                <p><%= bip(attraction, :hours) %></p>
+                <p><%= restaurant.hours %></p>
               </div>
             </td>
 
             <td>
               <span class="eleganticon icon_phone"></span>
               <div>
-                <p><%= bip(attraction, :phone) %></p>
+                <p><%= restaurant.phone %></p>
               </div>
             </td>
 
@@ -161,22 +158,28 @@
         </table>
       </div>
     </li>
+
+    <% end %>
 
   </ul>
 
 <!-- list of attractions -->
+	<h3>Attractions</h3>
   <ul>
+
+  <% session[:attraction_id].each do |attraction_find| %> 
+	<% attraction = @package.gen_attractions.find_by_id(attraction_find) %>
 
     <li class="item">
       <div>
 
         <div class="price-img">
-          <%= image_tag("w3c.svg") %>
+          <%= image_tag(attraction.image.url) %>
         </div>
 
         <div class="description">
-          <h2><%= @package.name %></h2>
-          <p><%= @package.gen_package_paragraphs.first.text %></p>
+          <h2><%= attraction.name %></h2>
+          <p><%= attraction.description %></p>
         </div>
 
       </div>
@@ -190,22 +193,16 @@
             <td>
               <span class="eleganticon icon_pin_alt"></span>
               <div>
-                <p><%= bip(attraction, :location) %></p>
+                <p><%= attraction.location %></p>
               </div>
             </td>
 
             <td>
               <span class="eleganticon icon_globe-2"></span>
               <div>
-                <a href="<%= attraction.website %>" target="_blank"><%= login_text("Short URL: ") %><%= bip(attraction, :short_url) %></a>                  
+                <a href="<%= attraction.website %>" target="_blank"><%= login_text("Short URL: ") %><%= attraction.short_url %></a>                  
               </div>                
             </td>
-
-            <% if user_signed_in? %>
-              <td>
-                Actual URL: <%= bip(attraction, :website) %>
-              </td>
-            <% end %>
 
           </tr>
 
@@ -214,14 +211,14 @@
             <td>
               <span class="eleganticon icon_clock_alt"></span>
               <div>
-                <p><%= bip(attraction, :hours) %></p>
+                <p><%= attraction.hours %></p>
               </div>
             </td>
 
             <td>
               <span class="eleganticon icon_phone"></span>
               <div>
-                <p><%= bip(attraction, :phone) %></p>
+                <p><%= attraction.phone %></p>
               </div>
             </td>
 
@@ -231,23 +228,10 @@
       </div>
     </li>
 
+    <hr>
+
+    <% end %>
+
   </ul>
 
-City: <%= @package.name %>
-<br/>
-Hotel: <%= @package.gen_hotels.find_by_id(session[:hotel_id]).name %>
-<br/>
-Restaurants: <% if session[:restaurant_id].is_a?(Array) %>
-	<% session[:restaurant_id].each do |restaurant| %> 
-	<%= @package.gen_restaurants.find_by_id(restaurant).name %>
-	<br/>
-	<% end %>
-	<% else %>
-	<%= @package.gen_restaurants.find_by_id(session[:restaurant_id]).name %>
-	<% end %>
-<br/>
-Attractions: <% session[:attraction_id].each do |attraction| %> 
-	<%= @package.gen_attractions.find_by_id(attraction).name %>
-	<br/>
-	<% end %>
-<br/>
+</div>
