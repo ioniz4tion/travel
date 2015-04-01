@@ -456,7 +456,7 @@ input[type="radio"] {
 	top: 60px;
 	left: 50%;
 	background-color: $blue;
-	width: auto;
+	width: 200px;
 	padding: 10px 20px;
 	font-size: 20px;
 	overflow: hidden;
@@ -948,7 +948,15 @@ h3 {
 	@include transition(max-height 0.3s);
 
 	&.open {
-		max-height: 624px;
+		max-height: 922px;
+
+		@media #{$tablet} {
+			max-height: 977px;
+		}
+
+		@media #{$phone} {
+			max-height: 3296px;
+		}
 	}
 }
 
@@ -959,8 +967,16 @@ h3 {
 	@include flex;
 
 	> div {
-		width: 29%;
+		width: calc(30% - 40px);
 		margin: 20px;
+
+		@media #{$tablet} {
+			width: calc(45% - 40px);
+		}
+
+		@media #{$phone} {
+			width: calc(95% - 40px);
+		}
 	}
 
 	a {
