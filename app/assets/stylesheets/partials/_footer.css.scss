@@ -54,7 +54,7 @@ footer {
 				margin-bottom: 20px;
 			}
 
-			span {
+			span:not(.eleganticon) {
 				@media #{$phone} {
 					display: none;
 				}
@@ -85,6 +85,12 @@ footer {
 			@media #{$phone} {
 				width: 75%;
 			}
+		}
+
+		.eleganticon {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 50px;
 		}
 
 		span {
