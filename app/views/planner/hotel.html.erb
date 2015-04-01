@@ -4,111 +4,97 @@
 
 <%= render :partial => 'templates/head' %>
 
-<%= form_tag('/planner/restaurant', id: "suggest") do %>
+<div class="content">
 
-<div class="recommend">
-		<span class="recommend-span">Pick a hotel</span>
-	</div>
+	<h1>Choose <span>a</span> Hotel</h1>
 
-<div class="card-flex">	
+	<%= form_tag('/planner/restaurant', id: "suggest") do %>
 
-	<% @package.gen_hotels.order(:name).each do |hotel| %>
-		<input type="radio" value="<%= hotel.id %>" id="<%= hotel.id %>" name="hotel_id">
-		<label for="<%= hotel.id %>">
-		<div class="hotel-card" id="hotel-card<%= hotel.id %>">
+		<ul>
 
-			<div class="flipper-card" id="card<%= hotel.id %>">
+			<% @package.gen_hotels.order(:name).each do |hotel| %>
 
-				<div class="front">
+				<input type="radio" value="<%= hotel.id %>" id="<%= hotel.id %>" name="hotel_id">
 
-					<h2><span><%= hotel.name %></span></h2>
+		    <li class="item">
+		      <div>
+		        
+		        <div class="price-img">
+						  <%= image_tag(hotel.image_thumb.url) %>
+						  <div></div>
+						  <p><%= hotel.pricing %></p>
+						</div>
 
-					<div class="price-img">
-					  <%= image_tag(hotel.image_thumb.url) %>
-					  <div></div>
-					  <p><%= hotel.pricing %></p>
-					</div>
+		        <div class="description"> 
+		        	<h2><%= hotel.name %></h2>       
+			        <p><%= hotel.description %></p>
+							<div class="rating">
+			          <span class="eleganticon icon_star"></span>
+			          <div><p><%= hotel.rating %><span class="slash">/</span>5</p></div>
+			        </div>        
+			      </div>
 
-					
-					<div class="description"> 
-						<div class="rating">
-		          <span class="eleganticon icon_star"></span>
-		          <div>
-		            <p><%= hotel.rating %><span class="slash">/</span>5</p>
-		          </div>
-		        </div>       
-		        <p><%= hotel.description %></p>        
 		      </div>
 
-		      <table>
+		      <div>
 
-			      <tr>
+		        <table>
 
-			        <td>
-			          <span class="eleganticon icon_pin_alt"></span>
-			          <div>
-			            <p><%= hotel.address %></p>
-			          </div>
-			        </td>
+		          <tr>
 
-		       </tr>
+		            <td>
+				          <span class="eleganticon icon_pin_alt"></span>
+				          <div>
+				            <p><%= hotel.address %></p>
+				          </div>
+				        </td>
 
-		       <tr>
+		            <td>
+				          <span class="eleganticon icon_globe-2"></span>
+				          <div>
+				            <a href="<%= hotel.website %>" target="_blank"><%= hotel.short_url %></a>
+				          </div>
+				        </td>
 
-			        <td>
-			          <span class="eleganticon icon_globe-2"></span>
-			          <div>
-			            <a href="<%= hotel.website %>" target="_blank"><%= hotel.short_url %></a>
-			          </div>
-			        </td>
+		          </tr>
 
-			      </tr>
+		          <tr>
 
-			      <tr>
+		            <td>
+		              <span class="eleganticon icon_clock_alt"></span>
+		              <div>
+		                <p><%= hotel.hours %></p>
+		              </div>
+		            </td>
 
-			        <td>
-			          <span class="eleganticon icon_clock_alt"></span>
-			          <div>
-			            <p><%= hotel.hours %></p>
-			          </div>
-			        </td>
+		            <td>
+		              <span class="eleganticon icon_phone"></span>
+		              <div>
+		                <p><%= hotel.phone %></p>
+		              </div>
+		            </td>
 
-			      </tr>
+		          </tr>
 
-			      <tr>
+		        </table>
 
-			        <td>
-			          <span class="eleganticon icon_phone"></span>
-			          <div>
-			            <p><%= hotel.phone %></p>
-			          </div>
-			        </td>
+		        <label for="<%= hotel.id %>">Select</label>
 
-			      </tr>
+		      </div>
 
-			    </table>
+		    </li>
 
-			    <button id="show<%= hotel.id %>">Show Map</button>
+		    <hr>
 
-			  </div>
+		  <% end %>
 
+		</ul>
 
-		    <div class="back back-flip">
-	        <div class="map open"> 
-	          <iframe src="<%= hotel.iframe_url %>"></iframe>
-	          <button id="show<%= hotel.id %>">Hide Map</button>
-	        </div>
-	      </div>
-
-      </div>
-
+		<div class="controls">
+			<div class="spacer"></div>	
+			<button id="suggest-continue" class="plnr-btn continue cont-only" type="button"><span class="planner-arrow arrow-right"></span><span class="planner-arrow arrow2 arrow-right"></span></button>
 		</div>
-		</label>
+
 	<% end %>
-</div>
 
-<div class="controls">	
-	<button id="suggest-continue" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
 </div>
-
-<% end %>

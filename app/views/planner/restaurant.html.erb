@@ -4,111 +4,96 @@
 
 <%= render :partial => 'templates/head' %>
 
-<%= form_tag('/planner/attraction', id: "suggest") do %>
+<div class="content">
 
-<div class="recommend">
-	<span class="recommend-span">Pick one or more restaurants</span>
-</div>
+	<h1>Choose <span>one or more</span> Restaurants</h1>
 
-<div class="card-flex">	
+	<%= form_tag('/planner/attraction', id: "suggest") do %>
 
-	<% @package.gen_restaurants.order(:name).each do |restaurant| %>
-		<input type="checkbox" value="<%= restaurant.id %>" id="<%= restaurant.id %>" name="restaurant_id[]">
-		<label for="<%= restaurant.id %>">
-		<div class="hotel-card" id="hotel-card<%= restaurant.id %>">
+		<ul>
 
-			<div class="flipper-card" id="card<%= restaurant.id %>">
+			<% @package.gen_restaurants.order(:name).each do |restaurant| %>
 
-				<div class="front">
+				<input type="checkbox" value="<%= restaurant.id %>" id="<%= restaurant.id %>" name="restaurant_id[]">
 
-					<h2><span><%= restaurant.name %></span></h2>
+		    <li class="item">
+		      <div>
+		        
+		        <div class="price-img">
+						  <%= image_tag(restaurant.image_thumb.url) %>
+						  <div></div>
+						  <p><%= restaurant.pricing %></p>
+						</div>
 
-					<div class="price-img">
-					  <%= image_tag(restaurant.image_thumb.url) %>
-					  <div></div>
-					  <p><%= restaurant.pricing %></p>
-					</div>
+		        <div class="description"> 
+		        	<h2><%= restaurant.name %></h2>       
+			        <p><%= restaurant.description %></p>
+							<div class="rating">
+			          <span class="eleganticon icon_star"></span>
+			          <div><p><%= restaurant.rating %><span class="slash">/</span>5</p></div>
+			        </div>        
+			      </div>
 
-					
-					<div class="description"> 
-						<div class="rating">
-		          <span class="eleganticon icon_star"></span>
-		          <div>
-		            <p><%= restaurant.rating %><span class="slash">/</span>5</p>
-		          </div>
-		        </div>       
-		        <p><%= restaurant.description %></p>        
 		      </div>
 
-		      <table>
+		      <div>
 
-			      <tr>
+		        <table>
 
-			        <td>
-			          <span class="eleganticon icon_pin_alt"></span>
-			          <div>
-			            <p><%= restaurant.address %></p>
-			          </div>
-			        </td>
+		          <tr>
 
-		       </tr>
+		            <td>
+				          <span class="eleganticon icon_pin_alt"></span>
+				          <div>
+				            <p><%= restaurant.address %></p>
+				          </div>
+				        </td>
 
-		       <tr>
+		            <td>
+				          <span class="eleganticon icon_globe-2"></span>
+				          <div>
+				            <a href="<%= restaurant.website %>" target="_blank"><%= restaurant.short_url %></a>
+				          </div>
+				        </td>
 
-			        <td>
-			          <span class="eleganticon icon_globe-2"></span>
-			          <div>
-			            <a href="<%= restaurant.website %>" target="_blank"><%= restaurant.short_url %></a>
-			          </div>
-			        </td>
+		          </tr>
 
-			      </tr>
+		          <tr>
 
-			      <tr>
+		            <td>
+		              <span class="eleganticon icon_clock_alt"></span>
+		              <div>
+		                <p><%= restaurant.hours %></p>
+		              </div>
+		            </td>
 
-			        <td>
-			          <span class="eleganticon icon_clock_alt"></span>
-			          <div>
-			            <p><%= restaurant.hours %></p>
-			          </div>
-			        </td>
+		            <td>
+		              <span class="eleganticon icon_phone"></span>
+		              <div>
+		                <p><%= restaurant.phone %></p>
+		              </div>
+		            </td>
 
-			      </tr>
+		          </tr>
 
-			      <tr>
+		        </table>
 
-			        <td>
-			          <span class="eleganticon icon_phone"></span>
-			          <div>
-			            <p><%= restaurant.phone %></p>
-			          </div>
-			        </td>
+		        <label for="<%= restaurant.id %>">Select</label>
 
-			      </tr>
+		      </div>
 
-			    </table>
+		    </li>
 
-			    <button id="show<%= restaurant.id %>">Show Map</button>
+		    <hr>
 
-			  </div>
+		  <% end %>
 
+		</ul>
 
-		    <div class="back back-flip">
-	        <div class="map open"> 
-	          <iframe src="<%= restaurant.iframe_url %>"></iframe>
-	          <button id="show<%= restaurant.id %>">Hide Map</button>
-	        </div>
-	      </div>
-
-      </div>
-
+		<div class="controls">	
+			<div class="spacer"></div>
+			<button id="suggest-continue" class="plnr-btn continue cont-only" type="button"><span class="planner-arrow arrow-right"></span><span class="planner-arrow arrow2 arrow-right"></span></button>
 		</div>
-		</label>
+
 	<% end %>
 </div>
-
-<div class="controls">	
-	<button id="suggest-continue" class="btn-slide btn icon-arrow-right continue" type="button">Continue</button>
-</div>
-
-<% end %>

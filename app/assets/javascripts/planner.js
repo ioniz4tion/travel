@@ -58,7 +58,7 @@ $(document).ready(function() {
 
 	$(".choose").click(function() {
 		$("#cities").removeClass("show");
-		$("body").removeClass("no-overflow");
+		// $("body").removeClass("no-overflow");
 		choose = parseInt(this.id.replace("choose",""));
 		request(choose);		
 	});
@@ -105,12 +105,18 @@ $(document).ready(function() {
 	});
 
 	$('.others a').click(function() {
-		var imgSource = $('.others img').attr('src');
-		var h2Source = $('.others .name').text();
-		var pSource = $('.others p').text();
+		var id = $(this).attr('id');
+				id = id.replace('choose', 'dest');
+		console.log(id);
 
-		$('.price-img img').attr('src', imgSource);
-		$('.description h2').text(h2Source);
-		$('.description p').text(pSource);
+		$('.option').addClass('not-visible');
+		$('#' + id).removeClass('not-visible');
+
+		$('.others a').removeClass('selected');
+		$(this).addClass('selected');
+	});
+
+	$('li label').click(function() {
+		$(this).toggleClass('selected');
 	});
 });

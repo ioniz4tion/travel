@@ -970,9 +970,32 @@ h3 {
 		&:hover {
 			// background: $dark-blue;
 
+			&::after {
+				opacity: 0.3;
+			}
+
 			.info {
 				top: -100%;
 			}
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: $dark-grey;
+			opacity: 0;
+
+			@include transition(all 0.3s);
+		}
+
+		&.selected::after {
+			background: $light-grey;
+			opacity: 0.3;
 		}
 	}
 
@@ -1010,5 +1033,116 @@ h3 {
 
 	p {
 		display: none;
+	}
+}
+
+.cont-only {
+	left: 50% !important;
+
+	@include x-center;
+}
+
+// .choices {
+// 	display: inline-block;
+// 	max-width: 390px;
+// 	width: 390px;
+// 	position: relative;
+
+// 	> div {
+// 		padding: 20px;
+// 		margin: 20px 0;
+// 		background: $blue;
+// 		color: $light-grey;
+// 		border: 2px solid $blue;
+// 		text-align: center;
+// 		font-variant: small-caps;
+// 		font-size: 24px;
+// 		cursor: pointer;
+
+// 		@include transition(all 0.3s);
+
+// 		&:hover {
+// 			background: $dark-blue;
+// 			border-color: $dark-blue;
+// 		}
+
+// 		&.selected {
+// 			border-color: $yellow;
+// 		}
+
+// 		&.chosen {
+// 			background: $yellow;
+// 			color: $dark-grey;
+// 			border-color: $yellow;
+// 		}
+// 	}
+
+// 	ul {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 390px;
+// 	}
+// }
+
+.choice {
+	position: relative;
+	// overflow: auto;
+}
+
+.option {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	@include transition(all 0.3s);
+
+	&.option1 {
+		position: relative;
+	}
+
+	&.not-visible {
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+.content input[type="radio"],
+.content input[type="checkbox"] {
+	display: none;
+}
+
+li label {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+	background: $blue;
+	color: $light-grey;
+	border: none;
+	outline: none;
+	float: right;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	cursor: pointer;
+
+	@include transition(all 0.3s);
+
+	@media #{$tablet} {
+		position: relative;
+		// float: none;
+		margin-bottom: 20px;
+	}
+
+	@media #{$phone} {
+		font-size: 1rem;
+	}
+
+	&:hover {
+		background: $dark-blue;
+	}
+
+	&.selected {
+		background: $yellow;
+		color: $dark-grey;
 	}
 }

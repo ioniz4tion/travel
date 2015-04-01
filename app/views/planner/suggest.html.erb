@@ -13,24 +13,35 @@
 			<span class="recommend-span">We recommend a vacation to:</span>
 		</div> -->
 
-		<ul>
+		<div class="choice">
 
-	    <li class="item">
-	      <div>
+			<% i = 1 %>
+			<% @packages.each do |package| %>
 
-	        <div class="price-img">
-	          <%= image_tag(@packages.first.image.url) %>
-	        </div>
+				<ul id="dest<%= package.id %>" class="option<%= i %> option not-visible">
 
-	        <div class="description">
-	          <h2><%= @packages.first.name %></h2>
-	          <p><%= @packages.first.gen_package_paragraphs.first.text %></p>
-	        </div>
+			    <li class="item">
+			      <div>
 
-	      </div>
-	    </li>
+			        <div class="price-img">
+			          <%= image_tag(package.image.url) %>
+			        </div>
 
-	  </ul>
+			        <div class="description">
+			          <h2><%= package.name %></h2>
+			          <p><%= package.gen_package_paragraphs.first.text %></p>
+			        </div>
+
+			      </div>
+			    </li>
+
+			  </ul>
+
+			  <% i += 1 %>
+
+			<% end %>
+
+		</div>
 
 		<input type="text" name="city_id" id="city_id" style="display:none" value="<%= @packages.first.id %>">
 
@@ -51,7 +62,7 @@
 
 				<div>
 
-					<a id="choose<%= package.id %>">
+					<a id="choose<%= package.id %>" class="choose">
 						<%= image_tag(package.image.url) %>
 						<div class="info">
 							<div><span><%= i.ordinalize %></span></div>
@@ -69,62 +80,10 @@
 		</div>
 	</div>
 
-	<!-- <div id="cities">
-
-		<div class="down">
-			<div id="arrows">
-			</div>		
-		</div>
-
-		<div class="content">
-
-		  <h1>Pick a city</h1>
-
-		  <ul>
-
-		  <% i = 1 %>
-		    <% @packages.each do |package| %>
-
-
-		      <li class="item">
-		        <div class="pick-content">
-		          
-		          <div class="price-img">
-		            <%= image_tag(package.image.url) %>	            
-		          </div>
-
-		          <div class="description">
-		            <h2><%= i.ordinalize %> - <%= package.name %></h2>
-		            <p><%= package.gen_package_paragraphs.first.text %></p>     
-		          </div>
-
-		          <button id="choose<%= package.id %>" class="choose btn btn-1 btn-1b" type="button">Choose</button>
-
-		          
-
-		        </div>
-
-		        <div>	                    
-
-		          <button id="show<%= package.id %>">Show/hide map<span class="caret"></span></button>
-
-		        </div>
-
-		        <div class="map" id="<%= package.id %>">	        
-
-		          <iframe src="<%= package.iframe_url %>"></iframe>
-
-		        </div>
-
-		      </li>
-
-		    <hr>
-		    <% i += 1 %>
-		    <% end %>	    
-
-		  </ul>
-
-		</div>
-	</div> -->
-
 </div>
+
+<script>
+	$(document).ready(function() {
+		$('.option1').removeClass('not-visible');
+	});
+</script>
