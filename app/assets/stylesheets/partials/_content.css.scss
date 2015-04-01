@@ -45,7 +45,7 @@
 		list-style: none;
 	}
 
-	button:not(.plnr-btn, #submit) {
+	button[id^="show"] {
 		position: absolute;
 		bottom: 0;
 		right: 0;
