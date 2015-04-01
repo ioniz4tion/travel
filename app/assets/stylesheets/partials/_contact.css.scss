@@ -1,0 +1,92 @@
+@import 'imports.css.scss';
+
+.contact {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 50px;
+
+	@media #{$phone} {
+		width: 95%;
+	}
+
+	tr {
+		&:first-child {
+			td,
+			th {
+				padding-top: 0;
+			}
+		}
+
+		&:last-child {
+			td,
+			th {
+				padding-bottom: 0;
+			}
+
+			span:not(.ast) {
+				text-transform: uppercase;
+				color: $yellow;
+				font-weight: normal;
+			}
+		}
+	}
+
+	th {
+		text-align: left;
+		padding: 20px;
+		text-transform: uppercase;
+		color: $yellow;
+		font-weight: normal;
+		width: 50%;
+	}
+
+	td {
+		width: 50%;
+		padding: 20px;
+
+		&[colspan="2"] {
+			width: 100%;
+
+			span:not(.ast) {
+				display: block;
+				margin-bottom: 10px;
+				text-transform: uppercase;
+				color: $yellow;
+				font-weight: normal;
+			}
+		}
+	}
+
+	input,
+	textarea {
+		width: 100%;
+	}
+
+	textarea {
+		resize: vertical;
+		min-height: 150px;
+	}
+
+	button {
+		padding: 10px;
+		background: $blue;
+		color: $light-grey;
+		border: none;
+		outline: none;
+		float: right;
+		font-size: 1.25rem;
+		text-transform: uppercase;
+
+		@include transition(all 0.3s);
+
+		&:hover {
+			background: $yellow;
+			color: $dark-grey;
+		}
+	}
+
+	.ast {
+		color: #cd2020;
+		font-weight: bolder;
+	}
+}
