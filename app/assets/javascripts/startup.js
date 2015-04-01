@@ -57,7 +57,7 @@ $(document).ready(function() {
   //I moved the flipper logic here because it needed access to variables form the
   //startup javascript file
 
-  var $flipper = $('.flipper'),
+  var $flipper = $('.flipper-container .flipper'),
       $flipperBtn = $('#flipperBtn'),
       $flipperClose = $('#flipperClose'),
       slideNum = 0;

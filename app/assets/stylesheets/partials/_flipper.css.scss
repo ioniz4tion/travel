@@ -20,6 +20,7 @@
 
 	@media #{$tablet-only} {
 		width: 280px;
+		float: right;
 	}
 
 	@media #{$phone} {
@@ -65,15 +66,11 @@
 		.weather {
 			visibility: hidden;
 			opacity: 0;
-
-			@include transition(all linear 0s 0.25s)
 		}
 
 		.weather-more {
 			visibility: visible;
 			opacity: 1;
-
-			@include transition(all linear 0s 0.25s)
 		}
 	}
 
@@ -89,7 +86,7 @@
 		@include transform(rotateY(180deg));
 	}
 
-	button {
+	button:not(.nav-btn) {
 		display: block;
 		width: 50px;
 		height: 50px;

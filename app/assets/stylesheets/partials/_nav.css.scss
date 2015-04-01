@@ -22,7 +22,7 @@ nav {
 		color: $light-grey;
 	}
 
-	button {
+	button:not(.nav-btn) {
 		display: none;
 		position: absolute;
 		right: 0;
@@ -352,6 +352,7 @@ nav {
 	right: -$mobile-nav-width;
 	background: $body-bg;
 	overflow: auto;
+	overflow-x: hidden;
 	text-align: right;
 	font-size: 22px;
 
@@ -363,6 +364,14 @@ nav {
 
 	&.open {
 		right: 0;
+	}
+
+	> div {
+		width: calc(100% - 50px);
+		position: absolute;
+		right: 25px;
+
+		@include transition(all 0.3s);
 	}
 
 	& > div > div {
@@ -425,4 +434,58 @@ nav {
 			@include transition(all 0.3s);
 		}
 	}
+}
+
+.nav-btn {
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 13px;
+	left: 25px;
+	outline: none;
+	border: none;
+	background: transparent;
+	z-index: 1;
+
+	@include transition(all 0.3s);
+
+	&:hover {
+		span {
+			color: $yellow;
+		}
+	}
+
+	span {
+		color: $light-grey;
+		font-size: 25px;
+
+		@include transition(all 0.3s);
+	}
+}
+
+.about-mobile {
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 5px 0;
+
+		&:hover span {
+			background: $yellow;
+			color: $dark-grey;
+		}
+	}
+
+	span {
+		display: inline-block !important;
+		padding: 5px !important;
+		margin-right: -5px;
+
+		@include transition(all 0.3s);
+	}
+}
+
+.hidden {
+	right: -$mobile-nav-width !important;
 }

@@ -43,7 +43,33 @@
 
 	<% end %>
 
-	<div id="cities">
+	<div class="others-container">
+		<div class="others">
+
+			<% i = 1 %>
+			<% @packages.each do |package| %>
+
+				<div>
+
+					<a id="choose<%= package.id %>">
+						<%= image_tag(package.image.url) %>
+						<div class="info">
+							<div><span><%= i.ordinalize %></span></div>
+							<div><span class="name"><%= package.name %></span></div>
+							<p><%= package.gen_package_paragraphs.first.text %></p>
+						</div>
+					</a>
+
+				</div>
+
+				<% i += 1 %>
+
+			<% end %>
+
+		</div>
+	</div>
+
+	<!-- <div id="cities">
 
 		<div class="down">
 			<div id="arrows">
@@ -99,6 +125,6 @@
 		  </ul>
 
 		</div>
-	</div>
+	</div> -->
 
 </div>

@@ -97,8 +97,9 @@
 	<button><span class="nav-arrow"></span></button>
 
 	<div class="nav-mobile">
+		<button class="nav-btn"><span class="eleganticon arrow_left-right_alt"></span></button>
 
-		<div>
+		<div class="dest-mobile">
 			<span class="nav-heading">Destinations</span>
 
 			<% @gen_package.order(:name).each do |package| %>
@@ -127,6 +128,41 @@
 
 				</div>
 			<% end %>
+
+		</div>
+
+		<div class="about-mobile hidden">
+			<span class="nav-heading">About Us</span>
+
+			<div>
+				<%= link_to('/contact') do %>
+					<span class="package-name">Contact Us</span>
+				<% end %>
+			</div>
+
+			<div>
+				<%= link_to('/abouts') do %>
+					<span class="package-name">The Developers</span>
+				<% end %>
+			</div>
+
+			<div>
+				<%= link_to('/bpas') do %>
+					<span class="package-name">BPA</span>
+				<% end %>
+			</div>
+
+			<div>
+				<%= link_to('/copyrights') do %>
+					<span class="package-name">Copyrights</span>
+				<% end %>
+			</div>
+
+			<div>
+				<%= link_to('/w3c') do %>
+					<span class="package-name">Validation</span>
+				<% end %>
+			</div>
 
 		</div>
 

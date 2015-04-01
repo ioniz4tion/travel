@@ -46,10 +46,10 @@ $(document).ready(function() {
 
 	//suggest page code
 
-	$("#another").click(function() {
-		$("#cities").addClass("show");
-		$("body").addClass("no-overflow");
-	});
+	// $("#another").click(function() {
+	// 	$("#cities").addClass("show");
+	// 	$("body").addClass("no-overflow");
+	// });
 
 	$(".down").click(function() {
 		$("#cities").removeClass("show");
@@ -98,5 +98,19 @@ $(document).ready(function() {
 
 	$('.hotel-card').click(function() {
 		$(this).toggleClass("selected-card");
+	});
+
+	$('#another').click(function() {
+		$('.others-container').toggleClass('open');
+	});
+
+	$('.others a').click(function() {
+		var imgSource = $('.others img').attr('src');
+		var h2Source = $('.others .name').text();
+		var pSource = $('.others p').text();
+
+		$('.price-img img').attr('src', imgSource);
+		$('.description h2').text(h2Source);
+		$('.description p').text(pSource);
 	});
 });

@@ -451,9 +451,9 @@ input[type="radio"] {
 	position: absolute;
 	right: calc(50% + 75px);
 	background-color: $blue;
-	width: 220px;
-	padding: 10px;
-	font-size: 24px;
+	width: auto;
+	padding: 10px 20px;
+	font-size: 20px;
 	overflow: hidden;
 	border: none;
 	text-decoration: none;
@@ -933,4 +933,82 @@ h3 {
 	font-size: 22px;
 	color: $yellow;
 	border-bottom: 1px solid $yellow;	
+}
+
+.others-container {
+	max-height: 0px;
+	overflow: hidden;
+
+	@include transition(max-height 0.3s);
+
+	&.open {
+		max-height: 624px;
+	}
+}
+
+.others {
+	width: 100%;
+	margin-top: 50px;
+
+	@include flex;
+
+	> div {
+		width: 29%;
+		margin: 20px;
+	}
+
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		// padding: 20px;
+		position: relative;
+		overflow: hidden;
+		// background: $blue;
+		cursor: pointer;
+
+		&:hover {
+			// background: $dark-blue;
+
+			.info {
+				top: -100%;
+			}
+		}
+	}
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	.info {
+		display: block;
+		width: 100%;
+		height: 200%;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		@include transition(top 0.3s);
+
+		div {
+			height: 50%;
+			position: relative;
+		}
+
+		span {
+			display: block;
+			padding: 5px;
+			background: $yellow;
+			color: $dark-grey;
+			font-size: 24px;
+			font-variant: small-caps;
+
+			@include xy-center;
+		}
+	}
+
+	p {
+		display: none;
+	}
 }
