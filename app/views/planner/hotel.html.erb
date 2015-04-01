@@ -10,7 +10,7 @@
 
 	<%= form_tag('/planner/restaurant', id: "suggest") do %>
 
-		<ul>
+		<ul class="hotels">
 
 			<% @package.gen_hotels.order(:name).each do |hotel| %>
 

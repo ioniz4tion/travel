@@ -108,6 +108,10 @@
 	left: 50%;
 
 	@include transform(translateX(-50%));
+
+	&.tall {
+		height: 107px;
+	}
 }
 
 form {
@@ -449,7 +453,8 @@ input[type="radio"] {
 #another {
 	color: $light-grey;
 	position: absolute;
-	right: calc(50% + 75px);
+	top: 60px;
+	left: 50%;
 	background-color: $blue;
 	width: auto;
 	padding: 10px 20px;
@@ -459,7 +464,8 @@ input[type="radio"] {
 	text-decoration: none;
 	text-transform: uppercase;
 
-	@include transition(all .3s);	
+	@include transition(all .3s);
+	@include x-center;	
 
 	/* &:after {
 		background-color: #36648f;

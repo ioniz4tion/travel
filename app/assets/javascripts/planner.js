@@ -119,4 +119,9 @@ $(document).ready(function() {
 	$('li label').click(function() {
 		$(this).toggleClass('selected');
 	});
+
+	$('.hotels label').click(function() {
+		$('.hotels label').removeClass('selected');
+		$(this).addClass('selected');
+	});
 });
