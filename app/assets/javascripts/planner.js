@@ -63,10 +63,6 @@ $(document).ready(function() {
 		request(choose);		
 	});
 
-	$("#suggest-continue").click(function() {
-		$("#suggest").submit();
-	});
-
 	var request = function(choose) {
 		$.ajax({url:"/planner/suggest/another", data: {choose: choose}, success:function(data){
 			data = JSON.parse(data);
@@ -123,5 +119,27 @@ $(document).ready(function() {
 	$('.hotels label').click(function() {
 		$('.hotels label').removeClass('selected');
 		$(this).addClass('selected');
+	});
+
+	$('#suggest-continue').click(function() {		
+		var chx = document.getElementsByTagName('input');
+		var check = false;
+  	for (var i=0; i<chx.length; i++) {    
+	    if ((chx[i].type == 'radio' || chx[i].type == 'checkbox') && chx[i].checked) {
+	      check = true;
+	      if (chx[i].type == 'radio') {
+	      	var hotel = true;
+	      }
+	    } 
+	  }
+	  if (check == true) {
+	  	$("#suggest").submit();	  	
+	  } else {
+	  	if (hotel) {
+	  		alert("You must select one option before continuing.");
+	  	} else {
+	  		alert("You must select at least one option before continuing.");
+	  	}
+	  }
 	});
 });
