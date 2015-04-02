@@ -1043,11 +1043,13 @@ h3 {
 
 		span {
 			display: block;
+			// max-width: 200px;
 			padding: 5px;
 			background: $yellow;
 			color: $dark-grey;
 			font-size: 24px;
 			font-variant: small-caps;
+			white-space: nowrap;
 
 			@include xy-center;
 		}
