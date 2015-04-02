@@ -20,8 +20,7 @@
 
 						<label for="<%= i %><%= answer.id %>" class="answer">
 							<input type="radio" name="<%= i %>" id="<%= i %><%= answer.id %>" value="<%= answer.score %>">
-							<label for="<%= i %><%= answer.id %>"><%= bip_url(answer, :text, 'planner/a') %>
-									<%= login_text("<br/>") %><%= bip_url(answer, :color, 'planner/a', false) %>
+							<label for="<%= i %><%= answer.id %>"><%= bip_url(answer, :text, 'planner/a') %>									
 									<%= login_text("<br/>") %><%= bip_url(answer, :score, 'planner/a', false) %>
 							</label>
 						</label>
