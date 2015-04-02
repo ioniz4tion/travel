@@ -67,7 +67,7 @@
 		min-height: 150px;
 	}
 
-	button {
+	input[type="submit"] {
 		padding: 10px;
 		background: $blue;
 		color: $light-grey;
@@ -75,6 +75,7 @@
 		outline: none;
 		float: right;
 		font-size: 1.25rem;
+		width: auto;
 		text-transform: uppercase;
 
 		@include transition(all 0.3s);

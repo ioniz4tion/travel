@@ -130,7 +130,11 @@ $(document).ready(function() {
 	      if (chx[i].type == 'radio') {
 	      	var hotel = true;
 	      }
-	    } 
+	    }
+	  }
+
+	  if ( chx.length == 3) {
+	  	check = true;
 	  }
 	  if (check == true) {
 	  	$("#suggest").submit();	  	
